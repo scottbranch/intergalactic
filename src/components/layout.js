@@ -14,11 +14,9 @@ import "./layout.css"
 
 const Layout = ({ children }) => {
 
-  const redirect = () => {
-    if(window !== undefined) {
-      window.location.replace('https://airborneecs.com/')
-     }
-  }
+  useEffect(() => {
+    window.location.replace('https://airborneecs.com/')
+  },[])
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -33,7 +31,6 @@ const Layout = ({ children }) => {
   return (
     <>
       {/*<Header siteTitle={data.site.siteMetadata?.title || `Title`} />*/}
-      {redirect()}
     </>
   )
 }
