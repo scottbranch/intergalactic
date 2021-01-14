@@ -15,7 +15,9 @@ import "./layout.css"
 const Layout = ({ children }) => {
 
   const redirect = () => {
-    window !== undefined && window.location.replace('https://airborneecs.com/')
+    if(window !== undefined) {
+      window.location.replace('https://airborneecs.com/')
+     }
   }
 
   const data = useStaticQuery(graphql`
