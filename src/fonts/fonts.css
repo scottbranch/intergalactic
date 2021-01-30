@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "tactic-italic";
+  src: url("Tactic-Italic.eot");
+  src: local("☺"), url("Tactic-Italic.woff") format("woff"),
+    url("Tactic-Italic.ttf") format("truetype"),
+    url("Tactic-Italic.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "tactic-regular", sans-serif;
+  src: url("Tactic-Regular.eot");
+  src: local("☺"), url("Tactic-Regular.woff") format("woff"),
+    url("Tactic-Regular.ttf") format("truetype"),
+    url("Tactic-Regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
