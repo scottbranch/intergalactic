@@ -49,9 +49,9 @@ const IndexPage = () => {
       setHideOverlay(true)
     }, 6000)
 
-    setTimeout(() => {
-      window.location.replace("https://airborneecs.com/")
-    }, 7000)
+    // setTimeout(() => {
+    //   window.location.replace("https://airborneecs.com/")
+    // }, 7000)
   }, [])
 
   const timerComponents = []
@@ -62,14 +62,16 @@ const IndexPage = () => {
     }
 
     timerComponents.push(
-      <span>
+      <span class="time-slot">
         {
-          <h5>
-            {timeLeft[interval]}
-            <span>:</span>
-          </h5>
+          <div>
+            <p class="number">
+              {timeLeft[interval]}
+              <span>:</span>
+            </p>
+          </div>
         }
-        {<p>{interval}</p>}
+        {<p class="days">{interval}</p>}
       </span>
     )
   })
@@ -163,13 +165,13 @@ const Outer = styled.div`
 const SpaceImgOuter = styled.div`
   position: absolute;
   right: -190px;
-  top: -70px;
+  top: 50%;
   z-index: 50;
   max-width: 1100px;
   overflow: hidden;
   height: 0;
   opacity: 0;
-  transform: translateY(-50px);
+  margin-top: -465px;
   animation: ${showHeight} 2s 1s cubic-bezier(0.49, 0, 0, 1) forwards;
 `
 
@@ -186,7 +188,8 @@ const Overlay = styled.div`
   opacity: 1;
   visibility: visible;
   transition: 1s ease;
-  animation: ${fadeOut} 1s 1s ease forwards;
+  //animation: ${fadeOut} 1s 1s ease forwards;
+  display: none;
 
   &.hide {
     animation: ${fadeIn} 1s ease forwards;
@@ -246,7 +249,26 @@ const CountDownText = styled.p`
   display: flex;
   margin: 0;
 
-  h5 {
+  .time-slot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &:nth-of-type(1) .days {
+      left: -22px;
+    }
+
+    &:nth-of-type(2) .days {
+      left: -20px;
+    }
+
+    &:nth-of-type(3) .days {
+      left: -12px;
+    }
+  }
+
+  .number {
     font-family: ${({ theme }) => theme.fonts.tacticRegular};
     font-size: 120px;
     letter-spacing: 2px;
@@ -255,11 +277,11 @@ const CountDownText = styled.p`
     color: ${({ theme }) => theme.colors.cream};
   }
 
-  span h5 span {
+  span .number span {
     margin: 0 3px;
   }
 
-  span:last-child h5 span {
+  span:last-child .number span {
     display: none;
   }
 
@@ -271,7 +293,6 @@ const CountDownText = styled.p`
     letter-spacing: 2px;
     position: relative;
     text-align: center;
-    left: -17px;
     margin-top: 50px;
   }
 
