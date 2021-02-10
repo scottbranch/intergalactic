@@ -160,6 +160,7 @@ const showScribble = keyframes`
 const Outer = styled.div`
   position: relative;
   overflow: hidden;
+  height: 100%;
 `
 
 const SpaceImgOuter = styled.div`
@@ -203,7 +204,7 @@ const Overlay = styled.div`
 
 const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   padding: 20px 15px;
   justify-content: space-between;
@@ -227,6 +228,11 @@ const ContainerLeft = styled.div`
 
 const LaunchContainer = styled.div`
   position: relative;
+  margin-bottom: 70px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+  }
 `
 
 const Cover = styled.div`
@@ -264,9 +270,11 @@ const CountDownText = styled.p`
   display: flex;
   margin: 0;
   flex-direction: column;
+  margin-bottom: 70px;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
+    margin-bottom: 0;
   }
 
   .time-slot {
