@@ -49,9 +49,9 @@ const IndexPage = () => {
       setHideOverlay(true)
     }, 6000)
 
-    setTimeout(() => {
-      window.location.replace("https://airborneecs.com/")
-    }, 7000)
+    // setTimeout(() => {
+    //   window.location.replace("https://airborneecs.com/")
+    // }, 7000)
   }, [])
 
   const timerComponents = []
@@ -194,6 +194,7 @@ const Overlay = styled.div`
   visibility: visible;
   transition: 1s ease;
   animation: ${fadeOut} 1s 1s ease forwards;
+  display: none;
 
   &.hide {
     animation: ${fadeIn} 1s ease forwards;
