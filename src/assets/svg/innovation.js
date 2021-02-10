@@ -12,7 +12,7 @@ function SvgInnovation(props) {
         letterSpacing={2.143}
       >
         <tspan x={-52.047} y={716}>
-          {"INNOVATIONS IN SPACE &amp; SKY"}
+          {"INNOVATIONS IN SPACE & SKY"}
         </tspan>
       </text>
     </svg>

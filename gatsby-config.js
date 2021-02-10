@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Environmental Control Systems for Civil, Defense &amp; Military | Airborne`,
+    title: `Environmental Control Systems for Civil, Defense & Military | Airborne`,
+    description: `Environmental Control Systems for Civil, Defense & Military | Airborne`,
     author: `@gatsbyjs`,
   },
   plugins: [
