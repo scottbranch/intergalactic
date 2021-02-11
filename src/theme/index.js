@@ -5,7 +5,7 @@ const theme = {
     rust: "#91897D",
   },
   fonts: {
-    tacticRegular: "tactic-regular, sans-serif",
+    tacticRegular: 'tactic-regular, sans-serif',
   },
 }
 

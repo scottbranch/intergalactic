@@ -49,9 +49,9 @@ const IndexPage = () => {
       setHideOverlay(true)
     }, 6000)
 
-    setTimeout(() => {
-      window.location.replace("https://airborneecs.com/")
-    }, 7000)
+    // setTimeout(() => {
+    //   window.location.replace("https://airborneecs.com/")
+    // }, 9000)
   }, [])
 
   const timerComponents = []
@@ -195,6 +195,7 @@ const Overlay = styled.div`
   visibility: visible;
   transition: 1s ease;
   animation: ${fadeOut} 1s 1s ease forwards;
+  display: none;
 
   &.hide {
     animation: ${fadeIn} 1s ease forwards;
@@ -226,19 +227,32 @@ const ContainerLeft = styled.div`
 `
 
 const LaunchContainer = styled.div`
-  position: relative;
+  position: fixed;
+  bottom: 345px;
+
+  @media screen and (min-width: 768px) {
+    position: relative;
+    bottom: 0;
+  }
 `
 
 const Cover = styled.div`
+  top: 20px;
+  left: 0;
+  height: 40px;
   position: absolute;
   background: #1e170a;
   width: 100%;
-  height: 60px;
-  top: 206px;
   margin-right: auto;
   transform: scaleX(1);
   transform-origin: right;
   animation: ${showScribble} 0.8s 2.2s ease forwards;
+
+  @media screen and (min-width: 768px) {
+    height: 60px;
+    top: 204px;
+    left: 0;
+  }
 `
 
 const CountDownContainer = styled.div`
@@ -264,9 +278,13 @@ const CountDownText = styled.p`
   display: flex;
   margin: 0;
   flex-direction: column;
+  position: fixed;
+  bottom: 20px;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
+    position: relative;
+    bottom: 0;
   }
 
   .time-slot {
