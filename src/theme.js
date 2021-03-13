@@ -3,10 +3,8 @@ export const scroll = {
   // https://github.com/locomotivemtl/locomotive-scroll#instance-options
   container: "#___gatsby",
   options: {
-    smooth: true,
+    smooth: false,
     smoothMobile: false,
     getDirection: true,
-    touchMultiplier: 2.5,
-    lerp: 0.08,
   },
 }
