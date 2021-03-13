@@ -13,6 +13,7 @@ const Nav = styled.nav`
   height: 100vh;
   background: ${({ theme }) => theme.colors.cream};
   z-index: 500;
+  border-right: 1px solid ${({ theme }) => theme.colors.black};
 `
 
 export default Menu

@@ -22,7 +22,16 @@ export default createGlobalStyle`
     font-weight: 500;
   }
 
-  h2 span {
+  h3 {
+    font-family: ${theme.fonts.tacticRegular};
+    text-transform: uppercase;
+    font-size: 95px;
+    line-height: 90px;
+    font-weight: 500;
+  }
+
+  h2 span,
+  h3 span {
     display: block;
     position: relative;
   }
@@ -31,5 +40,6 @@ export default createGlobalStyle`
     font-size: 17.2px;
     line-height: 21px;
     letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
 `

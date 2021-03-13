@@ -105,6 +105,7 @@ const StyledHeading = styled.h2`
   color: ${({ theme }) => theme.colors.cream};
   position: relative;
   left: -235px;
+  top: -50px;
   perspective: 600px;
 
   ${textDelay()};
