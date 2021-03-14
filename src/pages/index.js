@@ -6,6 +6,7 @@ import ValueProp from "../components/homepage/ValueProp"
 import ImageFloat from "../components/homepage/ImageFloat"
 import DoubleImage from "../components/homepage/DoubleImage"
 import BoxesChecked from "../components/homepage/BoxesChecked"
+import CtaSection from "../components/homepage/CtaSection"
 import styled, { keyframes } from "styled-components"
 
 const IndexPage = () => {
@@ -17,6 +18,7 @@ const IndexPage = () => {
       <ImageFloat />
       <DoubleImage />
       <BoxesChecked />
+      <CtaSection />
     </Layout>
   )
 }

@@ -13,6 +13,7 @@ import GlobalStyles from "./GlobalStylesheet"
 
 import Scroll from "./locomotiveScroll"
 import Header from "./header"
+import Footer from "./Footer"
 import "./layout.css"
 import "./locomotive-scroll.css"
 import theme from "../theme/"
@@ -40,7 +41,7 @@ const Layout = ({ children, location, props }) => {
         <Menu />
         {children}
       </main>
-      <footer></footer>
+      <Footer />
     </ThemeProvider>
   )
 }

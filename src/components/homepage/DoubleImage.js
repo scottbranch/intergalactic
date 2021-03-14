@@ -45,6 +45,7 @@ const StyledSection = styled.section`
   height: 100vh;
   max-height: 1400px;
   background: ${({ theme }) => theme.colors.cream};
+  position: relative;
 `
 
 const Container = styled.div`
