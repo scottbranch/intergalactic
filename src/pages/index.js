@@ -4,6 +4,8 @@ import SEO from "../components/seo"
 import Hero from "../components/homepage/Hero"
 import ValueProp from "../components/homepage/ValueProp"
 import ImageFloat from "../components/homepage/ImageFloat"
+import DoubleImage from "../components/homepage/DoubleImage"
+import BoxesChecked from "../components/homepage/BoxesChecked"
 import styled, { keyframes } from "styled-components"
 
 const IndexPage = () => {
@@ -13,6 +15,8 @@ const IndexPage = () => {
       <Hero />
       <ValueProp />
       <ImageFloat />
+      <DoubleImage />
+      <BoxesChecked />
     </Layout>
   )
 }

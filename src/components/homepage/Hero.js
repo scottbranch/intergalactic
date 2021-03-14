@@ -10,7 +10,7 @@ const Hero = props => {
   })
 
   return (
-    <StyledSection>
+    <StyledSection data-scroll-section>
       <HeadingContainer>
         <StyledHeading className={isLoaded && "active"}>
           <span id="headerline-0">Heat</span>{" "}

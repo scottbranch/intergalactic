@@ -15,7 +15,6 @@ export default createGlobalStyle`
   }
 
   h2 {
-    font-family: ${theme.fonts.tacticRegular};
     text-transform: uppercase;
     font-size: 120px;
     line-height: 105px;
@@ -23,15 +22,22 @@ export default createGlobalStyle`
   }
 
   h3 {
-    font-family: ${theme.fonts.tacticRegular};
     text-transform: uppercase;
     font-size: 95px;
     line-height: 90px;
     font-weight: 500;
   }
 
+  h4 {
+    text-transform: uppercase;
+    font-size: 76px;
+    line-height: 68px;
+    font-weight: 500;
+  }
+
   h2 span,
-  h3 span {
+  h3 span,
+  h4 span {
     display: block;
     position: relative;
   }

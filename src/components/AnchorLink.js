@@ -3,9 +3,13 @@ import Link from "gatsby-link"
 import styled from "styled-components"
 
 const AnchorLink = props => {
-  const { children, to } = props
+  const { children, to, className } = props
 
-  return <StyledLink to={to}>{children}</StyledLink>
+  return (
+    <StyledLink to={to} className={className}>
+      {children}
+    </StyledLink>
+  )
 }
 
 const StyledLink = styled(Link)`

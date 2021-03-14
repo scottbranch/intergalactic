@@ -35,8 +35,8 @@ const Layout = ({ children, location, props }) => {
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
 
       {/* Here we pass the callbacks to the component. Anything that impacts the innerHeight, for example: Font Loaded */}
-      {/*<Scroll callbacks={location} />*/}
-      <main>
+      <Scroll callbacks={location} />
+      <main data-scroll-container>
         <Menu />
         {children}
       </main>

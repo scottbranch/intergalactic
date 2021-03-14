@@ -1,19 +1,21 @@
 import React from "react"
 import valueprop from "../../images/homepage/value-prop.jpg"
-import AnchorLink from "../link"
+import AnchorLink from "../AnchorLink"
+import Line from "../Line"
 import styled from "styled-components"
 
 const ValueProp = props => {
   return (
-    <StyledSection>
+    <StyledSection data-scroll-section>
       <InnerContainer>
         <div>
-          <StyledHeading>
+          <StyledHeading data-scroll data-scroll-offset="20%">
             <span>Incremental</span>
             <span>Doesn’t Fly</span>
             <span>Anymore.</span>
           </StyledHeading>
           <TextContainer>
+            <Line />
             <p>
               The zero-risk mentality of yesterday can’t fuel the
               zero-boundaries breakthroughs of tomorrow. Across every aerospace
@@ -28,7 +30,7 @@ const ValueProp = props => {
           </TextContainer>
           <AnchorLink to="/test">Our Solutions</AnchorLink>
         </div>
-        <div>
+        <div data-scroll data-scroll-speed="1">
           <ValueImg src={valueprop} />
         </div>
       </InnerContainer>
@@ -40,6 +42,7 @@ const StyledSection = styled.section`
   padding: 155px 0 85px;
   background: ${({ theme }) => theme.colors.cream};
   overflow: hidden;
+  min-height: 970px;
 `
 
 const StyledHeading = styled.h3`
@@ -67,15 +70,6 @@ const TextContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 60px 0 80px;
-
-  &:before {
-    content: "";
-    width: 100px;
-    height: 1px;
-    background: ${({ theme }) => theme.colors.black};
-    display: block;
-    position: absolute;
-  }
 
   p {
     margin-top: 40px;
