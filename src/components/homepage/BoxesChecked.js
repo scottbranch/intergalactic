@@ -13,10 +13,12 @@ const BoxesChecked = () => {
 
   return (
     <StyledSection data-scroll-section>
-      <StyledHeading>Boxes Checked</StyledHeading>
+      <StyledHeading data-scroll data-scroll-offset="30%">
+        <span id="span-0">Boxes Checked</span>
+      </StyledHeading>
       <StyledUl>
         {listItems.map((item, index) => (
-          <StyledLi>
+          <StyledLi data-scroll>
             <StyledCheck />
             {item}
           </StyledLi>
@@ -29,6 +31,7 @@ const BoxesChecked = () => {
 const StyledSection = styled.section`
   padding: 180px 60px;
   background: ${({ theme }) => theme.colors.cream};
+  border-top: 1px solid ${({ theme }) => theme.colors.black};
 `
 
 const StyledUl = styled.ul`
@@ -48,9 +51,23 @@ const StyledLi = styled.li`
   align-items: center;
   position: relative;
 
+  &.is-inview {
+    &:before,
+    &:after {
+      width: 100%;
+    }
+    &:nth-last-child(1),
+    &:nth-last-child(2) {
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+
   &:before {
     content: "";
-    width: 100%;
+    width: 0;
+    transition: width 550ms ease;
     height: 1px;
     background: ${({ theme }) => theme.colors.black};
     position: absolute;
@@ -61,11 +78,12 @@ const StyledLi = styled.li`
   &:nth-last-child(2) {
     &:after {
       content: "";
-      width: 100%;
+      width: 0;
       height: 1px;
       background: ${({ theme }) => theme.colors.black};
       position: absolute;
       bottom: 0;
+      transition: width 550ms ease;
     }
   }
 `

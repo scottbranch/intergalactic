@@ -6,20 +6,27 @@ import styled from "styled-components"
 const CtaSection = () => {
   return (
     <StyledSection data-scroll-section>
-      <StyledHeading>Could your moonshot  be any cooler? </StyledHeading>
+      <StyledHeading data-scroll data-scroll-offset="30%">
+        <span id="span-0">Could your moonshot </span>{" "}
+        <span id="span-1">be any cooler?</span>{" "}
+      </StyledHeading>
       <CtaContainer>
         <Line />
         <CopyBlock>
-          <p>
-            Collaborative engineering is our jam. How about we connect your
-            people and our people to talk shop?
+          <p className="fadein" data-scroll data-scroll-offset="20%">
+            <span>
+              Collaborative engineering is our jam. How about we connect your
+              people and our people to talk shop?
+            </span>
           </p>
           <AnchorLink to="/test">Schedule a demo</AnchorLink>
         </CopyBlock>
         <CopyBlock>
-          <p>
-            Meet with our engineers and system designers. No obligations. No
-            slick salespeople.
+          <p className="fadein" data-scroll data-scroll-offset="20%">
+            <span>
+              Meet with our engineers and system designers. No obligations. No
+              slick salespeople.
+            </span>
           </p>
           <AnchorLink to="/test">Let's Talk</AnchorLink>
         </CopyBlock>

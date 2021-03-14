@@ -10,19 +10,21 @@ const DoubleImage = () => {
     <StyledSection data-scroll-section>
       <Container>
         <div>
-          <StyledHeading>
-            <span>Less</span>
-            <span> Less Weight.</span>
-            <span>MORE</span>
-            <span> MORE COOL.</span>
+          <StyledHeading data-scroll data-scroll-offset="30%">
+            <span id="span-0">Less</span>
+            <span id="span-1"> Less Weight.</span>
+            <span id="span-2">MORE</span>
+            <span id="span-3"> MORE COOL.</span>
           </StyledHeading>
           <TextContainer>
             <Line />
-            <p>
-              At one-third the size and weight, with three times the cooling
-              capacity of legacy thermal management equipment. it’s clear that
-              our X3 Series of thermal management systems are not here to play
-              incremental games.
+            <p className="fadein" data-scroll data-scroll-offset="20%">
+              <span>
+                At one-third the size and weight, with three times the cooling
+                capacity of legacy thermal management equipment. it’s clear that
+                our X3 Series of thermal management systems are not here to play
+                incremental games.
+              </span>
             </p>
           </TextContainer>
           <StyledAnchor to="/test">Our solutions</StyledAnchor>
@@ -42,7 +44,7 @@ const DoubleImage = () => {
 
 const StyledSection = styled.section`
   width: 100%;
-  height: 100vh;
+  height: auto;
   max-height: 1400px;
   background: ${({ theme }) => theme.colors.cream};
   position: relative;

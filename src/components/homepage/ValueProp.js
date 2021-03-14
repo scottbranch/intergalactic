@@ -9,23 +9,27 @@ const ValueProp = props => {
     <StyledSection data-scroll-section>
       <InnerContainer>
         <div>
-          <StyledHeading data-scroll data-scroll-offset="20%">
-            <span>Incremental</span>
-            <span>Doesn’t Fly</span>
-            <span>Anymore.</span>
+          <StyledHeading data-scroll data-scroll-offset="30%">
+            <span id="span-0">Incremental</span>
+            <span id="span-1">Doesn’t Fly</span>
+            <span id="span-2">Anymore.</span>
           </StyledHeading>
           <TextContainer>
             <Line />
-            <p>
-              The zero-risk mentality of yesterday can’t fuel the
-              zero-boundaries breakthroughs of tomorrow. Across every aerospace
-              sector, an innovation imperative is empowering the new guard and
-              leaving the incrementalists in the afterburn.
+            <p className="fadein" data-scroll data-scroll-offset="20%">
+              <span>
+                The zero-risk mentality of yesterday can’t fuel the
+                zero-boundaries breakthroughs of tomorrow. Across every
+                aerospace sector, an innovation imperative is empowering the new
+                guard and leaving the incrementalists in the afterburn.
+              </span>
             </p>
-            <p>
-              We are here to enable bold ambition, whether it’s commercializing
-              supersonic flight, pioneering interplanetary travel, or whatever
-              else is on your zero-boundaries agenda.
+            <p className="fadein" data-scroll data-scroll-offset="20%">
+              <span>
+                We are here to enable bold ambition, whether it’s
+                commercializing supersonic flight, pioneering interplanetary
+                travel, or whatever else is on your zero-boundaries agenda.
+              </span>
             </p>
           </TextContainer>
           <AnchorLink to="/test">Our Solutions</AnchorLink>

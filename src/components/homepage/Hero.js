@@ -11,16 +11,11 @@ const Hero = props => {
 
   return (
     <StyledSection data-scroll-section>
-      <a style={{ color: "white" }} href="/page-2">
-        page 2
-      </a>
       <HeadingContainer>
         <StyledHeading className={isLoaded && "active"}>
-          <span id="headerline-0">Heat</span>{" "}
-          <span id="headerline-1">Heat is no</span>{" "}
-          <span id="headerline-2">no</span>{" "}
-          <span id="headerline-3">longer</span>{" "}
-          <span id="headerline-4">a barrier</span>
+          <span id="span-0">Heat</span> <span id="span-1">Heat is no</span>{" "}
+          <span id="span-2">no</span> <span id="span-3">longer</span>{" "}
+          <span id="span-4">a barrier</span>
         </StyledHeading>
       </HeadingContainer>
       <TextBottom>
@@ -106,29 +101,10 @@ const Description = styled.p`
 
 const StyledHeading = styled.h2`
   color: ${({ theme }) => theme.colors.cream};
-  position: relative;
   left: -235px;
   top: -50px;
-  perspective: 600px;
-
-  ${textDelay()};
-
-  &.active {
-    span {
-      transform: none;
-      opacity: 1;
-    }
-  }
 
   span {
-    opacity: 0;
-    display: block;
-    transform-origin: center bottom;
-    transform-style: preserve-3d;
-    transform: translateY(50%) rotateX(-20deg);
-    transition: opacity 1.4s cubic-bezier(0.215, 0.61, 0.355, 1),
-      transform 1.4s cubic-bezier(0.215, 0.61, 0.355, 1);
-
     &:nth-of-type(3),
     &:nth-of-type(4),
     &:nth-of-type(5) {
