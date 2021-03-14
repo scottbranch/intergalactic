@@ -62,18 +62,23 @@ const Scroll = callbacks => {
     // Exposing to the global scope for ease of use.
     window.scroll = locomotiveScroll
 
+    const body = document.getElementsByTagName("body")[0]
     const imageFloat = document.getElementById("image-float-container")
     const floatImg = document.getElementById("float-image")
 
     locomotiveScroll.on("scroll", func => {
       // Update `data-direction` with scroll direction.
       document.documentElement.setAttribute("data-direction", func.direction)
-      const { y } = getTranslateValues(imageFloat)
-
-      //creating the rotate value for the homepage ImageFloat component
-      let rotateValue = y / 30 + 60
-      floatImg.style.transform = "rotate(" + rotateValue + "deg)"
     })
+
+    if (body.classList.contains("home")) {
+      locomotiveScroll.on("scroll", func => {
+        const { y } = getTranslateValues(imageFloat)
+        //creating the rotate value for the homepage ImageFloat component
+        let rotateValue = y / 30 + 60
+        floatImg.style.transform = "rotate(" + rotateValue + "deg)"
+      })
+    }
 
     return () => {
       if (locomotiveScroll) locomotiveScroll.destroy()

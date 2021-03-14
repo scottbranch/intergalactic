@@ -1,8 +1,13 @@
 import React from "react"
+import SvgLogomark from "../assets/svg/logomark"
 import styled from "styled-components"
 
 const Menu = () => {
-  return <Nav></Nav>
+  return (
+    <Nav>
+      <SvgLogomark />
+    </Nav>
+  )
 }
 
 const Nav = styled.nav`
@@ -14,6 +19,9 @@ const Nav = styled.nav`
   background: ${({ theme }) => theme.colors.cream};
   z-index: 500;
   border-right: 1px solid ${({ theme }) => theme.colors.black};
+  padding: 45px 0;
+  display: flex;
+  align-items: center;
 `
 
 export default Menu

@@ -7,12 +7,23 @@ import ImageFloat from "../components/homepage/ImageFloat"
 import DoubleImage from "../components/homepage/DoubleImage"
 import BoxesChecked from "../components/homepage/BoxesChecked"
 import CtaSection from "../components/homepage/CtaSection"
+import Helmet from "react-helmet"
 import styled, { keyframes } from "styled-components"
+import { isBrowser } from "react-device-detect"
 
 const IndexPage = () => {
+  useEffect(() => {
+    setTimeout(() => {
+      isBrowser && window.scroll.update()
+    }, 100)
+  }, [])
+
   return (
     <Layout>
       <SEO title="Home" />
+      <Helmet>
+        <body class="home" />
+      </Helmet>
       <Hero />
       <ValueProp />
       <ImageFloat />

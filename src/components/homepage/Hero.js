@@ -11,6 +11,9 @@ const Hero = props => {
 
   return (
     <StyledSection data-scroll-section>
+      <a style={{ color: "white" }} href="/page-2">
+        page 2
+      </a>
       <HeadingContainer>
         <StyledHeading className={isLoaded && "active"}>
           <span id="headerline-0">Heat</span>{" "}
