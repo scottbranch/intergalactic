@@ -3,28 +3,17 @@ import { useInView } from "react-intersection-observer"
 import styled from "styled-components"
 
 const Filler1 = () => {
-  const orbSection =
-    typeof document !== "undefined" && document.getElementById("orb-section")
-  const { ref, inView } = useInView({
-    /* Optional options */
-    threshold: 0.5,
-    triggerOnce: true,
-  })
-  inView && orbSection.classList.add("step-2")
-  return <FillerContent1 ref={ref}></FillerContent1>
+  return (
+    <FillerContent1
+      data-scroll
+      data-scroll-offset="50%"
+      data-scroll-call={"section2"}
+      data-scroll-repeat
+    ></FillerContent1>
+  )
 }
 
 const CircleSection = () => {
-  const orbSection =
-    typeof document !== "undefined" && document.getElementById("orb-section")
-  const { ref, inView } = useInView({
-    /* Optional options */
-    threshold: 1,
-    triggerOnce: true,
-  })
-
-  inView && orbSection.classList.add("step-1")
-
   return (
     <StyledSection data-scroll-section id="orb-section">
       <Trigger id="circle-trigger"></Trigger>
@@ -32,8 +21,8 @@ const CircleSection = () => {
         data-scroll
         data-scroll-sticky
         data-scroll-target="#circle-trigger"
-        ref={ref}
-        className={inView ? "in-view" : "out-of-view"}
+        data-scroll-call={"section1"}
+        data-scroll-repeat
       >
         <Orb id="orb"></Orb>
         <Text1 className="text1">
@@ -76,12 +65,40 @@ const StyledSection = styled.section`
       transform: translate3d(0, 0, 0);
       opacity: 1;
     }
+    .text3 {
+      transform: translate3d(0, 40px, 0);
+      opacity: 0;
+    }
     #orb {
       transform: translate3d(-50%, -50%, 0) scale(1);
     }
   }
 
   &.step-2 {
+    .text1 {
+      opacity: 0;
+      transform: translate3d(0, -50px, 0);
+    }
+    .text2 {
+      opacity: 0;
+      transform: translate3d(0, -50px, 0);
+      transition-delay: 1s;
+    }
+    .text3 {
+      transition-delay: 1.2s;
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+    #orb {
+      transform: translate3d(-50%, -50%, 0) scale(0.3);
+    }
+  }
+
+  &.done {
+    .text1 {
+      opacity: 0;
+      transform: translate3d(0, -50px, 0);
+    }
     .text2 {
       opacity: 0;
       transform: translate3d(0, -50px, 0);
