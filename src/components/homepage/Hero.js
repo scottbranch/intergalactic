@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import homepagehero from "../../images/homepage/homepage-hero.jpg"
 import styled, { css } from "styled-components"
 
@@ -8,6 +9,31 @@ const Hero = props => {
   useEffect(() => {
     setIsLoaded(true)
   })
+
+  const data = useStaticQuery(graphql`
+    {
+      allPrismicHomepageTemplate {
+        nodes {
+          data {
+            hero_subtext_1 {
+              text
+            }
+            hero_subtext_2 {
+              text
+            }
+            hero_subtitle_1 {
+              text
+            }
+            hero_subtitle_2 {
+              text
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const homepageData = data.allPrismicHomepageTemplate.nodes[0].data
 
   return (
     <StyledSection data-scroll-section>
@@ -20,18 +46,16 @@ const Hero = props => {
       </HeadingContainer>
       <TextBottom>
         <div>
-          <Title className="eyebrow">Those days are over</Title>
-          <Description>
-            For decades, innovation in aerospace has been limited by old methods
-            of thermal management that just can’t keep up.
-          </Description>
+          <Title className="eyebrow">
+            {homepageData.hero_subtitle_1[0].text}
+          </Title>
+          <Description>{homepageData.hero_subtext_1[0].text}</Description>
         </div>
         <div>
-          <Title className="eyebrow">Welcome to Intergalactic</Title>
-          <Description>
-            This is the era of further, faster and cooler. Welcome to the new
-            age of aerospace technology.
-          </Description>
+          <Title className="eyebrow">
+            {homepageData.hero_subtitle_2[0].text}
+          </Title>
+          <Description>{homepageData.hero_subtext_2[0].text}</Description>
         </div>
       </TextBottom>
     </StyledSection>

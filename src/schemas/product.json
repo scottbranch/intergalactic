@@ -1,0 +1,11 @@
+{
+  "Main": {
+    "product_description": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "Product Description"
+      }
+    }
+  }
+}

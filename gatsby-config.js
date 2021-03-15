@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Environmental Control Systems for Civil, Defense & Military | Airborne`,
     description: `Environmental Control Systems for Civil, Defense & Military | Airborne`,
-    author: `@gatsbyjs`,
+    author: `Scott Branch`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -31,6 +31,18 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: "gatsby-source-prismic",
+      options: {
+        repositoryName: "igspace",
+        accessToken:
+          "MC5ZRS1tVUJBQUFDQUFfbU1u.77-977-9WkPvv71TRu-_ve-_ve-_ve-_vRfvv73vv71a77-977-977-9Je-_ve-_ve-_ve-_ve-_vXHvv70n77-977-9de-_ve-_vQ",
+        schemas: {
+          homepage: require("./src/schemas/homepage.json"),
+          product_page: require("./src/schemas/product.json"),
+        },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

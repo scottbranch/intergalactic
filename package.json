@@ -13,6 +13,7 @@
     "gatsby-plugin-sharp": "^2.8.0",
     "gatsby-plugin-styled-components": "^3.9.0",
     "gatsby-source-filesystem": "^2.5.0",
+    "gatsby-source-prismic": "^3.3.4",
     "gatsby-transformer-sharp": "^2.6.0",
     "gsap": "^3.3.0",
     "locomotive-scroll": "^3.5.4",
