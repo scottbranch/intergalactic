@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 const Filler1 = () => {
   const orbSection =
-    typeof window !== undefined && document.getElementById("orb-section")
+    typeof document !== undefined && document.getElementById("orb-section")
   const { ref, inView } = useInView({
     /* Optional options */
     threshold: 0.5,
@@ -16,7 +16,7 @@ const Filler1 = () => {
 
 const CircleSection = () => {
   const orbSection =
-    typeof window !== undefined && document.getElementById("orb-section")
+    typeof document !== undefined && document.getElementById("orb-section")
   const { ref, inView } = useInView({
     /* Optional options */
     threshold: 1,
