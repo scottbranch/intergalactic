@@ -7,6 +7,7 @@ import ImageFloat from "../components/homepage/ImageFloat"
 import DoubleImage from "../components/homepage/DoubleImage"
 import BoxesChecked from "../components/homepage/BoxesChecked"
 import CtaSection from "../components/homepage/CtaSection"
+import CircleSection from "../components/homepage/CircleSection"
 import Helmet from "react-helmet"
 import styled, { keyframes } from "styled-components"
 import { isBrowser } from "react-device-detect"
@@ -28,6 +29,7 @@ const IndexPage = () => {
       <ValueProp />
       <ImageFloat />
       <DoubleImage />
+      <CircleSection />
       <BoxesChecked />
       <CtaSection />
     </Layout>

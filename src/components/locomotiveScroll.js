@@ -63,8 +63,6 @@ const Scroll = callbacks => {
     window.scroll = locomotiveScroll
 
     const body = document.getElementsByTagName("body")[0]
-    const imageFloat = document.getElementById("image-float-container")
-    const floatImg = document.getElementById("float-image")
 
     locomotiveScroll.on("scroll", func => {
       // Update `data-direction` with scroll direction.
@@ -72,7 +70,11 @@ const Scroll = callbacks => {
     })
 
     if (body.classList.contains("home")) {
+      const imageFloat = document.getElementById("image-float-container")
+      const floatImg = document.getElementById("float-image")
+
       locomotiveScroll.on("scroll", func => {
+        //image rotate stuff
         const { y } = getTranslateValues(imageFloat)
         //creating the rotate value for the homepage ImageFloat component
         let rotateValue = y / 30 + 60

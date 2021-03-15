@@ -79,8 +79,8 @@ const TextContainer = styled.div`
     margin-top: 40px;
     max-width: 400px;
 
-    &:first-child {
-      margin-right: 20px;
+    &:nth-of-type(1) {
+      margin-right: 40px;
     }
   }
 `

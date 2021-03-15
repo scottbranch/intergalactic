@@ -67,7 +67,7 @@ const StyledLi = styled.li`
   &:before {
     content: "";
     width: 0;
-    transition: width 550ms ease;
+    transition: width 1s ease;
     height: 1px;
     background: ${({ theme }) => theme.colors.black};
     position: absolute;
@@ -83,7 +83,7 @@ const StyledLi = styled.li`
       background: ${({ theme }) => theme.colors.black};
       position: absolute;
       bottom: 0;
-      transition: width 550ms ease;
+      transition: width 1s ease;
     }
   }
 `
