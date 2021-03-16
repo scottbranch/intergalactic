@@ -8,6 +8,8 @@ const theme = {
   fonts: {
     tacticRegular: "tactic-regular, sans-serif",
     tacticItalic: "tactic-italic, sans-serif",
+    cartographBold: "cartograph-bold, sans-serif",
+    cartographMedium: "cartograph-medium, sans-serif",
   },
 }
 

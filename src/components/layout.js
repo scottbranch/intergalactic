@@ -37,7 +37,6 @@ const Layout = ({ children, location, props }) => {
 
       {/* Here we pass the callbacks to the component. Anything that impacts the innerHeight, for example: Font Loaded */}
       <Scroll callbacks={location} />
-      {console.log("callbacks: ", location)}
       <main>
         <Menu />
         {children}

@@ -109,6 +109,7 @@ const BottomLink = styled(Link)`
   color: ${({ theme }) => theme.colors.cream};
   text-decoration: none;
   text-transform: uppercase;
+  font-family: ${({ theme }) => theme.fonts.cartographMedium};
 `
 
 const StyledUl = styled.ul`
