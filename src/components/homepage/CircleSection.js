@@ -154,8 +154,8 @@ const Text3 = styled.div`
 `
 
 const Number = styled.p`
-  font-size: 119px;
-  line-height: 143px;
+  font-size: 6.7vw;
+  line-height: 115%;
 `
 
 const Orb = styled.div`
@@ -193,8 +193,8 @@ const FillerContent1 = styled.div`
 `
 
 const StyledHeading = styled.h4`
-  font-size: 149.01px;
-  line-height: 179px;
+  font-size: 8.3vw;
+  line-height: 110%;
   -webkit-text-stroke: 2px #e6e1da;
 `
 

@@ -3,6 +3,7 @@ import { css } from "styled-components"
 import theme from "../theme/"
 import "../fonts/fonts.css"
 
+//text delay for the heading stagger
 function textDelay() {
   let styles = ""
 
@@ -27,6 +28,7 @@ export default createGlobalStyle`
     font-size: 16px;
   }
 
+  //stuff to trigger the in-view animations
   h2,
   h3,
   h4,
@@ -60,22 +62,22 @@ export default createGlobalStyle`
 
   h2 {
     text-transform: uppercase;
-    font-size: 120px;
-    line-height: 105px;
+    font-size: 6.7vw; //119px
+    line-height: 100%;
     font-weight: 500;
   }
 
   h3 {
     text-transform: uppercase;
-    font-size: 95px;
-    line-height: 90px;
+    font-size: 5.3vw; //95px
+    line-height: 95%;
     font-weight: 500;
   }
 
   h4 {
     text-transform: uppercase;
-    font-size: 76px;
-    line-height: 68px;
+    font-size: 4.2vw; //76px
+    line-height: 105%;
     font-weight: 500;
   }
 

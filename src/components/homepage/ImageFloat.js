@@ -34,7 +34,6 @@ const Trigger = styled.div`
   width: 1px;
   height: 200vh;
   min-height: 970px;
-  //background: green;
   position: absolute;
   top: 0;
 `
@@ -70,8 +69,8 @@ const StickyContainer = styled.div`
   }
 
   .heading {
-    font-size: 186px;
-    line-height: 224px;
+    font-size: 10.4vw;
+    line-height: 105%;
     text-transform: uppercase;
 
     span {
