@@ -13,7 +13,8 @@ const Hero = props => {
     <StyledSection data-scroll-section>
       <HeadingContainer>
         <StyledHeading className={isLoaded && "active"}>
-          <span id="span-0">ONLY THE BEST</span> <span id="span-1">GO INTERGALACTIC</span>{" "}
+          <span id="span-0">ONLY THE BEST</span>{" "}
+          <span id="span-1">GO INTERGALACTIC</span>{" "}
         </StyledHeading>
         <HeroImg src={heroImg} alt="Supply part" />
       </HeadingContainer>
@@ -21,26 +22,10 @@ const Hero = props => {
   )
 }
 
-function textDelay() {
-  let styles = ""
-
-  for (let i = 0; i < 5; i += 1) {
-    styles += `
-       #headerline-${i} {
-         transition-delay: ${i * 50}ms;
-       }
-     `
-  }
-
-  return css`
-    ${styles}
-  `
-}
-
 const StyledSection = styled.section`
   width: 100%;
   height: 100vh;
-  background-color: #1E170A;
+  background-color: #1e170a;
   position: relative;
   min-height: 970px;
 `
