@@ -2,14 +2,16 @@ import React, { useEffect, useState } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero from "../components/homepage/Hero"
+import Welcome from "../components/homepage/Welcome"
 import ValueProp from "../components/homepage/ValueProp"
 import ImageFloat from "../components/homepage/ImageFloat"
+import StaticImage from "../components/homepage/StaticImage"
 import DoubleImage from "../components/homepage/DoubleImage"
 import BoxesChecked from "../components/homepage/BoxesChecked"
 import CtaSection from "../components/homepage/CtaSection"
 import CircleSection from "../components/homepage/CircleSection"
 import Helmet from "react-helmet"
-import styled, { keyframes } from "styled-components"
+import styled from "styled-components"
 import { isBrowser } from "react-device-detect"
 
 const IndexPage = () => {
@@ -26,9 +28,11 @@ const IndexPage = () => {
         <body class="home" />
       </Helmet>
       <Hero />
+      <Welcome />
       <ValueProp />
-      <ImageFloat />
+      <StaticImage />
       <DoubleImage />
+      <ImageFloat />
       <CircleSection />
       <BoxesChecked />
       <CtaSection />

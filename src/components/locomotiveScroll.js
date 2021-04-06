@@ -78,7 +78,7 @@ const Scroll = callbacks => {
         //image rotate stuff
         const { y } = getTranslateValues(imageFloat)
         //creating the rotate value for the homepage ImageFloat component
-        let rotateValue = y / 30 + 60
+        let rotateValue = y / 30 + 120
         floatImg.style.transform = "rotate(" + rotateValue + "deg)"
       })
 
