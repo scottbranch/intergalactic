@@ -70,22 +70,24 @@ const Scroll = callbacks => {
       document.documentElement.setAttribute("data-direction", func.direction)
     })
 
-    if (body.classList.contains("home")) {
-      const imageFloat = document.getElementById("image-float-container")
-      const floatImg = document.getElementById("float-image")
-
-      locomotiveScroll.on("scroll", func => {
+    locomotiveScroll.on("scroll", func => {
+      if (body.classList.contains("home")) {
+        const imageFloat = document.getElementById("image-float-container")
+        const floatImg = document.getElementById("float-image")
         //image rotate stuff
         const { y } = getTranslateValues(imageFloat)
         //creating the rotate value for the homepage ImageFloat component
         let rotateValue = y / 30 + 120
         floatImg.style.transform = "rotate(" + rotateValue + "deg)"
-      })
+      }
+    })
 
-      //This controls the whole orb animation stuff on the homepage
-      const orbSection = document.getElementById("orb-section")
+    //This controls the whole orb animation stuff on the homepage
 
-      locomotiveScroll.on("call", obj => {
+    locomotiveScroll.on("call", obj => {
+      if (body.classList.contains("home")) {
+        const orbSection = document.getElementById("orb-section")
+
         if (html.dataset.direction === "down") {
           if (orbSection.classList.contains("step-1")) {
             orbSection.classList.remove("step-1")
@@ -108,8 +110,8 @@ const Scroll = callbacks => {
             orbSection.classList.remove("step-1")
           }
         }
-      })
-    }
+      }
+    })
 
     return () => {
       if (locomotiveScroll) locomotiveScroll.destroy()

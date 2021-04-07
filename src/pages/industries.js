@@ -16,6 +16,9 @@ const Industries = () => {
   return (
     <Layout>
       <SEO title="Industries" />
+      <Helmet>
+        <body class="industries" />
+      </Helmet>
       <Hero />
     </Layout>
   )

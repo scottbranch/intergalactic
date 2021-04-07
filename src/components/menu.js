@@ -1,14 +1,24 @@
-import React from "react"
+import React, { useState } from "react"
 import SvgLogomark from "../assets/svg/logomark"
 import SvgAero from "../assets/svg/aerospace"
+import MenuOverlay from "../components/MenuOverlay"
 import styled from "styled-components"
 
 const Menu = () => {
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen)
+  }
+
   return (
     <Nav>
+      <MenuOverlay className={menuOpen && "active"} />
       <CircleContainer>
-        <MenuCircle />
-        <span>Menu</span>
+        <StyledButton onClick={toggleMenu}>
+          <MenuCircle />
+          <span>Menu</span>
+        </StyledButton>
       </CircleContainer>
       <SvgAero />
       <SvgLogomark />
@@ -40,6 +50,17 @@ const CircleContainer = styled.div`
     font-size: 14px;
     margin-top: 19px;
     margin-left: -7px;
+  }
+`
+
+const StyledButton = styled.button`
+  border: none;
+  background: transparent;
+  padding-bottom: 14px;
+  outline: none;
+
+  &:hover {
+    cursor: pointer;
   }
 `
 
