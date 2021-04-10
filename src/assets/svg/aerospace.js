@@ -5,7 +5,7 @@ function SvgAero(props) {
     <svg width={9} height={180} {...props}>
       <text
         transform="rotate(90 718.5 -590.5)"
-        fill="#1E170A"
+        fill={props.fill}
         fillRule="evenodd"
         fontFamily="Helvetica"
         fontSize={10}

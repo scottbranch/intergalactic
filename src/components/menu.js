@@ -1,10 +1,11 @@
 import React, { useState } from "react"
 import SvgLogomark from "../assets/svg/logomark"
 import SvgAero from "../assets/svg/aerospace"
+import Close from "../assets/svg/close"
 import MenuOverlay from "../components/MenuOverlay"
-import styled from "styled-components"
+import styled, { withTheme } from "styled-components"
 
-const Menu = () => {
+const Menu = ({ theme }) => {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const toggleMenu = () => {
@@ -12,21 +13,29 @@ const Menu = () => {
   }
 
   return (
-    <Nav>
+    <>
       <MenuOverlay className={menuOpen && "active"} />
-      <CircleContainer>
-        <StyledButton onClick={toggleMenu}>
-          <MenuCircle />
-          <span>Menu</span>
-        </StyledButton>
-      </CircleContainer>
-      <SvgAero />
-      <SvgLogomark />
-    </Nav>
+      <StyledDiv className={menuOpen && "active"}>
+        <CircleContainer>
+          <StyledButton onClick={toggleMenu}>
+            {menuOpen ? (
+              <StyledClose fill={theme.colors.cream} />
+            ) : (
+              <MenuCircle />
+            )}
+            <span>{menuOpen ? "Close" : "Menu"}</span>
+          </StyledButton>
+        </CircleContainer>
+        <SvgAero fill={menuOpen ? theme.colors.cream : theme.colors.black} />
+        <SvgLogomark
+          fill={menuOpen ? theme.colors.cream : theme.colors.black}
+        />
+      </StyledDiv>
+    </>
   )
 }
 
-const Nav = styled.nav`
+const StyledDiv = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -40,6 +49,15 @@ const Nav = styled.nav`
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
+  transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+  &.active {
+    background: ${({ theme }) => theme.colors.black};
+
+    span {
+      color: ${({ theme }) => theme.colors.cream};
+    }
+  }
 `
 
 const CircleContainer = styled.div`
@@ -85,4 +103,9 @@ const MenuCircle = styled.button`
   }
 `
 
-export default Menu
+const StyledClose = styled(Close)`
+  right: 2px;
+  position: relative;
+`
+
+export default withTheme(Menu)
