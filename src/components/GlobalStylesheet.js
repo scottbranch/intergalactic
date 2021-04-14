@@ -56,6 +56,14 @@ export default createGlobalStyle`
   }
 }
 
+img.fadein {
+  opacity: 0;
+  transition: opacity 1s ease;
+  &.is-inview {
+    opacity: 1;
+  }
+}
+
   main {
     padding-left: 73px; //to offset the sidenav
   }

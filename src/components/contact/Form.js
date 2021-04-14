@@ -6,17 +6,19 @@ const Hero = props => {
 
   useEffect(() => {
     setIsLoaded(true)
-  })
+  }, [])
 
   return (
     <StyledSection data-scroll-section>
       <ContactFormContainer>
         <div>
           <h4>How can we help?</h4>
-          <StyledSubHeading className="fadein" data-scroll data-scroll-offset="20%">
-            <span>
-              CONTACT US :: 02
-            </span>
+          <StyledSubHeading
+            className="fadein"
+            data-scroll
+            data-scroll-offset="20%"
+          >
+            <span>CONTACT US :: 02</span>
           </StyledSubHeading>
         </div>
         <FlexContainer>
@@ -24,7 +26,11 @@ const Hero = props => {
             <div>
               <h5>Contact Information</h5>
               <address>
-                Intergalactic HQ<br/>3172 E. Deseret Drive South<br/>St. George, UT 84790
+                Intergalactic HQ
+                <br />
+                3172 E. Deseret Drive South
+                <br />
+                St. George, UT 84790
               </address>
               <a href="tel:495-673-4603">495-673-4603</a>
               <a href="mailto:phonehome(at)ig.space">phonehome(at)ig.space</a>
@@ -51,7 +57,9 @@ const Hero = props => {
               <div>
                 <label for="reason">Reason for inquiry</label>
                 <select type="text" id="reason">
-                  <option disabled selected>Select</option>
+                  <option disabled selected>
+                    Select
+                  </option>
                 </select>
               </div>
               <div>
@@ -88,7 +96,9 @@ const ContactForm = styled.form`
     display: block;
   }
 
-  input, select, textarea {
+  input,
+  select,
+  textarea {
     appearance: none;
     background-color: transparent;
     border: 0;
@@ -104,7 +114,7 @@ const StyledSection = styled.section`
 `
 
 const StyledSubHeading = styled.p`
-  color: #91897D;
+  color: #91897d;
   font-size: 14px;
   letter-spacing: 3px;
   font-family: ${({ theme }) => theme.fonts.cartographMedium};

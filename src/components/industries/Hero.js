@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import homepagehero from "../../images/homepage/homepage-hero.jpg"
+import industrieshero from "../../images/industries/hero.jpg"
 import styled, { css } from "styled-components"
 
 const Hero = props => {
@@ -14,10 +14,11 @@ const Hero = props => {
     <StyledSection data-scroll-section>
       <HeadingContainer>
         <StyledHeading className={isLoaded && "active"}>
-          <span id="span-0">Every sector gets</span>{" "}
-          <span id="span-1">cooler with</span>{" "}
-          <span id="span-2">Intergalactic</span>
+          <span id="span-0">Industries</span>
         </StyledHeading>
+        <Paragraph className="fadein" data-scroll>
+          <span>Every sector gets cooler with Intergalactic.</span>
+        </Paragraph>
       </HeadingContainer>
     </StyledSection>
   )
@@ -25,11 +26,10 @@ const Hero = props => {
 
 const StyledSection = styled.section`
   width: 100%;
-  height: 100vh;
-  background-image: url(${homepagehero});
+  height: 780px;
+  background-image: url(${industrieshero});
   background-size: cover;
   position: relative;
-  min-height: 970px;
 `
 
 const HeadingContainer = styled.div`
@@ -37,7 +37,8 @@ const HeadingContainer = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0 65px;
 `
 
 const TextBottom = styled.div`
@@ -66,9 +67,13 @@ const Description = styled.p`
 
 const StyledHeading = styled.h2`
   color: ${({ theme }) => theme.colors.cream};
-  left: 65px;
-  bottom: 265px;
-  position: absolute;
+`
+
+const Paragraph = styled.p`
+  color: white;
+  right: 100px;
+  position: relative;
+  font-size: 25px;
 `
 
 export default Hero
