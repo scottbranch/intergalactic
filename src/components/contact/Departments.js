@@ -12,44 +12,57 @@ const Hero = props => {
     <StyledSection data-scroll-section>
       <ContactContainer>
         <h4>Contact departments</h4>
-        <StyledSubHeading className="fadein" data-scroll data-scroll-offset="20%">
-          <span>
-            CONTACT US :: 03
-          </span>
-        </StyledSubHeading>
         <FlexContainer>
           <FlexArea>
-            <p><a href="mailto:phonehome@ig.space">Email us</a> corresponding your inquiery.</p>
+            <ContactText><a href="mailto:phonehome@ig.space">Email us</a> corresponding your inquiry.</ContactText>
           </FlexArea>
           <FlexArea>
-            <p>Technical support</p>
-            <a href="mailto:support@ig.space">
-              support(at)ig.space 
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11.2811 9.41728V0.417739H2.28154V1.96454L8.63947 1.95449L0.393238 10.2007L1.49809 11.3056L9.74432 3.05935L9.74432 9.42732L11.2811 9.41728Z" fill="#1E170A"/>
-              </svg>
-            </a>
-            <p>Press inquiries</p>
-            <a href="mailto:commslink@ig.space">
-              commslink(at)ig.space
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11.2811 9.41728V0.417739H2.28154V1.96454L8.63947 1.95449L0.393238 10.2007L1.49809 11.3056L9.74432 3.05935L9.74432 9.42732L11.2811 9.41728Z" fill="#1E170A"/>
-              </svg>
-            </a>
-            <p>Supplier info</p>
-            <a href="mailto:supplyuport@ig.space">
-              supplyuport(at)ig.space
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11.2811 9.41728V0.417739H2.28154V1.96454L8.63947 1.95449L0.393238 10.2007L1.49809 11.3056L9.74432 3.05935L9.74432 9.42732L11.2811 9.41728Z" fill="#1E170A"/>
-              </svg>
-            </a>
-            <p>Building or bidding a project</p>
-            <a href="mailto:launch@ig.space">
-              launch (at)ig.space
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11.2811 9.41728V0.417739H2.28154V1.96454L8.63947 1.95449L0.393238 10.2007L1.49809 11.3056L9.74432 3.05935L9.74432 9.42732L11.2811 9.41728Z" fill="#1E170A"/>
-              </svg>
-            </a>
+            <FlexContainerWrap>
+              <FlexArea>
+              <p>Technical support</p>
+              </FlexArea>
+              <FlexArea>
+              <a href="mailto:support@ig.space">
+                support(at)ig.space 
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.2811 9.41728V0.417739H2.28154V1.96454L8.63947 1.95449L0.393238 10.2007L1.49809 11.3056L9.74432 3.05935L9.74432 9.42732L11.2811 9.41728Z" fill="#1E170A"/>
+                </svg>
+              </a>
+              </FlexArea>
+              <FlexArea>
+                <p>Press inquiries</p>
+              </FlexArea>
+              <FlexArea>
+                <a href="mailto:commslink@ig.space">
+                  commslink(at)ig.space
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.2811 9.41728V0.417739H2.28154V1.96454L8.63947 1.95449L0.393238 10.2007L1.49809 11.3056L9.74432 3.05935L9.74432 9.42732L11.2811 9.41728Z" fill="#1E170A"/>
+                  </svg>
+                </a>
+              </FlexArea>
+              <FlexArea>
+                <p>Supplier info</p>
+              </FlexArea>
+              <FlexArea>
+                <a href="mailto:supplyuport@ig.space">
+                  supplyuport(at)ig.space
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.2811 9.41728V0.417739H2.28154V1.96454L8.63947 1.95449L0.393238 10.2007L1.49809 11.3056L9.74432 3.05935L9.74432 9.42732L11.2811 9.41728Z" fill="#1E170A"/>
+                  </svg> 
+                </a>
+              </FlexArea>
+              <FlexArea>
+                <p>Building or bidding a project</p>
+              </FlexArea>
+              <FlexArea>
+                <a href="mailto:launch@ig.space">
+                  launch (at)ig.space
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.2811 9.41728V0.417739H2.28154V1.96454L8.63947 1.95449L0.393238 10.2007L1.49809 11.3056L9.74432 3.05935L9.74432 9.42732L11.2811 9.41728Z" fill="#1E170A"/>
+                  </svg>
+                </a>
+              </FlexArea>
+            </FlexContainerWrap>
           </FlexArea>
         </FlexContainer>
       </ContactContainer>
@@ -63,8 +76,49 @@ const ContactContainer = styled.div`
   padding: 120px 60px;
 `
 
+const ContactText = styled.p`
+  color: ${({ theme }) => theme.colors.rust};
+  font-style: normal;
+  font-size: 25px;
+  line-height: 36px;
+  margin-top: 80px;
+
+  a {
+    color: ${({ theme }) => theme.colors.rust};
+  }
+`
+
 const FlexContainer = styled.div`
   display: flex;
+`
+
+const FlexContainerWrap = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 90px;
+  
+  p {
+    color: ${({ theme }) => theme.colors.rust};
+    font-style: normal;
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 40px;
+  }  
+
+  a {
+    color: ${({ theme }) => theme.colors.rust};
+    font-style: normal;
+    font-size: 20px;
+  }
+
+  svg {
+    position: relative;
+    left: 10px;
+  }
+
+  svg path {
+    fill: ${({ theme }) => theme.colors.rust};
+  }
 `
 
 const FlexArea = styled.div`

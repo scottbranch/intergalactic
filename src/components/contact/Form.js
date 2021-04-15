@@ -18,13 +18,11 @@ const Hero = props => {
             data-scroll
             data-scroll-offset="20%"
           >
-            <span>CONTACT US :: 02</span>
           </StyledSubHeading>
         </div>
         <FlexContainer>
           <FlexArea>
-            <div>
-              <h5>Contact Information</h5>
+            <div> 
               <address>
                 Intergalactic HQ
                 <br />
@@ -85,6 +83,23 @@ const ContactFormContainer = styled.div`
 
 const FlexContainer = styled.div`
   display: flex;
+
+  address {
+    color: ${({ theme }) => theme.colors.rust};
+    font-style: normal;
+    font-size: 16px;
+    line-height: 28px;
+    margin: 80px 0 40px;
+  }
+
+  a {
+    display: block;
+    color: ${({ theme }) => theme.colors.rust};
+    font-style: normal;
+    font-size: 16px;
+    line-height: 28px;
+    text-decoration: none;
+  }
 `
 
 const FlexArea = styled.div`
@@ -92,8 +107,23 @@ const FlexArea = styled.div`
 `
 
 const ContactForm = styled.form`
+  margin-top: 80px;
+
   label {
     display: block;
+    font-family: ${({ theme }) => theme.fonts.cartographMedium};
+    color: ${({ theme }) => theme.colors.rust};
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+    position: relative;
+    max-width: 675px;
+
+    &:not([for="reason"]):after {
+      content: '*';
+      position: absolute;
+      right: 0;
+    }
   }
 
   input,
@@ -102,9 +132,27 @@ const ContactForm = styled.form`
     appearance: none;
     background-color: transparent;
     border: 0;
-    border-bottom: 1px solid ${({ theme }) => theme.colors.black};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.rust};
     width: 100%;
     max-width: 675px;
+    font-size: 25px;
+    line-height: 60px;
+    color: ${({ theme }) => theme.colors.rust};
+    margin-bottom: 60px;
+  }
+
+  textarea {
+    line-height: 28px;
+  }
+
+  button {
+    font-family: ${({ theme }) => theme.fonts.cartographMedium};
+    color: ${({ theme }) => theme.colors.rust};
+    border: 1px solid ${({ theme }) => theme.colors.rust};
+    background-color: transparent;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 20px 40px;
   }
 `
 
