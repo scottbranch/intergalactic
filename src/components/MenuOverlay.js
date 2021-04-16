@@ -51,6 +51,29 @@ const MenuOverlay = props => {
               className="solutions"
             >
               <h3>Solutions</h3>
+              <div className="sub-list">
+                <p className="eyebrow">
+                  GS1 SERIES /<br />
+                   THERMAL MANAGEMENT SYSTEMS
+                </p>
+                <ul>
+                  <li>
+                    <Link to="/solutions/starscream">GS1-SX STARSCREAM</Link>
+                  </li>
+                  <li>
+                    <Link to="/solutions/mcfly">GS1-MC MCFLY</Link>
+                  </li>
+                  <li>
+                    <Link to="/solutions/falkor">GS1-FK FALKOR</Link>
+                  </li>
+                  <li>
+                    <Link to="/solutions/stardust">GS1-SD STARDUST</Link>
+                  </li>
+                  <li>
+                    <Link to="/solutions/gozer">GS1-GZ GOZER</Link>
+                  </li>
+                </ul>
+              </div>
             </Link>
           </li>
           <li>
@@ -169,6 +192,59 @@ const ListContainer = styled.nav`
     }
     li a {
       color: rgba(230, 225, 218, 0.4);
+    }
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  .solutions {
+    display: flex;
+  }
+
+  .solutions:hover .sub-list {
+    opacity: 1;
+    transition: all 300ms 300ms ease;
+    transform: translate3d(0, 0, 0);
+
+    a {
+      color: rgba(230, 225, 218, 1);
+    }
+  }
+
+  .solutions .sub-list {
+    left: 100px;
+    top: -130px;
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+    height: 0;
+    position: relative;
+    text-align: left;
+    transition: all 300ms 0s ease;
+
+    .eyebrow {
+      color: rgba(230, 225, 218, 1) !important;
+      margin-bottom: 40px;
+    }
+
+    ul {
+      margin: 0;
+    }
+
+    li {
+      list-style: none;
+      margin: 15px 0;
+    }
+  }
+
+  a {
+    font-size: 31px;
+    line-height: 37px;
+    transition: all 150ms ease;
+
+    &:hover {
+      transform: translate3d(15px, 0, 0);
     }
   }
 `
