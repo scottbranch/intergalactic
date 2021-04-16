@@ -11,11 +11,6 @@ const ValueProp = props => {
           <StyledHeading data-scroll data-scroll-offset="30%">
             <span id="span-0">Current Partners</span>
           </StyledHeading>
-          <StyledSubHeading className="fadein" data-scroll data-scroll-offset="20%">
-            <span>
-              SUPPLIERS :: 02
-            </span>
-          </StyledSubHeading>
         </div>
         <TextContainer>
             <p className="fadein" data-scroll data-scroll-offset="20%">
@@ -64,15 +59,17 @@ const InnerContainer = styled.div`
   display: flex;
   padding: 0 60px;
   justify-content: space-between;
-  max-width: 50vw;
 `
 
 const TextContainer = styled.div`
   margin: 0;
+  width: 540px;
 
   p {
     margin-top: 0;
     font-size: 25px;
+    line-height: 36px;
+    color: ${({ theme }) => theme.colors.rust};
   }
 
   span {
@@ -85,6 +82,7 @@ const PartnerLink = styled(Link)`
   align-items: center;
   margin: 30px 0;
   font-size: 20px;
+  color: ${({ theme }) => theme.colors.rust};
 
   &:first-of-type {
     margin-top: 80px;
@@ -92,6 +90,10 @@ const PartnerLink = styled(Link)`
 
   svg {
     margin-left: 10px;
+
+    path {
+      fill: ${({ theme }) => theme.colors.rust};
+    }
   }
 `
 

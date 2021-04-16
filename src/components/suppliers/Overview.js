@@ -11,11 +11,6 @@ const ValueProp = props => {
           <StyledHeading data-scroll data-scroll-offset="30%">
             <span id="span-0">Overview</span>
           </StyledHeading>
-          <StyledSubHeading className="fadein" data-scroll data-scroll-offset="20%">
-            <span>
-              SUPPLIERS :: 01
-            </span>
-          </StyledSubHeading>
           <TextContainer>
             <p className="fadein" data-scroll data-scroll-offset="20%">
               <span>
@@ -26,7 +21,7 @@ const ValueProp = props => {
             </p>
             <p className="fadein" data-scroll data-scroll-offset="20%">
               <span>
-                Contact us below if you’d like to be considered as an
+                <a href="#">Contact us</a> below if you’d like to be considered as an
                 Intergalactic supplier.
               </span>
             </p>
@@ -71,12 +66,18 @@ const TextContainer = styled.div`
 
   p {
     margin-top: 20px;
-    max-width: 400px;
+    max-width: 675px;
+  }
+
+  span, a {
+    font-size: 25px;
+    line-height: 36px;
+    color: ${({ theme }) => theme.colors.rust};
   }
 `
 
 const OverviewImg = styled.img`
-  max-width: 430px;
+  max-width: 540px;
 `
 
 export default ValueProp

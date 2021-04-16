@@ -13,10 +13,9 @@ const Hero = props => {
     <StyledSection data-scroll-section>
       <HeadingContainer>
         <StyledHeading className={isLoaded && "active"}>
-          <span id="span-0">ONLY THE BEST</span>{" "}
-          <span id="span-1">GO INTERGALACTIC</span>{" "}
+          <span id="span-0">ONLY THE BEST GO</span>{" "}
+          <span id="span-1">INTERGALACTIC</span>{" "}
         </StyledHeading>
-        <HeroImg src={heroImg} alt="Supply part" />
       </HeadingContainer>
     </StyledSection>
   )
@@ -24,10 +23,13 @@ const Hero = props => {
 
 const StyledSection = styled.section`
   width: 100%;
-  height: 100vh;
+  height: 70vh;
   background-color: #1e170a;
   position: relative;
-  min-height: 970px;
+  min-height: 780px;
+  background-image: url(${heroImg});
+  background-size: cover;
+  background-position: center center;
 `
 
 const HeadingContainer = styled.div`
