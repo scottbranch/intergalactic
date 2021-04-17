@@ -88,6 +88,7 @@ const Scroll = callbacks => {
         const orbSection = document.getElementById("orb-section")
 
         if (html.dataset.direction === "down") {
+          console.log('obj down',obj);
           if (orbSection.classList.contains("step-1")) {
             orbSection.classList.remove("step-1")
             orbSection.classList.add("step-2")
@@ -99,6 +100,7 @@ const Scroll = callbacks => {
         }
 
         if (html.dataset.direction === "up") {
+          console.log('obj up',obj)
           if (orbSection.classList.contains("step-2") && obj === "section1") {
             orbSection.classList.remove("step-2")
             orbSection.classList.add("step-1")
@@ -108,6 +110,25 @@ const Scroll = callbacks => {
           ) {
             orbSection.classList.remove("step-1")
           }
+        }
+
+        console.log('obj',obj)
+      }
+
+      if(body.classList.contains("has-carousel")) {
+        const carouselContainer = document.getElementById("carousel-container")
+
+        if (html.dataset.direction === "down") {
+          carouselContainer.classList = ''
+          carouselContainer.classList.add('slide-'+obj)
+        }
+
+        if (html.dataset.direction === "up") {
+          let integer = parseInt(obj, 10)
+          let newInteger = integer - 1 //i have to do this for some weird reason
+          let newString = newInteger.toString()
+          carouselContainer.classList = ''
+          carouselContainer.classList.add('slide-'+newString)
         }
       }
     })
