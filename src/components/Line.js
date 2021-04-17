@@ -2,9 +2,9 @@ import React from "react"
 import styled from "styled-components"
 
 const Line = props => {
-  const { theme, color } = props
+  const { theme, color, className } = props
 
-  return <StyledLine></StyledLine>
+  return <StyledLine className={className}></StyledLine>
 }
 
 const StyledLine = styled.div`
