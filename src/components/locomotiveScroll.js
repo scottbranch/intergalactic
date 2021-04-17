@@ -83,7 +83,6 @@ const Scroll = callbacks => {
     })
 
     //This controls the whole orb animation stuff on the homepage
-
     locomotiveScroll.on("call", obj => {
       if (body.classList.contains("home")) {
         const orbSection = document.getElementById("orb-section")

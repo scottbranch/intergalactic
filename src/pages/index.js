@@ -10,6 +10,7 @@ import DoubleImage from "../components/homepage/DoubleImage"
 import BoxesChecked from "../components/homepage/BoxesChecked"
 import CtaSection from "../components/homepage/CtaSection"
 import CircleSection from "../components/homepage/CircleSection"
+import Carousel from "../components/Carousel"
 import Helmet from "react-helmet"
 import styled from "styled-components"
 import { isBrowser } from "react-device-detect"
@@ -25,7 +26,7 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <Helmet>
-        <body class="home" />
+        <body class="home has-carousel" />
       </Helmet>
       <Hero />
       <Welcome />
@@ -33,6 +34,7 @@ const IndexPage = () => {
       <StaticImage />
       <DoubleImage />
       <ImageFloat />
+      <Carousel />
       <CircleSection />
       <BoxesChecked />
       <CtaSection />
