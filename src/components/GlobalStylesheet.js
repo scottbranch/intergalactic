@@ -33,6 +33,7 @@ export default createGlobalStyle`
   h3,
   h4,
   h5,
+  h6,
   p.fadein {
     position: relative;
     perspective: 600px;
@@ -92,7 +93,14 @@ img.fadein {
 
   h5 {
     text-transform: uppercase;
-    font-size: 3.7vw;
+    font-size: 3.7vw; //48px
+    line-height: 105%;
+    font-weight: 500;
+  }
+
+  h6 {
+    text-transform: uppercase;
+    font-size: 25px;
     line-height: 105%;
     font-weight: 500;
   }
@@ -100,7 +108,8 @@ img.fadein {
   h2 span,
   h3 span,
   h4 span,
-  h5 span {
+  h5 span,
+  h6 span {
     display: block;
     position: relative;
   }
