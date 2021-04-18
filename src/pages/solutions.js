@@ -1,0 +1,31 @@
+import React, { useEffect } from "react"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import Hero from "../components/solutions/Hero"
+import OurSolutions from "../components/solutions/OurSolutions"
+import Systems from "../components/solutions/Systems"
+import Helmet from "react-helmet"
+import styled from "styled-components"
+import { isBrowser } from "react-device-detect"
+
+const Solutions = () => {
+  useEffect(() => {
+    setTimeout(() => {
+      isBrowser && window.scroll.update()
+    }, 100)
+  }, [])
+
+  return (
+    <Layout>
+      <SEO title="Solutions" />
+      <Helmet>
+        <body class="solution" />
+      </Helmet>
+      <Hero />
+      <OurSolutions />
+      <Systems />
+    </Layout>
+  )
+}
+
+export default Solutions
