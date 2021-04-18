@@ -14,10 +14,58 @@ const Hero = props => {
     <StyledSection data-scroll-section>
       <HeadingContainer>
         <StyledHeading className={isLoaded && "active"}>
-          <span id="span-0">Born out of necessity</span>
+          <span id="span-0">
+            Born out of
+            <br />
+            necessity
+          </span>
         </StyledHeading>
         <Paragraph className="fadein" data-scroll>
-          <span>Every sector gets cooler with Intergalactic.</span>
+          <a href="#">
+            Overview{" "}
+            <svg
+              width="10"
+              height="10"
+              viewBox="0 0 10 10"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 1.63036H8.89696L8.91017 8.11881L0.792603 0L0 0.785478L8.12418 8.91089H1.62484L1.63804 10H10V1.63036Z"
+                fill="#ffffff"
+              />
+            </svg>{" "}
+          </a>
+          <a href="#">
+            Dream Team{" "}
+            <svg
+              width="10"
+              height="10"
+              viewBox="0 0 10 10"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 1.63036H8.89696L8.91017 8.11881L0.792603 0L0 0.785478L8.12418 8.91089H1.62484L1.63804 10H10V1.63036Z"
+                fill="#ffffff"
+              />
+            </svg>{" "}
+          </a>
+          <a href="#">
+            Careers{" "}
+            <svg
+              width="10"
+              height="10"
+              viewBox="0 0 10 10"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 1.63036H8.89696L8.91017 8.11881L0.792603 0L0 0.785478L8.12418 8.91089H1.62484L1.63804 10H10V1.63036Z"
+                fill="#ffffff"
+              />
+            </svg>{" "}
+          </a>
         </Paragraph>
       </HeadingContainer>
     </StyledSection>
@@ -76,6 +124,16 @@ const Paragraph = styled.p`
   right: 100px;
   position: relative;
   font-size: 25px;
+  width: 100%;
+  max-width: 360px;
+
+  a {
+    color: white;
+    text-decoration: none;
+    border-top: 1px solid white;
+    display: block;
+    padding: 20px 0;
+  }
 `
 
 export default Hero

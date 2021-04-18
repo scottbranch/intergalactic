@@ -4,6 +4,8 @@ const theme = {
     cream: "#E6E1DA",
     rust: "#91897D",
     gold: "#D2CABE",
+    aluminum: "#6B6358",
+    white: "#ffffff",
   },
   fonts: {
     tacticRegular: "tactic-regular, sans-serif",
