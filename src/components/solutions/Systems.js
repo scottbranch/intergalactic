@@ -15,10 +15,6 @@ const Systems = () => {
         </div>
       </StyledInner>
       <Solution />
-      <Solution />
-      <Solution />
-      <Solution />
-      <Solution />
     </StyledSection>
   )
 }

@@ -4,6 +4,10 @@ import SEO from "../components/seo"
 import Hero from "../components/solutions/Hero"
 import OurSolutions from "../components/solutions/OurSolutions"
 import Systems from "../components/solutions/Systems"
+import Equipment from "../components/solutions/Equipment"
+import Contact from "../components/solutions/Contact"
+import Shortcuts from "../components/solutions/Shortcuts"
+import Compliant from "../components/solutions/Compliant"
 import Helmet from "react-helmet"
 import styled from "styled-components"
 import { isBrowser } from "react-device-detect"
@@ -24,6 +28,10 @@ const Solutions = () => {
       <Hero />
       <OurSolutions />
       <Systems />
+      <Equipment />
+      <Contact />
+      <Shortcuts />
+      <Compliant />
     </Layout>
   )
 }
