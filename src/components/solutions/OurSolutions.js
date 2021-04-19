@@ -98,7 +98,7 @@ const StyledInner = styled.div`
   }
 
   .overview {
-    margin-top: 80px;
+    margin-top: 70px;
 
     div {
       margin-bottom: 70px;
