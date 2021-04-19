@@ -19,7 +19,7 @@ import "./locomotive-scroll.css"
 import theme from "../theme/"
 import Menu from "./menu"
 
-const Layout = ({ children, location, props }) => {
+const Layout = ({ children, location, props, className }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -33,7 +33,10 @@ const Layout = ({ children, location, props }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header
+        siteTitle={data.site.siteMetadata?.title || `Title`}
+        className={className}
+      />
 
       {/* Here we pass the callbacks to the component. Anything that impacts the innerHeight, for example: Font Loaded */}
       <Scroll callbacks={location} />

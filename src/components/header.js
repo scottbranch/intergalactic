@@ -2,14 +2,17 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import SvgWordmark from "../assets/svg/wordmark"
+import SvgWordmarkDark from "../assets/svg/wordmarkDark"
 import styled from "styled-components"
 
-const Header = ({ siteTitle }) => (
-  <StyledHeader>
+const Header = ({ siteTitle, className }) => (
+  <StyledHeader className={className}>
     <Link to="/">
-      <SvgWordmark />
+      {className === "dark" ? <SvgWordmarkDark /> : <SvgWordmark />}
     </Link>
-    <ContactLink to="/contact">Contact us</ContactLink>
+    <ContactLink to="/contact" className="contact">
+      Contact us
+    </ContactLink>
   </StyledHeader>
 )
 
@@ -31,6 +34,12 @@ const StyledHeader = styled.header`
   padding-left: 140px;
   padding-right: 75px;
   display: flex;
+
+  &.dark {
+    .contact {
+      color: black;
+    }
+  }
 `
 
 const ContactLink = styled(Link)`

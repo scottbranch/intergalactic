@@ -4,7 +4,48 @@ import headshot from "../../images/company/headshot.png"
 import styled from "styled-components"
 
 const Team = props => {
-  const teamMembers = ["1", "1", "1", "1", "1", "1", "1"]
+  const teamMembers = [
+    {
+      name: "Melzie & Ray Ganowsky",
+      title: "Co-owners",
+      headshot: headshot,
+    },
+    {
+      name: "Nick Kaiser",
+      title: "Vice President of Engineering",
+      headshot: headshot,
+    },
+    {
+      name: "Brian Mccann",
+      title: "CEO",
+      headshot: headshot,
+    },
+    {
+      name: "Kevin Kerlin",
+      title: "Vice President of Operations",
+      headshot: headshot,
+    },
+    {
+      name: "Doug Mccann",
+      title: "CFO",
+      headshot: headshot,
+    },
+    {
+      name: "Brad Plothow",
+      title: "Vice President of Strategy",
+      headshot: headshot,
+    },
+    {
+      name: "Taylor Fausett",
+      title: "Vice President of Programs",
+      headshot: headshot,
+    },
+    {
+      name: "Phillip Norris",
+      title: "Director of Quality of Compliance",
+      headshot: headshot,
+    },
+  ]
 
   return (
     <StyledSection data-scroll-section>
@@ -13,9 +54,13 @@ const Team = props => {
         <HoverCover>
           {teamMembers.map((item, index) => {
             return (
-              <TeamMember to="/test" data-scroll data-scroll-offset="20%">
-                <h6>Melzie & Ray Ganowsky</h6>
-                <p className="eyebrow">Co-owners</p>
+              <TeamMember
+                to="/team/brian-mccann"
+                data-scroll
+                data-scroll-offset="20%"
+              >
+                <h6>{item.name}</h6>
+                <p className="eyebrow">{item.title}</p>
                 <svg
                   width="20"
                   height="18"
@@ -28,7 +73,7 @@ const Team = props => {
                     fill="#6B6358"
                   />
                 </svg>
-                <Headshot className="headshot" src={headshot} />
+                <Headshot className="headshot" src={item.headshot} />
               </TeamMember>
             )
           })}
@@ -54,18 +99,17 @@ const Container = styled.div`
 
 const TeamMember = styled(Link)`
   width: 40%;
-  float: left;
   border-top: 1px solid ${({ theme }) => theme.colors.black};
-  padding: 30px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: ${({ theme }) => theme.colors.aluminum};
-  max-height: 105px;
+  height: 105px;
   text-decoration: none;
   position: relative;
   opacity: 0;
   transition: all 700ms ease;
+  float: left;
 
   &.is-inview {
     opacity: 1;
@@ -108,6 +152,11 @@ const TeamMember = styled(Link)`
 
   h6 {
     max-width: 300px;
+  }
+
+  .eyebrow {
+    max-width: 250px;
+    font-size: 16px;
   }
 
   h6,
