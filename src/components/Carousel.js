@@ -1,11 +1,11 @@
 import React from "react"
 import Helmet from "react-helmet"
 import AnchorLink from "./AnchorLink.js"
-import Line from "./Line.js"
 import slide1 from "../images/carousel/slide-1.jpg"
 import slide2 from "../images/carousel/slide-2.jpg"
 import slide3 from "../images/carousel/slide-3.jpg"
 import slide4 from "../images/carousel/slide-4.jpg"
+import Line from "./Line.js"
 import styled from "styled-components"
 
 const Carousel = props => {
