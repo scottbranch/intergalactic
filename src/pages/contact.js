@@ -15,7 +15,7 @@ const ContactPage = () => {
   }, [])
 
   return (
-    <Layout>
+    <Layout className="dark">
       <SEO title="Contact" />
       <Helmet>
         <body class="suppliers" />
