@@ -69,6 +69,8 @@ const StyledInner = styled.div`
     a {
       color: ${({ theme }) => theme.colors.aluminum};
       font-family: ${({ theme }) => theme.fonts.tacticRegular};
+      display: inline-block;
+      margin-top: 60px;
 
       svg {
         margin-left: 5px;
