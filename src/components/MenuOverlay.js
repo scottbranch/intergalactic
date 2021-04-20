@@ -88,7 +88,7 @@ const MenuOverlay = props => {
           </li>
           <li>
             <Link
-              to="/contact"
+              to="/commslink"
               onMouseOver={navItem => handleHover("commslink")}
               onMouseOut={() => handleHoverOut()}
               className="commslink"
