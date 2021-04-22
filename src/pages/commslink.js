@@ -1,4 +1,5 @@
 import React, { useEffect } from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Helmet from "react-helmet"
@@ -15,8 +16,35 @@ const Commslink = () => {
     }, 100)
   }, [])
 
+  const data = useStaticQuery(graphql`
+    {
+      allPrismicBlogPost {
+        edges {
+          node {
+            data {
+              blog_content {
+                html
+              }
+              blog_title {
+                text
+              }
+              date_published
+              preview_image {
+                url
+              }
+            }
+            uid
+            tags
+          }
+        }
+      }
+    }
+  `)
+
+  const blogData = data.allPrismicBlogPost.edges
+
   return (
-    <Layout>
+    <Layout className="dark">
       <SEO title="Commslink" />
       <Helmet>
         <body class="Commslink" />
@@ -29,13 +57,18 @@ const Commslink = () => {
       <Filter />
       <FeaturedBlog />
       <Grid data-scroll-section>
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <button>Load More</button>
+        {blogData.map((item, index) => {
+          return (
+            <BlogCard
+              featuredImage={item.node.data.preview_image.url}
+              title={item.node.data.blog_title.text}
+              category={item.node.tags[0]}
+              date={item.node.data.date_published}
+              link={item.node.uid}
+            />
+          )
+        })}
+        {/*<button>Load More</button>*/}
       </Grid>
     </Layout>
   )

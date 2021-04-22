@@ -42,6 +42,18 @@ module.exports = {
         schemas: {
           homepage: require("./src/schemas/homepage.json"),
           product_page: require("./src/schemas/product.json"),
+          blog_post: require("./src/schemas/blogPost.json"),
+        },
+        htmlSerializer: ({ node, key, value }) => (
+          type,
+          element,
+          content,
+          children
+        ) => {
+          // Your HTML serializer
+        },
+        linkResolver: ({ node, key, value }) => doc => {
+          // Your link resolver
         },
       },
     },

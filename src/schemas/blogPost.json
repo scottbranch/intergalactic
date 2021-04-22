@@ -1,0 +1,46 @@
+{
+  "Main": {
+    "title": {
+      "type": "Text",
+      "config": {
+        "label": "Document Title",
+        "useAsTitle": true
+      }
+    },
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "url"
+      }
+    },
+    "date_published": {
+      "type": "Date",
+      "config": {
+        "label": "Date Published"
+      }
+    },
+    "blog_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading2",
+        "label": "Blog Title"
+      }
+    },
+    "preview_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Preview Image"
+      }
+    },
+    "blog_content": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, heading6, strong, em, hyperlink, image, list-item, o-list-item",
+        "allowTargetBlank": true,
+        "label": "Blog Content"
+      }
+    }
+  }
+}

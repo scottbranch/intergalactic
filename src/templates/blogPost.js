@@ -3,15 +3,11 @@ import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
+import { RichText } from "prismic-reactjs"
 import { Helmet } from "react-helmet"
 
 const Post = ({ data: { prismicBlogPost, allPrismicBlogPost, uid } }) => {
-
   const { data, tags } = prismicBlogPost
-
-  useEffect(() => {
-    console.log('data: ',prismicBlogPost)
-  },[])
 
   return (
     <Layout className="dark">
@@ -20,17 +16,23 @@ const Post = ({ data: { prismicBlogPost, allPrismicBlogPost, uid } }) => {
         <body class="blog" />
       </Helmet>
       <StyledSection data-scroll-section>
-      <ContentOuter>
-        <HeadingContainer>
-          <Date>{data.date_published}</Date>
-          <h5>{data.title}</h5>
-          <HeaderImg src={data.preview_image.url}/>
-        </HeadingContainer>
-        <ContentContainer>
-          <Category><span>{tags[0]}</span></Category>
-          <TextContainer>{data.blog_content[0].text}</TextContainer>
-        </ContentContainer>
-      </ContentOuter>
+        <ContentOuter>
+          <HeadingContainer>
+            <Date>{data.date_published}</Date>
+            <h5>{data.title}</h5>
+            <HeaderImg src={data.preview_image.url} />
+          </HeadingContainer>
+          <ContentContainer>
+            <Category>
+              <span>{tags[0]}</span>
+            </Category>
+            <TextContainer>
+              <div
+                dangerouslySetInnerHTML={{ __html: data.blog_content.html }}
+              />
+            </TextContainer>
+          </ContentContainer>
+        </ContentOuter>
       </StyledSection>
     </Layout>
   )
@@ -39,7 +41,7 @@ const Post = ({ data: { prismicBlogPost, allPrismicBlogPost, uid } }) => {
 export default Post
 
 const StyledSection = styled.section`
-  background: ${({theme}) => theme.colors.cream};
+  background: ${({ theme }) => theme.colors.cream};
   padding-top: 300px;
 `
 
@@ -52,18 +54,18 @@ const Category = styled.p`
   text-transform: uppercase;
 
   &:before {
-    content: '';
+    content: "";
     width: 100%;
     height: 1px;
-    background: ${({theme}) => theme.colors.black};
+    background: ${({ theme }) => theme.colors.black};
     display: block;
   }
 
   span {
     padding-top: 20px;
     display: block;
-    font-family: ${({theme}) => theme.fonts.cartographMedium};
-    color: ${({theme}) => theme.colors.aluminum};
+    font-family: ${({ theme }) => theme.fonts.cartographMedium};
+    color: ${({ theme }) => theme.colors.aluminum};
   }
 `
 
@@ -81,11 +83,19 @@ const ContentContainer = styled.div`
 const TextContainer = styled.div`
   max-width: 850px;
   text-align: left;
+
+  h6 {
+    text-transform: none;
+  }
+
+  * {
+    color: ${({ theme }) => theme.colors.aluminum};
+  }
 `
 
 const Date = styled.p`
-  font-family: ${({theme}) => theme.fonts.cartographMedium};
-  color: ${({theme}) => theme.colors.aluminum};
+  font-family: ${({ theme }) => theme.fonts.cartographMedium};
+  color: ${({ theme }) => theme.colors.aluminum};
   margin-bottom: 10px;
 `
 
@@ -105,12 +115,12 @@ export const pageQuery = graphql`
           url
         }
         blog_content {
-          text
+          html
         }
       }
       tags
     }
-    allPrismicBlogPost(sort: {order: DESC, fields: id}) {
+    allPrismicBlogPost(sort: { order: DESC, fields: id }) {
       nodes {
         uid
         data {
@@ -120,7 +130,7 @@ export const pageQuery = graphql`
             url
           }
           blog_content {
-            text
+            html
           }
         }
         tags
