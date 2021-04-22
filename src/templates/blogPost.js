@@ -5,47 +5,126 @@ import SEO from "../components/seo"
 import styled from "styled-components"
 import { Helmet } from "react-helmet"
 
-const Post = ({ data }) => {
-  //const { data } = prismicJournal
+const Post = ({ data: { prismicBlogPost, allPrismicBlogPost, uid } }) => {
+
+  const { data, tags } = prismicBlogPost
+
+  useEffect(() => {
+    console.log('data: ',prismicBlogPost)
+  },[])
 
   return (
-    <Layout>
+    <Layout className="dark">
       <SEO title="Blog" />
       <Helmet>
         <body class="blog" />
       </Helmet>
-      <p>testing</p>
+      <StyledSection data-scroll-section>
+      <ContentOuter>
+        <HeadingContainer>
+          <Date>{data.date_published}</Date>
+          <h5>{data.title}</h5>
+          <HeaderImg src={data.preview_image.url}/>
+        </HeadingContainer>
+        <ContentContainer>
+          <Category><span>{tags[0]}</span></Category>
+          <TextContainer>{data.blog_content[0].text}</TextContainer>
+        </ContentContainer>
+      </ContentOuter>
+      </StyledSection>
     </Layout>
   )
 }
 
 export default Post
 
-// export const pageQuery = graphql`
-//   query JournalPost($uid: String!) {
-//     prismicJournal(uid: { eq: $uid }) {
-//       uid
-//       data {
-//         title {
-//           text
-//         }
-//         description {
-//           text
-//         }
-//         post_id
-//       }
-//     }
-//     allPrismicJournal(sort: {order: DESC, fields: id}) {
-//       nodes {
-//         uid
-//         slugs
-//         data {
-//           post_id
-//           title {
-//             text
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
+const StyledSection = styled.section`
+  background: ${({theme}) => theme.colors.cream};
+  padding-top: 300px;
+`
+
+const HeadingContainer = styled.div`
+  max-width: 1200px;
+`
+
+const Category = styled.p`
+  width: 500px;
+  text-transform: uppercase;
+
+  &:before {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: ${({theme}) => theme.colors.black};
+    display: block;
+  }
+
+  span {
+    padding-top: 20px;
+    display: block;
+    font-family: ${({theme}) => theme.fonts.cartographMedium};
+    color: ${({theme}) => theme.colors.aluminum};
+  }
+`
+
+const ContentOuter = styled.div`
+  padding: 0 62px;
+`
+
+const ContentContainer = styled.div`
+  max-width: 1540px;
+  display: flex;
+  justify-content: space-between;
+  padding: 120px 0 180px;
+`
+
+const TextContainer = styled.div`
+  max-width: 850px;
+  text-align: left;
+`
+
+const Date = styled.p`
+  font-family: ${({theme}) => theme.fonts.cartographMedium};
+  color: ${({theme}) => theme.colors.aluminum};
+  margin-bottom: 10px;
+`
+
+const HeaderImg = styled.img`
+  max-width: 1200px;
+  margin-top: 60px;
+`
+
+export const pageQuery = graphql`
+  query BlogPost($uid: String!) {
+    prismicBlogPost(uid: { eq: $uid }) {
+      uid
+      data {
+        title
+        date_published(formatString: "")
+        preview_image {
+          url
+        }
+        blog_content {
+          text
+        }
+      }
+      tags
+    }
+    allPrismicBlogPost(sort: {order: DESC, fields: id}) {
+      nodes {
+        uid
+        data {
+          title
+          date_published(formatString: "")
+          preview_image {
+            url
+          }
+          blog_content {
+            text
+          }
+        }
+        tags
+      }
+    }
+  }
+`
