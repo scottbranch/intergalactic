@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import styled, { css } from "styled-components"
-import heroImg from '../../images/solution/hero.jpg';
-import gadget from '../../images/solution/gadget.jpg';
+import gadget from '../../../images/solution/gadget.jpg';
 
 const Hero = props => {
 
@@ -27,11 +26,9 @@ const Hero = props => {
           <span id="span-0">{title}</span>
         </StyledHeading>
       </HeadingContainer>
-      {type !== 'thermal' &&
         <ImgContainer>
           <img src={gadget}/>
         </ImgContainer>
-      }
     </StyledSection>
   )
 }
@@ -39,11 +36,10 @@ const Hero = props => {
 const StyledSection = styled.section`
   width: 100%;
   height: 1200px;
-  background-image: url('${({type}) => type === 'thermal' ? heroImg : ''}');
-  background-color: ${({theme,type}) => type === 'thermal' ? theme.colors.black : theme.colors.cream};
+  background-color: ${({theme}) => theme.colors.cream};
   background-size: cover;
   background-position: center center;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.aluminum};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.black};
   display: ${({type}) => type === 'thermal' ? 'block' : 'flex'};
 `
 
@@ -58,14 +54,14 @@ const HeadingContainer = styled.div`
 `
 
 const StyledHeading = styled.h2`
-  color: ${({theme,type}) => type === 'thermal' ? theme.colors.gold : theme.colors.black};
+  color: ${({theme}) => theme.colors.black};
   font-size: 95px;
   line-height: 90px;
   max-width: 850px;
 `
 
 const Paragraph = styled.p`
-  color: ${({theme,type}) => type === 'thermal' ? theme.colors.aluminum : theme.colors.black};
+  color: theme.colors.black;
   position: relative;
   font-size: 25px;
   line-height: 30px;

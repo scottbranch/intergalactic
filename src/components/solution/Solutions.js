@@ -2,6 +2,11 @@ import React, { useState, useEffect } from "react"
 import styled, { css } from "styled-components"
 
 const Solutions = props => {
+
+  const {
+    description
+  } = props
+
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
@@ -15,7 +20,7 @@ const Solutions = props => {
           <span>SOLUTIONS:</span>
         </SectionTitle>
         <SectionDesc>
-          <span id="span-0">Compact, lightweight, efficient, and highly ruggedized high-load capacity ram air cooled passive liquid chiller. Broad applications in sky, space, land, and sea. Ideal for extreme vibration and temperature environments and high loads where below-ambient temperature is not required.</span>
+          <span id="span-0">{description}</span>
         </SectionDesc>
       </Container>
     </StyledSection>
@@ -30,7 +35,7 @@ const StyledSection = styled.section`
 const Container = styled.div`
   display: flex;
   padding: 160px 60px 250px;
-  
+
   &:after {
     display block;
     content: '';

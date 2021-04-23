@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from "react"
 import styled, { css } from "styled-components"
 
-const KeySpecs = props => {
-
-  const {
-    specs
-  } = props
-
+const UseCases = props => {
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
@@ -17,12 +12,10 @@ const KeySpecs = props => {
     <StyledSection data-scroll-section>
       <Container>
         <SectionTitle className="fadein" data-scroll>
-          <span>KEY SPECS:</span>
+          <span>USE CASES:</span>
         </SectionTitle>
         <SectionDesc>
-          {specs.map((item,index) => (
-            <span id="span-0" key={index}>{item}</span>
-          ))}
+          <span id="span-0">Compact, lightweight, efficient, and highly ruggedized high-load capacity ram air cooled passive liquid chiller. Broad applications in sky, space, land, and sea. Ideal for extreme vibration and temperature environments and high loads where below-ambient temperature is not required.</span>
         </SectionDesc>
       </Container>
     </StyledSection>
@@ -31,24 +24,13 @@ const KeySpecs = props => {
 
 const StyledSection = styled.section`
   width: 100%;
-  background-color: ${({ theme }) => theme.colors.black};
+  background-color: ${({ theme }) => theme.colors.cream};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.black};
 `
 
 const Container = styled.div`
   display: flex;
   padding: 160px 60px 250px;
-
-  &:after {
-    display block;
-    content: '';
-    width: 95%;
-    height: 1px;
-    background-color: ${({ theme }) => theme.colors.aluminum};
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
 `
 
 const SectionTitle = styled.div`
@@ -57,7 +39,7 @@ const SectionTitle = styled.div`
   span {
     font-size: 25px;
     line-height: 30px;
-    color: ${({ theme }) => theme.colors.gold};
+    color: ${({ theme }) => theme.colors.black};
   }
 `
 
@@ -68,11 +50,7 @@ const SectionDesc = styled.div`
     color: ${({ theme }) => theme.colors.aluminum};
     font-size: 25px;
     line-height: 36px;
-    display: block;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid ${({ theme }) => theme.colors.aluminum};
   }
 `
 
-export default KeySpecs
+export default UseCases

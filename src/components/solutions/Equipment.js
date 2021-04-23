@@ -21,7 +21,7 @@ const Equipment = props => {
         <HoverCover>
           {equipmentPieces.map((item, index) => {
             return (
-              <EquipmentPiece to="/test" data-scroll data-scroll-offset="20%">
+              <EquipmentPiece to="/solutions/subsystems/boreas3-heat-exchanger" data-scroll data-scroll-offset="20%">
                 <h6>IGE—B3HE<br/> BOREAS3 HEAT EXCHANGER</h6>
                 <EquipmnentImg className="equipmentImg" src={equipmentImg} />
               </EquipmentPiece>

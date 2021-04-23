@@ -120,4 +120,49 @@ img.fadein {
     letter-spacing: 0.05em;
     text-transform: uppercase;
   }
+
+  .cases-container .text-block {
+    color: ${theme.colors.aluminum};
+    font-size: 25px;
+    line-height: 36px;
+    opacity: 0;
+    transition: opacity 500ms ease;
+    position: absolute;
+  }
+
+  .cases-container.civil .civil {
+    opacity: 1;
+  }
+
+  .cases-container.defense .defense {
+    opacity: 1;
+  }
+
+  .cases-container.space .space {
+    opacity: 1;
+  }
+
+  .cases-container.land-sea .land-sea {
+    opacity: 1;
+  }
+
+  .cases-container.civil .civil-button {
+    color: ${theme.colors.white};
+    text-decoration: underline;
+  }
+
+  .cases-container.defense .defense-button {
+    color: ${theme.colors.white};
+    text-decoration: underline;
+  }
+
+  .cases-container.space .space-button {
+    color: ${theme.colors.white};
+    text-decoration: underline;
+  }
+
+  .cases-container.land-sea .land-sea-button {
+    color: ${theme.colors.white};
+    text-decoration: underline;
+  }
 `

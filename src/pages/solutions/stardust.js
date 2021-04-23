@@ -16,16 +16,46 @@ const Stardust = () => {
     }, 100)
   }, [])
 
+  const specs = [
+    'Size: 10” x 10” x 28”',
+    'Weight: 85lbs',
+    'Cooling capacity: 55 kW below ambient',
+    'Passive cooling',
+    'Extreme vibration and temperature survival'
+  ]
+
+  const carouselItems = [{
+      title: 'civil',
+      description: 'Avionics or electronic equipment cooling; engine, gearbox, and APU cooling; electric motor cooling; and electric systems cooling.',
+    },
+    {
+      title: 'defense',
+      description: 'Pod cooling, high power auxiliary systems cooling.'
+    },
+    {
+      title: 'space',
+      description: 'Liquid radiative cooling.'
+    },
+    {
+      title: 'land-sea',
+      description: 'High-energy laser cooling, radar cooling, vehicle cooling and heating, and engine cooling.'
+    }
+  ]
+
   return (
     <Layout>
       <SEO title="Stardust" />
       <Helmet>
         <body class="stardust" />
       </Helmet>
-      <Hero />
-      <Solutions />
-      <KeySpecs />
-      <UseCases />
+      <Hero
+        type="thermal"
+        eyebrow="GS1-SD"
+        title="Stardust"
+      />
+      <Solutions description="Compact, lightweight, efficient, and highly ruggedized high-load capacity ram air cooled passive liquid chiller. Broad applications in sky, space, land, and sea. Ideal for extreme vibration and temperature environments and high loads where below-ambient temperature is not required."/>
+      <KeySpecs specs={specs}/>
+      <UseCases items={carouselItems}/>
     </Layout>
   )
 }

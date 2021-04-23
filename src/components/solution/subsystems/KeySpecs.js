@@ -2,11 +2,6 @@ import React, { useState, useEffect } from "react"
 import styled, { css } from "styled-components"
 
 const KeySpecs = props => {
-
-  const {
-    specs
-  } = props
-
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
@@ -20,9 +15,11 @@ const KeySpecs = props => {
           <span>KEY SPECS:</span>
         </SectionTitle>
         <SectionDesc>
-          {specs.map((item,index) => (
-            <span id="span-0" key={index}>{item}</span>
-          ))}
+          <span id="span-0">Size: 10” x 10” x 28”</span>
+          <span id="span-0">Weight: 85lbs</span>
+          <span id="span-0">Cooling capacity: 55 kW below ambient</span>
+          <span id="span-0">Passive cooling</span>
+          <span id="span-0">Extreme vibration and temperature survival</span>
         </SectionDesc>
       </Container>
     </StyledSection>
@@ -31,7 +28,7 @@ const KeySpecs = props => {
 
 const StyledSection = styled.section`
   width: 100%;
-  background-color: ${({ theme }) => theme.colors.black};
+  background-color: ${({ theme }) => theme.colors.cream};
 `
 
 const Container = styled.div`
@@ -43,7 +40,7 @@ const Container = styled.div`
     content: '';
     width: 95%;
     height: 1px;
-    background-color: ${({ theme }) => theme.colors.aluminum};
+    background-color: ${({ theme }) => theme.colors.black};
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -57,7 +54,7 @@ const SectionTitle = styled.div`
   span {
     font-size: 25px;
     line-height: 30px;
-    color: ${({ theme }) => theme.colors.gold};
+    color: ${({ theme }) => theme.colors.black};
   }
 `
 
