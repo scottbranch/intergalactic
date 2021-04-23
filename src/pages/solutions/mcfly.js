@@ -5,8 +5,8 @@ import Hero from "../../components/solution/Hero"
 import Solutions from "../../components/solution/Solutions"
 import KeySpecs from "../../components/solution/KeySpecs"
 import UseCases from "../../components/solution/UseCases"
+import HeroImg from "../../images/solutions/mcfly.jpg"
 import Helmet from "react-helmet"
-import HeroImg from "../../images/solutions/stardust.jpg"
 import styled from "styled-components"
 import { isBrowser } from "react-device-detect"
 
@@ -18,10 +18,11 @@ const Stardust = () => {
   }, [])
 
   const specs = [
-    "Size: 10” x 10” x 28”",
-    "Weight: 85lbs",
-    "Cooling capacity: 55 kW below ambient",
-    "Passive cooling",
+    "Size: 25”x25”x40”",
+    "Weight: 130lbs",
+    "Cooling capacity: 10 kW below ambient, cooling and heating",
+    "Active cooling and heating",
+    "Full performance on ground",
     "Extreme vibration and temperature survival",
   ]
 
@@ -29,28 +30,30 @@ const Stardust = () => {
     {
       title: "civil",
       description:
-        "Avionics or electronic equipment cooling; engine, gearbox, and APU cooling; electric motor cooling; and electric systems cooling.",
+        "Cabin, cockpit, and avionics ventilation, cooling, and heating.",
     },
     {
       title: "defense",
-      description: "Pod cooling, high power auxiliary systems cooling.",
+      description:
+        "Cabin, cockpit, and avionics ventilation, cooling, and heating.",
     },
     {
       title: "space",
-      description: "Liquid radiative cooling.",
+      description:
+        "Compartment and equipment ventilation, cooling, and heating.",
     },
     {
       title: "land-sea",
       description:
-        "High-energy laser cooling, radar cooling, vehicle cooling and heating, and engine cooling.",
+        "Compartment and equipment ventilation, cooling, and heating.",
     },
   ]
 
   return (
     <Layout>
-      <SEO title="Stardust" />
-      <Hero eyebrow="GS1-SD" title="Stardust" heroImg={HeroImg} />
-      <Solutions description="Compact, lightweight, efficient, and highly ruggedized high-load capacity ram air cooled passive liquid chiller. Broad applications in sky, space, land, and sea. Ideal for extreme vibration and temperature environments and high loads where below-ambient temperature is not required." />
+      <SEO title="Mcfly" />
+      <Hero eyebrow="GS1-MC" title="Mcfly" heroImg={HeroImg} />
+      <Solutions description="Lightweight, and rugged 100% electric cooling, heating, and ventilation system with broad applications in sky, space, land, and sea. Ideal for heating and cooling ventilated enclosures, such as cockpits and cabins. " />
       <KeySpecs specs={specs} />
       <UseCases items={carouselItems} />
     </Layout>

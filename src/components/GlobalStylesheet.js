@@ -165,4 +165,10 @@ img.fadein {
     color: ${theme.colors.white};
     text-decoration: underline;
   }
+
+  #cases-container {
+  flex: 50%;
+  position: relative;
+  width: 670px;
+}
 `

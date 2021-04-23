@@ -2,10 +2,7 @@ import React, { useState, useEffect } from "react"
 import styled, { css } from "styled-components"
 
 const UseCases = props => {
-
-  const {
-    items
-  } = props
+  const { items } = props
 
   const [isLoaded, setIsLoaded] = useState(false)
 
@@ -13,10 +10,11 @@ const UseCases = props => {
     setIsLoaded(true)
   }, [])
 
-  const handleClick = (item) => {
-    const container = document !== undefined && document.getElementById('cases-container')
-    if(document !== undefined){
-     container.className = 'cases-container'
+  const handleClick = item => {
+    const container =
+      document !== undefined && document.getElementById("cases-container")
+    if (document !== undefined) {
+      container.className = "cases-container"
     }
     container.classList.add(item)
   }
@@ -27,17 +25,28 @@ const UseCases = props => {
         <SectionTitle className="fadein" data-scroll>
           <span>USE CASES:</span>
         </SectionTitle>
-        <SectionDesc id="cases-container" className="cases-container civil">
+        <SectionDesc
+          id="cases-container"
+          className={`cases-container ${items[0].title}`}
+        >
           <TabContainer>
             <ul>
-              <li><button className="civil-button" onClick={() => handleClick('civil')}>Civil</button></li>
-              <li><button className="defense-button" onClick={() => handleClick('defense')}>Defense</button></li>
-              <li><button className="space-button" onClick={() => handleClick('space')}>Space</button></li>
-              <li><button className="land-sea-button" onClick={() => handleClick('land-sea')}>Land & Sea</button></li>
+              {items.map((item, index) => (
+                <li>
+                  <button
+                    className={`${item.title}-button`}
+                    onClick={() => handleClick(`${item.title}`)}
+                  >
+                    {item.title === "land-sea" ? "land & sea" : item.title}
+                  </button>
+                </li>
+              ))}
             </ul>
           </TabContainer>
-          {items.map((item,index) => (
-            <span className={`text-block ${item.title}`}>{item.description}</span>
+          {items.map((item, index) => (
+            <span className={`text-block ${item.title}`}>
+              {item.description}
+            </span>
           ))}
         </SectionDesc>
       </Container>
@@ -81,7 +90,7 @@ const TabContainer = styled.div`
     background: none;
     border: none;
     box-shadow: none;
-    color: ${({theme}) => theme.colors.aluminum};
+    color: ${({ theme }) => theme.colors.aluminum};
     font-size: 25px;
     outline: none;
     padding: 0;
@@ -89,7 +98,7 @@ const TabContainer = styled.div`
 
     &:hover {
       cursor: pointer;
-      color: ${({theme}) => theme.colors.white};
+      color: ${({ theme }) => theme.colors.white};
     }
   }
 `
@@ -97,7 +106,7 @@ const TabContainer = styled.div`
 const SectionDesc = styled.div`
   flex: 50%;
   position: relative;
-  max-width: 670px;
+  width: 670px;
 
   .text-block {
     color: ${({ theme }) => theme.colors.aluminum};

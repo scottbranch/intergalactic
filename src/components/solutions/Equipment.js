@@ -1,11 +1,84 @@
 import React from "react"
 import styled from "styled-components"
-import EquipmentImg from "../../images/solutions/equipment.jpg";
+import EquipmentImg from "../../images/solutions/equipment.jpg"
 import equipmentImg from "../../images/solutions/hover-1.jpg"
 import Link from "gatsby-link"
 
 const Equipment = props => {
-  const equipmentPieces = ["1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"]
+  const equipmentPieces = [
+    {
+      code: "IGE—B3HE",
+      title: "BOREAS3 HEAT EXCHANGER",
+      link: "boreas3-heat-exchanger",
+      image: equipmentImg,
+    },
+    {
+      code: "IGE-A1C",
+      title: "Aries1 Controller",
+      link: "aries1-controller",
+      image: equipmentImg,
+    },
+    {
+      code: "IGE-HXP",
+      title: "HydraX Pump",
+      link: "hydrax-pump",
+      image: equipmentImg,
+    },
+    {
+      code: "IGE-GSF",
+      title: "Gemini Series Fans",
+      link: "gemini-series-fans",
+      image: equipmentImg,
+    },
+    {
+      code: "IGE-L4SC",
+      title: "Libra4 Scroll Compressor",
+      link: "libra4-scroll-compressor",
+      image: equipmentImg,
+    },
+    {
+      code: "IGE-C1PDU",
+      title: "Carina1 Power Distribution Unit",
+      link: "carina1-power-distribution-unit",
+      image: equipmentImg,
+    },
+    {
+      code: "IGE-C7EEV",
+      title: "Cygnus7 Electronic Expansion Valve",
+      link: "cygnus7-electronic-expansion-valve",
+      image: equipmentImg,
+    },
+    {
+      code: "IGE-OXDA",
+      title: "OrionXD Accumulator",
+      link: "orionxd-accumulator",
+      image: equipmentImg,
+    },
+    {
+      code: "IGE-FEH",
+      title: "Fornax Electric Heaters",
+      link: "fornax-electric-heaters",
+      image: equipmentImg,
+    },
+    {
+      code: "IGE-P1CP",
+      title: "Pisces1 Cold Plates",
+      link: "pisces1-cold-plates",
+      image: equipmentImg,
+    },
+    {
+      code: "IGE-DSTFCV",
+      title: "Dorado ST Liquid Flow Control Valve",
+      link: "dorado-st-liquid-flow-control-valve",
+      image: equipmentImg,
+    },
+    {
+      code: "IGE-VACV",
+      title: "Vela Airflow Control Valve",
+      link: "vela-airflow-control-valve",
+      image: equipmentImg,
+    },
+  ]
   return (
     <EquipmentContainer data-scroll-section>
       <div className="equipment-hero" />
@@ -15,15 +88,25 @@ const Equipment = props => {
             <h5>Intergalactic Equipment</h5>
           </div>
           <div>
-            <p>Available for stand alone applications or integrated into complete ECS solutions.</p>
+            <p>
+              Available for stand alone applications or integrated into complete
+              ECS solutions.
+            </p>
           </div>
         </FlexArea>
         <HoverCover>
           {equipmentPieces.map((item, index) => {
             return (
-              <EquipmentPiece to="/solutions/subsystems/boreas3-heat-exchanger" data-scroll data-scroll-offset="20%">
-                <h6>IGE—B3HE<br/> BOREAS3 HEAT EXCHANGER</h6>
-                <EquipmnentImg className="equipmentImg" src={equipmentImg} />
+              <EquipmentPiece
+                to={`/solutions/subsystems/${item.link}`}
+                data-scroll
+                data-scroll-offset="20%"
+              >
+                <h6>
+                  {item.code}
+                  <br /> {item.title}
+                </h6>
+                <EquipmnentImg className="equipmentImg" src={item.image} />
               </EquipmentPiece>
             )
           })}
@@ -39,7 +122,7 @@ const EquipmentContainer = styled.div`
 
   .equipment-hero {
     height: 875px;
-    background-image: url('${EquipmentImg}');
+    background-image: url("${EquipmentImg}");
     background-size: cover;
     background-position: center center;
   }

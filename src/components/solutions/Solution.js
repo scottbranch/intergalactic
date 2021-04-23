@@ -1,11 +1,12 @@
 import React from "react"
 import Line from "../Line"
+import Link from "gatsby-link"
 import styled from "styled-components"
-import SolutionImg from "../../images/solutions/solution.jpg";
-import SolutionImg2 from "../../images/solutions/solution-2.jpg";
-import SolutionImg3 from "../../images/solutions/solution-3.jpg";
-import SolutionImg4 from "../../images/solutions/solution-4.jpg";
-import SolutionImg5 from "../../images/solutions/solution-5.jpg";
+import SolutionImg from "../../images/solutions/starscream.jpg"
+import SolutionImg2 from "../../images/solutions/gozer.jpg"
+import SolutionImg3 from "../../images/solutions/falkor.jpg"
+import SolutionImg4 from "../../images/solutions/stardust.jpg"
+import SolutionImg5 from "../../images/solutions/mcfly.jpg"
 
 const Solution = () => {
   return (
@@ -20,12 +21,21 @@ const Solution = () => {
           <span>5 kW below ambient (active)</span>
           <span>10” x 10” x 28”</span>
           <span>115 lbs</span>
-          <a href="#">
+          <Link to="/solutions/starscream">
             Learn More
-            <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6.60227 11L11.6932 5.90909L6.60227 0.818182L5.72727 1.69318L9.32955 5.28409H0V6.53409H9.32955L5.72727 10.1364L6.60227 11Z" fill="#6B6358"/>
+            <svg
+              width="12"
+              height="11"
+              viewBox="0 0 12 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.60227 11L11.6932 5.90909L6.60227 0.818182L5.72727 1.69318L9.32955 5.28409H0V6.53409H9.32955L5.72727 10.1364L6.60227 11Z"
+                fill="#6B6358"
+              />
             </svg>
-          </a>
+          </Link>
         </div>
       </SolutionContainer>
       <SolutionContainer>
@@ -34,16 +44,27 @@ const Solution = () => {
         </div>
         <div className="solution-detail">
           <h4>GS1—GZ Gozer</h4>
-          <p>Ideal for high-energy laser systems, large aircraft systems cooling.</p>
+          <p>
+            Ideal for high-energy laser systems, large aircraft systems cooling.
+          </p>
           <span>10 kW cooling and heating, below ambient (active)</span>
           <span>25” x 25” x 40”</span>
           <span>130 lbs</span>
-          <a href="#">
+          <Link to="/solutions/gozer">
             Learn More
-            <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6.60227 11L11.6932 5.90909L6.60227 0.818182L5.72727 1.69318L9.32955 5.28409H0V6.53409H9.32955L5.72727 10.1364L6.60227 11Z" fill="#6B6358"/>
+            <svg
+              width="12"
+              height="11"
+              viewBox="0 0 12 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.60227 11L11.6932 5.90909L6.60227 0.818182L5.72727 1.69318L9.32955 5.28409H0V6.53409H9.32955L5.72727 10.1364L6.60227 11Z"
+                fill="#6B6358"
+              />
             </svg>
-          </a>
+          </Link>
         </div>
       </SolutionContainer>
       <SolutionContainer>
@@ -52,16 +73,27 @@ const Solution = () => {
         </div>
         <div className="solution-detail">
           <h4>GS1—FK Falkor</h4>
-          <p>Ideal for high-energy laser systems, large aircraft systems cooling.</p>
+          <p>
+            Ideal for high-energy laser systems, large aircraft systems cooling.
+          </p>
           <span>10 kW cooling and heating, below ambient (active)</span>
           <span>25” x 25” x 40”</span>
           <span>130 lbs</span>
-          <a href="#">
+          <Link to="/solutions/falkor">
             Learn More
-            <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6.60227 11L11.6932 5.90909L6.60227 0.818182L5.72727 1.69318L9.32955 5.28409H0V6.53409H9.32955L5.72727 10.1364L6.60227 11Z" fill="#6B6358"/>
+            <svg
+              width="12"
+              height="11"
+              viewBox="0 0 12 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.60227 11L11.6932 5.90909L6.60227 0.818182L5.72727 1.69318L9.32955 5.28409H0V6.53409H9.32955L5.72727 10.1364L6.60227 11Z"
+                fill="#6B6358"
+              />
             </svg>
-          </a>
+          </Link>
         </div>
       </SolutionContainer>
       <SolutionContainer>
@@ -70,16 +102,28 @@ const Solution = () => {
         </div>
         <div className="solution-detail">
           <h4>GS1—SD Stardust</h4>
-          <p>Ideal for extreme vibration and temperature environments. High loads where below-ambient temperature is not required.</p>
+          <p>
+            Ideal for extreme vibration and temperature environments. High loads
+            where below-ambient temperature is not required.
+          </p>
           <span>10 kW cooling and heating, below ambient (active)</span>
           <span>25” x 25” x 40”</span>
           <span>130 lbs</span>
-          <a href="#">
+          <Link to="/solutions/stardust">
             Learn More
-            <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6.60227 11L11.6932 5.90909L6.60227 0.818182L5.72727 1.69318L9.32955 5.28409H0V6.53409H9.32955L5.72727 10.1364L6.60227 11Z" fill="#6B6358"/>
+            <svg
+              width="12"
+              height="11"
+              viewBox="0 0 12 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.60227 11L11.6932 5.90909L6.60227 0.818182L5.72727 1.69318L9.32955 5.28409H0V6.53409H9.32955L5.72727 10.1364L6.60227 11Z"
+                fill="#6B6358"
+              />
             </svg>
-          </a>
+          </Link>
         </div>
       </SolutionContainer>
       <SolutionContainer>
@@ -88,16 +132,27 @@ const Solution = () => {
         </div>
         <div className="solution-detail">
           <h4>GS1—MC MCFly</h4>
-          <p>Ideal for high-energy laser systems, large aircraft systems cooling.</p>
+          <p>
+            Ideal for high-energy laser systems, large aircraft systems cooling.
+          </p>
           <span>10 kW cooling and heating, below ambient (active)</span>
           <span>25” x 25” x 40”</span>
           <span>130 lbs</span>
-          <a href="#">
+          <Link to="/solutions/mcfly">
             Learn More
-            <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6.60227 11L11.6932 5.90909L6.60227 0.818182L5.72727 1.69318L9.32955 5.28409H0V6.53409H9.32955L5.72727 10.1364L6.60227 11Z" fill="#6B6358"/>
+            <svg
+              width="12"
+              height="11"
+              viewBox="0 0 12 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.60227 11L11.6932 5.90909L6.60227 0.818182L5.72727 1.69318L9.32955 5.28409H0V6.53409H9.32955L5.72727 10.1364L6.60227 11Z"
+                fill="#6B6358"
+              />
             </svg>
-          </a>
+          </Link>
         </div>
       </SolutionContainer>
     </>
@@ -111,7 +166,7 @@ const SolutionContainer = styled.div`
   position: relative;
 
   &:after {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     bottom: 0;
@@ -126,7 +181,8 @@ const SolutionContainer = styled.div`
     display: none;
   }
 
-  .image-container, .solution-detail {
+  .image-container,
+  .solution-detail {
     flex: 50%;
   }
 
@@ -143,7 +199,9 @@ const SolutionContainer = styled.div`
       font-size: 48px;
     }
 
-    p, span, a {
+    p,
+    span,
+    a {
       color: ${({ theme }) => theme.colors.rust};
       display: block;
     }
