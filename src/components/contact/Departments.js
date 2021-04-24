@@ -14,7 +14,7 @@ const Hero = props => {
         <h4>Contact departments</h4>
         <FlexContainer>
           <FlexArea>
-            <ContactText><a href="mailto:phonehome@ig.space">Email us</a> corresponding your inquiry.</ContactText>
+            <ContactText>Email us corresponding your inquiry.</ContactText>
           </FlexArea>
           <FlexArea>
             <FlexContainerWrap>
@@ -77,38 +77,55 @@ const ContactContainer = styled.div`
 `
 
 const ContactText = styled.p`
-  color: ${({ theme }) => theme.colors.rust};
+  color: ${({ theme }) => theme.colors.aluminum};
   font-style: normal;
   font-size: 25px;
   line-height: 36px;
   margin-top: 80px;
 
-  a {
-    color: ${({ theme }) => theme.colors.rust};
+  @media screen and (max-width: 768px) {
+    margin-top: 40px;
   }
 `
 
 const FlexContainer = styled.div`
   display: flex;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
 `
 
 const FlexContainerWrap = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-top: 90px;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 50px;
+  }
   
   p {
-    color: ${({ theme }) => theme.colors.rust};
+    color: ${({ theme }) => theme.colors.aluminum};
     font-style: normal;
     font-size: 20px;
     line-height: 28px;
     margin-bottom: 40px;
+
+    @media screen and (max-width: 768px) {
+      margin-bottom: 10px;
+    }
   }  
 
   a {
-    color: ${({ theme }) => theme.colors.rust};
+    color: ${({ theme }) => theme.colors.aluminum};
     font-style: normal;
     font-size: 20px;
+
+    @media screen and (max-width: 768px) {
+      display: block;
+      margin-bottom: 40px;
+    }
   }
 
   svg {
@@ -117,12 +134,17 @@ const FlexContainerWrap = styled.div`
   }
 
   svg path {
-    fill: ${({ theme }) => theme.colors.rust};
+    fill: ${({ theme }) => theme.colors.aluminum};
   }
 `
 
 const FlexArea = styled.div`
   flex: 50%;
+
+  @media screen and (max-width: 768px) {
+    flex: 100%;
+  }
+
 `
 
 const StyledSubHeading = styled.p`

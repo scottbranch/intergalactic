@@ -79,22 +79,34 @@ const ContactFormContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.cream};
   border-bottom: 1px solid ${({ theme }) => theme.colors.black};
   padding: 120px 60px;
+
+  @media screen and (max-width: 768px) {
+    padding-top: 60px;
+  }
 `
 
 const FlexContainer = styled.div`
   display: flex;
 
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+
   address {
-    color: ${({ theme }) => theme.colors.rust};
+    color: ${({ theme }) => theme.colors.aluminum};
     font-style: normal;
     font-size: 16px;
     line-height: 28px;
     margin: 80px 0 40px;
+
+    @media screen and (max-width: 768px) {
+      margin: 40px 0;
+    }
   }
 
   a {
     display: block;
-    color: ${({ theme }) => theme.colors.rust};
+    color: ${({ theme }) => theme.colors.aluminum};
     font-style: normal;
     font-size: 16px;
     line-height: 28px;
@@ -112,7 +124,7 @@ const ContactForm = styled.form`
   label {
     display: block;
     font-family: ${({ theme }) => theme.fonts.cartographMedium};
-    color: ${({ theme }) => theme.colors.rust};
+    color: ${({ theme }) => theme.colors.aluminum};
     font-size: 16px;
     line-height: 20px;
     text-transform: uppercase;
@@ -132,13 +144,23 @@ const ContactForm = styled.form`
     appearance: none;
     background-color: transparent;
     border: 0;
-    border-bottom: 1px solid ${({ theme }) => theme.colors.rust};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.aluminum};
     width: 100%;
     max-width: 675px;
     font-size: 25px;
     line-height: 60px;
-    color: ${({ theme }) => theme.colors.rust};
+    color: ${({ theme }) => theme.colors.aluminum};
     margin-bottom: 60px;
+
+    @media screen and (max-width: 768px) {
+      line-height: 30px;
+    }
+  }
+
+  select {
+    @media screen and (max-width: 768px) {
+      line-height: 40px;
+    }
   }
 
   textarea {
@@ -147,8 +169,8 @@ const ContactForm = styled.form`
 
   button {
     font-family: ${({ theme }) => theme.fonts.cartographMedium};
-    color: ${({ theme }) => theme.colors.rust};
-    border: 1px solid ${({ theme }) => theme.colors.rust};
+    color: ${({ theme }) => theme.colors.aluminum};
+    border: 1px solid ${({ theme }) => theme.colors.aluminum};
     background-color: transparent;
     text-transform: uppercase;
     font-size: 16px;
