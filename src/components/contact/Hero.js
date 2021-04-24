@@ -48,6 +48,10 @@ const StyledSection = styled.section`
   position: relative;
   background-color: ${({ theme }) => theme.colors.cream};
   border-bottom: 1px solid ${({ theme }) => theme.colors.black};
+
+  @media screen and (max-width: 768px) {
+    padding-top: 100px;
+  }
 `
 
 const HeadingContainer = styled.div`
@@ -81,6 +85,10 @@ const PageLink = styled.a`
   font-family: ${({theme}) => theme.fonts.cartographMedium};
   text-decoration: none;
   display: inline-block;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
   
   &:first-of-type {
     margin-right: 40px;
