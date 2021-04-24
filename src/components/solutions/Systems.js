@@ -22,6 +22,10 @@ const Systems = () => {
 const StyledSection = styled.section`
   padding: 160px 0 180px;
   background: ${({ theme }) => theme.colors.black};
+
+  @media screen and (max-width: 768px) {
+    padding: 80px 0 90px;
+  }
 `
 
 const StyledInner = styled.div`
@@ -29,6 +33,10 @@ const StyledInner = styled.div`
   align-items: center;
   padding: 0 60px;
   justify-content: space-between;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 
   .intro-container, .overview {
     flex: 50%;
@@ -42,6 +50,11 @@ const StyledInner = styled.div`
       font-size: 62px;
       line-height: 73px;
       color: ${({ theme }) => theme.colors.cream};
+
+      @media screen and (max-width: 768px) {
+        font-size: 31px;
+        line-height: 35px;
+      }
     }
   }
 `

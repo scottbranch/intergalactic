@@ -58,9 +58,18 @@ const StyledSection = styled.section`
   background: ${({ theme }) => theme.colors.cream};
   border-bottom: ${({ theme }) => `1px solid ${theme.colors.aluminum}`};
 
+  @media screen and (max-width: 768px) {
+    padding: 80px 0 90px;
+  }
+
   h3 {
     font-size: 48px;
     font-weight: 400;
+
+    @media screen and (max-width: 768px) {
+      font-size: 31px;
+      line-height: 35px;
+    }
   }
 `
 
@@ -69,6 +78,10 @@ const FlexArea = styled.div`
   margin-top: 80px;
   flex-grow: initial;
   padding-right: 40px;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 20px;
+  }
 
   .intro {
     color: ${({ theme }) => theme.colors.aluminum};
@@ -94,6 +107,10 @@ const StyledInner = styled.div`
   flex-wrap: wrap;
   padding: 0 60px;
   justify-content: space-between;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 
   .welcome {
     font-size: 25px;
