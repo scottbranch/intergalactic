@@ -29,17 +29,25 @@ const BoxesChecked = () => {
 }
 
 const StyledSection = styled.section`
-  padding: 180px 60px;
+  padding: 100px 25px;
   background: ${({ theme }) => theme.colors.cream};
   border-top: 1px solid ${({ theme }) => theme.colors.black};
+
+  @media screen and (min-width: 768px) {
+    padding: 180px 60px;
+  }
 `
 
 const StyledUl = styled.ul`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-column-gap: 200px;
   max-width: 1250px;
   margin: 0;
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
 `
 
 const StyledLi = styled.li`
@@ -50,6 +58,19 @@ const StyledLi = styled.li`
   display: flex;
   align-items: center;
   position: relative;
+  color: ${({ theme }) => theme.colors.aluminum};
+
+  @media screen and (min-width: 768px) {
+    color: ${({ theme }) => theme.colors.black};
+  }
+
+  svg path {
+    fill: ${({ theme }) => theme.colors.aluminum};
+
+    @media screen and (min-width: 768px) {
+      fill: ${({ theme }) => theme.colors.black};
+    }
+  }
 
   &.is-inview {
     &:before,
@@ -59,7 +80,11 @@ const StyledLi = styled.li`
     &:nth-last-child(1),
     &:nth-last-child(2) {
       &:after {
-        width: 100%;
+        width: 0;
+
+        @media screen and (min-width: 768px) {
+          width: 100%;
+        }
       }
     }
   }
@@ -69,7 +94,7 @@ const StyledLi = styled.li`
     width: 0;
     transition: width 1s ease;
     height: 1px;
-    background: ${({ theme }) => theme.colors.black};
+    background: ${({ theme }) => theme.colors.aluminum};
     position: absolute;
     top: 0;
   }
@@ -80,20 +105,34 @@ const StyledLi = styled.li`
       content: "";
       width: 0;
       height: 1px;
-      background: ${({ theme }) => theme.colors.black};
+      background: ${({ theme }) => theme.colors.aluminum}
       position: absolute;
       bottom: 0;
       transition: width 1s ease;
+
+      @media screen and (min-width: 768px) {
+        background: ${({ theme }) => theme.colors.black};
+      }
     }
   }
 `
 
 const StyledCheck = styled(Checkmark)`
   margin: 0 20px 0 0;
+  width: 38px;
 `
 
 const StyledHeading = styled.h3`
-  margin-bottom: 150px;
+  margin-bottom: 90px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 150px;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 39px;
+    line-height: 100%;
+  }
 `
 
 export default BoxesChecked

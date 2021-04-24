@@ -53,6 +53,11 @@ const StyledSection = styled.section`
   text-align: center;
   position: relative;
   overflow: hidden;
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
 
   &.step-1 {
     .text1 {
