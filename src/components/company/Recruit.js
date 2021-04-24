@@ -30,10 +30,18 @@ const Recruit = props => {
 
 const StyledSection = styled.section`
   background: ${({ theme }) => theme.colors.black};
-  padding: 135px 0;
+  padding: 100px 0;
+
+  @media screen and (min-width: 768px) {
+    padding: 135px 0;
+  }
 
   h5 {
     max-width: 675px;
+
+    @media screen and (min-width: 768px) {
+      margin-right: 20px;
+    }
   }
 
   h5,
@@ -44,7 +52,14 @@ const StyledSection = styled.section`
 
 const Container = styled.div`
   display: flex;
-  margin-left: 60px;
+  margin-left: 0;
+  flex-direction: column;
+  padding: 0 25px;
+
+  @media screen and (min-width: 768px) {
+    margin-left: 60px;
+    flex-direction: row;
+  }
 `
 
 const TextContainer = styled.div`

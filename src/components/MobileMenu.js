@@ -83,7 +83,7 @@ const StyledHeader = styled.header`
   height: 70px;
   width: 100%;
   background: ${({ theme }) => theme.colors.cream};
-  z-index: 500;
+  z-index: 520;
   display: flex;
   align-items: center;
   border-bottom: 1px solid ${({ theme }) => theme.colors.black};

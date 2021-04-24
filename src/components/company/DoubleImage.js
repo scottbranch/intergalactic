@@ -50,23 +50,38 @@ const DoubleImage = props => {
 
 const StyledSection = styled.section`
   position: relative;
-  padding: 140px 0 180px;
+  padding: 100px 0;
   background: ${({ theme }) => theme.colors.cream};
   border-bottom: 1px solid ${({ theme }) => theme.colors.black};
+
+  @media screen and (min-width: 768px) {
+    padding: 140px 0 180px;
+  }
 `
 
 const Paragraph = styled.p`
   max-width: 700px;
-  margin-left: 62px;
+  margin-left: 25px;
   margin-bottom: 70px;
   color: ${({ theme }) => theme.colors.aluminum};
-  font-size: 25px;
-  line-height: 36px;
+  font-size: 20px;
+  line-height: 28px;
+
+  @media screen and (min-width: 768px) {
+    margin-left: 62px;
+    font-size: 25px;
+    line-height: 36px;
+  }
 `
 
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
+  padding: 0 25px;
+
+  @media screen and (min-width: 768px) {
+    padding: 0;
+  }
 `
 
 const ImageContainer = styled.div`
@@ -79,7 +94,11 @@ const MainImg = styled.div`
 
   img {
     width: 100%;
-    margin-bottom: 150px;
+    margin-bottom: 60px;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 150px;
+    }
   }
 
   p {
@@ -97,9 +116,14 @@ const SmallImg = styled.div`
   z-index: 150;
 
   img {
-    width: 100%;
-    left: -150px;
+    width: 30%;
+    left: -25px;
     position: relative;
+
+    @media screen and (min-width: 768px) {
+      width: 100%;
+      left: -150px;
+    }
 `
 
 export default DoubleImage

@@ -74,10 +74,15 @@ const Hero = props => {
 
 const StyledSection = styled.section`
   width: 100%;
-  height: 780px;
+  height: 100vh;
   background-image: url(${companyhero});
   background-size: cover;
   position: relative;
+  background-position: center;
+
+  @media screen and (min-width: 768px) {
+    height: 780px;
+  }
 `
 
 const HeadingContainer = styled.div`
@@ -85,8 +90,15 @@ const HeadingContainer = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 65px;
+  padding: 0 25px;
+  justify-content: flex-end;
+  flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    padding: 0 65px;
+    justify-content: space-between;
+    flex-direction: row;
+  }
 `
 
 const TextBottom = styled.div`
@@ -115,17 +127,28 @@ const Description = styled.p`
 
 const StyledHeading = styled.h2`
   color: ${({ theme }) => theme.colors.cream};
-  font-size: 76px;
-  line-height: 68px;
+  font-size: 52px;
+  line-height: 100%;
+
+  @media screen and (min-width: 768px) {
+    font-size: 76px;
+    line-height: 68px;
+  }
 `
 
 const Paragraph = styled.p`
   color: white;
-  right: 100px;
+  right: 0;
   position: relative;
   font-size: 25px;
   width: 100%;
   max-width: 360px;
+  margin-top: 30px;
+
+  @media screen and (min-width: 768px) {
+    right: 100px;
+    margin: 0;
+  }
 
   a {
     color: white;
@@ -133,6 +156,11 @@ const Paragraph = styled.p`
     border-top: 1px solid white;
     display: block;
     padding: 20px 0;
+    font-size: 20px;
+
+    @media screen and (min-width: 768px) {
+      font-size: 25px;
+    }
   }
 `
 

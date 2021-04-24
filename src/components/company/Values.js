@@ -70,37 +70,74 @@ const Values = props => {
 
 const StyledSection = styled.section`
   background: ${({ theme }) => theme.colors.cream};
-  padding: 140px 0 180px;
+  padding: 100px 0;
+
+  @media screen and (min-width: 768px) {
+    padding: 140px 0 180px;
+  }
 `
 
 const Container = styled.div`
-  margin-left: 60px;
+  margin-left: 0;
+  padding: 0 25px;
+
+  @media screen and (min-width: 768px) {
+    margin-left: 60px;
+  }
 `
 
 const HeadingTitle = styled.div`
   display: flex;
   margin-bottom: 40px;
+  flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+
   h5 {
     margin-right: 150px;
+
+    @media screen and (max-width: 768px) {
+      font-size: 31px;
+      line-height: 100%;
+    }
   }
 
   p {
-    font-size: 25px;
-    line-height: 36px;
+    font-size: 20px;
+    line-height: 100%;
     color: ${({ theme }) => theme.colors.aluminum};
     max-width: 500px;
+
+    @media screen and (min-width: 768px) {
+      font-size: 25px;
+      line-height: 36px;
+    }
   }
 `
 
 const Grid = styled.div`
-  grid-template-columns: 1fr 1fr 1fr;
-  display: grid;
-  padding-right: 60px;
+  padding-right: 0;
+
+  @media screen and (min-width: 768px) {
+    padding-right: 60px;
+    grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+  }
+
   > div {
-    max-width: 450px;
     display: inline-block;
-    margin-right: 10%;
-    margin-bottom: 85px;
+    margin-right: 0;
+    margin-bottom: 35px;
+    width: 100%;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 85px;
+      max-width: 450px;
+      margin-right: 10%;
+      width: auto;
+    }
   }
 `
 

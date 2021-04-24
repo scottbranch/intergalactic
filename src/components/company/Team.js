@@ -93,20 +93,34 @@ const Team = props => {
 }
 
 const StyledSection = styled.section`
-  padding: 140px 0 160px;
+  padding: 100px 0;
   background: ${({ theme }) => theme.colors.cream};
+  overflow: hidden;
+
+  @media screen and (min-width: 768px) {
+    padding: 140px 0 160px;
+  }
 
   h5 {
     margin-bottom: 90px;
+    @media screen and (max-width: 768px) {
+      font-size: 31px;
+      line-height: 100%;
+      margin-bottom: 30px;
+    }
   }
 `
 
 const Container = styled.div`
-  padding: 0 60px;
+  padding: 0 25px;
+
+  @media screen and (min-width: 768px) {
+    padding: 0 60px;
+  }
 `
 
 const TeamMember = styled(Link)`
-  width: 40%;
+  width: 100%;
   border-top: 1px solid ${({ theme }) => theme.colors.black};
   display: flex;
   justify-content: space-between;
@@ -117,7 +131,12 @@ const TeamMember = styled(Link)`
   position: relative;
   opacity: 0;
   transition: all 700ms ease;
-  float: left;
+  float: none;
+
+  @media screen and (min-width: 768px) {
+    float: left;
+    width: 40%;
+  }
 
   &.is-inview {
     opacity: 1;
@@ -160,11 +179,20 @@ const TeamMember = styled(Link)`
 
   h6 {
     max-width: 300px;
+
+    @media screen and (max-width: 768px) {
+      font-size: 16px;
+      max-width: 130px;
+    }
   }
 
   .eyebrow {
     max-width: 250px;
-    font-size: 16px;
+    font-size: 14px;
+
+    @media screen and (min-width: 768px) {
+      font-size: 16px;
+    }
   }
 
   h6,
