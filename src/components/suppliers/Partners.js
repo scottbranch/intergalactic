@@ -39,6 +39,10 @@ const StyledSection = styled.section`
   padding: 155px 0 155px;
   background: ${({ theme }) => theme.colors.cream};
   overflow: hidden;
+
+  @media screen and (max-width: 768px) {
+    padding: 80px 0;
+  }
 `
 
 const StyledHeading = styled.h3`
@@ -59,6 +63,10 @@ const InnerContainer = styled.div`
   display: flex;
   padding: 0 60px;
   justify-content: space-between;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 
 const TextContainer = styled.div`
@@ -69,7 +77,11 @@ const TextContainer = styled.div`
     margin-top: 0;
     font-size: 25px;
     line-height: 36px;
-    color: ${({ theme }) => theme.colors.rust};
+    color: ${({ theme }) => theme.colors.aluminum};
+
+    @media screen and (max-width: 768px) {
+      margin-top: 20px;
+    }
   }
 
   span {
@@ -80,19 +92,19 @@ const TextContainer = styled.div`
 const PartnerLink = styled(Link)`
   display: flex;
   align-items: center;
-  margin: 30px 0;
+  margin: 15px 0;
   font-size: 20px;
-  color: ${({ theme }) => theme.colors.rust};
+  color: ${({ theme }) => theme.colors.aluminum};
 
   &:first-of-type {
-    margin-top: 80px;
+    margin-top: 40px;
   }
 
   svg {
     margin-left: 10px;
 
     path {
-      fill: ${({ theme }) => theme.colors.rust};
+      fill: ${({ theme }) => theme.colors.aluminum};
     }
   }
 `

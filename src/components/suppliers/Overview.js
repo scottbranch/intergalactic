@@ -6,11 +6,11 @@ import styled from "styled-components"
 const ValueProp = props => {
   return (
     <StyledSection data-scroll-section>
+      <StyledHeading data-scroll data-scroll-offset="30%">
+        <span id="span-0">Overview</span>
+      </StyledHeading>
       <InnerContainer>
         <div>
-          <StyledHeading data-scroll data-scroll-offset="30%">
-            <span id="span-0">Overview</span>
-          </StyledHeading>
           <TextContainer>
             <p className="fadein" data-scroll data-scroll-offset="20%">
               <span>
@@ -34,14 +34,19 @@ const ValueProp = props => {
 }
 
 const StyledSection = styled.section`
-  padding: 155px 0 155px;
+  padding: 155px 0;
   background: ${({ theme }) => theme.colors.cream};
   overflow: hidden;
   border-bottom: 1px solid ${({ theme }) => theme.colors.black};
+
+  @media screen and (max-width: 768px) {
+    padding: 80px 0;
+  }
 `
 
 const StyledHeading = styled.h3`
   font-size: 48px;
+  padding-left: 60px;
   span:nth-of-type(2) {
     left: 115px;
   }
@@ -59,6 +64,10 @@ const InnerContainer = styled.div`
   padding: 0 60px;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
 `
 
 const TextContainer = styled.div`
@@ -72,12 +81,17 @@ const TextContainer = styled.div`
   span, a {
     font-size: 25px;
     line-height: 36px;
-    color: ${({ theme }) => theme.colors.rust};
+    color: ${({ theme }) => theme.colors.aluminum};
   }
 `
 
 const OverviewImg = styled.img`
   max-width: 540px;
+
+  @media screen and (max-width: 768px) {
+    padding: 0 60px;
+  }
+  
 `
 
 export default ValueProp
