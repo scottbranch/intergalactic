@@ -52,12 +52,20 @@ const StyledSection = styled.section`
   padding: 160px 0 180px;
   background: ${({ theme }) => theme.colors.black};
   border-bottom: ${({ theme }) => `1px solid ${theme.colors.gold}`};
+
+  @media screen and (max-width: 768px) {
+    padding: 80px 0 90px;
+  }
 `
 
 const StyledInner = styled.div`
   display: flex;
   padding: 0 60px;
   justify-content: space-between;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 
   .intro-container, .overview {
     flex: 50%;

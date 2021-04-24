@@ -31,6 +31,10 @@ const StyledSection = styled.section`
   background-size: cover;
   position: relative;
   background-position: bottom center;
+
+  @media screen and (max-width: 768px) {
+    height: 600px;
+  }
 `
 
 const HeadingContainer = styled.div`
@@ -40,6 +44,11 @@ const HeadingContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 65px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
 `
 
 const StyledHeading = styled.h2`
@@ -47,6 +56,11 @@ const StyledHeading = styled.h2`
   font-size: 76px;
   line-height: 68px;
   flex: 50%;
+
+  @media screen and (max-width: 768px) {
+    flex: initial;
+    margin-top: 200px;
+  }
 `
 
 const Paragraph = styled.p`
@@ -54,6 +68,10 @@ const Paragraph = styled.p`
   position: relative;
   font-size: 25px;
   flex: 50%;
+
+  @media screen and (max-width: 768px) {
+    flex: initial;
+  }
 `
 
 export default Hero

@@ -165,6 +165,11 @@ const SolutionContainer = styled.div`
   padding: 40px 0;
   position: relative;
 
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: 40px 60px;
+  }
+
   &:after {
     content: "";
     display: block;

@@ -125,6 +125,10 @@ const EquipmentContainer = styled.div`
     background-image: url("${EquipmentImg}");
     background-size: cover;
     background-position: center center;
+
+    @media screen and (max-width: 768px) {
+      height: 300px;
+    }
   }
 `
 const Container = styled.div`
@@ -141,6 +145,10 @@ const FlexArea = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 
   div {
     flex: 50%;
@@ -166,6 +174,10 @@ const EquipmentPiece = styled(Link)`
   position: relative;
   opacity: 0;
   transition: all 700ms ease;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 
   &.is-inview {
     opacity: 1;
@@ -240,6 +252,11 @@ const HoverCover = styled.span`
   width: 100%;
   display: inline-block;
   position: relative;
+
+  @media screen and (max-width: 768px) {
+    padding: 40px 0;
+  }
+  
   &:hover {
     a {
       border-top: 1px solid ${({ theme }) => theme.colors.gold};
