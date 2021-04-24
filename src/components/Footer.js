@@ -11,10 +11,7 @@ const Footer = () => {
             <p>Commslink</p>
             <StyledUl>
               <StyledLi>
-                <FooterLink to="/test">News Room</FooterLink>
-              </StyledLi>
-              <StyledLi>
-                <FooterLink to="/test">Press</FooterLink>
+                <FooterLink to="/commslink">News Room</FooterLink>
               </StyledLi>
             </StyledUl>
           </LinkContainer>
@@ -91,7 +88,9 @@ const Links = styled.div`
 `
 
 const FooterLink = styled(Link)`
-  color: ${({ theme }) => theme.colors.cream};
+  color: ${({ theme }) => theme.colors.aluminum};
+  text-decoration: none;
+  font-size: 16px;
 `
 
 const BottomLinks = styled.div`
@@ -100,13 +99,13 @@ const BottomLinks = styled.div`
 
   p {
     text-transform: uppercase;
-    color: ${({ theme }) => theme.colors.cream};
+    color: ${({ theme }) => theme.colors.aluminum};
   }
 `
 
 const BottomLink = styled(Link)`
   margin-right: 150px;
-  color: ${({ theme }) => theme.colors.cream};
+  color: ${({ theme }) => theme.colors.aluminum};
   text-decoration: none;
   text-transform: uppercase;
   font-family: ${({ theme }) => theme.fonts.cartographMedium};

@@ -67,14 +67,22 @@ img.fadein {
 }
 
   main {
-    padding-left: 73px; //to offset the sidenav
+    padding-left: 0;
+
+    @media screen and (min-width: 768px) {
+      padding-left: 73px; //to offset the sidenav
+    }
   }
 
   h2 {
+    font-size: 52px;
     text-transform: uppercase;
-    font-size: 6.7vw; //119px
     line-height: 100%;
     font-weight: 500;
+
+    @media screen and (min-width: 768px) {
+      font-size: 6.7vw; //119px
+    }
   }
 
   h3 {

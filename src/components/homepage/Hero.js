@@ -40,24 +40,11 @@ const Hero = props => {
       <HeadingContainer>
         <StyledHeading className={isLoaded && "active"}>
           <span id="span-0">Heat</span> <span id="span-1">Heat is no</span>{" "}
-          <span id="span-2">no</span> <span id="span-3">longer</span>{" "}
-          <span id="span-4">a barrier</span>
+          <span id="span-2">Longer a</span>
+          <span id="span-3">barrier</span>
+          <span id="span-4">barrier</span>
         </StyledHeading>
       </HeadingContainer>
-      <TextBottom>
-        <div>
-          <Title className="eyebrow">
-            {homepageData.hero_subtitle_1[0].text}
-          </Title>
-          <Description>{homepageData.hero_subtext_1[0].text}</Description>
-        </div>
-        <div>
-          <Title className="eyebrow">
-            {homepageData.hero_subtitle_2[0].text}
-          </Title>
-          <Description>{homepageData.hero_subtext_2[0].text}</Description>
-        </div>
-      </TextBottom>
     </StyledSection>
   )
 }
@@ -68,7 +55,12 @@ const StyledSection = styled.section`
   background-image: url(${homepagehero});
   background-size: cover;
   position: relative;
-  min-height: 970px;
+  min-height: 100vh;
+  background-position: center;
+
+  @media screen and (min-width: 768px) {
+    min-height: 970px;
+  }
 `
 
 const HeadingContainer = styled.div`
@@ -76,7 +68,11 @@ const HeadingContainer = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: end;
+
+  @media screen and (min-width: 768px) {
+    justify-content: center;
+  }
 `
 
 const TextBottom = styled.div`
@@ -109,15 +105,45 @@ const Description = styled.p`
 
 const StyledHeading = styled.h2`
   color: ${({ theme }) => theme.colors.cream};
-  left: -235px;
-  top: -50px;
+  margin-left: 25px;
+
+  @media screen and (min-width: 768px) {
+    margin-left: 0;
+    position: relative;
+  }
+
+  #span-0,
+  #span-4 {
+    display: none;
+
+    @media screen and (min-width: 768px) {
+      display: block;
+    }
+  }
 
   span {
-    &:nth-of-type(3),
+    &:nth-of-type(3) {
+      margin-left: 0;
+      @media screen and (min-width: 768px) {
+        margin-left: 100px;
+        position: relative;
+      }
+      @media screen and (min-width: 1260px) {
+        margin-left: 377px;
+        position: relative;
+      }
+    }
     &:nth-of-type(4),
     &:nth-of-type(5) {
-      left: 497px;
-      position: relative;
+      margin-left: 0;
+      @media screen and (min-width: 768px) {
+        margin-left: 400px;
+        position: relative;
+      }
+      @media screen and (min-width: 1260px) {
+        margin-left: 820px;
+        position: relative;
+      }
     }
   }
 `

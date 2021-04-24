@@ -1,12 +1,12 @@
 import React from "react"
 import Line from "../Line"
-import airCraft from "../../images/homepage/air-craft.jpg"
+import ship from "../../images/homepage/ship.jpg"
 import styled from "styled-components"
 
 const StaticImage = () => {
   return (
     <StyledSection data-scroll-section>
-      <img data-scroll data-scroll-offset="20%" src={airCraft} />
+      <img data-scroll data-scroll-offset="20%" src={ship} />
     </StyledSection>
   )
 }

@@ -1,7 +1,7 @@
 import React from "react"
 import AnchorLink from "../AnchorLink"
 import Line from "../Line"
-import gadgets from "../../images/homepage/gadgets.jpg"
+import metal from "../../images/homepage/metal.jpg"
 import space from "../../images/homepage/space.jpg"
 import styled from "styled-components"
 
@@ -13,8 +13,8 @@ const DoubleImage = () => {
           <StyledHeading data-scroll data-scroll-offset="30%">
             <span id="span-0">Less</span>
             <span id="span-1"> Less Weight.</span>
-            <span id="span-2">MORE</span>
-            <span id="span-3"> MORE COOL.</span>
+            <span id="span-2">MORE COOL.</span>
+            <span id="span-3">COOL.</span>
           </StyledHeading>
           <TextContainer>
             <Line />
@@ -27,14 +27,14 @@ const DoubleImage = () => {
               </span>
             </p>
           </TextContainer>
-          <StyledAnchor to="/test">Our solutions</StyledAnchor>
+          <StyledAnchor to="/solutions">Our solutions</StyledAnchor>
         </div>
         <div>
           <SmallImg data-scroll data-scroll-speed="3">
             <img src={space} />
           </SmallImg>
           <MainImg data-scroll data-scroll-speed="1">
-            <img src={gadgets} />
+            <img src={metal} />
           </MainImg>
         </div>
       </Container>
@@ -59,11 +59,13 @@ const Container = styled.div`
 `
 
 const StyledHeading = styled.h4`
+  z-index: 500;
+  position: relative;
   span:nth-of-type(3) {
-    margin: 40px 0 0 40px;
+    margin: 10px 0 0 220px;
   }
   span:nth-of-type(4) {
-    margin: 0 0 0 40px;
+    margin: 0 0 0 430px;
   }
 `
 

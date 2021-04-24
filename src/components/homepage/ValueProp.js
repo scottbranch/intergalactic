@@ -1,5 +1,5 @@
 import React from "react"
-import valueprop from "../../images/homepage/value-prop.jpg"
+import incremental from "../../images/homepage/incremental.jpg"
 import AnchorLink from "../AnchorLink"
 import Line from "../Line"
 import styled from "styled-components"
@@ -32,10 +32,10 @@ const ValueProp = props => {
               </span>
             </p>
           </TextContainer>
-          <AnchorLink to="/test">Our Solutions</AnchorLink>
+          <AnchorLink to="/solutions">Our Solutions</AnchorLink>
         </div>
         <div data-scroll data-scroll-speed="1">
-          <ValueImg src={valueprop} />
+          <ValueImg src={incremental} />
         </div>
       </InnerContainer>
     </StyledSection>

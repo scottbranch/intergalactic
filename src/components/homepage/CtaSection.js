@@ -12,14 +12,14 @@ const CtaSection = () => {
       </StyledHeading>
       <CtaContainer>
         <Line />
-        <CopyBlock>
+        <CopyBlock className="first-block">
           <p className="fadein" data-scroll data-scroll-offset="20%">
             <span>
               Collaborative engineering is our jam. How about we connect your
               people and our people to talk shop?
             </span>
           </p>
-          <AnchorLink to="/test">Schedule a demo</AnchorLink>
+          <AnchorLink to="/contact">Schedule a demo</AnchorLink>
         </CopyBlock>
         <CopyBlock>
           <p className="fadein" data-scroll data-scroll-offset="20%">
@@ -28,7 +28,7 @@ const CtaSection = () => {
               slick salespeople.
             </span>
           </p>
-          <AnchorLink to="/test">Let's Talk</AnchorLink>
+          <AnchorLink to="/contact">Let's Talk</AnchorLink>
         </CopyBlock>
       </CtaContainer>
     </StyledSection>
@@ -43,6 +43,10 @@ const StyledSection = styled.section`
 
 const StyledHeading = styled.h3`
   max-width: 1255px;
+
+  #span-1 {
+    margin-left: 550px;
+  }
 `
 
 const CtaContainer = styled.div`
@@ -58,7 +62,12 @@ const CopyBlock = styled.div`
   max-width: 325px;
   margin-top: 20px;
 
+  /* this wont work idk why */
   &:first-child {
+    margin-right: 200px;
+  }
+
+  &.first-block {
     margin-right: 200px;
   }
 `

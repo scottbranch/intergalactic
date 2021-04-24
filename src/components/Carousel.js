@@ -17,25 +17,25 @@ const Carousel = props => {
     needs, or we can build a custom solution for any thermal
     challenge, including supersonics and electric flight.`,
       image: slide1,
-      link: "/test",
+      link: "/solutions",
     },
     {
       title: "Defense and Security",
       description: `We have a long history in defense, and our systems are sole-sourced on multiple tier-one defense platforms. Our thermal management solutions unlock innovation throughout the entire supply chain and enable our partners to build next-generation airborne defense and security platforms.`,
       image: slide2,
-      link: "/test",
+      link: "/solutions",
     },
     {
       title: "Space",
       description: `The space race is heating up, and it’s our job to keep it from overheating. Our systems, subsystems, and parts are built to handle the most demanding conditions, including the intense vibrations and heat extremes of space travel. `,
       image: slide3,
-      link: "/test",
+      link: "/solutions",
     },
     {
       title: "Land and Sea",
       description: `Everything we build is aerospace-rated, but our systems are ideal for mitigating heat on land and sea, as well. Bring us your most demanding thermal management need and we’ll solve it with a targeted solution. `,
       image: slide4,
-      link: "/test",
+      link: "/solutions",
     },
   ]
 

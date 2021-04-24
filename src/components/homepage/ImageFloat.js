@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import spacefloater from "../../images/homepage/space-floater.jpg"
+import floater from "../../images/homepage/floater.jpg"
 import styled from "styled-components"
 
 const ImageFloat = () => {
@@ -20,7 +20,7 @@ const ImageFloat = () => {
           </div>
           <span data-scroll>
             <ImgContainer data-scroll-speed="11" data-scroll>
-              <Img id="float-image" src={spacefloater} />
+              <Img id="float-image" src={floater} />
             </ImgContainer>
           </span>
         </StickyContainer>

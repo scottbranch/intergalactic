@@ -8,41 +8,49 @@ const Team = props => {
     {
       name: "Melzie & Ray Ganowsky",
       title: "Co-owners",
+      link: "melzie-and-ray-ganowsky",
       headshot: headshot,
     },
     {
       name: "Nick Kaiser",
       title: "Vice President of Engineering",
+      link: "nick-kaiser",
       headshot: headshot,
     },
     {
       name: "Brian Mccann",
       title: "CEO",
+      link: "brian-mccann",
       headshot: headshot,
     },
     {
       name: "Kevin Kerlin",
       title: "Vice President of Operations",
+      link: "kevin-kerlin",
       headshot: headshot,
     },
     {
       name: "Doug Mccann",
       title: "CFO",
+      link: "doug-mccann",
       headshot: headshot,
     },
     {
       name: "Brad Plothow",
       title: "Vice President of Strategy",
+      link: "brad-plothow",
       headshot: headshot,
     },
     {
       name: "Taylor Fausett",
       title: "Vice President of Programs",
+      link: "taylor-fausett",
       headshot: headshot,
     },
     {
       name: "Phillip Norris",
       title: "Director of Quality of Compliance",
+      link: "phillip-norris",
       headshot: headshot,
     },
   ]
@@ -55,7 +63,7 @@ const Team = props => {
           {teamMembers.map((item, index) => {
             return (
               <TeamMember
-                to="/team/brian-mccann"
+                to={`/team/${item.link}`}
                 data-scroll
                 data-scroll-offset="20%"
               >

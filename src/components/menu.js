@@ -36,20 +36,24 @@ const Menu = ({ theme }) => {
 }
 
 const StyledDiv = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 73px;
-  height: 100vh;
-  background: ${({ theme }) => theme.colors.cream};
-  z-index: 500;
-  border-right: 1px solid ${({ theme }) => theme.colors.black};
-  padding: 45px 0;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 73px;
+    height: 100vh;
+    background: ${({ theme }) => theme.colors.cream};
+    z-index: 500;
+    border-right: 1px solid ${({ theme }) => theme.colors.black};
+    padding: 45px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
 
   &.active {
     background: ${({ theme }) => theme.colors.black};

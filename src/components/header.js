@@ -25,15 +25,19 @@ Header.defaultProps = {
 }
 
 const StyledHeader = styled.header`
-  position: fixed;
-  top: 40px;
-  left: 0;
-  z-index: 200;
-  justify-content: space-between;
-  width: 100%;
-  padding-left: 140px;
-  padding-right: 75px;
-  display: flex;
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    position: fixed;
+    top: 40px;
+    left: 0;
+    z-index: 200;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 140px;
+    padding-right: 75px;
+    display: flex;
+  }
 
   &.dark {
     .contact {
