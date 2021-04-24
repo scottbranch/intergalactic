@@ -50,7 +50,7 @@ const Footer = () => {
             <BottomLink to="/test">Privacy</BottomLink>
           </div>
           <div>
-            <p>© 2021 Intergalactic</p>
+            <p>© {new Date().getFullYear()} Intergalactic</p>
           </div>
         </BottomLinks>
       </FooterInner>
@@ -63,7 +63,14 @@ const StyledFooter = styled.footer`
 `
 
 const LinkContainer = styled.div`
-  margin-right: 240px;
+  margin-right: 0;
+  margin-bottom: 30px;
+
+  @media screen and (min-width: 768px) {
+    margin-right: 240px;
+    margin-bottom: 0;
+  }
+
   p {
     text-transform: uppercase;
     color: ${({ theme }) => theme.colors.cream};
@@ -72,15 +79,25 @@ const LinkContainer = styled.div`
 `
 
 const FooterInner = styled.div`
-  padding: 95px 138px 65px;
+  padding: 80px 25px 0px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media screen and (min-width: 768px) {
+    padding: 95px 138px 65px;
+  }
 `
 
 const TopLinks = styled.div`
   display: flex;
-  margin-bottom: 140px;
+  margin-bottom: 80px;
+  flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    margin-bottom: 140px;
+  }
 `
 
 const Links = styled.div`
@@ -96,6 +113,11 @@ const FooterLink = styled(Link)`
 const BottomLinks = styled.div`
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
 
   p {
     text-transform: uppercase;
@@ -105,10 +127,17 @@ const BottomLinks = styled.div`
 
 const BottomLink = styled(Link)`
   margin-right: 150px;
+  display: block;
+  margin-bottom: 20px;
   color: ${({ theme }) => theme.colors.aluminum};
   text-decoration: none;
   text-transform: uppercase;
   font-family: ${({ theme }) => theme.fonts.cartographMedium};
+
+  @media screen and (min-width: 768px) {
+    display: inline-block;
+    margin-bottom: 0;
+  }
 `
 
 const StyledUl = styled.ul`

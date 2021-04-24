@@ -121,7 +121,7 @@ const MenuOverlay = props => {
               <Link to="/contact">CONTACT</Link>
             </Social>
             <Legal>
-              <p>© 2021 Intergalactic</p>
+              <p>© {new Date().getFullYear()} Intergalactic</p>
             </Legal>
           </div>
         </BottomText>
@@ -141,6 +141,11 @@ const MenuContainer = styled.div`
   opacity: 0;
   transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
   z-index: 200;
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
 
   &.active {
     transform: translate3d(0, 0, 0);
