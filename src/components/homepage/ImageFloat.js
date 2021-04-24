@@ -47,11 +47,17 @@ const FillerContent = styled.div`
 
 const StyledSection = styled.section`
   width: 100%;
-  min-height: 970px;
+  min-height: 100vh;
+  height: 100vh;
   background: ${({ theme }) => theme.colors.black};
   color: ${({ theme }) => theme.colors.cream};
   overflow: hidden;
   position: relative;
+
+  @media screen and (min-width: 768px) {
+    min-height: 970px;
+    height: auto;
+  }
 `
 
 const StickyContainer = styled.div`
@@ -82,14 +88,25 @@ const StickyContainer = styled.div`
 
 const ImgContainer = styled.div`
   position: absolute;
-  max-width: 315px;
-  left: 35%;
+  max-width: 180px;
+  left: 0;
   top: 50%;
-  margin-top: -200px;
+  margin-top: -130px;
   z-index: 100;
-  transform: translate3d(-50%, -50%, 0);
+  transform: none;
+
+  @media screen and (min-width: 768px) {
+    margin-top: -200px;
+    left: 35%;
+    max-width: 315px;
+    transform: translate3d(-50%, -50%, 0);
+  }
 `
 
-const Img = styled.img``
+const Img = styled.img`
+  @media screen and (max-width: 768px) {
+    transform: none !important;
+  }
+`
 
 export default ImageFloat

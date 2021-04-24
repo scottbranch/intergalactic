@@ -1,10 +1,12 @@
 import React from "react"
 import Helmet from "react-helmet"
 import AnchorLink from "./AnchorLink.js"
+import Link from "gatsby-link"
 import slide1 from "../images/carousel/slide-1.jpg"
 import slide2 from "../images/carousel/slide-2.jpg"
 import slide3 from "../images/carousel/slide-3.jpg"
 import slide4 from "../images/carousel/slide-4.jpg"
+import Arrow from "./Arrow.js"
 import Line from "./Line.js"
 import styled from "styled-components"
 
@@ -112,15 +114,35 @@ const Carousel = props => {
           </Slide3>
         </FillerContent>
       </span>
+      {/*separate thing for mobile because timeline*/}
+      <span id="mobile-container">
+        {sliderItems.map((item, index) => (
+          <div>
+            <MobileLink to={item.link}>
+              <h5>
+                0{index + 1} :: {item.title}
+              </h5>
+              <Arrow />
+            </MobileLink>
+            <MobileImg src={item.image} />
+          </div>
+        ))}
+      </span>
     </StyledSection>
   )
 }
 
 const StyledSection = styled.section`
   position: relative;
+  background: ${({ theme }) => theme.colors.cream};
 
   #carousel-container {
     height: 100%;
+    display: none;
+
+    @media screen and (min-width: 768px) {
+      display: block;
+    }
 
     .slide {
       height: 100%;
@@ -401,6 +423,25 @@ const Slide2 = styled.div`
 const Slide3 = styled.div`
   position: absolute;
   top: 150vh;
+`
+
+//mobile ish
+const MobileLink = styled(Link)`
+  padding: 30px 25px;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.black};
+
+  h5 {
+    margin: 0;
+    align-items: center;
+  }
+`
+
+const MobileImg = styled.img`
+  width: 100%;
+  margin: 0;
 `
 
 export default Carousel

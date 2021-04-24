@@ -15,7 +15,11 @@ const StyledSection = styled.section`
   background: ${({ theme }) => theme.colors.cream};
   border-bottom: ${({ theme }) => `1px solid ${theme.colors.black}`};
   width: 100%;
-  height: 875px;
+  height: 100vh;
+
+  @media screen and (min-width: 768px) {
+    height: 875px;
+  }
 
   img {
     object-fit: cover;

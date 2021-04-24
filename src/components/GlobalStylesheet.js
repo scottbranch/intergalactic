@@ -86,24 +86,39 @@ img.fadein {
   }
 
   h3 {
+    font-size: 31px;
+    line-height: 100%;
     text-transform: uppercase;
-    font-size: 5.3vw; //95px
-    line-height: 95%;
     font-weight: 500;
+
+    @media screen and (min-width: 768px) {
+      font-size: 5.3vw; //95px
+      line-height: 95%;
+    }
   }
 
   h4 {
+    font-size: 31px;
+    line-height: 100%;
     text-transform: uppercase;
-    font-size: 4.2vw; //76px
-    line-height: 105%;
     font-weight: 500;
+
+    @media screen and (min-width: 768px) {
+      font-size: 4.2vw; //76px
+      line-height: 105%;
+    }
   }
 
   h5 {
+    font-size: 20px;
+    line-height: 100%;
     text-transform: uppercase;
-    font-size: 3.7vw; //48px
-    line-height: 105%;
     font-weight: 500;
+
+    @media screen and (min-width: 768px) {
+      font-size: 3.7vw; //48px
+      line-height: 105%;
+    }
   }
 
   h6 {

@@ -43,30 +43,48 @@ const ValueProp = props => {
 }
 
 const StyledSection = styled.section`
-  padding: 155px 0 85px;
+  padding: 100px 0;
   background: ${({ theme }) => theme.colors.cream};
   overflow: hidden;
   min-height: 970px;
+
+  @media screen and (min-width: 768px) {
+    padding: 155px 0 85px;
+  }
 `
 
 const StyledHeading = styled.h3`
   span:nth-of-type(2) {
-    left: 115px;
+    left: 55px;
+
+    @media screen and (min-width: 768px) {
+      left: 115px;
+    }
   }
 `
 
 const InnerContainer = styled.div`
   display: flex;
-  padding: 0 60px;
+  padding: 0 25px;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column-reverse;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    padding: 0 60px;
+  }
 
   div:first-child {
     margin-right: 20px;
   }
 
   div:last-child {
-    margin-left: 20px;
+    margin: 0;
+
+    @media screen and (min-width: 768px) {
+      margin-right: 20px;
+    }
   }
 `
 
@@ -74,10 +92,20 @@ const TextContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 60px 0 80px;
+  flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
 
   p {
     margin-top: 40px;
     max-width: 400px;
+    margin-bottom: 0;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: auto;
+    }
 
     &:nth-of-type(1) {
       margin-right: 40px;
@@ -87,6 +115,7 @@ const TextContainer = styled.div`
 
 const ValueImg = styled.img`
   max-width: 675px;
+  width: 100%;
 `
 
 export default ValueProp

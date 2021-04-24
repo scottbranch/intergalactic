@@ -55,22 +55,41 @@ const Container = styled.div`
   padding: 0 0 0 50px;
   justify-content: space-between;
   align-items: center;
-  padding: 150px 0 150px 20px;
+  padding: 100px 25px;
+  flex-direction: column-reverse;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    padding: 150px 0 150px 20px;
+  }
 `
 
 const StyledHeading = styled.h4`
   z-index: 500;
   position: relative;
   span:nth-of-type(3) {
-    margin: 10px 0 0 220px;
+    margin: 0px 0 0 90px;
+
+    @media screen and (min-width: 768px) {
+      margin: 10px 0 0 220px;
+    }
   }
   span:nth-of-type(4) {
-    margin: 0 0 0 430px;
+    margin: 0px 0 0 90px;
+
+    @media screen and (min-width: 768px) {
+      margin: 0 0 0 430px;
+    }
   }
 `
 
 const TextContainer = styled.div`
-  margin: 0 0 0 40px;
+  margin: 0;
+
+  @media screen and (min-width: 768px) {
+    margin: 0 0 0 40px;
+  }
+
   p {
     max-width: 420px;
     padding-top: 25px;
@@ -99,8 +118,16 @@ const SmallImg = styled.div`
 
   img {
     width: 100%;
-    left: -40px;
     position: relative;
+    max-width: 150px;
+    top: -100px;
+    left: -20px;
+
+    @media screen and (min-width: 768px) {
+      left: -40px;
+      top: auto;
+      max-width: 100%;
+    }
   }
 `
 
