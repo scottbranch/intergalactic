@@ -43,6 +43,13 @@ const HeadingContainer = styled.div`
 const StyledHeading = styled.h2`
   color: ${({ theme }) => theme.colors.cream};
   z-index: 1;
+
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
+    span {
+      word-break: none;
+    }
+  }
 `
 
 const HeroImg = styled.img`
