@@ -37,28 +37,57 @@ const ImageRow = props => {
 }
 
 const StyledSection = styled.section`
-  padding: 100px 0;
+  padding: 60px 0;
   background: ${({ theme }) => theme.colors.cream};
+
+  @media screen and (min-width: 768px) {
+    padding: 100px 0;
+  }
 `
 
 const Container = styled.div`
-  padding: 0 65px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
+  padding: 0 25px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    padding: 0 65px;
+  }
 `
 
 const RocketImg = styled.img`
-  width: 30vw;
+  width: 100%;
+  margin-bottom: 100px;
+
+  @media screen and (min-width: 768px) {
+    width: 30vw;
+  }
 `
 
 const InfoBlock = styled.div`
   text-align: center;
-  margin-right: 50px;
+  margin-right: 0;
+
+  @media screen and (min-width: 768px) {
+    margin-right: 50px;
+  }
+
+  .eyebrow {
+    @media screen and (max-width: 768px) {
+      font-size: 20px;
+    }
+  }
 `
 
 const GadgetImg = styled.img`
-  width: 20vw;
+  width: 70%;
+
+  @media screen and (min-width: 768px) {
+    width: 20vw;
+  }
 `
 
 const Description = styled.p`

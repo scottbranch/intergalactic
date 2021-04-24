@@ -26,19 +26,32 @@ const Hero = props => {
 
 const StyledSection = styled.section`
   width: 100%;
-  height: 780px;
+  height: 100vh;
   background-image: url(${industrieshero});
   background-size: cover;
   position: relative;
+  background-position: center;
+
+  @media screen and (min-width: 768px) {
+    height: 780px;
+  }
 `
 
 const HeadingContainer = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 65px;
+  padding: 0 25px;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: flex-end;
+
+  @media screen and (min-width: 768px) {
+    padding: 0 65px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 `
 
 const TextBottom = styled.div`
@@ -67,13 +80,24 @@ const Description = styled.p`
 
 const StyledHeading = styled.h2`
   color: ${({ theme }) => theme.colors.cream};
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 230px;
+  }
 `
 
 const Paragraph = styled.p`
   color: white;
-  right: 100px;
+  right: 0;
   position: relative;
-  font-size: 25px;
+  font-size: 20px;
+  margin-bottom: 60px;
+
+  @media screen and (min-width: 768px) {
+    right: 100px;
+    margin-bottom: 0;
+    font-size: 25px;
+  }
 `
 
 export default Hero
