@@ -36,25 +36,43 @@ const CtaSection = () => {
 }
 
 const StyledSection = styled.section`
-  padding: 225px 60px;
+  padding: 100px 25px;
   border-top: 1px solid ${({ theme }) => theme.colors.black};
   background: ${({ theme }) => theme.colors.cream};
+
+  @media screen and (min-width: 768px) {
+    padding: 225px 60px;
+  }
 `
 
 const StyledHeading = styled.h3`
   max-width: 1255px;
 
   #span-1 {
-    margin-left: 550px;
+    margin: 0;
+    @media screen and (min-width: 768px) {
+      margin-left: 550px;
+    }
   }
 `
 
 const CtaContainer = styled.div`
   display: flex;
-  margin: 80px 0 0 120px;
+  margin: 80px 0 0 0;
+  flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    margin: 80px 0 0 120px;
+    flex-direction: row;
+  }
 
   p {
-    margin-bottom: 65px;
+    margin-top: 25px;
+    margin-bottom: 70px;
+    @media screen and (min-width: 768px) {
+      margin-bottom: 65px;
+      margin-top: 0;
+    }
   }
 `
 
@@ -68,7 +86,10 @@ const CopyBlock = styled.div`
   }
 
   &.first-block {
-    margin-right: 200px;
+    margin: 0 0 45px;
+    @media screen and (min-width: 768px) {
+      margin-right: 200px;
+    }
   }
 `
 
