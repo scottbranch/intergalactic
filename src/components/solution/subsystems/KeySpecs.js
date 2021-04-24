@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react"
 import styled, { css } from "styled-components"
 
 const KeySpecs = props => {
+  const { specs } = props
+
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
@@ -15,11 +17,11 @@ const KeySpecs = props => {
           <span>KEY SPECS:</span>
         </SectionTitle>
         <SectionDesc>
-          <span id="span-0">Size: 10” x 10” x 28”</span>
-          <span id="span-0">Weight: 85lbs</span>
-          <span id="span-0">Cooling capacity: 55 kW below ambient</span>
-          <span id="span-0">Passive cooling</span>
-          <span id="span-0">Extreme vibration and temperature survival</span>
+          {specs.map((item, index) => (
+            <span id="span-0" key={index}>
+              {item}
+            </span>
+          ))}
         </SectionDesc>
       </Container>
     </StyledSection>

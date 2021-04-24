@@ -166,6 +166,27 @@ img.fadein {
     text-decoration: underline;
   }
 
+  //light theme ish
+  .cases-container.light.civil .civil-button {
+    color: ${theme.colors.black};
+    text-decoration: underline;
+  }
+
+  .cases-container.light.defense .defense-button {
+    color: ${theme.colors.black};
+    text-decoration: underline;
+  }
+
+  .cases-container.light.space .space-button {
+    color: ${theme.colors.black};
+    text-decoration: underline;
+  }
+
+  .cases-container.light.land-sea .land-sea-button {
+    color: ${theme.colors.black};
+    text-decoration: underline;
+  }
+
   #cases-container {
   flex: 50%;
   position: relative;

@@ -41,7 +41,7 @@ const Stardust = () => {
     <Layout>
       <SEO title="Falkor" />
       <Hero eyebrow="GS1-FK" title="Falkor" heroImg={HeroImg} />
-      <Solutions description=" High capacity, aerospace-grade electric vapor cycle chiller system with targeted applications in sky, land, and sea. Ideal for cooling large aircraft systems or high-energy laser weapons." />
+      <Solutions description="High capacity, aerospace-grade electric vapor cycle chiller system with targeted applications in sky, land, and sea. Ideal for cooling large aircraft systems or high-energy laser weapons." />
       <KeySpecs specs={specs} />
       <UseCases items={carouselItems} />
     </Layout>
