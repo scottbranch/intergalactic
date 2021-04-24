@@ -18,6 +18,7 @@ import "./layout.css"
 import "./locomotive-scroll.css"
 import theme from "../theme/"
 import Menu from "./menu"
+import MobileMenu from "./MobileMenu"
 
 const Layout = ({ children, location, props, className }) => {
   const data = useStaticQuery(graphql`
@@ -42,6 +43,7 @@ const Layout = ({ children, location, props, className }) => {
       <Scroll callbacks={location} />
       <main>
         <Menu />
+        <MobileMenu />
         {children}
       </main>
       <Footer />
