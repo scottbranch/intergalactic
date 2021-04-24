@@ -88,6 +88,10 @@ const StyledHeader = styled.header`
   align-items: center;
   border-bottom: 1px solid ${({ theme }) => theme.colors.black};
 
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+
   &.active {
     border-bottom: 1px solid ${({ theme }) => theme.colors.aluminum};
   }

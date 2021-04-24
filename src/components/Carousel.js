@@ -136,6 +136,13 @@ const StyledSection = styled.section`
   position: relative;
   background: ${({ theme }) => theme.colors.cream};
 
+  #mobile-container {
+    display: block;
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+
   #carousel-container {
     height: 100%;
     display: none;
@@ -426,6 +433,7 @@ const Slide3 = styled.div`
 `
 
 //mobile ish
+
 const MobileLink = styled(Link)`
   padding: 30px 25px;
   display: flex;
