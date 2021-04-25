@@ -6,10 +6,15 @@ const Contact = () => {
   return (
     <StyledSection data-scroll-section>
       <StyledInner>
-        <h3>On call, on site, <br/>and at the ready.</h3>
+        <h3 data-scroll data-scroll-offset="20%">
+          <span>
+            On call, on site, <br />
+            and at the ready.
+          </span>
+        </h3>
       </StyledInner>
       <StyledInner>
-        <FlexArea>
+        <FlexArea data-scroll data-scroll-offset="20%">
           <p
             className="eyebrow fadein welcome"
             data-scroll
@@ -18,11 +23,13 @@ const Contact = () => {
             <span>Systems Engineering &amp; Design</span>
           </p>
           <p className="intro">
-            Precision engineered and preconfigured, these systems can be modified to specific applications and assembled with the fastest lead times in the industry. 
+            Precision engineered and preconfigured, these systems can be
+            modified to specific applications and assembled with the fastest
+            lead times in the industry.
           </p>
           <a href="#">Let's Connect</a>
         </FlexArea>
-        <FlexArea>
+        <FlexArea data-scroll data-scroll-offset="20%">
           <p
             className="eyebrow fadein welcome"
             data-scroll
@@ -31,11 +38,13 @@ const Contact = () => {
             <span>Field Maintenance &amp; Service</span>
           </p>
           <p className="intro">
-          Everything we make is built to outperform, outlast, and outpace anything else out there. We offer scheduled field maintenance and onsite repairs to keep things tight and running smooth.
+            Everything we make is built to outperform, outlast, and outpace
+            anything else out there. We offer scheduled field maintenance and
+            onsite repairs to keep things tight and running smooth.
           </p>
           <a href="#">Let's Connect</a>
         </FlexArea>
-        <FlexArea>
+        <FlexArea data-scroll data-scroll-offset="20%">
           <p
             className="eyebrow fadein welcome"
             data-scroll
@@ -44,7 +53,9 @@ const Contact = () => {
             <span>Troubleshooting &amp; Technical Support</span>
           </p>
           <p className="intro">
-          Be it a loose connection, software bug, or gremlins run amok, our team will find and fix whatever’s wrong and get you back up and running in no time.
+            Be it a loose connection, software bug, or gremlins run amok, our
+            team will find and fix whatever’s wrong and get you back up and
+            running in no time.
           </p>
           <a href="#">Let's Connect</a>
         </FlexArea>
@@ -78,9 +89,16 @@ const FlexArea = styled.div`
   margin-top: 80px;
   flex-grow: initial;
   padding-right: 40px;
+  opacity: 0;
+  transition: opacity 1s ease;
+
+  &.is-inview {
+    opacity: 1;
+  }
 
   @media screen and (max-width: 768px) {
     margin-top: 20px;
+    margin-bottom: 60px;
   }
 
   .intro {
@@ -110,6 +128,7 @@ const StyledInner = styled.div`
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
+    padding: 0 25px;
   }
 
   .welcome {

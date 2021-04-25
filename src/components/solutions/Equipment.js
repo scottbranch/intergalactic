@@ -81,16 +81,20 @@ const Equipment = props => {
   ]
   return (
     <EquipmentContainer data-scroll-section>
-      <div className="equipment-hero" />
+      <div className="equipment-hero" data-scroll data-scroll-offset="20%" />
       <Container>
         <FlexArea>
           <div>
-            <h5>Intergalactic Equipment</h5>
+            <h5 data-scroll data-scroll-offset="20%">
+              <span>Intergalactic Equipment</span>
+            </h5>
           </div>
           <div>
-            <p>
-              Available for stand alone applications or integrated into complete
-              ECS solutions.
+            <p className="fadein" data-scroll data-scroll-offset="20%">
+              <span>
+                Available for stand alone applications or integrated into
+                complete ECS solutions.
+              </span>
             </p>
           </div>
         </FlexArea>
@@ -102,9 +106,11 @@ const Equipment = props => {
                 data-scroll
                 data-scroll-offset="20%"
               >
-                <h6>
-                  {item.code}
-                  <br /> {item.title}
+                <h6 data-scroll data-scroll-offset="20%">
+                  <span>
+                    {item.code}
+                    <br /> {item.title}
+                  </span>
                 </h6>
                 <EquipmnentImg className="equipmentImg" src={item.image} />
               </EquipmentPiece>
@@ -130,14 +136,31 @@ const EquipmentContainer = styled.div`
       height: 300px;
     }
   }
+
+  .equipment-hero {
+    opacity: 0;
+    transition: opacity 1s ease;
+
+    &.is-inview {
+      opacity: 1;
+    }
+  }
 `
 const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.cream};
-  padding: 60px;
+  padding: 60px 25px;
+
+  @media screen and (min-width: 768px) {
+    padding: 60px;
+  }
 
   h5 {
-    font-size: 48px;
+    font-size: 31px;
     font-weight: 400;
+
+    @media screen and (min-width: 768px) {
+      font-size: 48px;
+    }
   }
 `
 
@@ -219,9 +242,14 @@ const EquipmentPiece = styled(Link)`
   }
 
   h6 {
-    font-size: 25px;
-    line-height: 30px;
+    font-size: 20px;
+    line-height: 100%;
     font-weight: 400;
+
+    @media screen and (min-width: 768px) {
+      font-size: 25px;
+      line-height: 30px;
+    }
   }
 
   h6,
@@ -256,7 +284,7 @@ const HoverCover = styled.span`
   @media screen and (max-width: 768px) {
     padding: 40px 0;
   }
-  
+
   &:hover {
     a {
       border-top: 1px solid ${({ theme }) => theme.colors.gold};

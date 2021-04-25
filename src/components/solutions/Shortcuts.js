@@ -8,10 +8,17 @@ const Shortcuts = () => {
     <StyledSection data-scroll-section>
       <StyledInner>
         <FlexArea>
-          <h3>No Scrimping. No shortcuts.</h3>
+          <h3 data-scroll data-scroll-offset="20%">
+            <span>No Scrimping. No shortcuts.</span>
+          </h3>
         </FlexArea>
         <FlexArea>
-          <p>Next-level innovations are only achieved with an obsessive focus on quality, certification, and compliance.</p>
+          <p className="fadein" data-scroll data-scroll-offset="20%">
+            <span>
+              Next-level innovations are only achieved with an obsessive focus
+              on quality, certification, and compliance.
+            </span>
+          </p>
         </FlexArea>
       </StyledInner>
       <StyledInnerCentered>
@@ -26,8 +33,14 @@ const Shortcuts = () => {
           >
             <span>Facilities</span>
           </p>
-          <p className="intro">
-            Intergalactic currently operates in a state-of-the-art facility in beautiful St. George, Utah, with 10,000 square feet of cleanroom space to support any aviation, defense, or space program. We’re building a 70,000-square-foot facility on Southern Utah’s “Tech Ridge” to accommodate our growth.
+          <p className="intro fadein" data-scroll data-scroll-offset="20%">
+            <span>
+              Intergalactic currently operates in a state-of-the-art facility in
+              beautiful St. George, Utah, with 10,000 square feet of cleanroom
+              space to support any aviation, defense, or space program. We’re
+              building a 70,000-square-foot facility on Southern Utah’s “Tech
+              Ridge” to accommodate our growth.
+            </span>
           </p>
           <p
             className="eyebrow fadein welcome m-top"
@@ -36,8 +49,8 @@ const Shortcuts = () => {
           >
             <span>Certified</span>
           </p>
-          <p className="intro">
-            AS9100D/ISO9001:2015
+          <p className="intro fadein" data-scroll data-scroll-offset="20%">
+            <span>AS9100D/ISO9001:2015</span>
           </p>
         </FlexArea>
       </StyledInnerCentered>
@@ -96,6 +109,7 @@ const StyledInner = styled.div`
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
+    padding: 0 25px;
   }
 
   .welcome {
@@ -131,6 +145,7 @@ const StyledInnerCentered = styled.div`
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
+    padding: 0 25px;
   }
 
   .welcome {

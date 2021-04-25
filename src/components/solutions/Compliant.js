@@ -14,18 +14,22 @@ const Compliant = () => {
             <a href="#">NAS412</a> Foreign Object Damage Prevention
           </p>
           <p>
-            <a href="#">AS5553</a> Counterfeit Electronic Parts; Avoidance, Detection, Mitigation and Disposition
+            <a href="#">AS5553</a> Counterfeit Electronic Parts; Avoidance,
+            Detection, Mitigation and Disposition
           </p>
           <p>
-            <a href="#">DFAR’s</a> 252-204-7012 and 252-204-7020 for Cybersecurity AR 530-1 Operations Security
+            <a href="#">DFAR’s</a> 252-204-7012 and 252-204-7020 for
+            Cybersecurity AR 530-1 Operations Security
           </p>
         </FlexArea>
         <FlexArea>
           <p>
-            <a href="#">AS9102</a> Aerospace First Article Inspection Requirements
+            <a href="#">AS9102</a> Aerospace First Article Inspection
+            Requirements
           </p>
           <p>
-            <a href="#">AS6174</a> Counterfeit Material; Assuring Acquisition of Authentic and Conforming Material
+            <a href="#">AS6174</a> Counterfeit Material; Assuring Acquisition of
+            Authentic and Conforming Material
           </p>
         </FlexArea>
       </StyledInner>
@@ -57,7 +61,8 @@ const FlexArea = styled.div`
     margin-top: 20px;
   }
 
-  p, a {
+  p,
+  a {
     font-size: 20px;
     color: ${({ theme }) => theme.colors.aluminum};
   }
@@ -72,6 +77,7 @@ const StyledInner = styled.div`
   @media screen and (max-width: 768px) {
     flex-direction: column;
     justify-content: initial;
+    padding: 0 25px;
   }
 `
 

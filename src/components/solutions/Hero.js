@@ -33,7 +33,7 @@ const StyledSection = styled.section`
   background-position: bottom center;
 
   @media screen and (max-width: 768px) {
-    height: 600px;
+    height: 100vh;
   }
 `
 
@@ -53,13 +53,15 @@ const HeadingContainer = styled.div`
 
 const StyledHeading = styled.h2`
   color: ${({ theme }) => theme.colors.cream};
+  flex: 50%;
   font-size: 76px;
   line-height: 68px;
-  flex: 50%;
 
   @media screen and (max-width: 768px) {
     flex: initial;
     margin-top: 200px;
+    font-size: 52px;
+    line-height: 100%;
   }
 `
 
@@ -71,6 +73,8 @@ const Paragraph = styled.p`
 
   @media screen and (max-width: 768px) {
     flex: initial;
+    font-size: 20px;
+    line-height: 28px;
   }
 `
 

@@ -12,10 +12,10 @@ const Solution = () => {
   return (
     <>
       <SolutionContainer>
-        <div className="image-container">
+        <div className="image-container" data-scroll data-scroll-offset="20%">
           <img src={SolutionImg} />
         </div>
-        <div className="solution-detail">
+        <div className="solution-detail" data-scroll data-scroll-offset="20%">
           <h4>GS1—SX STARSCREAM</h4>
           <p>Ideal for extreme vibration and temperature environments.</p>
           <span>5 kW below ambient (active)</span>
@@ -39,10 +39,10 @@ const Solution = () => {
         </div>
       </SolutionContainer>
       <SolutionContainer>
-        <div className="image-container">
+        <div className="image-container" data-scroll data-scroll-offset="20%">
           <img src={SolutionImg2} />
         </div>
-        <div className="solution-detail">
+        <div className="solution-detail" data-scroll data-scroll-offset="20%">
           <h4>GS1—GZ Gozer</h4>
           <p>
             Ideal for high-energy laser systems, large aircraft systems cooling.
@@ -68,10 +68,10 @@ const Solution = () => {
         </div>
       </SolutionContainer>
       <SolutionContainer>
-        <div className="image-container">
+        <div className="image-container" data-scroll data-scroll-offset="20%">
           <img src={SolutionImg3} />
         </div>
-        <div className="solution-detail">
+        <div className="solution-detail" data-scroll data-scroll-offset="20%">
           <h4>GS1—FK Falkor</h4>
           <p>
             Ideal for high-energy laser systems, large aircraft systems cooling.
@@ -97,10 +97,10 @@ const Solution = () => {
         </div>
       </SolutionContainer>
       <SolutionContainer>
-        <div className="image-container">
+        <div className="image-container" data-scroll data-scroll-offset="20%">
           <img src={SolutionImg4} />
         </div>
-        <div className="solution-detail">
+        <div className="solution-detail" data-scroll data-scroll-offset="20%">
           <h4>GS1—SD Stardust</h4>
           <p>
             Ideal for extreme vibration and temperature environments. High loads
@@ -127,10 +127,10 @@ const Solution = () => {
         </div>
       </SolutionContainer>
       <SolutionContainer>
-        <div className="image-container">
+        <div className="image-container" data-scroll data-scroll-offset="20%">
           <img src={SolutionImg5} />
         </div>
-        <div className="solution-detail">
+        <div className="solution-detail" data-scroll data-scroll-offset="20%">
           <h4>GS1—MC MCFly</h4>
           <p>
             Ideal for high-energy laser systems, large aircraft systems cooling.
@@ -167,7 +167,7 @@ const SolutionContainer = styled.div`
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
-    padding: 40px 60px;
+    padding: 40px 25px;
   }
 
   &:after {
@@ -192,8 +192,24 @@ const SolutionContainer = styled.div`
   }
 
   .image-container {
+    opacity: 0;
+    transition: opacity 1s ease;
+
+    &.is-inview {
+      opacity: 1;
+    }
+
     img {
       max-height: 720px;
+    }
+  }
+
+  .solution-detail {
+    opacity: 0;
+    transition: opacity 1s ease;
+
+    &.is-inview {
+      opacity: 1;
     }
   }
 
@@ -201,7 +217,11 @@ const SolutionContainer = styled.div`
     h4 {
       color: ${({ theme }) => theme.colors.cream};
       font-family: ${({ theme }) => theme.fonts.tacticRegular};
-      font-size: 48px;
+      font-size: 25px;
+
+      @media screen and (min-width: 768px) {
+        font-size: 48px;
+      }
     }
 
     p,

@@ -14,33 +14,48 @@ const OurSolutions = () => {
           >
             <span>Our Solutions</span>
           </p>
-          <p className="intro">
-            <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18.3867 3.14062H16.4297L16.4531 14.6602L2.05078 0.246093L0.644531 1.64062L15.0586 16.0664h5.52734L3.55078 18H18.3867V3.14062Z" fill="#91897D"/>
+          <p className="intro fadein" data-scroll data-scroll-offset="20%">
+            <svg
+              width="19"
+              height="18"
+              viewBox="0 0 19 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18.3867 3.14062H16.4297L16.4531 14.6602L2.05078 0.246093L0.644531 1.64062L15.0586 16.0664h5.52734L3.55078 18H18.3867V3.14062Z"
+                fill="#91897D"
+              />
             </svg>
-            Say hello to the future of thermal management and a new standard for performance, reliability, and intelligence.
+            Say hello to the future of thermal management and a new standard for
+            performance, reliability, and intelligence.
           </p>
         </div>
         <div className="overview">
-          <div>
+          <div data-scroll data-scroll-offset="20%">
             <h5>Achieve apex performance</h5>
             <p>Confidently push the boundaries of what’s possible.</p>
           </div>
-          <div>
+          <div data-scroll data-scroll-offset="20%">
             <h5>Control every aspect</h5>
             <p>Enjoy end-to-end intelligent controls and custom software.</p>
           </div>
-          <div>
+          <div data-scroll data-scroll-offset="20%">
             <h5>Scale with ease</h5>
-            <p>Meet every requirement with systems that are highly modular and scalable.</p>
+            <p>
+              Meet every requirement with systems that are highly modular and
+              scalable.
+            </p>
           </div>
-          <div>
+          <div data-scroll data-scroll-offset="20%">
             <h5>Enjoy unmatched efficiency</h5>
             <p>Get more output while consuming less power. </p>
           </div>
-          <div>
+          <div data-scroll data-scroll-offset="20%">
             <h5>Upgrade your quality</h5>
-            <p>Rest easy knowing your ECS uses top-shelf parts and equipment.</p>
+            <p>
+              Rest easy knowing your ECS uses top-shelf parts and equipment.
+            </p>
           </div>
         </div>
       </StyledInner>
@@ -65,10 +80,30 @@ const StyledInner = styled.div`
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
+    padding: 0 25px;
   }
 
-  .intro-container, .overview {
+  .intro-container,
+  .overview {
     flex: 50%;
+  }
+
+  .intro-container p {
+    opacity: 0;
+    transition: opacity 1s ease;
+
+    &.is-inview {
+      opacity: 1;
+    }
+  }
+
+  .overview > div {
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+
+  .overview > div.is-inview {
+    opacity: 1;
   }
 
   p {

@@ -8,10 +8,21 @@ const Systems = () => {
     <StyledSection data-scroll-section>
       <StyledInner>
         <div className="intro-container">
-          <h3>GS1 SERIES — THERMAL<br/> MANAGEMENT SYSTEMS</h3>
-         </div>
+          <h3 data-scroll data-scroll-offset="20%">
+            <span>
+              GS1 SERIES — THERMAL
+              <br /> MANAGEMENT SYSTEMS
+            </span>
+          </h3>
+        </div>
         <div className="overview">
-         <p>Precision engineered and preconfigured, these systems can be modified to specific applications and assembled with the fastest lead times in the industry. </p>
+          <p className="fadein" data-scroll data-scroll-offset="20%">
+            <span>
+              Precision engineered and preconfigured, these systems can be
+              modified to specific applications and assembled with the fastest
+              lead times in the industry.
+            </span>{" "}
+          </p>
         </div>
       </StyledInner>
       <Solution />
@@ -36,9 +47,11 @@ const StyledInner = styled.div`
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
+    padding: 0 25px;
   }
 
-  .intro-container, .overview {
+  .intro-container,
+  .overview {
     flex: 50%;
 
     p {
