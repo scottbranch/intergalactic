@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -10,7 +10,10 @@ import BlogCard from "../components/commslink/BlogCard"
 import { isBrowser } from "react-device-detect"
 
 const Commslink = () => {
+  const [isLoaded, setIsLoaded] = useState(false)
+
   useEffect(() => {
+    setIsLoaded(true)
     setTimeout(() => {
       isBrowser && window.scroll.update()
     }, 100)
@@ -51,10 +54,12 @@ const Commslink = () => {
       </Helmet>
       <StyledSection data-scroll-section>
         <HeadingContainer>
-          <h1>Commslink</h1>
+          <h1 className={isLoaded && "active"}>
+            <span id="span-0">Commslink</span>
+          </h1>
         </HeadingContainer>
       </StyledSection>
-      <Filter />
+      {/*<Filter />*/}
       <FeaturedBlog />
       <Grid data-scroll-section>
         {blogData.map((item, index) => {
@@ -76,11 +81,16 @@ const Commslink = () => {
 
 const StyledSection = styled.section`
   width: 100%;
-  height: 500px;
+  height: 280px;
   position: relative;
   background-color: ${({ theme }) => theme.colors.cream};
   border-bottom: 1px solid ${({ theme }) => theme.colors.black};
+
+  @media screen and (min-width: 768px) {
+    height: 500px;
+  }
 `
+
 const BGSection = styled.div`
   background-color: ${({ theme }) => theme.colors.cream};
 `
@@ -95,17 +105,27 @@ const HeadingContainer = styled.div`
 
   h1 {
     text-transform: uppercase;
-    font-size: 76px;
-    line-height: 68px;
+    font-size: 31px;
+    line-height: 100%;
     padding-bottom: 60px;
+
+    @media screen and (min-width: 768px) {
+      font-size: 76px;
+      line-height: 68px;
+    }
   }
 `
 
 const Grid = styled.div`
-  display: flex;
+  display: block;
   flex-wrap: wrap;
-  padding: 0 40px 200px;
+  padding: 0 25px 100px;
   background-color: ${({ theme }) => theme.colors.cream};
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    padding: 0 40px 200px;
+  }
 
   button {
     font-family: ${({ theme }) => theme.fonts.cartographMedium};

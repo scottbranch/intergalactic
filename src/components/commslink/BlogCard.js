@@ -8,7 +8,7 @@ const BlogCard = props => {
   const { featuredImage, title, category, date, link } = props
 
   return (
-    <StyledInner>
+    <StyledInner data-scroll data-scroll-offset="20%">
       <div
         className="image-container"
         style={{ backgroundImage: `url(${featuredImage})` }}
@@ -38,9 +38,20 @@ const BlogCard = props => {
 }
 
 const StyledInner = styled.div`
-  width: 33.333%;
-  padding: 0 20px;
+  width: 100%;
+  padding: 0;
   margin-bottom: 100px;
+  opacity: 0;
+  transition: opacity 1s ease;
+
+  &.is-inview {
+    opacity: 1;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 33.333%;
+    padding: 0 20px;
+  }
 
   .image-container,
   .description {
@@ -62,7 +73,13 @@ const StyledInner = styled.div`
       color: ${({ theme }) => theme.colors.aluminum};
 
       &:first-of-type {
-        float: right;
+        float: none;
+        margin-top: 20px;
+
+        @media screen and (min-width: 768px) {
+          float: right;
+          margin-top: 0;
+        }
       }
     }
 
@@ -71,7 +88,11 @@ const StyledInner = styled.div`
       line-height: 30px;
       color: ${({ theme }) => theme.colors.black};
       font-family: ${({ theme }) => theme.fonts.tacticRegular};
-      margin: 20px 0 10px;
+      margin: 5px 0 10px;
+
+      @media screen and (min-width: 768px) {
+        margin: 20px 0 10px;
+      }
     }
 
     a {

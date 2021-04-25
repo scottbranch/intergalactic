@@ -29,6 +29,7 @@ export default createGlobalStyle`
   }
 
   //stuff to trigger the in-view animations
+  h1,
   h2,
   h3,
   h4,
