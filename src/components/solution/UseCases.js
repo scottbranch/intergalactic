@@ -45,6 +45,7 @@ const UseCases = props => {
           </TabContainer>
           {items.map((item, index) => (
             <span className={`text-block ${item.title}`}>
+              <p className="mobile-title">{item.title}</p>
               {item.description}
             </span>
           ))}
@@ -63,6 +64,11 @@ const StyledSection = styled.section`
 const Container = styled.div`
   display: flex;
   padding: 160px 60px 250px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: 80px 60px 100px;
+  }
 `
 
 const SectionTitle = styled.div`
@@ -80,6 +86,10 @@ const TabContainer = styled.div`
 
   ul {
     margin: 0;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
 
   li {
@@ -108,6 +118,21 @@ const SectionDesc = styled.div`
   position: relative;
   width: 670px;
 
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
+  }
+
+  .mobile-title {
+    display: none;
+
+    @media screen and (max-width: 768px) {
+      display: block;
+      color: ${({ theme }) => theme.colors.gold};
+      text-transform: capitalize;
+      margin-bottom: 10px;
+    }
+  }
+
   .text-block {
     color: ${({ theme }) => theme.colors.aluminum};
     font-size: 25px;
@@ -115,6 +140,13 @@ const SectionDesc = styled.div`
     opacity: 0;
     transition: opacity 500ms ease;
     position: absolute;
+
+    @media screen and (max-width: 768px) {
+      opacity: 1;
+      position: relative;
+      display: block;
+      margin-bottom: 30px;
+    }
   }
 `
 
