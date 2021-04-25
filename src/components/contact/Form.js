@@ -3,12 +3,12 @@ import styled, { css } from "styled-components"
 
 const Hero = props => {
   const [isLoaded, setIsLoaded] = useState(false)
-  const [name, setName] = useState("");
-  const [company, setCompany] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [reason, setReason] = useState("");
-  const [message, setMessage] = useState("");
+  const [formState, setFormState] = useState({})
+  const [successState, setSuccessState] = useState(false)
+  
+  const handleChange = e => {
+    setFormState({ ...formState, [e.target.name]: e.target.value })
+  }
 
   useEffect(() => {
     setIsLoaded(true)
@@ -27,14 +27,9 @@ const Hero = props => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": e.target.getAttribute("name"),
-        "name": name,
-        "company": company,
-        "email": email,
-        "phone": phone,
-        "reason": reason || 'default',
-        "message": message,
+        ...formState
       })
-    }).then(() => console.log("success")).catch(error => alert(error))
+    }).then(() => setSuccessState(true)).catch(error => alert(error))
   }
 
   return (
@@ -64,27 +59,27 @@ const Hero = props => {
             </div>
           </FlexArea>
           <FlexArea>
-            <ContactForm name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+            <ContactForm disabled={successState} name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
               <input type="hidden" name="form-name" value="contact" />
               <div>
                 <label for="name">Name</label>
-                <input type="text" id="name" required onChange={e => setName(e.target.value)} />
+                <input type="text" name="name" id="name" required onChange={handleChange} />
               </div>
               <div>
                 <label for="company">Company</label>
-                <input type="text" id="company" required onChange={e => setCompany(e.target.value)} />
+                <input type="text" name="company" id="company" required onChange={handleChange} />
               </div>
               <div>
                 <label for="email">Email</label>
-                <input type="text" id="email" required onChange={e => setEmail(e.target.value)} />
+                <input type="text" name="email" id="email" required onChange={handleChange} />
               </div>
               <div>
                 <label for="phone">Phone</label>
-                <input type="text" id="phone" required onChange={e => setPhone(e.target.value)}  />
+                <input type="text" name="phone" id="phone" required onChange={handleChange}  />
               </div>
               <div>
                 <label for="reason">Reason for inquiry</label>
-                <select type="text" id="reason" onChange={e => setReason(e.target.value)}>
+                <select type="text" name="reason" id="reason" onChange={handleChange}>
                   <option disabled selected>
                     Select
                   </option>
@@ -96,11 +91,15 @@ const Hero = props => {
               </div>
               <div>
                 <label for="message">Message</label>
-                <textarea id="message" required onChange={e => setMessage(e.target.value)} />
+                <textarea id="message" name="message" required onChange={handleChange} />
               </div>
-              <div>
-                <button type="submit">Submit Form</button>
-              </div>
+              {successState !== true ? (
+                <div>
+                  <button type="submit">Submit Form</button>
+                </div>
+              ) : (
+                <div><p>Thank you for your message, someone will be in contact with you soon.</p></div>
+              )}
             </ContactForm>
           </FlexArea>
         </FlexContainer>
@@ -156,6 +155,13 @@ const FlexArea = styled.div`
 
 const ContactForm = styled.form`
   margin-top: 80px;
+
+  &[disabled] {
+    label, input, select, textarea {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
 
   label {
     display: block;
@@ -218,6 +224,12 @@ const ContactForm = styled.form`
     text-transform: uppercase;
     font-size: 16px;
     padding: 20px 40px;
+  }
+
+  p {
+    font-size: 25px;
+    color: ${({ theme }) => theme.colors.aluminum};
+    line-height: 32px;
   }
 `
 
