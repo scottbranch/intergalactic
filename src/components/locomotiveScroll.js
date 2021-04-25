@@ -2,6 +2,7 @@ import { useEffect } from "react"
 
 // We are excluding this from loading at build time in gatsby-node.js
 import LocomotiveScroll from "locomotive-scroll"
+import { isBrowser } from "react-device-detect"
 
 import { scroll } from "../theme"
 
@@ -59,79 +60,86 @@ const Scroll = callbacks => {
     })
     locomotiveScroll.update()
 
-    // Exposing to the global scope for ease of use.
-    window.scroll = locomotiveScroll
+    if (isBrowser) {
+      // Exposing to the global scope for ease of use.
+      window.scroll = locomotiveScroll
 
-    const body = document.getElementsByTagName("body")[0]
-    const html = document.getElementsByTagName("html")[0]
+      const body = document.getElementsByTagName("body")[0]
+      const html = document.getElementsByTagName("html")[0]
 
-    locomotiveScroll.on("scroll", func => {
-      // Update `data-direction` with scroll direction.
-      document.documentElement.setAttribute("data-direction", func.direction)
-    })
+      locomotiveScroll.on("scroll", func => {
+        // Update `data-direction` with scroll direction.
+        document.documentElement.setAttribute("data-direction", func.direction)
+      })
 
-    locomotiveScroll.on("scroll", func => {
-      if (body.classList.contains("home")) {
-        const imageFloat = document.getElementById("image-float-container")
-        const floatImg = document.getElementById("float-image")
-        //image rotate stuff
-        const { y } = getTranslateValues(imageFloat)
-        //creating the rotate value for the homepage ImageFloat component
-        let rotateValue = y / 30 + 120
-        floatImg.style.transform = "rotate(" + rotateValue + "deg)"
-      }
-    })
+      locomotiveScroll.on("scroll", func => {
+        if (body.classList.contains("home")) {
+          const imageFloat = document.getElementById("image-float-container")
+          const floatImg = document.getElementById("float-image")
+          //image rotate stuff
+          const { y } = getTranslateValues(imageFloat)
+          //creating the rotate value for the homepage ImageFloat component
+          let rotateValue = y / 30 + 120
+          floatImg.style.transform = "rotate(" + rotateValue + "deg)"
+        }
+      })
 
-    //This controls the whole orb animation stuff on the homepage
-    locomotiveScroll.on("call", obj => {
-      if (body.classList.contains("home")) {
-        const orbSection = document.getElementById("orb-section")
+      //This controls the whole orb animation stuff on the homepage
+      locomotiveScroll.on("call", obj => {
+        if (body.classList.contains("home")) {
+          const orbSection = document.getElementById("orb-section")
 
-        if (obj === "section1" || obj === "section2") {
-          if (html.dataset.direction === "down") {
-            if (orbSection.classList.contains("step-1")) {
-              orbSection.classList.remove("step-1")
-              orbSection.classList.add("step-2")
-            } else if (orbSection.classList.contains("step-2")) {
-              //let it ride
-            } else {
-              orbSection.classList.add("step-1")
+          if (obj === "section1" || obj === "section2") {
+            if (html.dataset.direction === "down") {
+              if (orbSection.classList.contains("step-1")) {
+                orbSection.classList.remove("step-1")
+                orbSection.classList.add("step-2")
+              } else if (orbSection.classList.contains("step-2")) {
+                //let it ride
+              } else {
+                orbSection.classList.add("step-1")
+              }
             }
-          }
 
-          if (html.dataset.direction === "up") {
-            if (orbSection.classList.contains("step-2") && obj === "section1") {
-              orbSection.classList.remove("step-2")
-              orbSection.classList.add("step-1")
-            } else if (
-              orbSection.classList.contains("step-1") &&
-              obj === "section2"
-            ) {
-              orbSection.classList.remove("step-1")
+            if (html.dataset.direction === "up") {
+              if (
+                orbSection.classList.contains("step-2") &&
+                obj === "section1"
+              ) {
+                orbSection.classList.remove("step-2")
+                orbSection.classList.add("step-1")
+              } else if (
+                orbSection.classList.contains("step-1") &&
+                obj === "section2"
+              ) {
+                orbSection.classList.remove("step-1")
+              }
             }
           }
         }
-      }
 
-      if (body.classList.contains("has-carousel")) {
-        const carouselContainer = document.getElementById("carousel-container")
+        if (body.classList.contains("has-carousel")) {
+          const carouselContainer = document.getElementById(
+            "carousel-container"
+          )
 
-        if (obj === "1" || obj === "2" || obj === "3" || obj === "4") {
-          if (html.dataset.direction === "down") {
-            carouselContainer.classList = ""
-            carouselContainer.classList.add("slide-" + obj)
-          }
+          if (obj === "1" || obj === "2" || obj === "3" || obj === "4") {
+            if (html.dataset.direction === "down") {
+              carouselContainer.classList = ""
+              carouselContainer.classList.add("slide-" + obj)
+            }
 
-          if (html.dataset.direction === "up") {
-            let integer = parseInt(obj, 10)
-            let newInteger = integer - 1 //i have to do this for some weird reason
-            let newString = newInteger.toString()
-            carouselContainer.classList = ""
-            carouselContainer.classList.add("slide-" + newString)
+            if (html.dataset.direction === "up") {
+              let integer = parseInt(obj, 10)
+              let newInteger = integer - 1 //i have to do this for some weird reason
+              let newString = newInteger.toString()
+              carouselContainer.classList = ""
+              carouselContainer.classList.add("slide-" + newString)
+            }
           }
         }
-      }
-    })
+      })
+    }
 
     return () => {
       if (locomotiveScroll) locomotiveScroll.destroy()
