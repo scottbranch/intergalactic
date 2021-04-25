@@ -58,6 +58,10 @@ const Hero = props => {
                   <option disabled selected>
                     Select
                   </option>
+                  <option>Another Reason</option>
+                  <option>Another Reason</option>
+                  <option>Another Reason</option>
+                  <option>Another Reason</option>
                 </select>
               </div>
               <div>
@@ -160,6 +164,9 @@ const ContactForm = styled.form`
   }
 
   select {
+    &:focus {
+      outline: none;
+    }
     @media screen and (max-width: 768px) {
       line-height: 40px;
     }

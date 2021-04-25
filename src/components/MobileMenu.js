@@ -112,7 +112,7 @@ const MenuCircle = styled.button`
   box-shadow: none;
   border-radius: 50%;
   width: 28px;
-  height: 33px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
