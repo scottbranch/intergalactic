@@ -35,22 +35,22 @@ const Hero = props => {
             </div>
           </FlexArea>
           <FlexArea>
-            <ContactForm>
+            <ContactForm name="contact" method="POST" data-netlify="true">
               <div>
                 <label for="name">Name</label>
-                <input type="text" id="name" />
+                <input type="text" id="name" required />
               </div>
               <div>
                 <label for="company">Company</label>
-                <input type="text" id="company" />
+                <input type="text" id="company" required />
               </div>
               <div>
                 <label for="email">Email</label>
-                <input type="text" id="email" />
+                <input type="text" id="email" required />
               </div>
               <div>
                 <label for="phone">Phone</label>
-                <input type="text" id="phone" />
+                <input type="text" id="phone" required />
               </div>
               <div>
                 <label for="reason">Reason for inquiry</label>
@@ -66,7 +66,7 @@ const Hero = props => {
               </div>
               <div>
                 <label for="message">Message</label>
-                <textarea id="message" />
+                <textarea id="message" required />
               </div>
               <div>
                 <button type="submit">Submit Form</button>
@@ -157,6 +157,10 @@ const ContactForm = styled.form`
     line-height: 60px;
     color: ${({ theme }) => theme.colors.aluminum};
     margin-bottom: 60px;
+
+    &:focus {
+      outline: none;
+    }
 
     @media screen and (max-width: 768px) {
       line-height: 30px;
