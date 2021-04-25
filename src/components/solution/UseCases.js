@@ -69,7 +69,7 @@ const Container = styled.div`
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
-    padding: 80px 60px 100px;
+    padding: 80px 25px 100px;
   }
 `
 
@@ -154,6 +154,8 @@ const SectionDesc = styled.div`
       position: relative;
       display: block;
       margin-bottom: 30px;
+      font-size: 20px;
+      line-height: 31px;
     }
   }
 `

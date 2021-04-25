@@ -47,6 +47,10 @@ const StyledSection = styled.section`
 
 const StyledHeading = styled.h3`
   font-size: 48px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 30px;
+  }
   span:nth-of-type(2) {
     left: 115px;
   }
@@ -66,12 +70,17 @@ const InnerContainer = styled.div`
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
+    padding: 0 25px;
   }
 `
 
 const TextContainer = styled.div`
   margin: 0;
   width: 540px;
+
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
+  }
 
   p {
     margin-top: 0;
@@ -81,6 +90,8 @@ const TextContainer = styled.div`
 
     @media screen and (max-width: 768px) {
       margin-top: 20px;
+      font-size: 20px;
+      line-height: 31px;
     }
   }
 

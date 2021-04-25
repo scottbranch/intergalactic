@@ -82,6 +82,8 @@ const ContactFormContainer = styled.div`
 
   @media screen and (max-width: 768px) {
     padding-top: 60px;
+    padding-left: 25px;
+    padding-right: 25px;
   }
 `
 

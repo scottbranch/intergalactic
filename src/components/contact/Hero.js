@@ -61,6 +61,10 @@ const HeadingContainer = styled.div`
   align-items: flex-end;
   padding-left: 60px;
   padding-bottom: 40px;
+
+  @media screen and (max-width: 768px) {
+    padding-left: 25px;
+  }
 `
 
 const StyledHeading = styled.h2`
@@ -73,6 +77,10 @@ const ContactInfo = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+
+  @media screen and (max-width: 768px) {
+    padding: 0 25px;
+  }
 
   p {
     font-family: ${({theme}) => theme.fonts.cartographMedium};

@@ -51,6 +51,7 @@ const HeadingContainer = styled.div`
 
   @media screen and (max-width: 768px) {
     justify-content: flex-end;
+    padding: 0 25px;
   }
 `
 

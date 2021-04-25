@@ -74,6 +74,10 @@ const ContactContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.cream};
   border-bottom: 1px solid ${({ theme }) => theme.colors.black};
   padding: 120px 60px;
+
+  @media screen and (max-width: 768px) {
+    padding: 120px 25px;
+  }
 `
 
 const ContactText = styled.p`
@@ -85,6 +89,7 @@ const ContactText = styled.p`
 
   @media screen and (max-width: 768px) {
     margin-top: 40px;
+    font-size: 20px;
   }
 `
 
