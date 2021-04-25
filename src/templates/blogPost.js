@@ -19,7 +19,9 @@ const Post = ({ data: { prismicBlogPost, allPrismicBlogPost, uid } }) => {
         <ContentOuter>
           <HeadingContainer>
             <Date>{data.date_published}</Date>
-            <h5>{data.title}</h5>
+            <h5 className="fadein" data-scroll>
+              <span id="span-0">{data.title}</span>
+            </h5>
             <HeaderImg src={data.preview_image.url} />
           </HeadingContainer>
           <ContentContainer>
@@ -42,16 +44,35 @@ export default Post
 
 const StyledSection = styled.section`
   background: ${({ theme }) => theme.colors.cream};
-  padding-top: 300px;
+  padding-top: 150px;
+  padding-bottom: 100px;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 300px;
+    padding-bottom: 0;
+  }
 `
 
 const HeadingContainer = styled.div`
   max-width: 1200px;
+
+  h5 {
+    padding: 0 25px;
+
+    @media screen and (min-width: 768px) {
+      padding: 0;
+    }
+  }
 `
 
 const Category = styled.p`
-  width: 500px;
+  width: 100%;
   text-transform: uppercase;
+  margin-right: 20px;
+
+  @media screen and (min-width: 768px) {
+    width: 500px;
+  }
 
   &:before {
     content: "";
@@ -70,19 +91,36 @@ const Category = styled.p`
 `
 
 const ContentOuter = styled.div`
-  padding: 0 62px;
+  padding: 0;
+
+  @media screen and (min-width: 768px) {
+    padding: 0 62px;
+  }
 `
 
 const ContentContainer = styled.div`
   max-width: 1540px;
   display: flex;
   justify-content: space-between;
-  padding: 120px 0 180px;
+  padding: 50px ​0 180px;
+  flex-direction: column;
+  padding: 0 25px;
+
+  @media screen and (min-width: 768px) {
+    padding: 120px 0 180px;
+    flex-direction: row;
+    padding: 0;
+  }
 `
 
 const TextContainer = styled.div`
   max-width: 850px;
   text-align: left;
+  margin-top: 50px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 0;
+  }
 
   h6 {
     text-transform: none;
@@ -97,11 +135,21 @@ const Date = styled.p`
   font-family: ${({ theme }) => theme.fonts.cartographMedium};
   color: ${({ theme }) => theme.colors.aluminum};
   margin-bottom: 10px;
+  padding: 0 25px;
+
+  @media screen and (min-width: 768px) {
+    padding: 0;
+  }
 `
 
 const HeaderImg = styled.img`
   max-width: 1200px;
-  margin-top: 60px;
+  margin-top: 10px;
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 60px;
+  }
 `
 
 export const pageQuery = graphql`
