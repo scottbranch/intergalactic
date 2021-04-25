@@ -34,6 +34,10 @@ const StyledSection = styled.section`
   background-size: cover;
   background-position: center center;
   border-bottom: 1px solid ${({ theme }) => theme.colors.aluminum};
+
+  @media screen and (max-width: 768px) {
+    height: 700px;
+  }
 `
 
 const HeadingContainer = styled.div`
@@ -44,6 +48,10 @@ const HeadingContainer = styled.div`
   flex-direction: column;
   padding: 0 65px;
   justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    justify-content: flex-end;
+  }
 `
 
 const StyledHeading = styled.h2`
@@ -51,6 +59,11 @@ const StyledHeading = styled.h2`
   font-size: 95px;
   line-height: 90px;
   max-width: 850px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 40px;
+    line-height: 40px;
+  }
 `
 
 const Paragraph = styled.p`

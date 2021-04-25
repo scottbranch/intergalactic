@@ -36,6 +36,11 @@ const Container = styled.div`
   display: flex;
   padding: 160px 60px 250px;
 
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: 80px 60px 100px;
+  }
+
   &:after {
     display block;
     content: '';
@@ -66,6 +71,11 @@ const SectionDesc = styled.div`
     color: ${({ theme }) => theme.colors.aluminum};
     font-size: 25px;
     line-height: 36px;
+
+    @media screen and (max-width: 768px) {
+      display: block;
+      margin-top: 30px;
+    }
   }
 `
 

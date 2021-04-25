@@ -37,6 +37,11 @@ const Container = styled.div`
   display: flex;
   padding: 160px 60px 250px;
 
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: 80px 60px 100px;
+  }
+
   &:after {
     display block;
     content: '';
@@ -71,6 +76,10 @@ const SectionDesc = styled.div`
     padding-bottom: 20px;
     margin-bottom: 20px;
     border-bottom: 1px solid ${({ theme }) => theme.colors.aluminum};
+    
+    @media screen and (max-width: 768px) {
+      margin-top: 30px;
+    }
   }
 `
 
