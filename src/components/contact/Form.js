@@ -3,10 +3,39 @@ import styled, { css } from "styled-components"
 
 const Hero = props => {
   const [isLoaded, setIsLoaded] = useState(false)
+  const [name, setName] = useState("");
+  const [company, setCompany] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [reason, setReason] = useState("");
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     setIsLoaded(true)
   }, [])
+
+  function encode(data) {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&")
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": e.target.getAttribute("name"),
+        "name": name,
+        "company": company,
+        "email": email,
+        "phone": phone,
+        "reason": reason || 'default',
+        "message": message,
+      })
+    }).then(() => console.log("success")).catch(error => alert(error))
+  }
 
   return (
     <StyledSection data-scroll-section>
@@ -35,26 +64,27 @@ const Hero = props => {
             </div>
           </FlexArea>
           <FlexArea>
-            <ContactForm name="contact" method="POST" data-netlify="true">
+            <ContactForm name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+              <input type="hidden" name="form-name" value="contact" />
               <div>
                 <label for="name">Name</label>
-                <input type="text" id="name" required />
+                <input type="text" id="name" required onChange={e => setName(e.target.value)} />
               </div>
               <div>
                 <label for="company">Company</label>
-                <input type="text" id="company" required />
+                <input type="text" id="company" required onChange={e => setCompany(e.target.value)} />
               </div>
               <div>
                 <label for="email">Email</label>
-                <input type="text" id="email" required />
+                <input type="text" id="email" required onChange={e => setEmail(e.target.value)} />
               </div>
               <div>
                 <label for="phone">Phone</label>
-                <input type="text" id="phone" required />
+                <input type="text" id="phone" required onChange={e => setPhone(e.target.value)}  />
               </div>
               <div>
                 <label for="reason">Reason for inquiry</label>
-                <select type="text" id="reason">
+                <select type="text" id="reason" onChange={e => setReason(e.target.value)}>
                   <option disabled selected>
                     Select
                   </option>
@@ -66,7 +96,7 @@ const Hero = props => {
               </div>
               <div>
                 <label for="message">Message</label>
-                <textarea id="message" required />
+                <textarea id="message" required onChange={e => setMessage(e.target.value)} />
               </div>
               <div>
                 <button type="submit">Submit Form</button>
