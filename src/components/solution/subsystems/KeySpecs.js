@@ -13,12 +13,12 @@ const KeySpecs = props => {
   return (
     <StyledSection data-scroll-section>
       <Container>
-        <SectionTitle className="fadein" data-scroll>
+        <SectionTitle data-scroll data-scroll-offset="20%">
           <span>KEY SPECS:</span>
         </SectionTitle>
         <SectionDesc>
           {specs.map((item, index) => (
-            <span id="span-0" key={index}>
+            <span id="span-0" key={index} data-scroll data-scroll-offset="20%">
               {item}
             </span>
           ))}
@@ -35,7 +35,13 @@ const StyledSection = styled.section`
 
 const Container = styled.div`
   display: flex;
-  padding: 160px 60px 250px;
+  padding: 160px 25px 0;
+  flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    padding: 160px 60px 250px;
+    flex-direction: row;
+  }
 
   &:after {
     display block;
@@ -52,6 +58,17 @@ const Container = styled.div`
 
 const SectionTitle = styled.div`
   flex: 50%;
+  margin-bottom: 40px;
+  opacity: 0;
+  transition: opacity 1s ease;
+
+  &.is-inview {
+    opacity: 1;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+  }
 
   span {
     font-size: 25px;
@@ -65,12 +82,23 @@ const SectionDesc = styled.div`
 
   span {
     color: ${({ theme }) => theme.colors.aluminum};
-    font-size: 25px;
-    line-height: 36px;
+    font-size: 20px;
+    line-height: 28px;
     display: block;
     padding-bottom: 20px;
     margin-bottom: 20px;
     border-bottom: 1px solid ${({ theme }) => theme.colors.aluminum};
+    opacity: 0;
+    transition: opacity 1s ease;
+
+    &.is-inview {
+      opacity: 1;
+    }
+
+    @media screen and (min-width: 768px) {
+      font-size: 25px;
+      line-height: 36px;
+    }
   }
 `
 

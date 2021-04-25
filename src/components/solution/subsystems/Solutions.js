@@ -13,11 +13,13 @@ const Solutions = props => {
   return (
     <StyledSection data-scroll-section>
       <Container>
-        <SectionTitle className="fadein" data-scroll>
+        <SectionTitle className="fadein" data-scroll data-scroll-offset="20%">
           <span>SOLUTIONS:</span>
         </SectionTitle>
         <SectionDesc>
-          <span id="span-0">{description}</span>
+          <p data-scroll data-scroll-offset="20%">
+            {description}
+          </p>
         </SectionDesc>
       </Container>
     </StyledSection>
@@ -31,7 +33,13 @@ const StyledSection = styled.section`
 
 const Container = styled.div`
   display: flex;
-  padding: 160px 60px 250px;
+  padding: 100px 25px 0;
+  flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    padding: 160px 60px 250px;
+    flex-direction: row;
+  }
 
   &:after {
     display block;
@@ -48,6 +56,17 @@ const Container = styled.div`
 
 const SectionTitle = styled.div`
   flex: 50%;
+  margin-bottom: 40px;
+  opacity: 0;
+  transition: opacity 1s ease;
+
+  &.is-inview {
+    opacity: 1;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+  }
 
   span {
     font-size: 25px;
@@ -59,10 +78,27 @@ const SectionTitle = styled.div`
 const SectionDesc = styled.div`
   flex: 50%;
 
+  p {
+    opacity: 0;
+    transition: opacity 1s ease;
+    color: ${({ theme }) => theme.colors.aluminum};
+    font-size: 20px;
+    line-height: 28px;
+
+    &.is-inview {
+      opacity: 1;
+    }
+  }
+
   span {
     color: ${({ theme }) => theme.colors.aluminum};
-    font-size: 25px;
-    line-height: 36px;
+    font-size: 20px;
+    line-height: 28px;
+
+    @media screen and (min-width: 768px) {
+      font-size: 25px;
+      line-height: 36px;
+    }
   }
 `
 

@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from "react"
 import styled, { css } from "styled-components"
-import gadget from '../../../images/solution/gadget.jpg';
+import gadget from "../../../images/solution/gadget.jpg"
 
 const Hero = props => {
-
-  const {
-    eyebrow,
-    title,
-    type
-  } = props
+  const { eyebrow, title, type } = props
 
   const [isLoaded, setIsLoaded] = useState(false)
 
@@ -26,38 +21,55 @@ const Hero = props => {
           <span id="span-0">{title}</span>
         </StyledHeading>
       </HeadingContainer>
-        <ImgContainer>
-          <img src={gadget}/>
-        </ImgContainer>
+      <ImgContainer>
+        <img src={gadget} />
+      </ImgContainer>
     </StyledSection>
   )
 }
 
 const StyledSection = styled.section`
   width: 100%;
-  height: 1200px;
-  background-color: ${({theme}) => theme.colors.cream};
+  height: auto;
+  background-color: ${({ theme }) => theme.colors.cream};
   background-size: cover;
   background-position: center center;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.black};
-  display: ${({type}) => type === 'thermal' ? 'block' : 'flex'};
+  border-bottom: none;
+  display: ${({ type }) => (type === "thermal" ? "block" : "flex")};
+  flex-direction: column-reverse;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    height: 1200px;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.black};
+  }
 `
 
 const HeadingContainer = styled.div`
   width: 100%;
-  height: 100%;
-  max-height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: column;
-  padding: 0 65px;
+  padding: 0 25px;
   justify-content: center;
+
+  @media screen and (min-width: 768px) {
+    height: 100%;
+    max-height: 100vh;
+    padding: 0 65px;
+  }
 `
 
 const StyledHeading = styled.h2`
-  color: ${({theme}) => theme.colors.black};
-  font-size: 95px;
-  line-height: 90px;
+  color: ${({ theme }) => theme.colors.black};
+  font-size: 39px;
+  line-height: 100%;
   max-width: 850px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 95px;
+    line-height: 90px;
+  }
 `
 
 const Paragraph = styled.p`
@@ -68,8 +80,12 @@ const Paragraph = styled.p`
 `
 
 const ImgContainer = styled.div`
-  min-width: 910px;
+  min-width: 100%;
   margin-left: auto;
+
+  @media screen and (min-width: 768px) {
+    min-width: 910px;
+  }
 
   img {
     width: 100%;

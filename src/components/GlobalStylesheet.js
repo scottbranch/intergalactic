@@ -214,6 +214,10 @@ img.fadein {
   #cases-container {
   flex: 50%;
   position: relative;
-  width: 670px;
+  width: auto;
+
+  @media screen and (min-width: 768px) {
+    width: 670px;
+  }
 }
 `
