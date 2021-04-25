@@ -88,7 +88,7 @@ const CopyBlock = styled.div`
   &.first-block {
     margin: 0 0 45px;
     @media screen and (min-width: 768px) {
-      margin-right: 200px;
+      margin: 45px 200px 45px 0;
     }
   }
 `

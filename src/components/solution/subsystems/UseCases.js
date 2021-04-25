@@ -28,6 +28,8 @@ const UseCases = props => {
         <SectionDesc
           id="cases-container"
           className={`cases-container light ${items[0].title}`}
+          data-scroll
+          data-scroll-offset="20%"
         >
           <TabContainer>
             <ul>
@@ -158,6 +160,12 @@ const SectionDesc = styled.div`
   flex: 50%;
   position: relative;
   width: auto;
+  opacity: 0;
+  transition: opacity 1s ease;
+
+  &.is-inview {
+    opacity: 1;
+  }
 
   @media screen and (min-width: 768px) {
     width: 670px;

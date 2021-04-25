@@ -18,7 +18,7 @@ const KeySpecs = props => {
         </SectionTitle>
         <SectionDesc>
           {specs.map((item, index) => (
-            <span id="span-0" key={index} data-scroll data-scroll-offset="20%">
+            <span key={index} data-scroll data-scroll-offset="20%">
               {item}
             </span>
           ))}
@@ -74,6 +74,12 @@ const SectionTitle = styled.div`
     font-size: 25px;
     line-height: 30px;
     color: ${({ theme }) => theme.colors.black};
+    opacity: 0;
+    transition: opacity 1s ease;
+
+    &.is-inview {
+      opacity: 1;
+    }
   }
 `
 

@@ -18,7 +18,7 @@ const KeySpecs = props => {
         </SectionTitle>
         <SectionDesc>
           {specs.map((item, index) => (
-            <span id="span-0" key={index}>
+            <span id="span-0" key={index} data-scroll data-scroll-offset="20%">
               {item}
             </span>
           ))}
@@ -76,7 +76,13 @@ const SectionDesc = styled.div`
     padding-bottom: 20px;
     margin-bottom: 20px;
     border-bottom: 1px solid ${({ theme }) => theme.colors.aluminum};
-    
+    opacity: 0;
+    transition: opacity 1s ease;
+
+    &.is-inview {
+      opacity: 1;
+    }
+
     @media screen and (max-width: 768px) {
       margin-top: 30px;
     }

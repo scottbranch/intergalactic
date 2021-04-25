@@ -111,12 +111,13 @@ const MenuCircle = styled.button`
   border: 1px solid ${({ theme }) => theme.colors.black};
   box-shadow: none;
   border-radius: 50%;
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 33px;
   display: flex;
   align-items: center;
   justify-content: center;
   outline: none;
+  position: relative;
 
   &:before {
     content: "";
@@ -125,6 +126,7 @@ const MenuCircle = styled.button`
     background: ${({ theme }) => theme.colors.black};
     border-radius: 50%;
     display: block;
+    position: absolute;
   }
 `
 

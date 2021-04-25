@@ -2,10 +2,7 @@ import React, { useState, useEffect } from "react"
 import styled, { css } from "styled-components"
 
 const Solutions = props => {
-
-  const {
-    description
-  } = props
+  const { description } = props
 
   const [isLoaded, setIsLoaded] = useState(false)
 
@@ -20,7 +17,9 @@ const Solutions = props => {
           <span>SOLUTIONS:</span>
         </SectionTitle>
         <SectionDesc>
-          <span id="span-0">{description}</span>
+          <span id="span-0" data-scroll data-scroll-offset="20%">
+            {description}
+          </span>
         </SectionDesc>
       </Container>
     </StyledSection>
@@ -71,6 +70,12 @@ const SectionDesc = styled.div`
     color: ${({ theme }) => theme.colors.aluminum};
     font-size: 25px;
     line-height: 36px;
+    opacity: 0;
+    transition: opacity 1s ease;
+
+    &.is-inview {
+      opacity: 1;
+    }
 
     @media screen and (max-width: 768px) {
       display: block;

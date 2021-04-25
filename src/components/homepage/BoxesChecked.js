@@ -84,6 +84,7 @@ const StyledLi = styled.li`
 
         @media screen and (min-width: 768px) {
           width: 100%;
+          position: absolute;
         }
       }
     }
