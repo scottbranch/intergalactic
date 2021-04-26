@@ -19,6 +19,7 @@ import "./locomotive-scroll.css"
 import theme from "../theme/"
 import Menu from "./menu"
 import MobileMenu from "./MobileMenu"
+import CookieBar from "./CookieBar"
 
 const Layout = ({ children, location, props, className }) => {
   const data = useStaticQuery(graphql`
@@ -47,6 +48,7 @@ const Layout = ({ children, location, props, className }) => {
         {children}
       </main>
       <Footer />
+      <CookieBar />
     </ThemeProvider>
   )
 }
