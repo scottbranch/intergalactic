@@ -39,7 +39,7 @@ const Post = ({ data: { prismicBlogPost, allPrismicBlogPost, uid } }) => {
               <div
                 dangerouslySetInnerHTML={{ __html: data.blog_content.html }}
               />
-              {dataRaw.video && (
+              {dataRaw.video.url !== undefined && (
                 <video controls src={`${dataRaw.video.url}#t=0.5`} />
               )}
             </TextContainer>
