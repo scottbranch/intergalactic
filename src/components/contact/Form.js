@@ -5,7 +5,7 @@ const Hero = props => {
   const [isLoaded, setIsLoaded] = useState(false)
   const [formState, setFormState] = useState({})
   const [successState, setSuccessState] = useState(false)
-  
+
   const handleChange = e => {
     setFormState({ ...formState, [e.target.name]: e.target.value })
   }
@@ -16,20 +16,22 @@ const Hero = props => {
 
   function encode(data) {
     return Object.keys(data)
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-        .join("&")
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault()
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": e.target.getAttribute("name"),
-        ...formState
-      })
-    }).then(() => setSuccessState(true)).catch(error => alert(error))
+        ...formState,
+      }),
+    })
+      .then(() => setSuccessState(true))
+      .catch(error => alert(error))
   }
 
   return (
@@ -41,12 +43,11 @@ const Hero = props => {
             className="fadein"
             data-scroll
             data-scroll-offset="20%"
-          >
-          </StyledSubHeading>
+          ></StyledSubHeading>
         </div>
         <FlexContainer>
           <FlexArea>
-            <div> 
+            <div>
               <address>
                 Intergalactic HQ
                 <br />
@@ -59,27 +60,69 @@ const Hero = props => {
             </div>
           </FlexArea>
           <FlexArea id="contactForm">
-            <ContactForm disabled={successState} name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+            <ContactForm
+              disabled={successState}
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              onSubmit={handleSubmit}
+            >
+              <div hidden aria-hidden="true">
+                <label>
+                  Don't fill this out if you're human:
+                  <input name="bot-field" />
+                </label>
+              </div>
               <input type="hidden" name="form-name" value="contact" />
               <div>
                 <label for="name">Name</label>
-                <input type="text" name="name" id="name" required onChange={handleChange} />
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  required
+                  onChange={handleChange}
+                />
               </div>
               <div>
                 <label for="company">Company</label>
-                <input type="text" name="company" id="company" required onChange={handleChange} />
+                <input
+                  type="text"
+                  name="company"
+                  id="company"
+                  required
+                  onChange={handleChange}
+                />
               </div>
               <div>
                 <label for="email">Email</label>
-                <input type="text" name="email" id="email" required onChange={handleChange} />
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  required
+                  onChange={handleChange}
+                />
               </div>
               <div>
                 <label for="phone">Phone</label>
-                <input type="text" name="phone" id="phone" required onChange={handleChange}  />
+                <input
+                  type="text"
+                  name="phone"
+                  id="phone"
+                  required
+                  onChange={handleChange}
+                />
               </div>
               <div>
                 <label for="reason">Reason for inquiry</label>
-                <select type="text" name="reason" id="reason" onChange={handleChange}>
+                <select
+                  type="text"
+                  name="reason"
+                  id="reason"
+                  onChange={handleChange}
+                >
                   <option disabled selected>
                     Select
                   </option>
@@ -91,14 +134,24 @@ const Hero = props => {
               </div>
               <div>
                 <label for="message">Message</label>
-                <textarea id="message" name="message" required onChange={handleChange} />
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  onChange={handleChange}
+                />
               </div>
               {successState !== true ? (
                 <div>
                   <button type="submit">Submit Form</button>
                 </div>
               ) : (
-                <div><p>Thank you for your message, someone will be in contact with you soon.</p></div>
+                <div>
+                  <p>
+                    Thank you for your message, someone will be in contact with
+                    you soon.
+                  </p>
+                </div>
               )}
             </ContactForm>
           </FlexArea>
@@ -157,7 +210,10 @@ const ContactForm = styled.form`
   margin-top: 80px;
 
   &[disabled] {
-    label, input, select, textarea {
+    label,
+    input,
+    select,
+    textarea {
       opacity: 0.5;
       pointer-events: none;
     }
@@ -174,7 +230,7 @@ const ContactForm = styled.form`
     max-width: 675px;
 
     &:not([for="reason"]):after {
-      content: '*';
+      content: "*";
       position: absolute;
       right: 0;
     }
