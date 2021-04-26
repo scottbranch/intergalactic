@@ -16,12 +16,12 @@ const Commslink = () => {
     setIsLoaded(true)
     setTimeout(() => {
       isBrowser && window.scroll.update()
-    }, 100)
+    }, 200)
   }, [])
 
   const data = useStaticQuery(graphql`
     {
-      allPrismicBlogPost {
+      allPrismicBlogPost(sort: { order: DESC, fields: id }) {
         edges {
           node {
             data {

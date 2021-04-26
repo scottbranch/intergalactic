@@ -5,9 +5,16 @@ import SEO from "../components/seo"
 import styled from "styled-components"
 import { RichText } from "prismic-reactjs"
 import { Helmet } from "react-helmet"
+import { isBrowser } from "react-device-detect"
 
 const Post = ({ data: { prismicBlogPost, allPrismicBlogPost, uid } }) => {
-  const { data, tags } = prismicBlogPost
+  useEffect(() => {
+    setTimeout(() => {
+      isBrowser && window.scroll.update()
+    }, 200)
+  })
+
+  const { data, tags, dataRaw } = prismicBlogPost
 
   return (
     <Layout className="dark">
@@ -32,6 +39,9 @@ const Post = ({ data: { prismicBlogPost, allPrismicBlogPost, uid } }) => {
               <div
                 dangerouslySetInnerHTML={{ __html: data.blog_content.html }}
               />
+              {dataRaw.video.url !== undefined && (
+                <video controls src={`${dataRaw.video.url}#t=0.5`} />
+              )}
             </TextContainer>
           </ContentContainer>
         </ContentOuter>
@@ -111,12 +121,22 @@ const ContentContainer = styled.div`
     flex-direction: row;
     padding: 0;
   }
+
+  iframe {
+    width: 100%;
+    height: 500px;
+  }
+
+  video {
+    width: 100%;
+  }
 `
 
 const TextContainer = styled.div`
   max-width: 850px;
   text-align: left;
   margin-top: 50px;
+  padding: 100px 0;
 
   @media screen and (min-width: 768px) {
     margin-top: 0;
@@ -167,6 +187,7 @@ export const pageQuery = graphql`
         }
       }
       tags
+      dataRaw
     }
     allPrismicBlogPost(sort: { order: DESC, fields: id }) {
       nodes {
@@ -182,6 +203,7 @@ export const pageQuery = graphql`
           }
         }
         tags
+        dataRaw
       }
     }
   }

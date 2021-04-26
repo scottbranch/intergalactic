@@ -1,6 +1,7 @@
 import React from "react"
 import overviewImg from "../../images/suppliers/overview.jpg"
 import Line from "../Line"
+import Link from "gatsby-link"
 import styled from "styled-components"
 
 const ValueProp = props => {
@@ -21,8 +22,8 @@ const ValueProp = props => {
             </p>
             <p className="fadein" data-scroll data-scroll-offset="20%">
               <span>
-                <a href="#">Contact us</a> below if you’d like to be considered as an
-                Intergalactic supplier.
+                <Link to="/contact">Contact us</Link> below if you’d like to be
+                considered as an Intergalactic supplier.
               </span>
             </p>
           </TextContainer>
@@ -60,7 +61,7 @@ const StyledHeading = styled.h3`
 `
 
 const StyledSubHeading = styled.p`
-  color: #91897D;
+  color: #91897d;
   font-size: 14px;
   letter-spacing: 3px;
   font-family: ${({ theme }) => theme.fonts.cartographMedium};
@@ -86,7 +87,8 @@ const TextContainer = styled.div`
     max-width: 675px;
   }
 
-  span, a {
+  span,
+  a {
     font-size: 25px;
     line-height: 36px;
     color: ${({ theme }) => theme.colors.aluminum};
@@ -103,7 +105,6 @@ const OverviewImg = styled.img`
   @media screen and (max-width: 768px) {
     max-width: 100%;
   }
-  
 `
 
 export default ValueProp
