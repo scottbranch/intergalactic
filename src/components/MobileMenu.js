@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import SvgLogomark from "../assets/svg/logomark"
 import Close from "../assets/svg/close"
+import Open from "../assets/svg/open"
 import Link from "gatsby-link"
 import styled, { withTheme } from "styled-components"
 
@@ -21,7 +22,7 @@ const MobileMenu = ({ theme }) => {
         </Link>
         <MenuText className={menuOpen ? "active" : ""} onClick={toggleMenu}>
           <span>{menuOpen ? "Close" : "Menu"}</span>{" "}
-          {menuOpen ? <Close fill={theme.colors.aluminum} /> : <MenuCircle />}
+          {menuOpen ? <Close fill={theme.colors.aluminum} /> : <Open fill={theme.colors.black} />}
         </MenuText>
       </Container>
       <Overlay className={menuOpen ? "active" : ""}>
