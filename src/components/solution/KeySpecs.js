@@ -39,7 +39,7 @@ const Container = styled.div`
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
-    padding: 80px 60px 100px;
+    padding: 80px 25px 100px;
   }
 
   &:after {
@@ -78,6 +78,11 @@ const SectionDesc = styled.div`
     border-bottom: 1px solid ${({ theme }) => theme.colors.aluminum};
     opacity: 0;
     transition: opacity 1s ease;
+
+    @media screen and (max-width: 768px) {
+      font-size: 20px;
+      line-height: 31px;
+    }
 
     &.is-inview {
       opacity: 1;

@@ -171,6 +171,7 @@ const FlexArea = styled.div`
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
+    align-items: initial;
   }
 
   div {
@@ -273,6 +274,10 @@ const EquipmnentImg = styled.img`
   visibility: hidden;
   z-index: 100;
   transition: all 650ms ease;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `
 
 const HoverCover = styled.span`

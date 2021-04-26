@@ -33,7 +33,7 @@ const StyledSection = styled.section`
   background-position: bottom center;
 
   @media screen and (max-width: 768px) {
-    height: 100vh;
+    height: 700px;
   }
 `
 
@@ -47,7 +47,9 @@ const HeadingContainer = styled.div`
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: initial;
+    padding: 0 25px;
+    align-items: initial;
   }
 `
 
@@ -59,7 +61,8 @@ const StyledHeading = styled.h2`
 
   @media screen and (max-width: 768px) {
     flex: initial;
-    margin-top: 200px;
+    margin-top: auto;
+    margin-bottom: auto;
     font-size: 52px;
     line-height: 100%;
   }
@@ -69,6 +72,7 @@ const Paragraph = styled.p`
   color: white;
   position: relative;
   font-size: 25px;
+  line-height: 36px;
   flex: 50%;
 
   @media screen and (max-width: 768px) {

@@ -48,6 +48,13 @@ const StyledSection = styled.section`
 const StyledHeading = styled.h3`
   font-size: 48px;
   padding-left: 60px;
+  
+  @media screen and (max-width: 768px) {
+    text-align: left;
+    padding-left: 25px;
+    font-size: 30px;
+  }
+  
   span:nth-of-type(2) {
     left: 115px;
   }
@@ -68,6 +75,7 @@ const InnerContainer = styled.div`
 
   @media screen and (max-width: 768px) {
     flex-direction: column-reverse;
+    padding: 0 25px;
   }
 `
 
@@ -84,6 +92,10 @@ const TextContainer = styled.div`
     font-size: 25px;
     line-height: 36px;
     color: ${({ theme }) => theme.colors.aluminum};
+
+    @media screen and (max-width: 768px) {
+      font-size: 20px;
+    }
   }
 `
 
@@ -91,7 +103,7 @@ const OverviewImg = styled.img`
   max-width: 540px;
 
   @media screen and (max-width: 768px) {
-    padding: 0 60px;
+    max-width: 100%;
   }
 `
 

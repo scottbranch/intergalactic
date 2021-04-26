@@ -10,6 +10,11 @@ const Hero = props => {
     setIsLoaded(true)
   }, [])
 
+  const scrollToHandler = (el) => {
+    const scrollEl = document.getElementById(el);
+    window.scroll.scrollTo(scrollEl);
+  }
+
   return (
     <StyledSection data-scroll-section>
       <HeadingContainer>
@@ -21,7 +26,7 @@ const Hero = props => {
           </span>
         </StyledHeading>
         <Paragraph className="fadein" data-scroll>
-          <a href="#">
+          <a href="javascript:void(0)" onClick={e => scrollToHandler('companyOverview')}>
             Overview{" "}
             <svg
               width="10"
@@ -36,7 +41,7 @@ const Hero = props => {
               />
             </svg>{" "}
           </a>
-          <a href="#">
+          <a href="javascript:void(0)" onClick={e => scrollToHandler('companyTeam')}>
             Dream Team{" "}
             <svg
               width="10"
@@ -51,7 +56,7 @@ const Hero = props => {
               />
             </svg>{" "}
           </a>
-          <a href="#">
+          <a href="javascript:void(0)" onClick={e => scrollToHandler('companyCareers')}>
             Careers{" "}
             <svg
               width="10"

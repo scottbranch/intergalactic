@@ -38,6 +38,10 @@ const HeadingContainer = styled.div`
   display: flex;
   align-items: center;
   padding-left: 60px;
+
+  @media screen and (max-width: 768px) {
+    padding-left: 25px;
+  }
 `
 
 const StyledHeading = styled.h2`

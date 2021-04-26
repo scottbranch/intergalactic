@@ -3,10 +3,34 @@ import styled, { css } from "styled-components"
 
 const Hero = props => {
   const [isLoaded, setIsLoaded] = useState(false)
+  const [formState, setFormState] = useState({})
+  const [successState, setSuccessState] = useState(false)
+  
+  const handleChange = e => {
+    setFormState({ ...formState, [e.target.name]: e.target.value })
+  }
 
   useEffect(() => {
     setIsLoaded(true)
   }, [])
+
+  function encode(data) {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&")
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": e.target.getAttribute("name"),
+        ...formState
+      })
+    }).then(() => setSuccessState(true)).catch(error => alert(error))
+  }
 
   return (
     <StyledSection data-scroll-section>
@@ -34,39 +58,48 @@ const Hero = props => {
               <a href="mailto:phonehome(at)ig.space">phonehome(at)ig.space</a>
             </div>
           </FlexArea>
-          <FlexArea>
-            <ContactForm>
+          <FlexArea id="contactForm">
+            <ContactForm disabled={successState} name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+              <input type="hidden" name="form-name" value="contact" />
               <div>
                 <label for="name">Name</label>
-                <input type="text" id="name" />
+                <input type="text" name="name" id="name" required onChange={handleChange} />
               </div>
               <div>
                 <label for="company">Company</label>
-                <input type="text" id="company" />
+                <input type="text" name="company" id="company" required onChange={handleChange} />
               </div>
               <div>
                 <label for="email">Email</label>
-                <input type="text" id="email" />
+                <input type="text" name="email" id="email" required onChange={handleChange} />
               </div>
               <div>
                 <label for="phone">Phone</label>
-                <input type="text" id="phone" />
+                <input type="text" name="phone" id="phone" required onChange={handleChange}  />
               </div>
               <div>
                 <label for="reason">Reason for inquiry</label>
-                <select type="text" id="reason">
+                <select type="text" name="reason" id="reason" onChange={handleChange}>
                   <option disabled selected>
                     Select
                   </option>
+                  <option>Another Reason</option>
+                  <option>Another Reason</option>
+                  <option>Another Reason</option>
+                  <option>Another Reason</option>
                 </select>
               </div>
               <div>
                 <label for="message">Message</label>
-                <textarea id="message" />
+                <textarea id="message" name="message" required onChange={handleChange} />
               </div>
-              <div>
-                <button type="submit">Submit Form</button>
-              </div>
+              {successState !== true ? (
+                <div>
+                  <button type="submit">Submit Form</button>
+                </div>
+              ) : (
+                <div><p>Thank you for your message, someone will be in contact with you soon.</p></div>
+              )}
             </ContactForm>
           </FlexArea>
         </FlexContainer>
@@ -82,6 +115,8 @@ const ContactFormContainer = styled.div`
 
   @media screen and (max-width: 768px) {
     padding-top: 60px;
+    padding-left: 25px;
+    padding-right: 25px;
   }
 `
 
@@ -121,6 +156,13 @@ const FlexArea = styled.div`
 const ContactForm = styled.form`
   margin-top: 80px;
 
+  &[disabled] {
+    label, input, select, textarea {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+
   label {
     display: block;
     font-family: ${({ theme }) => theme.fonts.cartographMedium};
@@ -152,12 +194,19 @@ const ContactForm = styled.form`
     color: ${({ theme }) => theme.colors.aluminum};
     margin-bottom: 60px;
 
+    &:focus {
+      outline: none;
+    }
+
     @media screen and (max-width: 768px) {
       line-height: 30px;
     }
   }
 
   select {
+    &:focus {
+      outline: none;
+    }
     @media screen and (max-width: 768px) {
       line-height: 40px;
     }
@@ -175,6 +224,12 @@ const ContactForm = styled.form`
     text-transform: uppercase;
     font-size: 16px;
     padding: 20px 40px;
+  }
+
+  p {
+    font-size: 25px;
+    color: ${({ theme }) => theme.colors.aluminum};
+    line-height: 32px;
   }
 `
 

@@ -5,7 +5,7 @@ import styled from "styled-components"
 const Recruit = props => {
   return (
     <StyledSection data-scroll-section>
-      <Container>
+      <Container id="companyCareers">
         <h5>Become an Intergalactic recruit</h5>
         <TextContainer>
           <p>

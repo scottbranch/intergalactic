@@ -54,7 +54,7 @@ const MenuOverlay = props => {
               <div className="sub-list">
                 <p className="eyebrow">
                   GS1 SERIES /<br />
-                   THERMAL MANAGEMENT SYSTEMS
+                  THERMAL MANAGEMENT SYSTEMS
                 </p>
                 <ul>
                   <li>

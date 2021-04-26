@@ -57,7 +57,7 @@ const Team = props => {
 
   return (
     <StyledSection data-scroll-section>
-      <Container>
+      <Container id="companyTeam">
         <h5>Team</h5>
         <HoverCover>
           {teamMembers.map((item, index) => {

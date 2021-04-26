@@ -6,7 +6,7 @@ import styled from "styled-components"
 const DoubleImage = props => {
   return (
     <StyledSection data-scroll-section>
-      <Paragraph className="fadein" data-scroll data-scroll-offset="20%">
+      <Paragraph className="fadein" data-scroll data-scroll-offset="20%" id="companyOverview">
         <span>
           Our founding engineers led thermal management at large aerospace
           companies and couldn’t find the solutions they needed to build
