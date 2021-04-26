@@ -1,5 +1,6 @@
 import React from "react"
 import Line from "../Line"
+import AnchorLink from "../AnchorLink"
 import styled from "styled-components"
 
 const Contact = () => {
@@ -27,7 +28,7 @@ const Contact = () => {
             modified to specific applications and assembled with the fastest
             lead times in the industry.
           </p>
-          <a href="#">Let's Connect</a>
+          <AnchorLink to="/contact">Let's Connect</AnchorLink>
         </FlexArea>
         <FlexArea data-scroll data-scroll-offset="20%">
           <p
@@ -42,7 +43,7 @@ const Contact = () => {
             anything else out there. We offer scheduled field maintenance and
             onsite repairs to keep things tight and running smooth.
           </p>
-          <a href="#">Let's Connect</a>
+          <AnchorLink to="/contact">Let's Connect</AnchorLink>
         </FlexArea>
         <FlexArea data-scroll data-scroll-offset="20%">
           <p
@@ -57,7 +58,7 @@ const Contact = () => {
             team will find and fix whatever’s wrong and get you back up and
             running in no time.
           </p>
-          <a href="#">Let's Connect</a>
+          <AnchorLink to="/contact">Let's Connect</AnchorLink>
         </FlexArea>
       </StyledInner>
     </StyledSection>

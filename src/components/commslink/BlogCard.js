@@ -92,6 +92,7 @@ const StyledInner = styled.div`
 
       @media screen and (min-width: 768px) {
         margin: 20px 0 10px;
+        max-width: 380px;
       }
     }
 
