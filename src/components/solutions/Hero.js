@@ -72,6 +72,7 @@ const Paragraph = styled.p`
   color: white;
   position: relative;
   font-size: 25px;
+  line-height: 36px;
   flex: 50%;
 
   @media screen and (max-width: 768px) {

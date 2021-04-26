@@ -8,6 +8,11 @@ const Hero = props => {
     setIsLoaded(true)
   })
 
+  const scrollToHandler = (el) => {
+    const scrollEl = document.getElementById(el);
+    window.scroll.scrollTo(scrollEl);
+  }
+
   return (
     <HeroWrapper data-scroll-section>
       <StyledSection>
@@ -20,13 +25,13 @@ const Hero = props => {
       <ContactInfo>
           <p>Our partnership begins here.</p>
           <div>
-            <PageLink href="#">
+            <PageLink href="javascript:void(0)" onClick={e => scrollToHandler('contactForm')}>
               Contact form
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10 1.63036H8.89696L8.91017 8.11881L0.792603 0L0 0.785478L8.12418 8.91089H1.62484L1.63804 10H10V1.63036Z" fill="#2D261E"/>
               </svg>
             </PageLink>
-            <PageLink href="#">
+            <PageLink href="javascript:void(0)" onClick={e => scrollToHandler('departments')}>
               Contact departments
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10 1.63036H8.89696L8.91017 8.11881L0.792603 0L0 0.785478L8.12418 8.91089H1.62484L1.63804 10H10V1.63036Z" fill="#2D261E"/>

@@ -10,7 +10,7 @@ const Hero = props => {
 
   return (
     <StyledSection data-scroll-section>
-      <ContactContainer>
+      <ContactContainer id="departments">
         <h4>Contact departments</h4>
         <FlexContainer>
           <FlexArea>

@@ -58,7 +58,7 @@ const Hero = props => {
               <a href="mailto:phonehome(at)ig.space">phonehome(at)ig.space</a>
             </div>
           </FlexArea>
-          <FlexArea>
+          <FlexArea id="contactForm">
             <ContactForm disabled={successState} name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
               <input type="hidden" name="form-name" value="contact" />
               <div>
