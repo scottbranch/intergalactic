@@ -16,7 +16,7 @@ const Commslink = () => {
     setIsLoaded(true)
     setTimeout(() => {
       isBrowser && window.scroll.update()
-    }, 200)
+    }, 300)
   }, [])
 
   const data = useStaticQuery(graphql`

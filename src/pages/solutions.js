@@ -16,7 +16,7 @@ const Solutions = () => {
   useEffect(() => {
     setTimeout(() => {
       isBrowser && window.scroll.update()
-    }, 200)
+    }, 300)
   }, [])
 
   return (

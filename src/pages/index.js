@@ -19,7 +19,7 @@ const IndexPage = () => {
   useEffect(() => {
     setTimeout(() => {
       isBrowser && window.scroll.update()
-    }, 100)
+    }, 300)
   }, [])
 
   return (
