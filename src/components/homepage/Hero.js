@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import homepagehero from "../../images/homepage/homepage-hero.jpg"
+import CookieBar from "../../components/CookieBar"
 import styled, { css } from "styled-components"
 
 const Hero = props => {
@@ -36,16 +37,19 @@ const Hero = props => {
   const homepageData = data.allPrismicHomepageTemplate.nodes[0].data
 
   return (
-    <StyledSection data-scroll-section>
-      <HeadingContainer>
-        <StyledHeading className={isLoaded && "active"}>
-          <span id="span-0">Heat</span> <span id="span-1">Heat is no</span>{" "}
-          <span id="span-2">Longer a</span>
-          <span id="span-3">barrier</span>
-          <span id="span-4">barrier</span>
-        </StyledHeading>
-      </HeadingContainer>
-    </StyledSection>
+    <>
+      <StyledSection data-scroll-section id="homepage-hero">
+        <HeadingContainer>
+          <StyledHeading className={isLoaded && "active"}>
+            <span id="span-0">Heat</span> <span id="span-1">Heat is no</span>{" "}
+            <span id="span-2">Longer a</span>
+            <span id="span-3">barrier</span>
+            <span id="span-4">barrier</span>
+          </StyledHeading>
+        </HeadingContainer>
+      </StyledSection>
+      <CookieBar />
+    </>
   )
 }
 

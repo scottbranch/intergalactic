@@ -74,6 +74,9 @@ const Scroll = callbacks => {
 
       locomotiveScroll.on("scroll", func => {
         if (body.classList.contains("home")) {
+          const homepageHero = document.getElementById("homepage-hero")
+          const heroValue = getTranslateValues(homepageHero)
+
           const imageFloat = document.getElementById("image-float-container")
           const floatImg = document.getElementById("float-image")
           //image rotate stuff
@@ -81,6 +84,19 @@ const Scroll = callbacks => {
           //creating the rotate value for the homepage ImageFloat component
           let rotateValue = y / 30 + 120
           floatImg.style.transform = "rotate(" + rotateValue + "deg)"
+        }
+
+        if (
+          document.getElementsByTagName("body")[0].classList.contains("home")
+        ) {
+          const homepageHero = document.getElementById("homepage-hero")
+          const heroValue = getTranslateValues(homepageHero)
+          const cookieBar = document.getElementById("cookie-bar")
+          if (heroValue.y < 0) {
+            cookieBar.classList.add("hide")
+          } else {
+            cookieBar.classList.remove("hide")
+          }
         }
       })
 
