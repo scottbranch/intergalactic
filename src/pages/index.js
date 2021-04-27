@@ -18,7 +18,7 @@ const IndexPage = () => {
 
   const calculateTimeLeft = () => {
     let year = new Date().getFullYear()
-    let difference = +new Date(`04/30/2021`) - +new Date()
+    let difference = +new Date(`05/04/2021`) - +new Date()
     let timeLeft = {}
 
     if (difference > 0) {
