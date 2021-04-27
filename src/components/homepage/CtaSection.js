@@ -7,7 +7,7 @@ const CtaSection = () => {
   return (
     <StyledSection data-scroll-section>
       <StyledHeading data-scroll data-scroll-offset="30%">
-        <span id="span-0">Could your moonshot </span>{" "}
+        <span id="span-0">Could your moonshot</span>{" "}
         <span id="span-1">be any cooler?</span>{" "}
       </StyledHeading>
       <CtaContainer>

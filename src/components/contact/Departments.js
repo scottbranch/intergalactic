@@ -11,28 +11,28 @@ const Hero = props => {
   return (
     <StyledSection data-scroll-section>
       <ContactContainer id="departments">
-        <h4>Contact departments</h4>
+        <h4 data-scroll data-scroll-offset="20%">Contact departments</h4>
         <FlexContainer>
-          <FlexArea>
+          <FlexArea data-scroll data-scroll-offset="20%">
             <ContactText>Email us corresponding your inquiry.</ContactText>
           </FlexArea>
-          <FlexArea>
+          <FlexArea data-scroll data-scroll-offset="20%">
             <FlexContainerWrap>
-              <FlexArea>
-              <p>Technical support</p>
+              <FlexArea data-scroll data-scroll-offset="20%">
+                <p>Technical support</p>
               </FlexArea>
-              <FlexArea>
-              <a href="mailto:support@ig.space">
-                support(at)ig.space 
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M11.2811 9.41728V0.417739H2.28154V1.96454L8.63947 1.95449L0.393238 10.2007L1.49809 11.3056L9.74432 3.05935L9.74432 9.42732L11.2811 9.41728Z" fill="#1E170A"/>
-                </svg>
-              </a>
+              <FlexArea data-scroll data-scroll-offset="20%">
+                <a href="mailto:support@ig.space">
+                  support(at)ig.space 
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.2811 9.41728V0.417739H2.28154V1.96454L8.63947 1.95449L0.393238 10.2007L1.49809 11.3056L9.74432 3.05935L9.74432 9.42732L11.2811 9.41728Z" fill="#1E170A"/>
+                  </svg>
+                </a>
               </FlexArea>
-              <FlexArea>
+              <FlexArea data-scroll data-scroll-offset="20%">
                 <p>Press inquiries</p>
               </FlexArea>
-              <FlexArea>
+              <FlexArea data-scroll data-scroll-offset="20%">
                 <a href="mailto:commslink@ig.space">
                   commslink(at)ig.space
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -40,10 +40,10 @@ const Hero = props => {
                   </svg>
                 </a>
               </FlexArea>
-              <FlexArea>
+              <FlexArea data-scroll data-scroll-offset="20%">
                 <p>Supplier info</p>
               </FlexArea>
-              <FlexArea>
+              <FlexArea data-scroll data-scroll-offset="20%">
                 <a href="mailto:supplyuport@ig.space">
                   supplyuport(at)ig.space
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -51,10 +51,10 @@ const Hero = props => {
                   </svg> 
                 </a>
               </FlexArea>
-              <FlexArea>
+              <FlexArea data-scroll data-scroll-offset="20%">
                 <p>Building or bidding a project</p>
               </FlexArea>
-              <FlexArea>
+              <FlexArea data-scroll data-scroll-offset="20%">
                 <a href="mailto:launch@ig.space">
                   launch (at)ig.space
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -74,6 +74,15 @@ const ContactContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.cream};
   border-bottom: 1px solid ${({ theme }) => theme.colors.black};
   padding: 120px 60px;
+
+  h4 {
+    opacity: 0;
+    transition: opacity 1s ease;
+
+    &.is-inview {
+      opacity: 1;
+    }
+  }
 
   @media screen and (max-width: 768px) {
     padding: 120px 25px;
@@ -145,6 +154,12 @@ const FlexContainerWrap = styled.div`
 
 const FlexArea = styled.div`
   flex: 50%;
+  opacity: 0;
+  transition: opacity 1s ease;
+
+  &.is-inview {
+    opacity: 1;
+  }
 
   @media screen and (max-width: 768px) {
     flex: 100%;

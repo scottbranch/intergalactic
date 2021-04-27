@@ -23,15 +23,15 @@ const Hero = props => {
         </HeadingContainer>
       </StyledSection>
       <ContactInfo>
-          <p>Our partnership begins here.</p>
+          <p data-scroll data-scroll-offset="20%">Our partnership begins here.</p>
           <div>
-            <PageLink href="javascript:void(0)" onClick={e => scrollToHandler('contactForm')}>
+            <PageLink data-scroll data-scroll-offset="20%" href="javascript:void(0)" onClick={e => scrollToHandler('contactForm')}>
               Contact form
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10 1.63036H8.89696L8.91017 8.11881L0.792603 0L0 0.785478L8.12418 8.91089H1.62484L1.63804 10H10V1.63036Z" fill="#2D261E"/>
               </svg>
             </PageLink>
-            <PageLink href="javascript:void(0)" onClick={e => scrollToHandler('departments')}>
+            <PageLink data-scroll data-scroll-offset="20%" href="javascript:void(0)" onClick={e => scrollToHandler('departments')}>
               Contact departments
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10 1.63036H8.89696L8.91017 8.11881L0.792603 0L0 0.785478L8.12418 8.91089H1.62484L1.63804 10H10V1.63036Z" fill="#2D261E"/>
@@ -90,6 +90,12 @@ const ContactInfo = styled.div`
   p {
     font-family: ${({theme}) => theme.fonts.cartographMedium};
     text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 1s ease;
+
+    &.is-inview {
+      opacity: 1;
+    }
   }
 `
 const PageLink = styled.a`
@@ -98,6 +104,12 @@ const PageLink = styled.a`
   font-family: ${({theme}) => theme.fonts.cartographMedium};
   text-decoration: none;
   display: inline-block;
+  opacity: 0;
+  transition: opacity 1s ease;
+
+  &.is-inview {
+    opacity: 1;
+  }
 
   @media screen and (max-width: 768px) {
     display: none;

@@ -12,7 +12,7 @@ const DoubleImage = () => {
         <div>
           <StyledHeading data-scroll data-scroll-offset="30%">
             <span id="span-0">Less</span>
-            <span id="span-1"> Less Weight.</span>
+            <span id="span-1">Less Weight.</span>
             <span id="span-2">MORE COOL.</span>
             <span id="span-3">COOL.</span>
           </StyledHeading>

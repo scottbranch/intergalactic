@@ -38,7 +38,7 @@ const Hero = props => {
     <StyledSection data-scroll-section>
       <ContactFormContainer>
         <div>
-          <h4>How can we help?</h4>
+          <h4 data-scroll data-scroll-offset="20%">How can we help?</h4>
           <StyledSubHeading
             className="fadein"
             data-scroll
@@ -48,7 +48,7 @@ const Hero = props => {
         <FlexContainer>
           <FlexArea>
             <div>
-              <address>
+              <address data-scroll data-scroll-offset="20%">
                 Intergalactic HQ
                 <br />
                 3172 E. Deseret Drive South
@@ -166,6 +166,15 @@ const ContactFormContainer = styled.div`
   border-bottom: 1px solid ${({ theme }) => theme.colors.black};
   padding: 120px 60px;
 
+  h4 {
+    opacity: 0;
+    transition: opacity 1s ease;
+
+    &.is-inview {
+      opacity: 1;
+    }
+  }
+
   @media screen and (max-width: 768px) {
     padding-top: 60px;
     padding-left: 25px;
@@ -186,6 +195,12 @@ const FlexContainer = styled.div`
     font-size: 16px;
     line-height: 28px;
     margin: 80px 0 40px;
+    opacity: 0;
+    transition: opacity 1s ease;
+
+    &.is-inview {
+      opacity: 1;
+    }
 
     @media screen and (max-width: 768px) {
       margin: 40px 0;
