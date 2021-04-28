@@ -85,17 +85,21 @@ const Scroll = callbacks => {
           let rotateValue = y / 30 + 120
           floatImg.style.transform = "rotate(" + rotateValue + "deg)"
         }
+      })
 
-        if (
-          document.getElementsByTagName("body")[0].classList.contains("home")
-        ) {
-          const homepageHero = document.getElementById("homepage-hero")
-          const heroValue = getTranslateValues(homepageHero)
-          const cookieBar = document.getElementById("cookie-bar")
-          if (heroValue.y < 0) {
-            cookieBar.classList.add("hide")
-          } else {
-            cookieBar.classList.remove("hide")
+      const cookie = document.getElementById("cookie-bar")
+
+      locomotiveScroll.on("call", obj => {
+        if (body.classList.contains("home")) {
+          if (html.dataset.direction === "down") {
+            if (obj === "cookie") {
+              cookie.classList.add("hide")
+            }
+          }
+          if (html.dataset.direction === "up") {
+            if (obj === "cookie") {
+              cookie.classList.remove("hide")
+            }
           }
         }
       })

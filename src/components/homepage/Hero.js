@@ -47,8 +47,13 @@ const Hero = props => {
             <span id="span-4">barrier</span>
           </StyledHeading>
         </HeadingContainer>
+        <CookieTrigger
+          data-scroll-call={"cookie"}
+          data-scroll
+          data-scroll-repeat
+        ></CookieTrigger>
       </StyledSection>
-      <CookieBar />
+      <CookieBar id="cookie-bar" />
     </>
   )
 }
@@ -150,6 +155,13 @@ const StyledHeading = styled.h2`
       }
     }
   }
+`
+
+const CookieTrigger = styled.div`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
 `
 
 export default Hero
