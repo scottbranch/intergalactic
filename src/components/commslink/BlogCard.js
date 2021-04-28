@@ -71,6 +71,7 @@ const StyledInner = styled.div`
       font-size: 14px;
       text-transform: uppercase;
       color: ${({ theme }) => theme.colors.aluminum};
+      font-family: ${({ theme }) => theme.fonts.cartographMedium};
 
       &:first-of-type {
         float: none;

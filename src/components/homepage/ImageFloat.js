@@ -13,7 +13,6 @@ const ImageFloat = () => {
           data-scroll-target="#sticky-trigger"
         >
           <div>
-            <p className="eyebrow">/intro</p>
             <p className="heading">
               <span>Applic</span>ations
             </p>

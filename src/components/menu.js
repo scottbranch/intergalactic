@@ -84,6 +84,12 @@ const StyledButton = styled.button`
   &:hover {
     cursor: pointer;
   }
+
+  span {
+    margin-top: 15px;
+    margin-left: -1px;
+    font-family: ${({ theme }) => theme.fonts.cartographMedium};
+  }
 `
 
 const MenuCircle = styled.button`

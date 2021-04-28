@@ -21,6 +21,7 @@ const StyledLink = styled(Link)`
     color === "light" ? theme.colors.gold : theme.colors.black};
   text-decoration: none;
   padding: 20px 42px;
+  font-family: ${({ theme }) => theme.fonts.cartographMedium};
 `
 
 export default AnchorLink

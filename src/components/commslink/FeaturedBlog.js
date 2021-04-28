@@ -94,6 +94,7 @@ const StyledInner = styled.div`
       text-transform: uppercase;
       color: ${({ theme }) => theme.colors.aluminum};
       margin-bottom: 20px;
+      font-family: ${({ theme }) => theme.fonts.cartographMedium};
     }
 
     h3 {

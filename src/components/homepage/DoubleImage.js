@@ -102,7 +102,7 @@ const StyledAnchor = styled(AnchorLink)`
 `
 
 const MainImg = styled.div`
-  max-width: 910px;
+  max-width: 800px;
   z-index: 100;
 
   img {

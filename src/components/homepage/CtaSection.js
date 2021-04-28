@@ -46,8 +46,6 @@ const StyledSection = styled.section`
 `
 
 const StyledHeading = styled.h3`
-  max-width: 1255px;
-
   #span-1 {
     margin: 0;
     @media screen and (min-width: 768px) {

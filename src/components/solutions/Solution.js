@@ -211,6 +211,10 @@ const SolutionContainer = styled.div`
     &.is-inview {
       opacity: 1;
     }
+
+    span {
+      font-family: ${({ theme }) => theme.fonts.cartographMedium};
+    }
   }
 
   .solution-detail {

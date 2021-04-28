@@ -46,6 +46,7 @@ const Div = styled.div`
     a {
       color: ${({ theme }) => theme.colors.white};
       text-decoration: none;
+      font-family: ${({ theme }) => theme.fonts.cartographMedium};
     }
   }
 

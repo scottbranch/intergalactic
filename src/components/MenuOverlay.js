@@ -240,6 +240,7 @@ const ListContainer = styled.nav`
     li {
       list-style: none;
       margin: 15px 0;
+      font-family: ${({ theme }) => theme.fonts.cartographMedium};
     }
   }
 
