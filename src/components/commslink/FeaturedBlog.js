@@ -1,22 +1,45 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import Line from "../Line"
 import styled from "styled-components"
 import FeaturedImage from "../../images/commslink/featuredBlog.jpg"
 
 const FeaturedBlog = () => {
+  const data = useStaticQuery(graphql`
+    {
+      prismicBlogPost {
+        data {
+          blog_title {
+            text
+          }
+          date_published(formatString: "")
+          preview_image {
+            url
+          }
+        }
+        uid
+      }
+    }
+  `)
+
+  const blogData = data.prismicBlogPost.data
+
   return (
     <StyledSection data-scroll-section>
       <StyledInner>
-        <div className="image-container" />
+        <div
+          className="image-container"
+          style={{ backgroundImage: `url(${blogData.preview_image.url})` }}
+        />
         <div className="description">
-          <span>08.03.21</span>
-          <h3>REIMAGINING THERMAL ENGINES</h3>
-          <span>The Boom BoX</span>
+          <span>{blogData.date_published}</span>
+          <h3>{blogData.blog_title.text}</h3>
+          <span>The Boom Box</span>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
-          <a href="#">
+          <a href={`/commslink/${data.prismicBlogPost.uid}`}>
             Go to article
             <svg
               width="12"
@@ -70,7 +93,6 @@ const StyledInner = styled.div`
   .image-container {
     height: 290px;
     width: 100%;
-    background-image: url("${FeaturedImage}");
     background-size: cover;
     background-position: center center;
 
