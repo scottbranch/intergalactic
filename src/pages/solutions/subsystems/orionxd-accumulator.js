@@ -50,7 +50,7 @@ const Stardust = () => {
     <Layout className="dark">
       <SEO title="OrionXD Accumulator" />
       <Hero eyebrow="IGE-OXDA" title="OrionXD Accumulator" />
-      <Solutions description="The OrionXD Accumulator is gas-charged to allow for coolant expansion in sealed liquid systems. The OrionXD is configurable with sensor options for position and leak detection feedback, uses non-stick double sealed dynamic piston technology, and is customizable to any" />
+      <Solutions description="The OrionXD Accumulator is gas-charged to allow for coolant expansion in sealed liquid systems. The OrionXD is configurable with sensor options for position and leak detection feedback, uses non-stick double sealed dynamic piston technology, and is customizable to any specification." />
       <KeySpecs specs={specs} />
       <UseCases items={carouselItems} />
     </Layout>

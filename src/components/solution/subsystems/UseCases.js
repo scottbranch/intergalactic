@@ -83,7 +83,7 @@ const StyledSection = styled.section`
   .desktop-list {
     display: none;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1000px) {
       display: block;
     }
   }
@@ -91,7 +91,7 @@ const StyledSection = styled.section`
   .mobile-list {
     display: block;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1000px) {
       display: none;
     }
   }
@@ -103,7 +103,7 @@ const Container = styled.div`
   flex-direction: column;
 
   @media screen and (min-width: 768px) {
-    padding: 160px 60px 250px;
+    padding: 160px 60px 390px;
     flex-direction: row;
   }
 `
@@ -127,7 +127,7 @@ const TabContainer = styled.div`
   margin-bottom: 45px;
   display: none;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1000px) {
     display: block;
   }
 

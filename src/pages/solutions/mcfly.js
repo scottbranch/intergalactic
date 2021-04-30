@@ -53,7 +53,7 @@ const Stardust = () => {
     <Layout>
       <SEO title="Mcfly" />
       <Hero eyebrow="GS1-MC" title="Mcfly" heroImg={HeroImg} />
-      <Solutions description="Lightweight, and rugged 100% electric cooling, heating, and ventilation system with broad applications in sky, space, land, and sea. Ideal for heating and cooling ventilated enclosures, such as cockpits and cabins. " />
+      <Solutions description="Lightweight and rugged 100% electric cooling, heating, and ventilation system with broad applications in sky, space, land, and sea. Ideal for heating and cooling ventilated enclosures, such as cockpits and cabins. " />
       <KeySpecs specs={specs} />
       <UseCases items={carouselItems} />
     </Layout>

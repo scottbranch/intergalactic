@@ -14,7 +14,7 @@ const Solutions = props => {
     <StyledSection data-scroll-section>
       <Container>
         <SectionTitle className="fadein" data-scroll data-scroll-offset="20%">
-          <span>SOLUTIONS:</span>
+          <span>SUMMARY:</span>
         </SectionTitle>
         <SectionDesc>
           <p data-scroll data-scroll-offset="20%">

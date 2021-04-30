@@ -94,9 +94,13 @@ const Paragraph = styled.p`
   margin-bottom: 60px;
 
   @media screen and (min-width: 768px) {
-    right: 100px;
-    margin-bottom: 0;
+    margin-left: 60px;
     font-size: 25px;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: 1460px) {
+    right: 100px;
   }
 `
 

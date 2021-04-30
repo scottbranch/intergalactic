@@ -11,7 +11,9 @@ const Hero = props => {
   return (
     <StyledSection data-scroll-section>
       <ContactContainer id="departments">
-        <h4 data-scroll data-scroll-offset="20%">Contact departments</h4>
+        <h4 data-scroll data-scroll-offset="20%">
+          Contact departments
+        </h4>
         <FlexContainer>
           <FlexArea data-scroll data-scroll-offset="20%">
             <ContactText>Email us corresponding your inquiry.</ContactText>
@@ -23,9 +25,18 @@ const Hero = props => {
               </FlexArea>
               <FlexArea data-scroll data-scroll-offset="20%">
                 <a href="mailto:support@ig.space">
-                  support(at)ig.space 
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.2811 9.41728V0.417739H2.28154V1.96454L8.63947 1.95449L0.393238 10.2007L1.49809 11.3056L9.74432 3.05935L9.74432 9.42732L11.2811 9.41728Z" fill="#1E170A"/>
+                  support(at)ig.space
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11.2811 9.41728V0.417739H2.28154V1.96454L8.63947 1.95449L0.393238 10.2007L1.49809 11.3056L9.74432 3.05935L9.74432 9.42732L11.2811 9.41728Z"
+                      fill="#1E170A"
+                    />
                   </svg>
                 </a>
               </FlexArea>
@@ -35,8 +46,17 @@ const Hero = props => {
               <FlexArea data-scroll data-scroll-offset="20%">
                 <a href="mailto:commslink@ig.space">
                   commslink(at)ig.space
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.2811 9.41728V0.417739H2.28154V1.96454L8.63947 1.95449L0.393238 10.2007L1.49809 11.3056L9.74432 3.05935L9.74432 9.42732L11.2811 9.41728Z" fill="#1E170A"/>
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11.2811 9.41728V0.417739H2.28154V1.96454L8.63947 1.95449L0.393238 10.2007L1.49809 11.3056L9.74432 3.05935L9.74432 9.42732L11.2811 9.41728Z"
+                      fill="#1E170A"
+                    />
                   </svg>
                 </a>
               </FlexArea>
@@ -45,10 +65,19 @@ const Hero = props => {
               </FlexArea>
               <FlexArea data-scroll data-scroll-offset="20%">
                 <a href="mailto:supplyuport@ig.space">
-                  supplyuport(at)ig.space
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.2811 9.41728V0.417739H2.28154V1.96454L8.63947 1.95449L0.393238 10.2007L1.49809 11.3056L9.74432 3.05935L9.74432 9.42732L11.2811 9.41728Z" fill="#1E170A"/>
-                  </svg> 
+                  supplyport(at)ig.space
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11.2811 9.41728V0.417739H2.28154V1.96454L8.63947 1.95449L0.393238 10.2007L1.49809 11.3056L9.74432 3.05935L9.74432 9.42732L11.2811 9.41728Z"
+                      fill="#1E170A"
+                    />
+                  </svg>
                 </a>
               </FlexArea>
               <FlexArea data-scroll data-scroll-offset="20%">
@@ -57,8 +86,17 @@ const Hero = props => {
               <FlexArea data-scroll data-scroll-offset="20%">
                 <a href="mailto:launch@ig.space">
                   launch (at)ig.space
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.2811 9.41728V0.417739H2.28154V1.96454L8.63947 1.95449L0.393238 10.2007L1.49809 11.3056L9.74432 3.05935L9.74432 9.42732L11.2811 9.41728Z" fill="#1E170A"/>
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11.2811 9.41728V0.417739H2.28154V1.96454L8.63947 1.95449L0.393238 10.2007L1.49809 11.3056L9.74432 3.05935L9.74432 9.42732L11.2811 9.41728Z"
+                      fill="#1E170A"
+                    />
                   </svg>
                 </a>
               </FlexArea>
@@ -118,7 +156,7 @@ const FlexContainerWrap = styled.div`
   @media screen and (max-width: 768px) {
     margin-top: 50px;
   }
-  
+
   p {
     color: ${({ theme }) => theme.colors.aluminum};
     font-style: normal;
@@ -129,7 +167,7 @@ const FlexContainerWrap = styled.div`
     @media screen and (max-width: 768px) {
       margin-bottom: 10px;
     }
-  }  
+  }
 
   a {
     color: ${({ theme }) => theme.colors.aluminum};
@@ -164,11 +202,10 @@ const FlexArea = styled.div`
   @media screen and (max-width: 768px) {
     flex: 100%;
   }
-
 `
 
 const StyledSubHeading = styled.p`
-  color: #91897D;
+  color: #91897d;
   font-size: 14px;
   letter-spacing: 3px;
   font-family: ${({ theme }) => theme.fonts.cartographMedium};
@@ -200,17 +237,17 @@ const ContactInfo = styled.div`
   margin-top: 20px;
 
   p {
-    font-family: ${({theme}) => theme.fonts.cartographMedium};
+    font-family: ${({ theme }) => theme.fonts.cartographMedium};
     text-transform: uppercase;
   }
 `
 const PageLink = styled.a`
   color: ${({ theme }) => theme.colors.black};
   text-transform: uppercase;
-  font-family: ${({theme}) => theme.fonts.cartographMedium};
+  font-family: ${({ theme }) => theme.fonts.cartographMedium};
   text-decoration: none;
   display: inline-block;
-  
+
   &:first-of-type {
     margin-right: 40px;
   }

@@ -47,7 +47,7 @@ const Stardust = () => {
     <Layout className="dark">
       <SEO title="Fornax Electric Heaters" />
       <Hero eyebrow="IGE-FEH" title="Fornax Electric Heaters" />
-      <Solutions description="The Fornax Electric Heater is a native high-voltage DC electric heater used throughout Intergalactic’s thermal management systems. The heater is implemented in both liquid, air, and conductive systems." />
+      <Solutions description="The Fornax Electric Heater is a native high-voltage DC electric heater used throughout Intergalactic’s thermal management systems. The heater is implemented in liquid, air, and conductive systems." />
       <KeySpecs specs={specs} />
       <UseCases items={carouselItems} />
     </Layout>

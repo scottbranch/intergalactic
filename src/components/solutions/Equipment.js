@@ -25,12 +25,6 @@ const Equipment = props => {
       image: equipmentImg,
     },
     {
-      code: "IGE-GSF",
-      title: "Gemini Series Fans",
-      link: "gemini-series-fans",
-      image: equipmentImg,
-    },
-    {
       code: "IGE-L4SC",
       title: "Libra4 Scroll Compressor",
       link: "libra4-scroll-compressor",
@@ -61,12 +55,6 @@ const Equipment = props => {
       image: equipmentImg,
     },
     {
-      code: "IGE-P1CP",
-      title: "Pisces1 Cold Plates",
-      link: "pisces1-cold-plates",
-      image: equipmentImg,
-    },
-    {
       code: "IGE-DSTFCV",
       title: "Dorado ST Liquid Flow Control Valve",
       link: "dorado-st-liquid-flow-control-valve",
@@ -92,8 +80,8 @@ const Equipment = props => {
           <div>
             <p className="fadein" data-scroll data-scroll-offset="20%">
               <span>
-                Available for stand alone applications or integrated into
-                complete ECS solutions.
+                Available for stand-alone applications or integrated into
+                complete thermal management solutions
               </span>
             </p>
           </div>

@@ -112,7 +112,6 @@ const MenuOverlay = props => {
             </Social>
             <Legal>
               <Link to="/terms">Terms & Conditions</Link>
-              <Link to="/privacy">Privacy</Link>
             </Legal>
           </div>
           <div>

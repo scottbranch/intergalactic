@@ -15,14 +15,18 @@ const MobileMenu = ({ theme }) => {
   return (
     <StyledHeader className={menuOpen ? "active" : ""}>
       <Container>
-        <Link to="/">
+        <LogoLink to="/">
           <SvgLogomark
             fill={menuOpen ? theme.colors.aluminum : theme.colors.black}
           />
-        </Link>
+        </LogoLink>
         <MenuText className={menuOpen ? "active" : ""} onClick={toggleMenu}>
           <span>{menuOpen ? "Close" : "Menu"}</span>{" "}
-          {menuOpen ? <Close fill={theme.colors.aluminum} /> : <Open fill={theme.colors.black} />}
+          {menuOpen ? (
+            <Close fill={theme.colors.aluminum} />
+          ) : (
+            <Open fill={theme.colors.black} />
+          )}
         </MenuText>
       </Container>
       <Overlay className={menuOpen ? "active" : ""}>
@@ -69,7 +73,6 @@ const MobileMenu = ({ theme }) => {
         </Social>
         <Legal>
           <a href="#">Terms & Conditions</a>
-          <a href="#">Quality</a>
           <p>© {new Date().getFullYear()} Intergalactic</p>
         </Legal>
       </Overlay>
@@ -134,6 +137,8 @@ const MenuCircle = styled.button`
 const MenuText = styled.div`
   display: flex;
   align-items: center;
+  font-family: ${({ theme }) => theme.fonts.cartographMedium};
+  text-transform: uppercase;
 
   &.active {
     span {
@@ -221,6 +226,11 @@ const Legal = styled.div`
     text-decoration: none;
     margin-bottom: 5px;
   }
+`
+
+const LogoLink = styled(Link)`
+  top: 2px;
+  position: relative;
 `
 
 export default withTheme(MobileMenu)

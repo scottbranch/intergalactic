@@ -60,7 +60,7 @@ const Stardust = () => {
         <body class="boreas3 heat exchanger" />
       </Helmet>
       <Hero eyebrow="IGE-B3HE" title="Boreas3 Heat Exchanger" />
-      <Solutions description="The Intergalactic Heat Exchanger is the heart of our industry-leading thermal management systems. We innovated and perfected our proprietary microtube technology, which allows exponentially higher heat rejection per ounce and square inch of surface area. The Boreas3 Heat Exchanger provides the highest heat transfer density per size and weight by a factor of 3 over the next best available technology (brazed plate fin). Its highly ruggedized design allows for operation with nearly any fluid and in extreme aircraft environments, including high temperature engine bleed." />
+      <Solutions description="The Boreas3 Heat Exchanger is the heart of our industry-leading thermal management systems. We innovated and perfected our proprietary microtube technology, which allows exponentially higher heat rejection per ounce and square inch of surface area. The Boreas3 Heat Exchanger provides the highest heat transfer density per size and weight by a factor of 3 over the next best available technology (brazed plate fin). Its highly ruggedized design allows for operation with nearly any fluid and in extreme aircraft environments, including high temperature engine bleed." />
       <KeySpecs specs={specs} />
       <UseCases items={carouselItems} />
     </Layout>

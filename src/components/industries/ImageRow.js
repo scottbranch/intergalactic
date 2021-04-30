@@ -26,7 +26,7 @@ const ImageRow = props => {
           <Description className="fadein" data-scroll data-scroll-offset="20%">
             <span>
               Anywhere mankind or machines venture from ocean depths to extreme
-              surface conditions or into and beyond the atmosphere our thermal
+              surface conditions or into and beyond the atmosphere, our thermal
               management systems are onboard to see the mission through.
             </span>
           </Description>

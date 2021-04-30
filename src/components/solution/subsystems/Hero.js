@@ -67,6 +67,11 @@ const StyledHeading = styled.h2`
   max-width: 850px;
 
   @media screen and (min-width: 768px) {
+    font-size: 50px;
+    line-height: 60px;
+  }
+
+  @media screen and (min-width: 1330px) {
     font-size: 95px;
     line-height: 90px;
   }
@@ -84,6 +89,13 @@ const ImgContainer = styled.div`
   margin-left: auto;
 
   @media screen and (min-width: 768px) {
+    min-width: 330px;
+    display: flex;
+    align-items: center;
+    margin-top: -200px;
+  }
+
+  @media screen and (min-width: 1630px) {
     min-width: 910px;
   }
 

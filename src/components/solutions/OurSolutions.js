@@ -54,7 +54,8 @@ const OurSolutions = () => {
           <div data-scroll data-scroll-offset="20%">
             <h5>Upgrade your quality</h5>
             <p>
-              Rest easy knowing your ECS uses top-shelf parts and equipment.
+              Rest easy knowing your thermal system uses top-shelf parts and
+              equipment.
             </p>
           </div>
         </div>
