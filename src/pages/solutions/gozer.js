@@ -20,7 +20,7 @@ const Stardust = () => {
   const specs = [
     "Size: 40”x40”x40”",
     "Weight: 200 lbs",
-    "Cooling capacity: 150 kW below ambient",
+    "Cooling capacity: 150 kW",
     "Passive cooling",
   ]
 

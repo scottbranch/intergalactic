@@ -18,7 +18,7 @@ const Stardust = () => {
 
   const specs = [
     "Small, lightweight, and highly rugged – operates in extreme vibration, temperatures, water, fluids, EMI, lightning, high power microwave, etc.",
-    "Proprietary bare-metal source code prevents hacking",
+    "Proprietary bare metal code provides robust and secure operation",
     "Provides intelligent control, BIT, and health monitoring of all thermal management system components ",
     "Intelligently communicates with aircraft or platform – compatible with all major communication buses (Ethernet, Canbus, Serial, ARINC, etc.)",
     "Configured for native 270 VDC operation and can be configured for any common power bus  ",

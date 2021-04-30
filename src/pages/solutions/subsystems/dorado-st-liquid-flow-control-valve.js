@@ -50,7 +50,7 @@ const Stardust = () => {
     <Layout className="dark">
       <SEO title="Dorado ST Liquid Flow Control Valve" />
       <Hero eyebrow="IGE-DSTFCV" title="Dorado ST Liquid Flow Control Valve" />
-      <Solutions description="The Dorado ST Flow Control Valve is the only intelligent coolant flow control valve available in the industry. The Dorado ST enables full control of recirculated or fresh and features 0-100% flow control with minimal pressure drop at full flow for high system efficiency. The Dorado ST is compatible with all coolants including pure water. " />
+      <Solutions description="The Dorado ST Flow Control Valve is the only intelligent coolant flow control valve available in the industry. The Dorado ST and features 0-100% flow control with minimal pressure drop at full flow for high system efficiency. The Dorado ST is compatible with all coolants including pure water. " />
       <KeySpecs specs={specs} />
       <UseCases items={carouselItems} />
     </Layout>
