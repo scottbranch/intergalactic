@@ -77,9 +77,16 @@ const StyledSection = styled.section`
 `
 
 const ImageContainer = styled.div`
-  min-width: 500px;
   max-height: 730px;
-  margin-right: 195px;
+
+  @media screen and (min-width: 768px) {
+    min-width: 500px;
+    margin-right: 90px;
+  }
+
+  @media screen and (min-width: 1260px) {
+    margin-right: 195px;
+  }
 
   img {
     width: 100%;
@@ -100,10 +107,16 @@ const Container = styled.div`
 const Info = styled.div`
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+
+  @media screen and (min-width: 1080px) {
+    flex-direction: row;
+  }
 
   img {
     max-width: 500px;
     margin-right: 195px;
+    width: 100%;
   }
 `
 
