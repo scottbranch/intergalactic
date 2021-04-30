@@ -53,7 +53,7 @@ const Stardust = () => {
     <Layout className="dark">
       <SEO title="HydraX Pump" />
       <Hero eyebrow="IGE-HXP" title="HydraX Pump" />
-      <Solutions description="The HydraX Pump uses proprietary design to bring ultimate performance and efficiency in a small, light package. The centerpiece of the HydraX Pump are our high voltage DC positive displacement radial piston pumps, which are configured for intelligent speed control from 0 to 100%, speed feedback, and BIT. As with all our subsystems and equipment, The HydraX Pump is 270 DCA native." />
+      <Solutions description="The HydraX Pump uses proprietary design to bring ultimate performance and efficiency in a small, light package. The centerpiece of the HydraX Pump are our high voltage DC positive displacement radial piston pumps, which are configured for intelligent speed control from 0 to 100%, speed feedback, and BIT. As with all our subsystems and equipment, The HydraX Pump is 270 VDC native." />
       <KeySpecs specs={specs} />
       <UseCases items={carouselItems} />
     </Layout>

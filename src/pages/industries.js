@@ -12,7 +12,7 @@ const Industries = () => {
   useEffect(() => {
     setTimeout(() => {
       isBrowser && window.scroll.update()
-    }, 300)
+    }, 1000)
   }, [])
 
   return (
