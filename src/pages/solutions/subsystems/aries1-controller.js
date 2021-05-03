@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import Layout from "../../../components/layout"
 import SEO from "../../../components/seo"
+import aries from "../../../images/solutions/parts/aries1-controller-01.jpg"
 import Hero from "../../../components/solution/subsystems/Hero"
 import Solutions from "../../../components/solution/subsystems/Solutions"
 import KeySpecs from "../../../components/solution/subsystems/KeySpecs"
@@ -51,7 +52,7 @@ const Stardust = () => {
   return (
     <Layout className="dark">
       <SEO title="Aries1 Controller" />
-      <Hero eyebrow="IGE-A1C" title="Aries1 Controller" />
+      <Hero eyebrow="IGE-A1C" title="Aries1 Controller" image={aries} />
       <Solutions description="The Aries1 Controller is the brains of a very intelligent thermal management operation. It provides intelligent management of all thermal management and environmental control subsystems to produce optimally efficient operation. The Aries1 Controller has built-in test and predictive health monitoring to intelligently adjust thermal controls and avoid wasted power draw. Regardless of the craft, vehicle, or machine, the Aries1 Controller communicates with the host platform or aircraft, sending and receiving control messages and providing running status updates." />
       <KeySpecs specs={specs} />
       <UseCases items={carouselItems} />

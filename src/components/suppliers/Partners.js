@@ -13,23 +13,29 @@ const ValueProp = props => {
           </StyledHeading>
         </div>
         <TextContainer>
-            <p className="fadein" data-scroll data-scroll-offset="20%">
-              <span>
-                Contact us for purchase orders, scorecards, or other information.
-              </span>
-            </p>
-            <p className="fadein" data-scroll data-scroll-offset="20%">
-              <PartnerLink to="/">
-                Contact supply port <Arrow/>
-              </PartnerLink>
-              <PartnerLink to="/">
-                Supplier quality assurance requirements <Arrow/>
-              </PartnerLink>
-              <PartnerLink to="/">
-                Terms &amp; conditions <Arrow/>
-              </PartnerLink>
-            </p>
-          </TextContainer>
+          <p className="fadein" data-scroll data-scroll-offset="20%">
+            <span>
+              Contact us for purchase orders, scorecards, or other information.
+            </span>
+          </p>
+          <p className="fadein" data-scroll data-scroll-offset="20%">
+            <PartnerLink to="/contact">
+              Contact supply port <Arrow />
+            </PartnerLink>
+            <a
+              href="https://prismic-io.s3.amazonaws.com/igspace/1252633c-5b5c-4808-9def-56f4b62370b4_Intergalactic+AS9100+certification.pdf"
+              target="_blank"
+            >
+              Supplier quality assurance requirements <Arrow />
+            </a>
+            <a
+              href="https://prismic-io.s3.amazonaws.com/igspace/86f1d824-779c-4e74-8857-b3565c5557cf_PUR-PO-001+Intergalactic+ECS+Terms+and+Conditions.pdf"
+              target="_blank"
+            >
+              Terms &amp; conditions <Arrow />
+            </a>
+          </p>
+        </TextContainer>
       </InnerContainer>
     </StyledSection>
   )
@@ -57,7 +63,7 @@ const StyledHeading = styled.h3`
 `
 
 const StyledSubHeading = styled.p`
-  color: #91897D;
+  color: #91897d;
   font-size: 14px;
   letter-spacing: 3px;
   font-family: ${({ theme }) => theme.fonts.cartographMedium};
@@ -97,6 +103,26 @@ const TextContainer = styled.div`
 
   span {
     max-width: 400px;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    font-size: 20px;
+    color: ${({ theme }) => theme.colors.aluminum};
+
+    &:first-of-type {
+      margin-top: 40px;
+    }
+
+    svg {
+      margin-left: 10px;
+
+      path {
+        fill: ${({ theme }) => theme.colors.aluminum};
+      }
+    }
   }
 `
 

@@ -47,9 +47,9 @@ const Solution = () => {
           <p>
             Ideal for high-energy laser systems, large aircraft systems cooling.
           </p>
-          <span>10 kW cooling and heating, below ambient (active)</span>
-          <span>25” x 25” x 40”</span>
-          <span>130 lbs</span>
+          <span>150 kW, above ambient (passive)</span>
+          <span>40”x40”x40” </span>
+          <span>200 lbs</span>
           <Link to="/solutions/gozer">
             Learn More
             <svg
@@ -74,11 +74,11 @@ const Solution = () => {
         <div className="solution-detail" data-scroll data-scroll-offset="20%">
           <h4>GS1—FK Falkor</h4>
           <p>
-            Ideal for high-energy laser systems, large aircraft systems cooling.
+            Ideal for high energy laser systems, large aircraft systems cooling.
           </p>
-          <span>10 kW cooling and heating, below ambient (active)</span>
-          <span>25” x 25” x 40”</span>
-          <span>130 lbs</span>
+          <span>25 kW, below ambient (active)</span>
+          <span>40”x40”x40” </span>
+          <span>250 lbs</span>
           <Link to="/solutions/falkor">
             Learn More
             <svg
@@ -106,9 +106,9 @@ const Solution = () => {
             Ideal for extreme vibration and temperature environments. High loads
             where below-ambient temperature is not required.
           </p>
-          <span>10 kW cooling and heating, below ambient (active)</span>
-          <span>25” x 25” x 40”</span>
-          <span>130 lbs</span>
+          <span>55 kW, above ambient (passive)</span>
+          <span>10”x10”x28” </span>
+          <span>85 lbs</span>
           <Link to="/solutions/stardust">
             Learn More
             <svg
@@ -133,11 +133,11 @@ const Solution = () => {
         <div className="solution-detail" data-scroll data-scroll-offset="20%">
           <h4>GS1—MC MCFly</h4>
           <p>
-            Ideal for high-energy laser systems, large aircraft systems cooling.
+            Ideal for high energy laser systems, large aircraft systems cooling.
           </p>
-          <span>10 kW cooling and heating, below ambient (active)</span>
-          <span>25” x 25” x 40”</span>
-          <span>130 lbs</span>
+          <span>150 kW, above ambient (passive)</span>
+          <span>40”x40”x40” </span>
+          <span>200 lbs</span>
           <Link to="/solutions/mcfly">
             Learn More
             <svg

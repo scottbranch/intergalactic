@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import Layout from "../../../components/layout"
 import SEO from "../../../components/seo"
+import orion from "../../../images/solutions/parts/OrionXD-Accumulator-01.jpg"
 import Hero from "../../../components/solution/subsystems/Hero"
 import Solutions from "../../../components/solution/subsystems/Solutions"
 import KeySpecs from "../../../components/solution/subsystems/KeySpecs"
@@ -49,7 +50,7 @@ const Stardust = () => {
   return (
     <Layout className="dark">
       <SEO title="OrionXD Accumulator" />
-      <Hero eyebrow="IGE-OXDA" title="OrionXD Accumulator" />
+      <Hero eyebrow="IGE-OXDA" title="OrionXD Accumulator" image={orion} />
       <Solutions description="The OrionXD Accumulator is gas-charged to allow for coolant expansion in sealed liquid systems. The OrionXD is configurable with sensor options for position and leak detection feedback, uses non-stick double sealed dynamic piston technology, and is customizable to any specification." />
       <KeySpecs specs={specs} />
       <UseCases items={carouselItems} />

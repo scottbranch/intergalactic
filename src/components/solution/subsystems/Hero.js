@@ -3,7 +3,7 @@ import styled, { css } from "styled-components"
 import gadget from "../../../images/solution/gadget.jpg"
 
 const Hero = props => {
-  const { eyebrow, title, type } = props
+  const { eyebrow, title, type, image } = props
 
   const [isLoaded, setIsLoaded] = useState(false)
 
@@ -22,7 +22,7 @@ const Hero = props => {
         </StyledHeading>
       </HeadingContainer>
       <ImgContainer>
-        <img src={gadget} />
+        <img src={image} />
       </ImgContainer>
     </StyledSection>
   )

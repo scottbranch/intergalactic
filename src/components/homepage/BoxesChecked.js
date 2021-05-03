@@ -5,10 +5,10 @@ import styled from "styled-components"
 const BoxesChecked = () => {
   const listItems = [
     "Sole-sourced on major platforms.",
-    "Sole-sourced on major platforms.",
-    "Sole-sourced on major platforms.",
-    "Sole-sourced on major platforms.",
-    "Sole-sourced on major platforms.",
+    "AS9100 certified.",
+    "100% american made.",
+    "Field tested at mach 1 and 10 g’s of force.",
+    "CMMC cybersecurity compliant.",
   ]
 
   return (

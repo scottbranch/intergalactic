@@ -2,6 +2,15 @@ import React from "react"
 import styled from "styled-components"
 import EquipmentImg from "../../images/solutions/equipment.jpg"
 import equipmentImg from "../../images/solutions/hover-1.jpg"
+import boreas from "../../images/solutions/parts/boreas3-heat-exchanger-01.jpg"
+import aries from "../../images/solutions/parts/aries1-controller-01.jpg"
+import hydra from "../../images/solutions/parts/HydraX-Pump-01.jpg"
+import libra from "../../images/solutions/parts/Libra5-Scroll-Compressor-01.jpg"
+import carina from "../../images/solutions/parts/carina1-PDU-01.jpg"
+import orion from "../../images/solutions/parts/OrionXD-Accumulator-01.jpg"
+import fornax from "../../images/solutions/parts/Fornax-electric Heaters-01.jpg"
+import dorado from "../../images/solutions/parts/dorado-ST-flow-control Valve-01.jpg"
+import airflow from "../../images/solutions/parts/airflow-control-valve-01.jpg"
 import Link from "gatsby-link"
 
 const Equipment = props => {
@@ -10,61 +19,55 @@ const Equipment = props => {
       code: "IGE—B3HE",
       title: "BOREAS3 HEAT EXCHANGER",
       link: "boreas3-heat-exchanger",
-      image: equipmentImg,
+      image: boreas,
     },
     {
       code: "IGE-A1C",
       title: "Aries1 Controller",
       link: "aries1-controller",
-      image: equipmentImg,
+      image: aries,
     },
     {
       code: "IGE-HXP",
       title: "HydraX Pump",
       link: "hydrax-pump",
-      image: equipmentImg,
+      image: hydra,
     },
     {
       code: "IGE-L4SC",
       title: "Libra4 Scroll Compressor",
       link: "libra4-scroll-compressor",
-      image: equipmentImg,
+      image: libra,
     },
     {
       code: "IGE-C1PDU",
       title: "Carina1 Power Distribution Unit",
       link: "carina1-power-distribution-unit",
-      image: equipmentImg,
-    },
-    {
-      code: "IGE-C7EEV",
-      title: "Cygnus7 Electronic Expansion Valve",
-      link: "cygnus7-electronic-expansion-valve",
-      image: equipmentImg,
+      image: carina,
     },
     {
       code: "IGE-OXDA",
       title: "OrionXD Accumulator",
       link: "orionxd-accumulator",
-      image: equipmentImg,
+      image: orion,
     },
     {
       code: "IGE-FEH",
       title: "Fornax Electric Heaters",
       link: "fornax-electric-heaters",
-      image: equipmentImg,
+      image: fornax,
     },
     {
       code: "IGE-DSTFCV",
       title: "Dorado ST Liquid Flow Control Valve",
       link: "dorado-st-liquid-flow-control-valve",
-      image: equipmentImg,
+      image: dorado,
     },
     {
       code: "IGE-VACV",
       title: "Vela Airflow Control Valve",
       link: "vela-airflow-control-valve",
-      image: equipmentImg,
+      image: airflow,
     },
   ]
   return (

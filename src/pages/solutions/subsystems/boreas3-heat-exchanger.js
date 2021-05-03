@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import Layout from "../../../components/layout"
 import SEO from "../../../components/seo"
+import boreas from "../../../images/solutions/parts/boreas3-heat-exchanger-01.jpg"
 import Hero from "../../../components/solution/subsystems/Hero"
 import Solutions from "../../../components/solution/subsystems/Solutions"
 import KeySpecs from "../../../components/solution/subsystems/KeySpecs"
@@ -59,7 +60,7 @@ const Stardust = () => {
       <Helmet>
         <body class="boreas3 heat exchanger" />
       </Helmet>
-      <Hero eyebrow="IGE-B3HE" title="Boreas3 Heat Exchanger" />
+      <Hero eyebrow="IGE-B3HE" title="Boreas3 Heat Exchanger" image={boreas} />
       <Solutions description="The Boreas3 Heat Exchanger is the heart of our industry-leading thermal management systems. We innovated and perfected our proprietary microtube technology, which allows exponentially higher heat rejection per ounce and square inch of surface area. The Boreas3 Heat Exchanger provides the highest heat transfer density per size and weight by a factor of 3 over the next best available technology (brazed plate fin). Its highly ruggedized design allows for operation with nearly any fluid and in extreme aircraft environments, including high temperature engine bleed." />
       <KeySpecs specs={specs} />
       <UseCases items={carouselItems} />

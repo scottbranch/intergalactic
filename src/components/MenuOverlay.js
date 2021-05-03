@@ -109,9 +109,17 @@ const MenuOverlay = props => {
               >
                 LI
               </a>
+              <a href="https://twitter.com/airborneecs?s=21" target="_blank">
+                TW
+              </a>
             </Social>
             <Legal>
-              <Link to="/terms">Terms & Conditions</Link>
+              <a
+                href="https://prismic-io.s3.amazonaws.com/igspace/86f1d824-779c-4e74-8857-b3565c5557cf_PUR-PO-001+Intergalactic+ECS+Terms+and+Conditions.pdf"
+                target="_blank"
+              >
+                Terms & Conditions
+              </a>
             </Legal>
           </div>
           <div>

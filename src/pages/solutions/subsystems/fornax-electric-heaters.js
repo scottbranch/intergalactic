@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import Layout from "../../../components/layout"
 import SEO from "../../../components/seo"
+import fornax from "../../../images/solutions/parts/Fornax-electric Heaters-01.jpg"
 import Hero from "../../../components/solution/subsystems/Hero"
 import Solutions from "../../../components/solution/subsystems/Solutions"
 import KeySpecs from "../../../components/solution/subsystems/KeySpecs"
@@ -46,7 +47,7 @@ const Stardust = () => {
   return (
     <Layout className="dark">
       <SEO title="Fornax Electric Heaters" />
-      <Hero eyebrow="IGE-FEH" title="Fornax Electric Heaters" />
+      <Hero eyebrow="IGE-FEH" title="Fornax Electric Heaters" image={fornax} />
       <Solutions description="The Fornax Electric Heater is a native high-voltage DC electric heater used throughout Intergalactic’s thermal management systems. The heater is implemented in liquid, air, and conductive systems." />
       <KeySpecs specs={specs} />
       <UseCases items={carouselItems} />

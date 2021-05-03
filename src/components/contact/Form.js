@@ -38,7 +38,9 @@ const Hero = props => {
     <StyledSection data-scroll-section>
       <ContactFormContainer>
         <div>
-          <h4 data-scroll data-scroll-offset="20%">How can we help?</h4>
+          <h4 data-scroll data-scroll-offset="20%">
+            How can we help?
+          </h4>
           <StyledSubHeading
             className="fadein"
             data-scroll
@@ -126,10 +128,10 @@ const Hero = props => {
                   <option disabled selected>
                     Select
                   </option>
-                  <option>Another Reason</option>
-                  <option>Another Reason</option>
-                  <option>Another Reason</option>
-                  <option>Another Reason</option>
+                  <option>Product information</option>
+                  <option>Supplier information</option>
+                  <option>Careers</option>
+                  <option>Other</option>
                 </select>
               </div>
               <div>

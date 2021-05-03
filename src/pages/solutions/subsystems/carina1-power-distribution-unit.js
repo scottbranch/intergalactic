@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import Layout from "../../../components/layout"
 import SEO from "../../../components/seo"
+import carina from "../../../images/solutions/parts/carina1-PDU-01.jpg"
 import Hero from "../../../components/solution/subsystems/Hero"
 import Solutions from "../../../components/solution/subsystems/Solutions"
 import KeySpecs from "../../../components/solution/subsystems/KeySpecs"
@@ -51,7 +52,11 @@ const Stardust = () => {
   return (
     <Layout className="dark">
       <SEO title="Carina1 Power Distribution Unit" />
-      <Hero eyebrow="IGE-C1PDU" title="Carina1 Power Distribution Unit" />
+      <Hero
+        eyebrow="IGE-C1PDU"
+        title="Carina1 Power Distribution Unit"
+        image={carina}
+      />
       <Solutions description="The Carina1 Power Distribution Unit offers intelligent power management and control to maximize efficiency. The Carina1 PDU filters, distributes, and controls power provided to thermal management or ECS components while offering integral, programmable solid state circuit breaker protection and voltage/current feedback. The Carina1 PDU seamlessly integrates with the Aries1 Controller in Intergalactic’s precision-built thermal management systems." />
       <KeySpecs specs={specs} />
       <UseCases items={carouselItems} />

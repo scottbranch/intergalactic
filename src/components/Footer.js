@@ -19,35 +19,58 @@ const Footer = () => {
             <p>More Links</p>
             <StyledUl>
               <StyledLi>
-                <FooterLink to="/test">Press</FooterLink>
+                <a
+                  href="https://prismic-io.s3.amazonaws.com/igspace/0f091438-83bc-419c-abbc-49d3ae6b099a_Intergalactic+SQAR+Manual.pdf"
+                  target="_blank"
+                >
+                  Supplier QA Reqs
+                </a>
               </StyledLi>
               <StyledLi>
-                <FooterLink to="/test">Press</FooterLink>
-              </StyledLi>
-              <StyledLi>
-                <FooterLink to="/test">Press</FooterLink>
+                <a
+                  href="https://prismic-io.s3.amazonaws.com/igspace/1252633c-5b5c-4808-9def-56f4b62370b4_Intergalactic+AS9100+certification.pdf"
+                  target="_blank"
+                >
+                  AS9100 certification
+                </a>
               </StyledLi>
             </StyledUl>
           </LinkContainer>
           <LinkContainer>
-            <p>More Links</p>
+            <p>Social Media</p>
             <StyledUl>
               <StyledLi>
-                <FooterLink to="/test">Press</FooterLink>
+                <a
+                  href="https://www.instagram.com/airborneecs/"
+                  target="_blank"
+                >
+                  Instagram
+                </a>
               </StyledLi>
               <StyledLi>
-                <FooterLink to="/test">Press</FooterLink>
+                <a
+                  href="https://www.linkedin.com/company/airborneecs/"
+                  target="_blank"
+                >
+                  Linkedin
+                </a>
               </StyledLi>
               <StyledLi>
-                <FooterLink to="/test">Press</FooterLink>
+                <a href="https://twitter.com/airborneecs?s=21" target="_blank">
+                  Twitter
+                </a>
               </StyledLi>
             </StyledUl>
           </LinkContainer>
         </TopLinks>
         <BottomLinks>
           <div>
-            <BottomLink to="/test">Terms & Conditions</BottomLink>
-            <BottomLink to="/test">Privacy</BottomLink>
+            <BottomLink
+              href="https://prismic-io.s3.amazonaws.com/igspace/86f1d824-779c-4e74-8857-b3565c5557cf_PUR-PO-001+Intergalactic+ECS+Terms+and+Conditions.pdf"
+              target="_blank"
+            >
+              Terms & Conditions
+            </BottomLink>
           </div>
           <div>
             <p>© {new Date().getFullYear()} Intergalactic</p>
@@ -125,7 +148,7 @@ const BottomLinks = styled.div`
   }
 `
 
-const BottomLink = styled(Link)`
+const BottomLink = styled.a`
   margin-right: 150px;
   display: block;
   margin-bottom: 20px;
@@ -149,6 +172,11 @@ const StyledLi = styled.li`
   margin: 0 0 10px;
   list-style: none;
   text-decoration: none;
+
+  a {
+    color: ${({ theme }) => theme.colors.aluminum};
+    text-decoration: none;
+  }
 `
 
 export default Footer

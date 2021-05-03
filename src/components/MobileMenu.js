@@ -63,6 +63,9 @@ const MobileMenu = ({ theme }) => {
           >
             LI
           </a>
+          <a href="https://twitter.com/airborneecs?s=21" target="_blank">
+            TW
+          </a>
           <br />
           <Link className="links" to="/company">
             Company
@@ -72,7 +75,12 @@ const MobileMenu = ({ theme }) => {
           </Link>
         </Social>
         <Legal>
-          <a href="#">Terms & Conditions</a>
+          <a
+            href="https://prismic-io.s3.amazonaws.com/igspace/86f1d824-779c-4e74-8857-b3565c5557cf_PUR-PO-001+Intergalactic+ECS+Terms+and+Conditions.pdf"
+            target="_blank"
+          >
+            Terms & Conditions
+          </a>
           <p>© {new Date().getFullYear()} Intergalactic</p>
         </Legal>
       </Overlay>
