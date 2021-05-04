@@ -135,7 +135,7 @@ const Solution = () => {
           <p>
             Ideal for high energy laser systems, large aircraft systems cooling.
           </p>
-          <span>150 kW, above ambient (passive)</span>
+          <span>10 kW below ambient, cooling and heating</span>
           <span>40”x40”x40” </span>
           <span>200 lbs</span>
           <Link to="/solutions/mcfly">

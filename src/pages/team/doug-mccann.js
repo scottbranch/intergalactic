@@ -1,6 +1,5 @@
 import React from "react"
 import Layout from "../../components/layout"
-import headshot from "../../images/company/headshot.png"
 import styled from "styled-components"
 
 const TeamMember = props => {
@@ -20,7 +19,7 @@ const TeamMember = props => {
                 className="fadein"
                 data-scroll
                 data-scroll-offset="20%"
-                src={headshot}
+                src={""}
               />
             </ImageContainer>
             <TextContainer

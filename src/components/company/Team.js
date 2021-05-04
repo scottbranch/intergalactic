@@ -1,6 +1,11 @@
 import React from "react"
 import Link from "gatsby-link"
-import headshot from "../../images/company/headshot.png"
+import bplothow from "../../images/company/team/Brad-Plothow.jpg"
+import bmccann from "../../images/company/team/Brian-Mccann-01.jpg"
+import kkerlin from "../../images/company/team/Kevin-Kerlin.jpg"
+import mganowsky from "../../images/company/team/Melzie-Ganowsky.jpg"
+import nkaiser from "../../images/company/team/Nick-Kaiser.jpg"
+import rganowski from "../../images/company/team/Ray-Ganowsky.jpg"
 import styled from "styled-components"
 
 const Team = props => {
@@ -9,49 +14,43 @@ const Team = props => {
       name: "Melzie & Ray Ganowsky",
       title: "Co-owners",
       link: "melzie-and-ray-ganowsky",
-      headshot: headshot,
+      headshot: mganowsky,
     },
     {
       name: "Nick Kaiser",
       title: "Vice President of Engineering",
       link: "nick-kaiser",
-      headshot: headshot,
+      headshot: nkaiser,
     },
     {
       name: "Brian Mccann",
       title: "CEO",
       link: "brian-mccann",
-      headshot: headshot,
+      headshot: bmccann,
     },
     {
       name: "Kevin Kerlin",
       title: "Vice President of Operations",
       link: "kevin-kerlin",
-      headshot: headshot,
+      headshot: kkerlin,
     },
     {
       name: "Doug Mccann",
       title: "CFO",
       link: "doug-mccann",
-      headshot: headshot,
+      headshot: "",
     },
     {
       name: "Brad Plothow",
       title: "Vice President of Strategy",
       link: "brad-plothow",
-      headshot: headshot,
+      headshot: bplothow,
     },
     {
       name: "Taylor Fausett",
       title: "Vice President of Programs",
       link: "taylor-fausett",
-      headshot: headshot,
-    },
-    {
-      name: "Phillip Norris",
-      title: "Director of Quality of Compliance",
-      link: "phillip-norris",
-      headshot: headshot,
+      headshot: "",
     },
   ]
 

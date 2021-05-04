@@ -20,7 +20,7 @@ const TeamMember = props => {
                 className="fadein"
                 data-scroll
                 data-scroll-offset="20%"
-                src={headshot}
+                src={""}
               />
             </ImageContainer>
             <TextContainer

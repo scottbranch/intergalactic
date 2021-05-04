@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../../components/layout"
-import headshot from "../../images/company/headshot.png"
+import headshot from "../../images/company/team/Melzie-Ganowsky.jpg"
 import styled from "styled-components"
 
 const TeamMember = props => {
