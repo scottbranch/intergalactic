@@ -64,7 +64,7 @@ const Hero = props => {
                 <p>Supplier info</p>
               </FlexArea>
               <FlexArea data-scroll data-scroll-offset="20%">
-                <a href="mailto:supplyuport@ig.space">
+                <a href="mailto:supplyport@ig.space">
                   supplyport(at)ig.space
                   <svg
                     width="12"
