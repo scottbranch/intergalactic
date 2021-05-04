@@ -36,8 +36,9 @@ const FeaturedBlog = () => {
           <h3>{blogData.blog_title.text}</h3>
           <span>The Boom Box</span>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            If you’ve been following our journey, you know our company was
+            founded as Airborne ECS (short forenvironmental control systems). We
+            just changed our name to Intergalactic. We’d like to explain why.
           </p>
           <a href={`/commslink/${data.prismicBlogPost.uid}`}>
             Go to article
