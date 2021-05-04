@@ -8,10 +8,28 @@
 }
 
 @font-face {
-  font-family: 'tactic-regular';
-  src: url('Tactic-Regular.eot');
-  src: url('Tactic-Regular.woff') format('woff'),
-    url('Tactic-Regular.ttf') format('truetype');
+  font-family: "tactic-regular";
+  src: url("Tactic-Regular.eot");
+  src: url("Tactic-Regular.woff") format("woff"),
+    url("Tactic-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "cartograph-bold";
+  src: url("Cartograph-Mono-CF-Bold.eot");
+  src: url("Cartograph-Mono-CF-Bold.woff") format("woff"),
+    url("Cartograph-Mono-CF-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "cartograph-medium";
+  src: url("Cartograph-Mono-CF-Medium.eot");
+  src: url("Cartograph-Mono-CF-Medium.woff") format("woff"),
+    url("Cartograph-Mono-CF-Medium.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
