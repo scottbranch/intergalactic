@@ -50,6 +50,7 @@ const StyledHeading = styled.h2`
 
   @media screen and (max-width: 768px) {
     max-width: 100%;
+    font-size: 33px;
     span {
       word-break: none;
     }

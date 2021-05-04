@@ -135,11 +135,12 @@ const ContentContainer = styled.div`
 const TextContainer = styled.div`
   max-width: 850px;
   text-align: left;
-  margin-top: 50px;
-  padding: 100px 0;
+  margin-top: 20px;
+  padding: 0px 0;
 
   @media screen and (min-width: 768px) {
-    margin-top: 0;
+    margin-top: 50px;
+    padding: 100px 0;
   }
 
   h6 {

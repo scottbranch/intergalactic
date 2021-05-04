@@ -92,11 +92,27 @@ const ImageContainer = styled.div`
 `
 
 const Container = styled.div`
-  padding: 330px 62px;
+  padding: 140px 30px;
+
+  @media screen and (min-width: 768px) {
+    padding: 330px 62px;
+  }
+
+  h5 {
+    margin-bottom: 10px;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 30px;
+    }
+  }
 
   .eyebrow {
     ${({ theme }) => theme.colors.aluminum};
-    margin-bottom: 100px;
+    margin-bottom: 40px;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 100px;
+    }
   }
 `
 

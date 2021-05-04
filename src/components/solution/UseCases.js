@@ -27,7 +27,7 @@ const UseCases = props => {
         </SectionTitle>
         <SectionDesc
           id="cases-container"
-          className={`cases-container ${items[0].title}`}
+          className={`cases-container dark ${items[0].title}`}
           data-scroll
           data-scroll-offset="20%"
         >
@@ -45,12 +45,30 @@ const UseCases = props => {
               ))}
             </ul>
           </TabContainer>
-          {items.map((item, index) => (
-            <span className={`text-block ${item.title}`}>
-              <p className="mobile-title">{item.title}</p>
-              {item.description}
-            </span>
-          ))}
+          <span className="desktop-list">
+            {items.map((item, index) => (
+              <span className={`text-block ${item.title}`}>
+                {item.description}
+              </span>
+            ))}
+          </span>
+          {/*mobile stuff*/}
+          <div className="mobile-list" data-scroll data-scroll-offset="20%">
+            {items.map((item, index) => (
+              <div className={`mobile-block`}>
+                <p
+                  className="title fadein"
+                  data-scroll
+                  data-scroll-offset="20%"
+                >
+                  <span>
+                    {item.title === "land-sea" ? "Land & Sea" : item.title}
+                  </span>
+                </p>
+                <p className="description">{item.description}</p>
+              </div>
+            ))}
+          </div>
         </SectionDesc>
       </Container>
     </StyledSection>
@@ -61,37 +79,64 @@ const StyledSection = styled.section`
   width: 100%;
   background-color: ${({ theme }) => theme.colors.black};
   border-bottom: 1px solid ${({ theme }) => theme.colors.aluminum};
+
+  .desktop-list {
+    display: none;
+
+    @media screen and (min-width: 1000px) {
+      display: block;
+    }
+  }
+
+  .mobile-list {
+    display: block;
+
+    @media screen and (min-width: 1000px) {
+      display: none;
+    }
+  }
+
+  .title {
+    color: ${({ theme }) => theme.colors.aluminum};
+  }
 `
 
 const Container = styled.div`
   display: flex;
-  padding: 160px 60px 250px;
+  padding: 70px 25px 100px;
+  flex-direction: column;
 
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-    padding: 80px 25px 100px;
+  @media screen and (min-width: 768px) {
+    padding: 160px 60px 390px;
+    flex-direction: row;
   }
 `
 
 const SectionTitle = styled.div`
   flex: 50%;
+  margin-bottom: 30px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+  }
 
   span {
     font-size: 25px;
     line-height: 30px;
-    color: ${({ theme }) => theme.colors.gold};
+    color: ${({ theme }) => theme.colors.aluminum};
   }
 `
 
 const TabContainer = styled.div`
   margin-bottom: 45px;
+  display: none;
+
+  @media screen and (min-width: 1000px) {
+    display: block;
+  }
 
   ul {
     margin: 0;
-
-    @media screen and (max-width: 768px) {
-      display: none;
-    }
   }
 
   li {
@@ -118,7 +163,7 @@ const TabContainer = styled.div`
 const SectionDesc = styled.div`
   flex: 50%;
   position: relative;
-  width: 670px;
+  width: auto;
   opacity: 0;
   transition: opacity 1s ease;
 
@@ -126,19 +171,8 @@ const SectionDesc = styled.div`
     opacity: 1;
   }
 
-  @media screen and (max-width: 768px) {
-    max-width: 100%;
-  }
-
-  .mobile-title {
-    display: none;
-
-    @media screen and (max-width: 768px) {
-      display: block;
-      color: ${({ theme }) => theme.colors.gold};
-      text-transform: capitalize;
-      margin-bottom: 10px;
-    }
+  @media screen and (min-width: 768px) {
+    width: 670px;
   }
 
   .text-block {
@@ -148,14 +182,23 @@ const SectionDesc = styled.div`
     opacity: 0;
     transition: opacity 500ms ease;
     position: absolute;
+  }
 
-    @media screen and (max-width: 768px) {
+  .mobile-list {
+    opacity: 0;
+    transition: opacity 1s ease;
+
+    &.is-inview {
       opacity: 1;
-      position: relative;
-      display: block;
-      margin-bottom: 30px;
+    }
+    .title {
       font-size: 20px;
-      line-height: 31px;
+      line-height: 28px;
+      margin-bottom: 5px;
+    }
+    .description {
+      color: ${({ theme }) => theme.colors.aluminum};
+      margin-bottom: 30px;
     }
   }
 `

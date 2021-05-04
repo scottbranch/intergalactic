@@ -228,4 +228,10 @@ img.fadein {
     width: 670px;
   }
 }
+
+.mobile-title {
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
 `

@@ -37,6 +37,7 @@ const StyledSection = styled.section`
 
   @media screen and (max-width: 768px) {
     height: 700px;
+    border-bottom: none;
   }
 `
 

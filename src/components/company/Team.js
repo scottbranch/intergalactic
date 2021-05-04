@@ -6,6 +6,8 @@ import kkerlin from "../../images/company/team/Kevin-Kerlin.jpg"
 import mganowsky from "../../images/company/team/Melzie-Ganowsky.jpg"
 import nkaiser from "../../images/company/team/Nick-Kaiser.jpg"
 import rganowski from "../../images/company/team/Ray-Ganowsky.jpg"
+import dmccann from "../../images/company/team/Doug-McCann.jpg"
+import tfausett from "../../images/company/team/Taylor-Fausett.jpg"
 import styled from "styled-components"
 
 const Team = props => {
@@ -38,7 +40,7 @@ const Team = props => {
       name: "Doug Mccann",
       title: "CFO",
       link: "doug-mccann",
-      headshot: "",
+      headshot: dmccann,
     },
     {
       name: "Brad Plothow",
@@ -50,7 +52,7 @@ const Team = props => {
       name: "Taylor Fausett",
       title: "Vice President of Programs",
       link: "taylor-fausett",
-      headshot: "",
+      headshot: tfausett,
     },
   ]
 
@@ -208,13 +210,18 @@ const TeamMember = styled(Link)`
 `
 
 const Headshot = styled.img`
-  position: absolute;
-  right: -250px;
-  max-width: 325px;
-  opacity: 0;
-  visibility: hidden;
-  z-index: 100;
-  transition: all 650ms ease;
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    right: -250px;
+    max-width: 325px;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 100;
+    transition: all 650ms ease;
+    display: block;
+  }
 `
 
 const HoverCover = styled.span`

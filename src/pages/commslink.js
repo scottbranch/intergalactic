@@ -81,7 +81,7 @@ const Commslink = () => {
 
 const StyledSection = styled.section`
   width: 100%;
-  height: 280px;
+  height: 200px;
   position: relative;
   background-color: ${({ theme }) => theme.colors.cream};
   border-bottom: 1px solid ${({ theme }) => theme.colors.black};
@@ -107,11 +107,13 @@ const HeadingContainer = styled.div`
     text-transform: uppercase;
     font-size: 31px;
     line-height: 100%;
-    padding-bottom: 60px;
+    padding-bottom: 25px;
+    font-weight: 500;
 
     @media screen and (min-width: 768px) {
       font-size: 76px;
       line-height: 68px;
+      padding-bottom: 60px;
     }
   }
 `
