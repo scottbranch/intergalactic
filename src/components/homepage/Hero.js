@@ -115,6 +115,7 @@ const Description = styled.p`
 const StyledHeading = styled.h2`
   color: ${({ theme }) => theme.colors.cream};
   margin-left: 25px;
+  line-height: 80%;
 
   @media screen and (min-width: 768px) {
     margin-left: 0;
