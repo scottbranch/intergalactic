@@ -8,7 +8,7 @@ const CookieBar = () => {
     <Div id="cookie-bar">
       <p>
         <Link to="/commslink/heres-why-we-changed-our-name-to-intergalactic">
-          Airbone ECS is now Intergalactic <Arrow />
+          Airborne ECS is now Intergalactic <Arrow />
         </Link>
       </p>
     </Div>
