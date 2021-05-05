@@ -51,6 +51,8 @@ const ContactLink = styled(Link)`
   color: ${({ theme }) => theme.colors.gold};
   text-transform: uppercase;
   text-decoration: none;
+  font-size: 15px;
+  letter-spacing: 1px;
 `
 
 export default Header

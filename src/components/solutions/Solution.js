@@ -214,6 +214,8 @@ const SolutionContainer = styled.div`
 
     span {
       font-family: ${({ theme }) => theme.fonts.cartographMedium};
+      font-size: 15px;
+      letter-spacing: 1px;
     }
   }
 

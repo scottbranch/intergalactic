@@ -69,11 +69,11 @@ const StyledHeading = styled.h2`
 `
 
 const Paragraph = styled.p`
-  color: white;
   position: relative;
   font-size: 25px;
   line-height: 36px;
   flex: 50%;
+  color: ${({ theme }) => theme.colors.cream};
 
   @media screen and (max-width: 768px) {
     flex: initial;

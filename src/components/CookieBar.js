@@ -47,6 +47,8 @@ const Div = styled.div`
       color: ${({ theme }) => theme.colors.white};
       text-decoration: none;
       font-family: ${({ theme }) => theme.fonts.cartographMedium};
+      font-size: 15px;
+      letter-spacing: 1px;
     }
   }
 

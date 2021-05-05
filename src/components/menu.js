@@ -26,7 +26,7 @@ const Menu = ({ theme }) => {
             <span>{menuOpen ? "Close" : "Menu"}</span>
           </StyledButton>
         </CircleContainer>
-        <SvgAero fill={menuOpen ? theme.colors.cream : theme.colors.black} />
+        <TagLine menuOpen={menuOpen}>An Aerospace Company</TagLine>
         <SvgLogomark
           fill={menuOpen ? theme.colors.cream : theme.colors.black}
         />
@@ -75,6 +75,23 @@ const CircleContainer = styled.div`
   }
 `
 
+const TagLine = styled.p`
+  font-size: 15px;
+  font-family: ${({ theme }) => theme.fonts.cartographMedium};
+  text-transform: uppercase;
+  width: 287%;
+  position: absolute;
+  transform: rotate(90deg) translateY(-50%);
+  top: 50%;
+  margin: 0;
+  padding: 0;
+  right: -50px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: ${({ theme, menuOpen }) =>
+    menuOpen ? theme.colors.cream : theme.colors.black};
+`
+
 const StyledButton = styled.button`
   border: none;
   background: transparent;
@@ -87,8 +104,10 @@ const StyledButton = styled.button`
 
   span {
     margin-top: 15px;
-    margin-left: -1px;
+    margin-left: -5px;
     font-family: ${({ theme }) => theme.fonts.cartographMedium};
+    font-size: 15px;
+    letter-spacing: 1px;
   }
 `
 

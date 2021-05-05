@@ -87,12 +87,14 @@ const Paragraph = styled.p`
 const ImgContainer = styled.div`
   min-width: 100%;
   margin-left: auto;
+  padding-top: 68px;
 
   @media screen and (min-width: 768px) {
     min-width: 330px;
     display: flex;
     align-items: center;
     margin-top: -200px;
+    padding-top: 0;
   }
 
   @media screen and (min-width: 1630px) {

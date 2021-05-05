@@ -41,16 +41,21 @@ const HeadingContainer = styled.div`
 
   @media screen and (max-width: 768px) {
     padding-left: 25px;
+    margin-bottom: 230px;
   }
 `
 
 const StyledHeading = styled.h2`
   color: ${({ theme }) => theme.colors.cream};
   z-index: 1;
+  font-size: 76px;
+  line-height: 68px;
 
   @media screen and (max-width: 768px) {
     max-width: 100%;
     font-size: 33px;
+    font-size: 52px;
+    line-height: 100%;
     span {
       word-break: none;
     }

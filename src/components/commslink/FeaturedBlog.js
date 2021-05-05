@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Line from "../Line"
 import styled from "styled-components"
-import FeaturedImage from "../../images/commslink/featuredBlog.jpg"
+import fallbackImage from "../../images/commslink/blog-fallback.jpg"
 
 const FeaturedBlog = () => {
   const data = useStaticQuery(graphql`
@@ -29,7 +29,13 @@ const FeaturedBlog = () => {
       <StyledInner>
         <div
           className="image-container"
-          style={{ backgroundImage: `url(${blogData.preview_image.url})` }}
+          style={{
+            backgroundImage: `url(${
+              blogData.preview_image.url
+                ? blogData.preview_image.url
+                : fallbackImage
+            })`,
+          }}
         />
         <div className="description">
           <span>{blogData.date_published}</span>
@@ -113,11 +119,12 @@ const StyledInner = styled.div`
 
     span {
       display: block;
-      font-size: 16px;
       text-transform: uppercase;
       color: ${({ theme }) => theme.colors.aluminum};
       margin-bottom: 20px;
       font-family: ${({ theme }) => theme.fonts.cartographMedium};
+      font-size: 15px;
+      letter-spacing: 1px;
     }
 
     h3 {

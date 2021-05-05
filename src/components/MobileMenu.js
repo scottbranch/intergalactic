@@ -147,6 +147,8 @@ const MenuText = styled.div`
   align-items: center;
   font-family: ${({ theme }) => theme.fonts.cartographMedium};
   text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 1px;
 
   &.active {
     span {

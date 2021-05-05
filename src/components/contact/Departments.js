@@ -206,8 +206,8 @@ const FlexArea = styled.div`
 
 const StyledSubHeading = styled.p`
   color: #91897d;
-  font-size: 14px;
-  letter-spacing: 3px;
+  font-size: 15px;
+  letter-spacing: 1px;
   font-family: ${({ theme }) => theme.fonts.cartographMedium};
 `
 
@@ -238,6 +238,8 @@ const ContactInfo = styled.div`
 
   p {
     font-family: ${({ theme }) => theme.fonts.cartographMedium};
+    font-size: 15px;
+    letter-spacing: 1px;
     text-transform: uppercase;
   }
 `
@@ -247,6 +249,8 @@ const PageLink = styled.a`
   font-family: ${({ theme }) => theme.fonts.cartographMedium};
   text-decoration: none;
   display: inline-block;
+  font-size: 15px;
+  letter-spacing: 1px;
 
   &:first-of-type {
     margin-right: 40px;

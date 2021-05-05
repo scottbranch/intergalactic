@@ -80,14 +80,18 @@ const Description = styled.p`
 
 const StyledHeading = styled.h2`
   color: ${({ theme }) => theme.colors.cream};
+  font-size: 76px;
+  line-height: 68px;
 
   @media screen and (max-width: 768px) {
     margin-bottom: 230px;
+    font-size: 52px;
+    line-height: 100%;
   }
 `
 
 const Paragraph = styled.p`
-  color: white;
+  color: ${({ theme }) => theme.colors.cream};
   right: 0;
   position: relative;
   font-size: 20px;

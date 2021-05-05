@@ -156,6 +156,8 @@ const BottomLink = styled.a`
   text-decoration: none;
   text-transform: uppercase;
   font-family: ${({ theme }) => theme.fonts.cartographMedium};
+  font-size: 15px;
+  letter-spacing: 1px;
 
   @media screen and (min-width: 768px) {
     display: inline-block;

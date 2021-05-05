@@ -2,7 +2,6 @@ import React from "react"
 import Line from "../Line"
 import Link from "gatsby-link"
 import styled from "styled-components"
-import FeaturedImage from "../../images/commslink/featuredBlog.jpg"
 
 const BlogCard = props => {
   const { featuredImage, title, category, date, link } = props
@@ -72,6 +71,8 @@ const StyledInner = styled.div`
       text-transform: uppercase;
       color: ${({ theme }) => theme.colors.aluminum};
       font-family: ${({ theme }) => theme.fonts.cartographMedium};
+      font-size: 15px;
+      letter-spacing: 1px;
 
       &:first-of-type {
         float: none;

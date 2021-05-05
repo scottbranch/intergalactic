@@ -248,6 +248,8 @@ const ListContainer = styled.nav`
       list-style: none;
       margin: 15px 0;
       font-family: ${({ theme }) => theme.fonts.cartographMedium};
+      font-size: 15px;
+      letter-spacing: 1px;
     }
   }
 
@@ -295,14 +297,16 @@ const Legal = styled.div`
     font-family: ${({ theme }) => theme.fonts.cartographMedium};
     color: ${({ theme }) => theme.colors.rust};
     text-decoration: none;
-    font-size: 16px;
+    font-size: 15px;
+    letter-spacing: 1px;
   }
 
   p {
     font-family: ${({ theme }) => theme.fonts.cartographMedium};
     color: ${({ theme }) => theme.colors.rust};
     text-decoration: none;
-    font-size: 16px;
+    font-size: 15px;
+    letter-spacing: 1px;
   }
 `
 

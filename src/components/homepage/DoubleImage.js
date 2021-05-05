@@ -21,7 +21,7 @@ const DoubleImage = () => {
             <p className="fadein" data-scroll data-scroll-offset="20%">
               <span>
                 At one-third the size and weight, with three times the cooling
-                capacity of legacy thermal management equipment. it’s clear that
+                capacity of legacy thermal management equipment. It’s clear that
                 our X3 Series of thermal management systems are not here to play
                 incremental games.
               </span>

@@ -53,6 +53,11 @@ const Container = styled.div`
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    display: none;
+
+    @media screen and (min-width: 768px) {
+      display: block;
+    }
   }
 `
 

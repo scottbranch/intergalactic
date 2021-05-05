@@ -118,6 +118,8 @@ const FlexArea = styled.div`
     text-decoration: none;
     display: inline-block;
     margin-top: 20px;
+    font-size: 15px;
+    letter-spacing: 1px;
   }
 `
 

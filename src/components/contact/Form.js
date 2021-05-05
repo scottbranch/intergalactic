@@ -240,7 +240,8 @@ const ContactForm = styled.form`
     display: block;
     font-family: ${({ theme }) => theme.fonts.cartographMedium};
     color: ${({ theme }) => theme.colors.aluminum};
-    font-size: 16px;
+    font-size: 15px;
+    letter-spacing: 1px;
     line-height: 20px;
     text-transform: uppercase;
     position: relative;
@@ -295,7 +296,8 @@ const ContactForm = styled.form`
     border: 1px solid ${({ theme }) => theme.colors.aluminum};
     background-color: transparent;
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 15px;
+    letter-spacing: 1px;
     padding: 20px 40px;
   }
 
@@ -313,8 +315,8 @@ const StyledSection = styled.section`
 
 const StyledSubHeading = styled.p`
   color: #91897d;
-  font-size: 14px;
-  letter-spacing: 3px;
+  font-size: 15px;
+  letter-spacing: 1px;
   font-family: ${({ theme }) => theme.fonts.cartographMedium};
 `
 

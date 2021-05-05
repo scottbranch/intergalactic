@@ -21,7 +21,7 @@ const CtaSection = () => {
           </p>
           <AnchorLink to="/contact">Schedule a demo</AnchorLink>
         </CopyBlock>
-        <CopyBlock>
+        <CopyBlock className="second-block">
           <p className="fadein" data-scroll data-scroll-offset="20%">
             <span>
               Meet with our engineers and system designers. No obligations. No
@@ -87,6 +87,12 @@ const CopyBlock = styled.div`
     margin: 0 0 45px;
     @media screen and (min-width: 768px) {
       margin: 45px 200px 45px 0;
+    }
+  }
+
+  &.second-block {
+    @media screen and (min-width: 768px) {
+      margin-top: 45px;
     }
   }
 `

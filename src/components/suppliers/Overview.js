@@ -48,13 +48,13 @@ const StyledSection = styled.section`
 const StyledHeading = styled.h3`
   font-size: 48px;
   padding-left: 60px;
-  
+
   @media screen and (max-width: 768px) {
     text-align: left;
     padding-left: 25px;
     font-size: 30px;
   }
-  
+
   span:nth-of-type(2) {
     left: 115px;
   }
@@ -62,8 +62,8 @@ const StyledHeading = styled.h3`
 
 const StyledSubHeading = styled.p`
   color: #91897d;
-  font-size: 14px;
-  letter-spacing: 3px;
+  font-size: 15px;
+  letter-spacing: 1px;
   font-family: ${({ theme }) => theme.fonts.cartographMedium};
 `
 

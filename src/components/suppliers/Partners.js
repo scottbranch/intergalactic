@@ -64,8 +64,8 @@ const StyledHeading = styled.h3`
 
 const StyledSubHeading = styled.p`
   color: #91897d;
-  font-size: 14px;
-  letter-spacing: 3px;
+  font-size: 15px;
+  letter-spacing: 1px;
   font-family: ${({ theme }) => theme.fonts.cartographMedium};
 `
 

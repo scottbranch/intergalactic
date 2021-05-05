@@ -22,6 +22,8 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   padding: 20px 42px;
   font-family: ${({ theme }) => theme.fonts.cartographMedium};
+  font-size: 15px;
+  letter-spacing: 1px;
 `
 
 export default AnchorLink

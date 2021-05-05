@@ -97,6 +97,8 @@ const Category = styled.p`
     display: block;
     font-family: ${({ theme }) => theme.fonts.cartographMedium};
     color: ${({ theme }) => theme.colors.aluminum};
+    font-size: 15px;
+    letter-spacing: 1px;
   }
 `
 
@@ -157,6 +159,8 @@ const Date = styled.p`
   color: ${({ theme }) => theme.colors.aluminum};
   margin-bottom: 10px;
   padding: 0 25px;
+  font-size: 15px;
+  letter-spacing: 1px;
 
   @media screen and (min-width: 768px) {
     padding: 0;

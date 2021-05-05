@@ -8,6 +8,7 @@ import Filter from "../components/commslink/Filter"
 import FeaturedBlog from "../components/commslink/FeaturedBlog"
 import BlogCard from "../components/commslink/BlogCard"
 import { isBrowser } from "react-device-detect"
+import fallbackImage from "../images/commslink/blog-fallback.jpg"
 
 const Commslink = () => {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -65,7 +66,11 @@ const Commslink = () => {
         {blogData.map((item, index) => {
           return (
             <BlogCard
-              featuredImage={item.node.data.preview_image.url}
+              featuredImage={
+                item.node.data.preview_image.url
+                  ? item.node.data.preview_image.url
+                  : fallbackImage
+              }
               title={item.node.data.blog_title.text}
               category={item.node.tags[0]}
               date={item.node.data.date_published}
@@ -105,7 +110,7 @@ const HeadingContainer = styled.div`
 
   h1 {
     text-transform: uppercase;
-    font-size: 31px;
+    font-size: 52px;
     line-height: 100%;
     padding-bottom: 25px;
     font-weight: 500;
@@ -135,7 +140,8 @@ const Grid = styled.div`
     border: 1px solid ${({ theme }) => theme.colors.black};
     background-color: transparent;
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 15px;
+    letter-spacing: 1px;
     padding: 20px 40px;
     display: inline-block;
     margin: 0 auto;
