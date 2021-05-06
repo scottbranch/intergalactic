@@ -13,8 +13,7 @@ const Hero = props => {
     <StyledSection data-scroll-section>
       <HeadingContainer>
         <StyledHeading className={isLoaded && "active"}>
-          <span id="span-0">ONLY THE BEST GO</span>{" "}
-          <span id="span-1">INTERGALACTIC</span>{" "}
+          <span id="span-0">ONLY THE RIGHT STUFF</span>{" "}
         </StyledHeading>
       </HeadingContainer>
     </StyledSection>
