@@ -23,7 +23,7 @@ const ValueProp = props => {
               Contact supply port <Arrow />
             </PartnerLink>
             <a
-              href="https://prismic-io.s3.amazonaws.com/igspace/1252633c-5b5c-4808-9def-56f4b62370b4_Intergalactic+AS9100+certification.pdf"
+              href="https://prismic-io.s3.amazonaws.com/igspace/0f091438-83bc-419c-abbc-49d3ae6b099a_Intergalactic+SQAR+Manual.pdf"
               target="_blank"
             >
               Supplier quality assurance requirements <Arrow />
