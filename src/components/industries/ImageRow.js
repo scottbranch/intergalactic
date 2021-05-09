@@ -1,34 +1,56 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import industryrocket from "../../images/industries/rocket.jpg"
 import gadget from "../../images/industries/gadget.jpg"
 import styled from "styled-components"
 
 const ImageRow = props => {
+  const data = useStaticQuery(graphql`
+    {
+      allPrismicIndustriesPage {
+        nodes {
+          data {
+            image_1 {
+              url
+            }
+            image_2 {
+              url
+            }
+            image_description {
+              text
+            }
+            image_title {
+              text
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const imageData = data.allPrismicIndustriesPage.nodes[0].data
+
   return (
     <StyledSection data-scroll-section>
       <Container>
         <RocketImg
-          src={industryrocket}
+          src={imageData.image_1?.url}
           data-scroll
           data-scroll-offset="20%"
           className="fadein"
         />
         <InfoBlock data-scroll data-scroll-offset="20%">
           <p className="eyebrow fadein" data-scroll data-scroll-offset="20%">
-            <span>Innovations in Space & Sky</span>
+            <span>{imageData.image_title[0]?.text}</span>
           </p>
           <GadgetImg
-            src={gadget}
+            src={imageData.image_2?.url}
             className="fadein"
             data-scroll
             data-scroll-offset="20%"
           />
           <Description className="fadein" data-scroll data-scroll-offset="20%">
-            <span>
-              Anywhere mankind or machines venture from ocean depths to extreme
-              surface conditions or into and beyond the atmosphere, our thermal
-              management systems are onboard to see the mission through.
-            </span>
+            <span>{imageData.image_description[0]?.text}</span>
           </Description>
         </InfoBlock>
       </Container>

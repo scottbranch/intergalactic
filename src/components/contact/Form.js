@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import styled, { css } from "styled-components"
 
 const Hero = props => {
@@ -34,12 +35,43 @@ const Hero = props => {
       .catch(error => alert(error))
   }
 
+  const data = useStaticQuery(graphql`
+    {
+      allPrismicContactPage {
+        nodes {
+          data {
+            address_1 {
+              text
+            }
+            address_2 {
+              text
+            }
+            address_3 {
+              text
+            }
+            sub_heading {
+              text
+            }
+            phone_number {
+              text
+            }
+            email {
+              text
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const sectionData = data.allPrismicContactPage.nodes[0].data
+
   return (
     <StyledSection data-scroll-section>
       <ContactFormContainer>
         <div>
           <h4 data-scroll data-scroll-offset="20%">
-            How can we help?
+            {sectionData.sub_heading[0]?.text}
           </h4>
           <StyledSubHeading
             className="fadein"
@@ -51,14 +83,18 @@ const Hero = props => {
           <FlexArea>
             <div>
               <address data-scroll data-scroll-offset="20%">
-                Intergalactic HQ
+                {sectionData.address_1[0]?.text}
                 <br />
-                3172 E. Deseret Drive South
+                {sectionData.address_2[0]?.text}
                 <br />
-                St. George, UT 84790
+                {sectionData.address_3[0]?.text}
               </address>
-              <a href="tel:495-673-4603">495-673-4603</a>
-              <a href="mailto:phonehome(at)ig.space">phonehome(at)ig.space</a>
+              <a href={`tel:${sectionData.phone_number[0]?.text}`}>
+                {sectionData.phone_number[0]?.text}
+              </a>
+              <a href={`mailto:${sectionData.email[0]?.text}`}>
+                {sectionData.email[0]?.text}
+              </a>
             </div>
           </FlexArea>
           <FlexArea id="contactForm">

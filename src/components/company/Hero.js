@@ -10,23 +10,38 @@ const Hero = props => {
     setIsLoaded(true)
   }, [])
 
-  const scrollToHandler = (el) => {
-    const scrollEl = document.getElementById(el);
-    window.scroll.scrollTo(scrollEl);
+  const scrollToHandler = el => {
+    const scrollEl = document.getElementById(el)
+    window.scroll.scrollTo(scrollEl)
   }
+
+  const data = useStaticQuery(graphql`
+    {
+      allPrismicCompanyPage {
+        nodes {
+          data {
+            heading {
+              text
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const sectionData = data.allPrismicCompanyPage.nodes[0].data
 
   return (
     <StyledSection data-scroll-section>
       <HeadingContainer>
         <StyledHeading className={isLoaded && "active"}>
-          <span id="span-0">
-            Born out of
-            <br />
-            necessity
-          </span>
+          <span id="span-0">{sectionData.heading?.text}</span>
         </StyledHeading>
         <Paragraph className="fadein" data-scroll>
-          <a href="javascript:void(0)" onClick={e => scrollToHandler('companyOverview')}>
+          <a
+            href="javascript:void(0)"
+            onClick={e => scrollToHandler("companyOverview")}
+          >
             Overview{" "}
             <svg
               width="10"
@@ -41,7 +56,10 @@ const Hero = props => {
               />
             </svg>{" "}
           </a>
-          <a href="javascript:void(0)" onClick={e => scrollToHandler('companyTeam')}>
+          <a
+            href="javascript:void(0)"
+            onClick={e => scrollToHandler("companyTeam")}
+          >
             Dream Team{" "}
             <svg
               width="10"
@@ -56,7 +74,10 @@ const Hero = props => {
               />
             </svg>{" "}
           </a>
-          <a href="javascript:void(0)" onClick={e => scrollToHandler('companyCareers')}>
+          <a
+            href="javascript:void(0)"
+            onClick={e => scrollToHandler("companyCareers")}
+          >
             Careers{" "}
             <svg
               width="10"
@@ -138,6 +159,7 @@ const StyledHeading = styled.h2`
   @media screen and (min-width: 768px) {
     font-size: 76px;
     line-height: 68px;
+    max-width: 50vw;
   }
 `
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero from "../components/homepage/Hero"
@@ -22,6 +23,30 @@ const IndexPage = () => {
     }, 1000)
   }, [])
 
+  const data = useStaticQuery(graphql`
+    {
+      allPrismicHomepageTemplate {
+        nodes {
+          data {
+            slider {
+              slider_description {
+                text
+              }
+              slider_image {
+                url
+              }
+              slider_title {
+                text
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const sliderData = data.allPrismicHomepageTemplate.nodes[0].data
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -34,7 +59,7 @@ const IndexPage = () => {
       <StaticImage />
       <DoubleImage />
       <ImageFloat />
-      <Carousel />
+      <Carousel carouselItems={sliderData.slider} />
       <CircleSection />
       <BoxesChecked />
       <CtaSection />

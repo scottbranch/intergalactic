@@ -1,4 +1,5 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import EquipmentImg from "../../images/solutions/equipment.jpg"
 import equipmentImg from "../../images/solutions/hover-1.jpg"
@@ -14,6 +15,28 @@ import airflow from "../../images/solutions/parts/airflow-control-valve-01.jpg"
 import Link from "gatsby-link"
 
 const Equipment = props => {
+  const data = useStaticQuery(graphql`
+    {
+      allPrismicSolutions {
+        nodes {
+          data {
+            divider_image {
+              url
+            }
+            equipment_title {
+              text
+            }
+            equipment_subtitle {
+              text
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const sectionData = data.allPrismicSolutions.nodes[0].data
+
   const equipmentPieces = [
     {
       code: "IGE—B3HE",
@@ -72,20 +95,22 @@ const Equipment = props => {
   ]
   return (
     <EquipmentContainer data-scroll-section>
-      <div className="equipment-hero" data-scroll data-scroll-offset="20%" />
+      <div
+        className="equipment-hero"
+        data-scroll
+        data-scroll-offset="20%"
+        style={{ backgroundImage: `url(${sectionData.divider_image?.url})` }}
+      />
       <Container>
         <FlexArea>
           <div>
             <h5 data-scroll data-scroll-offset="20%">
-              <span>Intergalactic Equipment</span>
+              <span>{sectionData.equipment_title[0]?.text}</span>
             </h5>
           </div>
           <div>
             <p className="fadein" data-scroll data-scroll-offset="20%">
-              <span>
-                Available for stand-alone applications or integrated into
-                complete thermal management solutions
-              </span>
+              <span>{sectionData.equipment_subtitle[0]?.text}</span>
             </p>
           </div>
         </FlexArea>
@@ -119,7 +144,6 @@ const EquipmentContainer = styled.div`
 
   .equipment-hero {
     height: 875px;
-    background-image: url("${EquipmentImg}");
     background-size: cover;
     background-position: center center;
 

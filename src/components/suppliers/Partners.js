@@ -1,22 +1,40 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import Link from "gatsby-link"
 import Arrow from "../Arrow"
 import styled from "styled-components"
 
 const ValueProp = props => {
+  const data = useStaticQuery(graphql`
+    {
+      allPrismicSuppliersPage {
+        nodes {
+          data {
+            partners_title {
+              text
+            }
+            partners_subtitle {
+              text
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const sectionData = data.allPrismicSuppliersPage.nodes[0].data
+
   return (
     <StyledSection data-scroll-section>
       <InnerContainer>
         <div>
           <StyledHeading data-scroll data-scroll-offset="30%">
-            <span id="span-0">Current Partners</span>
+            <span id="span-0">{sectionData.partners_title?.text}</span>
           </StyledHeading>
         </div>
         <TextContainer>
           <p className="fadein" data-scroll data-scroll-offset="20%">
-            <span>
-              Contact us for purchase orders, scorecards, or other information.
-            </span>
+            <span>{sectionData.partners_subtitle?.text}</span>
           </p>
           <p className="fadein" data-scroll data-scroll-offset="20%">
             <PartnerLink to="/contact">

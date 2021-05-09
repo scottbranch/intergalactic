@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import heroImg from "../../images/suppliers/hero.jpg"
 import styled, { css } from "styled-components"
 
@@ -9,11 +10,27 @@ const Hero = props => {
     setIsLoaded(true)
   })
 
+  const data = useStaticQuery(graphql`
+    {
+      allPrismicSuppliersPage {
+        nodes {
+          data {
+            heading {
+              text
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const sectionData = data.allPrismicSuppliersPage.nodes[0].data
+
   return (
     <StyledSection data-scroll-section>
       <HeadingContainer>
         <StyledHeading className={isLoaded && "active"}>
-          <span id="span-0">ONLY THE RIGHT STUFF</span>{" "}
+          <span id="span-0">{sectionData.heading?.text}</span>{" "}
         </StyledHeading>
       </HeadingContainer>
     </StyledSection>

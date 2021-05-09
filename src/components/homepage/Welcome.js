@@ -1,8 +1,28 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import Line from "../Line"
 import styled from "styled-components"
 
 const Welcome = () => {
+  const data = useStaticQuery(graphql`
+    {
+      allPrismicHomepageTemplate {
+        nodes {
+          data {
+            value_prop_title {
+              text
+            }
+            value_prop_description {
+              text
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const welcomeData = data.allPrismicHomepageTemplate.nodes[0].data
+
   return (
     <StyledSection data-scroll-section>
       <StyledInner>
@@ -11,15 +31,10 @@ const Welcome = () => {
           data-scroll
           data-scroll-offset="20%"
         >
-          <span>Welcome to Intergalactic</span>
+          <span>{welcomeData.value_prop_title[0]?.text}</span>
         </p>
         <Paragraph className="fadein" data-scroll data-scroll-offset="20%">
-          <span>
-            For decades, innovation in aerospace has been limited by old methods
-            of thermal management that just can’t keep up. Those days are over.
-            This is the era of further, faster and cooler. Welcome to the new
-            age of aerospace technology.{" "}
-          </span>
+          <span>{welcomeData.value_prop_description[0]?.text}</span>
         </Paragraph>
       </StyledInner>
     </StyledSection>

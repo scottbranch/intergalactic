@@ -1,4 +1,5 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import AnchorLink from "../AnchorLink"
 import Line from "../Line"
 import metal from "../../images/homepage/metal.jpg"
@@ -6,6 +7,22 @@ import space from "../../images/homepage/space.jpg"
 import styled from "styled-components"
 
 const DoubleImage = () => {
+  const data = useStaticQuery(graphql`
+    {
+      allPrismicHomepageTemplate {
+        nodes {
+          data {
+            solutions_text_3 {
+              text
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const solutionData = data.allPrismicHomepageTemplate.nodes[0].data
+
   return (
     <StyledSection data-scroll-section>
       <Container>
@@ -19,12 +36,7 @@ const DoubleImage = () => {
           <TextContainer>
             <Line />
             <p className="fadein" data-scroll data-scroll-offset="20%">
-              <span>
-                At one-third the size and weight, with three times the cooling
-                capacity of legacy thermal management equipment. It’s clear that
-                our X3 Series of thermal management systems are not here to play
-                incremental games.
-              </span>
+              <span>{solutionData.solutions_text_3[0]?.text}</span>
             </p>
           </TextContainer>
           <StyledAnchor to="/solutions">Our solutions</StyledAnchor>

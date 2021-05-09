@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import homepagehero from "../../images/homepage/homepage-hero.jpg"
 import CookieBar from "../../components/CookieBar"
 import styled, { css } from "styled-components"
@@ -10,31 +9,6 @@ const Hero = props => {
   useEffect(() => {
     setIsLoaded(true)
   })
-
-  const data = useStaticQuery(graphql`
-    {
-      allPrismicHomepageTemplate {
-        nodes {
-          data {
-            hero_subtext_1 {
-              text
-            }
-            hero_subtext_2 {
-              text
-            }
-            hero_subtitle_1 {
-              text
-            }
-            hero_subtitle_2 {
-              text
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  const homepageData = data.allPrismicHomepageTemplate.nodes[0].data
 
   return (
     <>

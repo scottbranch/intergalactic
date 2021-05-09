@@ -1,0 +1,47 @@
+{
+  "Main": {
+    "heading": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading6",
+        "label": "Heading"
+      }
+    },
+    "info_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading6",
+        "label": "Info Title"
+      }
+    },
+    "info_description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, hyperlink",
+        "label": "Info Description"
+      }
+    },
+    "info_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Info Image"
+      }
+    },
+    "partners_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading6",
+        "label": "Partners Title"
+      }
+    },
+    "partners_subtitle": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "Partners Subtitle"
+      }
+    }
+  }
+}

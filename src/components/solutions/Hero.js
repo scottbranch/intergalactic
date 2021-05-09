@@ -10,14 +10,33 @@ const Hero = props => {
     setIsLoaded(true)
   }, [])
 
+  const data = useStaticQuery(graphql`
+    {
+      allPrismicSolutions {
+        nodes {
+          data {
+            heading {
+              text
+            }
+            sub_heading {
+              text
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const heroData = data.allPrismicSolutions.nodes[0].data
+
   return (
     <StyledSection data-scroll-section>
       <HeadingContainer>
         <StyledHeading className={isLoaded && "active"}>
-          <span id="span-0">SOLUTIONS</span>
+          <span id="span-0">{heroData.heading[0]?.text}</span>
         </StyledHeading>
         <Paragraph className="fadein" data-scroll>
-          <span>What could you build if heat wasn’t a limiting factor?</span>
+          <span>{heroData.sub_heading[0]?.text}</span>
         </Paragraph>
       </HeadingContainer>
     </StyledSection>

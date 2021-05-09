@@ -1,10 +1,30 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import incremental from "../../images/homepage/incremental.jpg"
 import AnchorLink from "../AnchorLink"
 import Line from "../Line"
 import styled from "styled-components"
 
 const ValueProp = props => {
+  const data = useStaticQuery(graphql`
+    {
+      allPrismicHomepageTemplate {
+        nodes {
+          data {
+            solutions_text_1 {
+              text
+            }
+            solutions_text_2 {
+              text
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const valueData = data.allPrismicHomepageTemplate.nodes[0].data
+
   return (
     <StyledSection data-scroll-section>
       <InnerContainer>
@@ -17,19 +37,10 @@ const ValueProp = props => {
           <TextContainer>
             <Line />
             <p className="fadein" data-scroll data-scroll-offset="20%">
-              <span>
-                The zero-risk mentality of yesterday can’t fuel the
-                zero-boundaries breakthroughs of tomorrow. Across every
-                aerospace sector, an innovation imperative is empowering the new
-                guard and leaving the incrementalists in the afterburn.
-              </span>
+              <span>{valueData.solutions_text_1[0]?.text}</span>
             </p>
             <p className="fadein" data-scroll data-scroll-offset="20%">
-              <span>
-                We are here to enable bold ambition, whether it’s
-                commercializing supersonic flight, pioneering interplanetary
-                travel, or whatever else is on your zero-boundaries agenda.
-              </span>
+              <span>{valueData.solutions_text_2[0]?.text}</span>
             </p>
           </TextContainer>
           <AnchorLink to="/solutions">Our Solutions</AnchorLink>

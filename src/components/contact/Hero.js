@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import styled, { css } from "styled-components"
 
 const Hero = props => {
@@ -13,18 +14,37 @@ const Hero = props => {
     window.scroll.scrollTo(scrollEl)
   }
 
+  const data = useStaticQuery(graphql`
+    {
+      allPrismicContactPage {
+        nodes {
+          data {
+            heading {
+              text
+            }
+            statement {
+              text
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const sectionData = data.allPrismicContactPage.nodes[0].data
+
   return (
     <HeroWrapper data-scroll-section>
       <StyledSection>
         <HeadingContainer>
           <StyledHeading className={isLoaded && "active"}>
-            <span id="span-0">WHAT'S THE MISSION?</span>{" "}
+            <span id="span-0">{sectionData.heading[0]?.text}</span>{" "}
           </StyledHeading>
         </HeadingContainer>
       </StyledSection>
       <ContactInfo>
         <p data-scroll data-scroll-offset="20%">
-          Our partnership begins here.
+          {sectionData.statement[0]?.text}
         </p>
         <div>
           <PageLink
