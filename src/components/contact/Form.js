@@ -58,7 +58,7 @@ const Hero = props => {
                 St. George, UT 84790
               </address>
               <a href="tel:495-673-4603">495-673-4603</a>
-              <a href="mailto:phonehome(at)ig.space">phonehome(at)ig.space</a>
+              <a href="mailto:phonehome@ig.space">phonehome(at)ig.space</a>
             </div>
           </FlexArea>
           <FlexArea id="contactForm">
