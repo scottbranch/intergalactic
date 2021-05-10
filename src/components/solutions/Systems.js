@@ -29,12 +29,12 @@ const Systems = () => {
       <StyledInner>
         <div className="intro-container">
           <h3 data-scroll data-scroll-offset="20%">
-            <span>{sectionData.systems_title[0]?.text}</span>
+            <span>{sectionData.systems_title?.text}</span>
           </h3>
         </div>
         <div className="overview">
           <p className="fadein" data-scroll data-scroll-offset="20%">
-            <span>{sectionData.systems_description[0]?.text}</span>{" "}
+            <span>{sectionData.systems_description?.text}</span>{" "}
           </p>
         </div>
       </StyledInner>

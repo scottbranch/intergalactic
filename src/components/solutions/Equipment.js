@@ -31,11 +31,39 @@ const Equipment = props => {
             }
           }
         }
+        edges {
+          node {
+            data {
+              equipment {
+                item {
+                  document {
+                    ... on PrismicSubsystem {
+                      id
+                      data {
+                        heading {
+                          text
+                        }
+                        image {
+                          url
+                        }
+                        code {
+                          text
+                        }
+                      }
+                      uid
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   `)
 
   const sectionData = data.allPrismicSolutions.nodes[0].data
+  const equipmentData = data.allPrismicSolutions.edges[0].node.data.equipment
 
   const equipmentPieces = [
     {
@@ -105,30 +133,33 @@ const Equipment = props => {
         <FlexArea>
           <div>
             <h5 data-scroll data-scroll-offset="20%">
-              <span>{sectionData.equipment_title[0]?.text}</span>
+              <span>{sectionData.equipment_title?.text}</span>
             </h5>
           </div>
           <div>
             <p className="fadein" data-scroll data-scroll-offset="20%">
-              <span>{sectionData.equipment_subtitle[0]?.text}</span>
+              <span>{sectionData.equipment_subtitle?.text}</span>
             </p>
           </div>
         </FlexArea>
         <HoverCover>
-          {equipmentPieces.map((item, index) => {
+          {equipmentData.map((item, index) => {
             return (
               <EquipmentPiece
-                to={`/solutions/subsystems/${item.link}`}
+                to={`/solutions/subsystems/${item.item.document.uid}`}
                 data-scroll
                 data-scroll-offset="20%"
               >
                 <h6 data-scroll data-scroll-offset="20%">
                   <span>
-                    {item.code}
-                    <br /> {item.title}
+                    {item.item.document.data.code.text}
+                    <br /> {item.item.document.data.heading.text}
                   </span>
                 </h6>
-                <EquipmnentImg className="equipmentImg" src={item.image} />
+                <EquipmnentImg
+                  className="equipmentImg"
+                  src={item.item.document.data.image.url}
+                />
               </EquipmentPiece>
             )
           })}

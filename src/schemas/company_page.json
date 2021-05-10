@@ -21,6 +21,22 @@
         "label": "About Subtext"
       }
     },
+    "team": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "team_member": {
+            "type": "Link",
+            "config": {
+              "select": "document",
+              "customtypes": ["team_member"],
+              "label": "Team Member"
+            }
+          }
+        },
+        "label": "Team"
+      }
+    },
     "apply_heading": {
       "type": "StructuredText",
       "config": {

@@ -1,75 +1,68 @@
 import React from "react"
 import Link from "gatsby-link"
-import bplothow from "../../images/company/team/Brad-Plothow.jpg"
-import bmccann from "../../images/company/team/Brian-McCann-01.jpg"
-import kkerlin from "../../images/company/team/Kevin-Kerlin.jpg"
-import mganowsky from "../../images/company/team/Melzie-Ganowsky.jpg"
-import nkaiser from "../../images/company/team/Nick-Kaiser.jpg"
-import rganowski from "../../images/company/team/Ray-Ganowsky.jpg"
-import dmccann from "../../images/company/team/Doug-McCann.jpg"
-import tfausett from "../../images/company/team/Taylor-Fausett.jpg"
+import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 
 const Team = props => {
-  const teamMembers = [
+  const data = useStaticQuery(graphql`
     {
-      name: "Melzie & Ray Ganowsky",
-      title: "Co-owners",
-      link: "melzie-and-ray-ganowsky",
-      headshot: mganowsky,
-    },
-    {
-      name: "Nick Kaiser",
-      title: "Vice President of Engineering",
-      link: "nick-kaiser",
-      headshot: nkaiser,
-    },
-    {
-      name: "Brian Mccann",
-      title: "CEO",
-      link: "brian-mccann",
-      headshot: bmccann,
-    },
-    {
-      name: "Kevin Kerlin",
-      title: "Vice President of Operations",
-      link: "kevin-kerlin",
-      headshot: kkerlin,
-    },
-    {
-      name: "Doug Mccann",
-      title: "CFO",
-      link: "doug-mccann",
-      headshot: dmccann,
-    },
-    {
-      name: "Brad Plothow",
-      title: "Vice President of Strategy",
-      link: "brad-plothow",
-      headshot: bplothow,
-    },
-    {
-      name: "Taylor Fausett",
-      title: "Vice President of Programs",
-      link: "taylor-fausett",
-      headshot: tfausett,
-    },
-  ]
+      allPrismicCompanyPage(
+        sort: { fields: data___team___team_member___link_type }
+      ) {
+        edges {
+          node {
+            id
+            data {
+              team {
+                team_member {
+                  document {
+                    ... on PrismicTeamMember {
+                      id
+                      data {
+                        title {
+                          text
+                        }
+                        name {
+                          text
+                        }
+                        headshot {
+                          url
+                        }
+                        description {
+                          text
+                        }
+                      }
+                      uid
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const sectionData = data.allPrismicCompanyPage.edges[0].node.data.team
 
   return (
     <StyledSection data-scroll-section>
       <Container id="companyTeam">
         <h5>Team</h5>
         <HoverCover>
-          {teamMembers.map((item, index) => {
+          {sectionData.map((item, index) => {
+            console.log("team: ", item)
             return (
               <TeamMember
-                to={`/team/${item.link}`}
+                to={`/team/${item?.team_member.document.uid}`}
                 data-scroll
                 data-scroll-offset="20%"
               >
-                <h6>{item.name}</h6>
-                <p className="eyebrow">{item.title}</p>
+                <h6>{item.team_member.document.data.name?.text}</h6>
+                <p className="eyebrow">
+                  {item.team_member.document.data.title?.text}
+                </p>
                 <svg
                   width="20"
                   height="18"
@@ -82,7 +75,10 @@ const Team = props => {
                     fill="#6B6358"
                   />
                 </svg>
-                <Headshot className="headshot" src={item.headshot} />
+                <Headshot
+                  className="headshot"
+                  src={item.team_member.document.data.headshot?.url}
+                />
               </TeamMember>
             )
           })}

@@ -58,12 +58,12 @@ const Solution = () => {
               data-scroll
               data-scroll-offset="20%"
             >
-              <h4>{item.title[0]?.text}</h4>
-              <p>{item.subtitle[0]?.text}</p>
-              <span>{item.description_1[0]?.text}</span>
-              <span>{item.description_2[0]?.text}</span>
-              <span>{item.description_3[0]?.text}</span>
-              <Link to={item.link[0]?.text}>
+              <h4>{item.title?.text}</h4>
+              <p>{item.subtitle?.text}</p>
+              <span>{item.description_1?.text}</span>
+              <span>{item.description_2?.text}</span>
+              <span>{item.description_3?.text}</span>
+              <Link to={item.link?.text}>
                 Learn More
                 <svg
                   width="12"

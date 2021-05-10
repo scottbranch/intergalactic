@@ -1,0 +1,258 @@
+{
+  "Main": {
+    "heading": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Heading"
+      }
+    },
+    "sub_heading": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph",
+        "label": "Sub Heading"
+      }
+    },
+    "solutions_section_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading6",
+        "label": "Solutions Section Title"
+      }
+    },
+    "solutions_section_subtitle": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph",
+        "label": "Solutions Section Subtitle"
+      }
+    },
+    "solutions_list": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "item_title": {
+            "type": "StructuredText",
+            "config": {
+              "single": "heading6",
+              "label": "Item Title"
+            }
+          },
+          "item_description": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph",
+              "label": "Item Description"
+            }
+          }
+        },
+        "label": "Solutions List"
+      }
+    },
+    "systems_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading6",
+        "label": "Systems Title"
+      }
+    },
+    "systems_description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph",
+        "label": "Systems Description"
+      }
+    },
+    "systems_list": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "image": {
+            "type": "Image",
+            "config": {
+              "constraint": {},
+              "thumbnails": [],
+              "label": "Image"
+            }
+          },
+          "title": {
+            "type": "StructuredText",
+            "config": {
+              "single": "heading6",
+              "label": "Title"
+            }
+          },
+          "subtitle": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph",
+              "label": "Subtitle"
+            }
+          },
+          "description_1": {
+            "type": "StructuredText",
+            "config": {
+              "single": "paragraph",
+              "label": "Description 1"
+            }
+          },
+          "description_2": {
+            "type": "StructuredText",
+            "config": {
+              "single": "paragraph",
+              "label": "Description 2"
+            }
+          },
+          "description_3": {
+            "type": "StructuredText",
+            "config": {
+              "single": "paragraph",
+              "label": "Description 3"
+            }
+          },
+          "link": {
+            "type": "StructuredText",
+            "config": {
+              "single": "paragraph",
+              "label": "Link"
+            }
+          }
+        },
+        "label": "Systems List"
+      }
+    },
+    "divider_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Divider Image"
+      }
+    },
+    "equipment_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading6",
+        "label": "Equipment Title"
+      }
+    },
+    "equipment_subtitle": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph",
+        "label": "Equipment Subtitle"
+      }
+    },
+    "equipment": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "item": {
+            "type": "Link",
+            "config": {
+              "select": "document",
+              "customtypes": ["subsystem"],
+              "label": "Item"
+            }
+          }
+        },
+        "label": "Equipment"
+      }
+    },
+    "contact_heading": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading6",
+        "label": "Contact Heading"
+      }
+    },
+    "contact_blocks": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "title": {
+            "type": "StructuredText",
+            "config": {
+              "single": "heading6",
+              "label": "Title"
+            }
+          },
+          "description": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph",
+              "label": "Description"
+            }
+          }
+        },
+        "label": "Contact Blocks"
+      }
+    },
+    "info_heading": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading6",
+        "label": "Info Heading"
+      }
+    },
+    "info_subheading": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "Info Subheading"
+      }
+    },
+    "info": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "title": {
+            "type": "StructuredText",
+            "config": {
+              "single": "heading6",
+              "label": "Title"
+            }
+          },
+          "description": {
+            "type": "StructuredText",
+            "config": {
+              "single": "paragraph",
+              "label": "Description"
+            }
+          }
+        },
+        "label": "Info"
+      }
+    },
+    "compliance_heading": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading6",
+        "label": "Compliance Heading"
+      }
+    },
+    "compliance_list": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "code": {
+            "type": "StructuredText",
+            "config": {
+              "single": "heading6",
+              "label": "Code"
+            }
+          },
+          "description": {
+            "type": "StructuredText",
+            "config": {
+              "single": "paragraph",
+              "label": "Description"
+            }
+          }
+        },
+        "label": "Compliance List"
+      }
+    }
+  }
+}

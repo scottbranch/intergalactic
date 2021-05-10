@@ -33,7 +33,7 @@ const Contact = () => {
     <StyledSection data-scroll-section>
       <StyledInner>
         <h3 data-scroll data-scroll-offset="20%">
-          <span>{sectionData.contact_heading[0]?.text}</span>
+          <span>{sectionData.contact_heading?.text}</span>
         </h3>
       </StyledInner>
       <StyledInner>
@@ -45,9 +45,9 @@ const Contact = () => {
                 data-scroll
                 data-scroll-offset="20%"
               >
-                <span>{item.title[0]?.text}</span>
+                <span>{item.title?.text}</span>
               </p>
-              <p className="intro">{item.description[0]?.text}</p>
+              <p className="intro">{item.description?.text}</p>
               <AnchorLink to="/contact">Let's Connect</AnchorLink>
             </FlexArea>
           )

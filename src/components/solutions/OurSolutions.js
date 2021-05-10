@@ -40,7 +40,7 @@ const OurSolutions = () => {
             data-scroll
             data-scroll-offset="20%"
           >
-            <span>{sectionData.solutions_section_title[0]?.text}</span>
+            <span>{sectionData.solutions_section_title?.text}</span>
           </p>
           <p className="intro fadein" data-scroll data-scroll-offset="20%">
             <svg
@@ -55,15 +55,15 @@ const OurSolutions = () => {
                 fill="#91897D"
               />
             </svg>
-            {sectionData.solutions_section_subtitle[0]?.text}
+            {sectionData.solutions_section_subtitle?.text}
           </p>
         </div>
         <div className="overview">
           {sectionData.solutions_list?.map((item, index) => {
             return (
               <div data-scroll data-scroll-offset="20%">
-                <h5>{item.item_title[0]?.text}</h5>
-                <p>{item.item_description[0]?.text}</p>
+                <h5>{item.item_title?.text}</h5>
+                <p>{item.item_description?.text}</p>
               </div>
             )
           })}

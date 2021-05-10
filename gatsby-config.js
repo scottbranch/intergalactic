@@ -51,6 +51,9 @@ module.exports = {
           blog_post: require("./src/schemas/blogPost.json"),
           suppliers_page: require("./src/schemas/suppliers_page.json"),
           company_page: require("./src/schemas/company_page.json"),
+          team_member: require("./src/schemas/team_member.json"),
+          subsystem: require("./src/schemas/subsystem.json"),
+          solutions: require("./src/schemas/solutions.json"),
         },
         htmlSerializer: ({ node, key, value }) => (
           type,

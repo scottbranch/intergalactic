@@ -25,6 +25,16 @@ exports.createPages = async ({ graphql, actions }) => {
           uid
         }
       }
+      allPrismicTeamMember {
+        nodes {
+          uid
+        }
+      }
+      allPrismicSubsystem {
+        nodes {
+          uid
+        }
+      }
     }
   `)
 
@@ -32,6 +42,26 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: `/commslink/${edge.uid}`,
       component: path.resolve("src/templates/blogPost.js"),
+      context: {
+        uid: edge.uid,
+      },
+    })
+  })
+
+  pages.data.allPrismicTeamMember.nodes.forEach(edge => {
+    createPage({
+      path: `/team/${edge.uid}`,
+      component: path.resolve("src/templates/teamMember.js"),
+      context: {
+        uid: edge.uid,
+      },
+    })
+  })
+
+  pages.data.allPrismicSubsystem.nodes.forEach(edge => {
+    createPage({
+      path: `/solutions/subsystems/${edge.uid}`,
+      component: path.resolve("src/templates/subSystem.js"),
       context: {
         uid: edge.uid,
       },
