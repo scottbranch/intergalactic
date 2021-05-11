@@ -10,6 +10,7 @@ module.exports = {
       resolve: `gatsby-plugin-react-helmet-canonical-urls`,
       options: {
         siteUrl: `https://www.ig.space`,
+        exclude: [`https://www.ig.space/commslink/reimagining-thermal-engines`],
       },
     },
     {
@@ -25,6 +26,13 @@ module.exports = {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         // Add any options here
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: "G-TPG5YE5EK0",
       },
     },
     {

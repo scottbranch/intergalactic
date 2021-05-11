@@ -35,6 +35,11 @@ exports.createPages = async ({ graphql, actions }) => {
           uid
         }
       }
+      allPrismicSystem {
+        nodes {
+          uid
+        }
+      }
     }
   `)
 
@@ -62,6 +67,16 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: `/solutions/subsystems/${edge.uid}`,
       component: path.resolve("src/templates/subSystem.js"),
+      context: {
+        uid: edge.uid,
+      },
+    })
+  })
+
+  pages.data.allPrismicSystem.nodes.forEach(edge => {
+    createPage({
+      path: `/solutions/${edge.uid}`,
+      component: path.resolve("src/templates/system.js"),
       context: {
         uid: edge.uid,
       },
