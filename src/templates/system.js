@@ -199,7 +199,7 @@ const SectionTitle = styled.div`
   span {
     font-size: 25px;
     line-height: 30px;
-    color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.cream};
     opacity: 0;
     transition: opacity 1s ease;
 

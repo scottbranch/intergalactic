@@ -234,4 +234,12 @@ img.fadein {
     display: none;
   }
 }
+
+.dark .title {
+  color: ${theme.colors.cream};  
+}
+.dark .description {
+  color: ${theme.colors.aluminum};
+}
+
 `
