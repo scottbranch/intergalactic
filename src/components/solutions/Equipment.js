@@ -1,17 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
-import EquipmentImg from "../../images/solutions/equipment.jpg"
-import equipmentImg from "../../images/solutions/hover-1.jpg"
-import boreas from "../../images/solutions/parts/boreas3-heat-exchanger-01.jpg"
-import aries from "../../images/solutions/parts/aries1-controller-01.jpg"
-import hydra from "../../images/solutions/parts/HydraX-Pump-01.jpg"
-import libra from "../../images/solutions/parts/Libra5-Scroll-Compressor-01.jpg"
-import carina from "../../images/solutions/parts/carina1-PDU-01.jpg"
-import orion from "../../images/solutions/parts/OrionXD-Accumulator-01.jpg"
-import fornax from "../../images/solutions/parts/Fornax-electric Heaters-01.jpg"
-import dorado from "../../images/solutions/parts/dorado-ST-flow-control Valve-01.jpg"
-import airflow from "../../images/solutions/parts/airflow-control-valve-01.jpg"
 import Link from "gatsby-link"
 
 const Equipment = props => {

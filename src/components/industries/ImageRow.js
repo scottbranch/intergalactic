@@ -1,7 +1,5 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import industryrocket from "../../images/industries/rocket.jpg"
-import gadget from "../../images/industries/gadget.jpg"
 import styled from "styled-components"
 
 const ImageRow = props => {

@@ -1,7 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Line from "../Line"
-import ship from "../../images/homepage/ship.jpg"
 import styled from "styled-components"
 
 const StaticImage = () => {

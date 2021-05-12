@@ -1,11 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import values from "../../images/company/values.jpg"
-import impact from "../../images/company/icons/impact.svg"
-import humility from "../../images/company/icons/humility.svg"
-import precision from "../../images/company/icons/precision.svg"
-import fun from "../../images/company/icons/fun.svg"
-import invention from "../../images/company/icons/invention.svg"
 import styled from "styled-components"
 
 const Values = props => {

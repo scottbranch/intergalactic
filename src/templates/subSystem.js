@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import aries from "../images/solutions/parts/aries1-controller-01.jpg"
 import Hero from "../components/solution/subsystems/Hero"
 import Solutions from "../components/solution/subsystems/Solutions"
 import Helmet from "react-helmet"
