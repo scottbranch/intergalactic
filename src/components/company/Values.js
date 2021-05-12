@@ -1,4 +1,5 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import values from "../../images/company/values.jpg"
 import impact from "../../images/company/icons/impact.svg"
 import humility from "../../images/company/icons/humility.svg"
@@ -8,57 +9,60 @@ import invention from "../../images/company/icons/invention.svg"
 import styled from "styled-components"
 
 const Values = props => {
-  const valuesItems = [
+  const data = useStaticQuery(graphql`
     {
-      icon: impact,
-      title: "Impact",
-      description: "An insatiable appetite to go big.",
-    },
-    {
-      icon: humility,
-      title: "Humility",
-      description: "It’s about getting it right, not being right.",
-    },
-    {
-      icon: precision,
-      title: "Precision",
-      description:
-        "Thorough and detail-obsessed because every-little-thing-matters.",
-    },
-    {
-      icon: fun,
-      title: "Fun",
-      description: "Serious work can still be enjoyable.",
-    },
-    {
-      icon: invention,
-      title: "Invention",
-      description:
-        "We reverence and protect a culture of discovery and innovation.",
-    },
-  ]
+      allPrismicCompanyPage {
+        nodes {
+          data {
+            values {
+              description {
+                text
+              }
+              icon {
+                url
+              }
+              title {
+                text
+              }
+            }
+            values_heading {
+              text
+            }
+            values_image {
+              url
+            }
+            values_subheading {
+              text
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const sectionData = data.allPrismicCompanyPage.nodes[0].data
 
   return (
     <StyledSection data-scroll-section>
       <Container>
         <HeadingTitle>
           <h5 data-scroll data-scroll-offset="20%">
-            <span>Core Values</span>
+            <span>{sectionData.values_heading?.text}</span>
           </h5>
           <p className="fadein" data-scroll data-scroll-offset="20%">
-            <span>The fuel that propels us onward, upward and beyond.</span>
+            <span>{sectionData.values_subheading?.text}</span>
           </p>
         </HeadingTitle>
         <Grid>
           <div>
-            <img src={values} />
+            <img src={sectionData.values_image?.url} />
           </div>
-          {valuesItems.map((item, index) => {
+          {sectionData.values.map((item, index) => {
             return (
               <Value data-scroll data-scroll-offset="20%">
-                <img src={item.icon} />
-                <h6>{item.title}</h6>
-                <p>{item.description}</p>
+                <img src={item.icon?.url} />
+                <h6>{item.title?.text}</h6>
+                <p>{item.description?.text}</p>
               </Value>
             )
           })}

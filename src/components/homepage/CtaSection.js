@@ -1,9 +1,29 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import AnchorLink from "../AnchorLink.js"
 import Line from "../Line.js"
 import styled from "styled-components"
 
 const CtaSection = () => {
+  const data = useStaticQuery(graphql`
+    {
+      allPrismicHomepageTemplate {
+        nodes {
+          data {
+            contact_text_1 {
+              text
+            }
+            contact_text_2 {
+              text
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const contactData = data.allPrismicHomepageTemplate.nodes[0].data
+
   return (
     <StyledSection data-scroll-section>
       <StyledHeading data-scroll data-scroll-offset="30%">
@@ -14,19 +34,13 @@ const CtaSection = () => {
         <Line />
         <CopyBlock className="first-block">
           <p className="fadein" data-scroll data-scroll-offset="20%">
-            <span>
-              Collaborative engineering is our jam. How about we connect your
-              people and our people to talk shop?
-            </span>
+            <span>{contactData.contact_text_1[0]?.text}</span>
           </p>
           <AnchorLink to="/contact">Schedule a demo</AnchorLink>
         </CopyBlock>
         <CopyBlock className="second-block">
           <p className="fadein" data-scroll data-scroll-offset="20%">
-            <span>
-              Meet with our engineers and system designers. No obligations. No
-              slick salespeople.
-            </span>
+            <span>{contactData.contact_text_2[0]?.text}</span>
           </p>
           <AnchorLink to="/contact">Let's Talk</AnchorLink>
         </CopyBlock>

@@ -1,4 +1,5 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import EquipmentImg from "../../images/solutions/equipment.jpg"
 import equipmentImg from "../../images/solutions/hover-1.jpg"
@@ -14,6 +15,56 @@ import airflow from "../../images/solutions/parts/airflow-control-valve-01.jpg"
 import Link from "gatsby-link"
 
 const Equipment = props => {
+  const data = useStaticQuery(graphql`
+    {
+      allPrismicSolutions {
+        nodes {
+          data {
+            divider_image {
+              url
+            }
+            equipment_title {
+              text
+            }
+            equipment_subtitle {
+              text
+            }
+          }
+        }
+        edges {
+          node {
+            data {
+              equipment {
+                item {
+                  document {
+                    ... on PrismicSubsystem {
+                      id
+                      data {
+                        heading {
+                          text
+                        }
+                        image {
+                          url
+                        }
+                        code {
+                          text
+                        }
+                      }
+                      uid
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const sectionData = data.allPrismicSolutions.nodes[0].data
+  const equipmentData = data.allPrismicSolutions.edges[0].node.data.equipment
+
   const equipmentPieces = [
     {
       code: "IGE—B3HE",
@@ -72,38 +123,43 @@ const Equipment = props => {
   ]
   return (
     <EquipmentContainer data-scroll-section>
-      <div className="equipment-hero" data-scroll data-scroll-offset="20%" />
+      <div
+        className="equipment-hero"
+        data-scroll
+        data-scroll-offset="20%"
+        style={{ backgroundImage: `url(${sectionData.divider_image?.url})` }}
+      />
       <Container>
         <FlexArea>
           <div>
             <h5 data-scroll data-scroll-offset="20%">
-              <span>Intergalactic Equipment</span>
+              <span>{sectionData.equipment_title?.text}</span>
             </h5>
           </div>
           <div>
             <p className="fadein" data-scroll data-scroll-offset="20%">
-              <span>
-                Available for stand-alone applications or integrated into
-                complete thermal management solutions
-              </span>
+              <span>{sectionData.equipment_subtitle?.text}</span>
             </p>
           </div>
         </FlexArea>
         <HoverCover>
-          {equipmentPieces.map((item, index) => {
+          {equipmentData.map((item, index) => {
             return (
               <EquipmentPiece
-                to={`/solutions/subsystems/${item.link}`}
+                to={`/solutions/subsystems/${item.item.document.uid}`}
                 data-scroll
                 data-scroll-offset="20%"
               >
                 <h6 data-scroll data-scroll-offset="20%">
                   <span>
-                    {item.code}
-                    <br /> {item.title}
+                    {item.item.document.data.code.text}
+                    <br /> {item.item.document.data.heading.text}
                   </span>
                 </h6>
-                <EquipmnentImg className="equipmentImg" src={item.image} />
+                <EquipmnentImg
+                  className="equipmentImg"
+                  src={item.item.document.data.image.url}
+                />
               </EquipmentPiece>
             )
           })}
@@ -119,7 +175,6 @@ const EquipmentContainer = styled.div`
 
   .equipment-hero {
     height: 875px;
-    background-image: url("${EquipmentImg}");
     background-size: cover;
     background-position: center center;
 

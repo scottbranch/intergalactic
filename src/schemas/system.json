@@ -1,0 +1,76 @@
+{
+  "Main": {
+    "heading": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label": "Heading"
+      }
+    },
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "url"
+      }
+    },
+    "code": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+        "label": "Code"
+      }
+    },
+    "image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Image"
+      }
+    },
+    "summary": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+        "label": "Summary"
+      }
+    },
+    "specs": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "description": {
+            "type": "StructuredText",
+            "config": {
+              "single": "paragraph",
+              "label": "Description"
+            }
+          }
+        },
+        "label": "Specs"
+      }
+    },
+    "use_cases": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "title": {
+            "type": "StructuredText",
+            "config": {
+              "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+              "label": "Title"
+            }
+          },
+          "description": {
+            "type": "StructuredText",
+            "config": {
+              "single": "paragraph",
+              "label": "Description"
+            }
+          }
+        },
+        "label": "Use Cases"
+      }
+    }
+  }
+}

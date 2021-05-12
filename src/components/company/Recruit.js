@@ -1,24 +1,38 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import AnchorLink from "../AnchorLink"
 import styled from "styled-components"
 
 const Recruit = props => {
+  const data = useStaticQuery(graphql`
+    {
+      allPrismicCompanyPage {
+        nodes {
+          data {
+            apply_heading {
+              text
+            }
+            apply_subheading {
+              html
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const sectionData = data.allPrismicCompanyPage.nodes[0].data
+
   return (
     <StyledSection data-scroll-section>
       <Container id="companyCareers">
-        <h5>Become an Intergalactic recruit</h5>
+        <h5>{sectionData.apply_heading?.text}</h5>
         <TextContainer>
-          <p>
-            We’re building a crew of the nation’s best, regardless of where you
-            live. Come join us at Intergalactic HQ in Southern Utah, or stay
-            where you are and work remotely. We’re always on the hunt for
-            top-tier engineers, designers, technicians, business specialists,
-            and more.
-          </p>
-          <p>
-            Think you’d be a good fit? Take a look at our core values and drop
-            us a line if this sounds like you.
-          </p>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: sectionData.apply_subheading?.html,
+            }}
+          />
           <StyledLink to="/contact" color="light">
             Apply
           </StyledLink>

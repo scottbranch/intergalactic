@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import homepagehero from "../../images/homepage/homepage-hero.jpg"
 import CookieBar from "../../components/CookieBar"
 import styled, { css } from "styled-components"

@@ -1,34 +1,52 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import overviewImg from "../../images/suppliers/overview.jpg"
 import Line from "../Line"
 import Link from "gatsby-link"
 import styled from "styled-components"
 
 const ValueProp = props => {
+  const data = useStaticQuery(graphql`
+    {
+      allPrismicSuppliersPage {
+        nodes {
+          data {
+            info_description {
+              html
+            }
+            info_title {
+              text
+            }
+            info_image {
+              url
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const sectionData = data.allPrismicSuppliersPage.nodes[0].data
+
   return (
     <StyledSection data-scroll-section>
       <StyledHeading data-scroll data-scroll-offset="30%">
-        <span id="span-0">Overview</span>
+        <span id="span-0">{sectionData.info_title?.text}</span>
       </StyledHeading>
       <InnerContainer>
         <div>
           <TextContainer>
-            <p className="fadein" data-scroll data-scroll-offset="20%">
-              <span>
-                We can only build great things if we work with the best people
-                and materials. Our suppliers are hand-picked, best-in-class, and
-                share our no-boundaries mentality.
-              </span>
-            </p>
-            <p className="fadein" data-scroll data-scroll-offset="20%">
-              <span>
-                <Link to="/contact">Contact us</Link> below if you’d like to be
-                considered as an Intergalactic supplier.
-              </span>
-            </p>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: sectionData.info_description.html,
+              }}
+            />
           </TextContainer>
         </div>
-        <OverviewImg src={overviewImg} alt="Interior of warehouse " />
+        <OverviewImg
+          src={sectionData.info_image?.url}
+          alt="Interior of warehouse"
+        />
       </InnerContainer>
     </StyledSection>
   )
@@ -85,6 +103,9 @@ const TextContainer = styled.div`
   p {
     margin-top: 20px;
     max-width: 675px;
+    font-size: 25px;
+    line-height: 36px;
+    color: ${({ theme }) => theme.colors.aluminum};
   }
 
   span,

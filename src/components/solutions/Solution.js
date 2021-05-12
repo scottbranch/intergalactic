@@ -1,160 +1,87 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import Line from "../Line"
 import Link from "gatsby-link"
 import styled from "styled-components"
-import SolutionImg from "../../images/solutions/starscream.jpg"
-import SolutionImg2 from "../../images/solutions/gozer.jpg"
-import SolutionImg3 from "../../images/solutions/falkor.jpg"
-import SolutionImg4 from "../../images/solutions/stardust.jpg"
-import SolutionImg5 from "../../images/solutions/mcfly.jpg"
 
 const Solution = () => {
+  const data = useStaticQuery(graphql`
+    {
+      allPrismicSolutions {
+        nodes {
+          data {
+            systems_list {
+              title {
+                text
+              }
+              subtitle {
+                text
+              }
+              link {
+                text
+              }
+              description_3 {
+                text
+              }
+              description_2 {
+                text
+              }
+              description_1 {
+                text
+              }
+              image {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const sectionData = data.allPrismicSolutions.nodes[0].data
+
   return (
     <>
-      <SolutionContainer>
-        <div className="image-container" data-scroll data-scroll-offset="20%">
-          <img src={SolutionImg} />
-        </div>
-        <div className="solution-detail" data-scroll data-scroll-offset="20%">
-          <h4>GS1—SX STARSCREAM</h4>
-          <p>Ideal for extreme vibration and temperature environments.</p>
-          <span>5 kW below ambient (active)</span>
-          <span>10” x 10” x 28”</span>
-          <span>115 lbs</span>
-          <Link to="/solutions/starscream">
-            Learn More
-            <svg
-              width="12"
-              height="11"
-              viewBox="0 0 12 11"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+      {sectionData.systems_list.map((item, index) => {
+        return (
+          <SolutionContainer>
+            <div
+              className="image-container"
+              data-scroll
+              data-scroll-offset="20%"
             >
-              <path
-                d="M6.60227 11L11.6932 5.90909L6.60227 0.818182L5.72727 1.69318L9.32955 5.28409H0V6.53409H9.32955L5.72727 10.1364L6.60227 11Z"
-                fill="#6B6358"
-              />
-            </svg>
-          </Link>
-        </div>
-      </SolutionContainer>
-      <SolutionContainer>
-        <div className="image-container" data-scroll data-scroll-offset="20%">
-          <img src={SolutionImg2} />
-        </div>
-        <div className="solution-detail" data-scroll data-scroll-offset="20%">
-          <h4>GS1—GZ Gozer</h4>
-          <p>
-            Ideal for high-energy laser systems, large aircraft systems cooling.
-          </p>
-          <span>150 kW, above ambient (passive)</span>
-          <span>40”x40”x40” </span>
-          <span>200 lbs</span>
-          <Link to="/solutions/gozer">
-            Learn More
-            <svg
-              width="12"
-              height="11"
-              viewBox="0 0 12 11"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+              <img src={item.image?.url} />
+            </div>
+            <div
+              className="solution-detail"
+              data-scroll
+              data-scroll-offset="20%"
             >
-              <path
-                d="M6.60227 11L11.6932 5.90909L6.60227 0.818182L5.72727 1.69318L9.32955 5.28409H0V6.53409H9.32955L5.72727 10.1364L6.60227 11Z"
-                fill="#6B6358"
-              />
-            </svg>
-          </Link>
-        </div>
-      </SolutionContainer>
-      <SolutionContainer>
-        <div className="image-container" data-scroll data-scroll-offset="20%">
-          <img src={SolutionImg3} />
-        </div>
-        <div className="solution-detail" data-scroll data-scroll-offset="20%">
-          <h4>GS1—FK Falkor</h4>
-          <p>
-            Ideal for high energy laser systems, large aircraft systems cooling.
-          </p>
-          <span>25 kW, below ambient (active)</span>
-          <span>40”x40”x40” </span>
-          <span>250 lbs</span>
-          <Link to="/solutions/falkor">
-            Learn More
-            <svg
-              width="12"
-              height="11"
-              viewBox="0 0 12 11"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6.60227 11L11.6932 5.90909L6.60227 0.818182L5.72727 1.69318L9.32955 5.28409H0V6.53409H9.32955L5.72727 10.1364L6.60227 11Z"
-                fill="#6B6358"
-              />
-            </svg>
-          </Link>
-        </div>
-      </SolutionContainer>
-      <SolutionContainer>
-        <div className="image-container" data-scroll data-scroll-offset="20%">
-          <img src={SolutionImg4} />
-        </div>
-        <div className="solution-detail" data-scroll data-scroll-offset="20%">
-          <h4>GS1—SD Stardust</h4>
-          <p>
-            Ideal for extreme vibration and temperature environments. High loads
-            where below-ambient temperature is not required.
-          </p>
-          <span>55 kW, above ambient (passive)</span>
-          <span>10”x10”x28” </span>
-          <span>85 lbs</span>
-          <Link to="/solutions/stardust">
-            Learn More
-            <svg
-              width="12"
-              height="11"
-              viewBox="0 0 12 11"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6.60227 11L11.6932 5.90909L6.60227 0.818182L5.72727 1.69318L9.32955 5.28409H0V6.53409H9.32955L5.72727 10.1364L6.60227 11Z"
-                fill="#6B6358"
-              />
-            </svg>
-          </Link>
-        </div>
-      </SolutionContainer>
-      <SolutionContainer>
-        <div className="image-container" data-scroll data-scroll-offset="20%">
-          <img src={SolutionImg5} />
-        </div>
-        <div className="solution-detail" data-scroll data-scroll-offset="20%">
-          <h4>GS1—MC MCFly</h4>
-          <p>
-            Ideal for high energy laser systems, large aircraft systems cooling.
-          </p>
-          <span>10 kW below ambient, cooling and heating</span>
-          <span>40”x40”x40” </span>
-          <span>200 lbs</span>
-          <Link to="/solutions/mcfly">
-            Learn More
-            <svg
-              width="12"
-              height="11"
-              viewBox="0 0 12 11"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6.60227 11L11.6932 5.90909L6.60227 0.818182L5.72727 1.69318L9.32955 5.28409H0V6.53409H9.32955L5.72727 10.1364L6.60227 11Z"
-                fill="#6B6358"
-              />
-            </svg>
-          </Link>
-        </div>
-      </SolutionContainer>
+              <h4>{item.title?.text}</h4>
+              <p>{item.subtitle?.text}</p>
+              <span>{item.description_1?.text}</span>
+              <span>{item.description_2?.text}</span>
+              <span>{item.description_3?.text}</span>
+              <Link to={item.link?.text}>
+                Learn More
+                <svg
+                  width="12"
+                  height="11"
+                  viewBox="0 0 12 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.60227 11L11.6932 5.90909L6.60227 0.818182L5.72727 1.69318L9.32955 5.28409H0V6.53409H9.32955L5.72727 10.1364L6.60227 11Z"
+                    fill="#6B6358"
+                  />
+                </svg>
+              </Link>
+            </div>
+          </SolutionContainer>
+        )
+      })}
     </>
   )
 }

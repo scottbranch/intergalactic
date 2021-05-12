@@ -1,4 +1,5 @@
 import React, { useEffect } from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero from "../components/industries/Hero"
@@ -15,6 +16,30 @@ const Industries = () => {
     }, 1000)
   }, [])
 
+  const data = useStaticQuery(graphql`
+    {
+      allPrismicIndustriesPage {
+        nodes {
+          data {
+            slider {
+              slider_description {
+                text
+              }
+              slider_image {
+                url
+              }
+              slider_title {
+                text
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const sliderData = data.allPrismicIndustriesPage.nodes[0].data
+
   return (
     <Layout>
       <SEO title="Industries" />
@@ -23,7 +48,7 @@ const Industries = () => {
       </Helmet>
       <Hero />
       <ImageRow />
-      <Carousel />
+      <Carousel carouselItems={sliderData.slider} />
     </Layout>
   )
 }

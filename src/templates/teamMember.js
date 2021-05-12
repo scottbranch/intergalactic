@@ -1,18 +1,23 @@
-import React from "react"
-import Layout from "../../components/layout"
-import headshot from "../../images/company/team/Melzie-Ganowsky.jpg"
+import React, { useState, useEffect } from "react"
+import Layout from "../components/layout"
+import { graphql, useStaticQuery } from "gatsby"
+import Link from "gatsby-link"
 import styled from "styled-components"
 
-const TeamMember = props => {
+const TeamMember = ({
+  data: { prismicTeamMember, allPrismicTeamMember, uid },
+}) => {
+  const { data } = prismicTeamMember
+
   return (
     <Layout className="dark">
       <StyledSection data-scroll-section>
         <Container>
           <h5 data-scroll>
-            <span>Melzie & Ray Ganowsky</span>
+            <span>{data.name.text}</span>
           </h5>
           <p className="eyebrow fadein" data-scroll data-scroll-offset="20%">
-            <span>Co-owners</span>
+            <span>{data.title.text}</span>
           </p>
           <Info>
             <ImageContainer>
@@ -20,7 +25,7 @@ const TeamMember = props => {
                 className="fadein"
                 data-scroll
                 data-scroll-offset="20%"
-                src={headshot}
+                src={data.headshot.url}
               />
             </ImageContainer>
             <TextContainer
@@ -28,35 +33,9 @@ const TeamMember = props => {
               data-scroll
               data-scroll-offset="20%"
             >
-              <p>
-                Melzie and Ray Ganowsky own a majority stake in Intergalactic as
-                co-founders and co-owners of RAM Company in St. George, Utah.
-                They helped bring Intergalactic to its current home in
-                picturesque Southern Utah in early 2019.
-              </p>
-              <p>
-                Melzie and Ray founded RAM Company in 1975 after relocating to
-                St. George from upstate New York. Initially, they started the
-                company in their garage and eventually opened a
-                1,000-square-foot facility. They started with a single lathe and
-                began designing, manufacturing, and assembling precision parts
-                for Kohler, Mack Truck, United Technologies, and a growing list
-                of additional customers.
-              </p>
-              <p>
-                In 1979, RAM Company expanded its capabilities, acquired
-                industry certifications and pedigree, and began designing and
-                manufacturing precision components for various aerospace
-                programs in the military and defense, commercial aviation,
-                legacy space (Shuttle Program and International Space Station),
-                and commercial space markets.
-              </p>
-              <p>
-                Melzie and Ray live in St. George and still enjoy going into the
-                office every day and calling into company meetings but have
-                turned over day-to-day operations of the company they built over
-                the space of five decades.
-              </p>
+              <div
+                dangerouslySetInnerHTML={{ __html: data.description.html }}
+              />
             </TextContainer>
           </Info>
         </Container>
@@ -138,3 +117,44 @@ const TextContainer = styled.div`
 `
 
 export default TeamMember
+
+export const pageQuery = graphql`
+  query teamMember($uid: String!) {
+    prismicTeamMember(uid: { eq: $uid }) {
+      uid
+      data {
+        description {
+          html
+        }
+        headshot {
+          url
+        }
+        name {
+          text
+        }
+        title {
+          text
+        }
+      }
+    }
+    allPrismicTeamMember(sort: { order: DESC, fields: id }) {
+      nodes {
+        uid
+        data {
+          description {
+            html
+          }
+          headshot {
+            url
+          }
+          name {
+            text
+          }
+          title {
+            text
+          }
+        }
+      }
+    }
+  }
+`

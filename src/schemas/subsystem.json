@@ -1,0 +1,77 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "url"
+      }
+    },
+    "code": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading6",
+        "label": "Code"
+      }
+    },
+    "heading": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Heading"
+      }
+    },
+    "image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Image"
+      }
+    },
+    "summary": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph",
+        "allowTargetBlank": true,
+        "label": "Summary"
+      }
+    },
+    "features": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "description": {
+            "type": "StructuredText",
+            "config": {
+              "single": "paragraph",
+              "label": "Description"
+            }
+          }
+        },
+        "label": "Features"
+      }
+    },
+    "use_cases": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "title": {
+            "type": "StructuredText",
+            "config": {
+              "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+              "label": "Title"
+            }
+          },
+          "description": {
+            "type": "StructuredText",
+            "config": {
+              "single": "paragraph",
+              "label": "Description"
+            }
+          }
+        },
+        "label": "Use Cases"
+      }
+    }
+  }
+}

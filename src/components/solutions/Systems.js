@@ -1,27 +1,40 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import Line from "../Line"
 import styled from "styled-components"
 import Solution from "./Solution"
 
 const Systems = () => {
+  const data = useStaticQuery(graphql`
+    {
+      allPrismicSolutions {
+        nodes {
+          data {
+            systems_title {
+              text
+            }
+            systems_description {
+              text
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const sectionData = data.allPrismicSolutions.nodes[0].data
+
   return (
     <StyledSection data-scroll-section>
       <StyledInner>
         <div className="intro-container">
           <h3 data-scroll data-scroll-offset="20%">
-            <span>
-              GS1 SERIES — THERMAL
-              <br /> MANAGEMENT SYSTEMS
-            </span>
+            <span>{sectionData.systems_title?.text}</span>
           </h3>
         </div>
         <div className="overview">
           <p className="fadein" data-scroll data-scroll-offset="20%">
-            <span>
-              Precision engineered and preconfigured, these systems can be
-              modified to specific applications and assembled with the fastest
-              lead times in the industry.
-            </span>{" "}
+            <span>{sectionData.systems_description?.text}</span>{" "}
           </p>
         </div>
       </StyledInner>

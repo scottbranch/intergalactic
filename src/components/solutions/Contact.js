@@ -1,65 +1,57 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import Line from "../Line"
 import AnchorLink from "../AnchorLink"
 import styled from "styled-components"
 
 const Contact = () => {
+  const data = useStaticQuery(graphql`
+    {
+      allPrismicSolutions {
+        nodes {
+          data {
+            contact_heading {
+              text
+            }
+            contact_blocks {
+              title {
+                text
+              }
+              description {
+                text
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const sectionData = data.allPrismicSolutions.nodes[0].data
+
   return (
     <StyledSection data-scroll-section>
       <StyledInner>
         <h3 data-scroll data-scroll-offset="20%">
-          <span>
-            On call, on site, <br />
-            and at the ready.
-          </span>
+          <span>{sectionData.contact_heading?.text}</span>
         </h3>
       </StyledInner>
       <StyledInner>
-        <FlexArea data-scroll data-scroll-offset="20%">
-          <p
-            className="eyebrow fadein welcome"
-            data-scroll
-            data-scroll-offset="20%"
-          >
-            <span>Systems Engineering &amp; Design</span>
-          </p>
-          <p className="intro">
-            Precision engineered and preconfigured, these systems can be
-            modified to specific applications and assembled with the fastest
-            lead times in the industry.
-          </p>
-          <AnchorLink to="/contact">Let's Connect</AnchorLink>
-        </FlexArea>
-        <FlexArea data-scroll data-scroll-offset="20%">
-          <p
-            className="eyebrow fadein welcome"
-            data-scroll
-            data-scroll-offset="20%"
-          >
-            <span>Field Maintenance &amp; Service</span>
-          </p>
-          <p className="intro">
-            Everything we make is built to outperform, outlast, and outpace
-            anything else out there. We offer scheduled field maintenance and
-            onsite repairs to keep things tight and running smooth.
-          </p>
-          <AnchorLink to="/contact">Let's Connect</AnchorLink>
-        </FlexArea>
-        <FlexArea data-scroll data-scroll-offset="20%">
-          <p
-            className="eyebrow fadein welcome"
-            data-scroll
-            data-scroll-offset="20%"
-          >
-            <span>Troubleshooting &amp; Technical Support</span>
-          </p>
-          <p className="intro">
-            Be it a loose connection, software bug, or gremlins run amok, our
-            team will find and fix whatever’s wrong and get you back up and
-            running in no time.
-          </p>
-          <AnchorLink to="/contact">Let's Connect</AnchorLink>
-        </FlexArea>
+        {sectionData.contact_blocks.map((item, index) => {
+          return (
+            <FlexArea data-scroll data-scroll-offset="20%">
+              <p
+                className="eyebrow fadein welcome"
+                data-scroll
+                data-scroll-offset="20%"
+              >
+                <span>{item.title?.text}</span>
+              </p>
+              <p className="intro">{item.description?.text}</p>
+              <AnchorLink to="/contact">Let's Connect</AnchorLink>
+            </FlexArea>
+          )
+        })}
       </StyledInner>
     </StyledSection>
   )

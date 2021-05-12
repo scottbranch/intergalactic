@@ -1,8 +1,30 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import Checkmark from "../../assets/svg/checkmark"
 import styled from "styled-components"
 
 const BoxesChecked = () => {
+  const data = useStaticQuery(graphql`
+    {
+      allPrismicHomepageTemplate {
+        nodes {
+          data {
+            boxes_checked_title {
+              text
+            }
+            checkbox_items {
+              checkbox_item {
+                text
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const boxData = data.allPrismicHomepageTemplate.nodes[0].data
+
   const listItems = [
     "Sole-sourced on major platforms.",
     "AS9100 certified.",
@@ -14,13 +36,13 @@ const BoxesChecked = () => {
   return (
     <StyledSection data-scroll-section>
       <StyledHeading data-scroll data-scroll-offset="30%">
-        <span id="span-0">Boxes Checked</span>
+        <span id="span-0">{boxData.boxes_checked_title[0]?.text}</span>
       </StyledHeading>
       <StyledUl>
-        {listItems.map((item, index) => (
+        {boxData.checkbox_items.map((item, index) => (
           <StyledLi data-scroll>
             <StyledCheck />
-            {item}
+            {item.checkbox_item[0]?.text}
           </StyledLi>
         ))}
       </StyledUl>

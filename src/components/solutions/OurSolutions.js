@@ -1,8 +1,36 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import Line from "../Line"
 import styled from "styled-components"
 
 const OurSolutions = () => {
+  const data = useStaticQuery(graphql`
+    {
+      allPrismicSolutions {
+        nodes {
+          data {
+            solutions_section_title {
+              text
+            }
+            solutions_section_subtitle {
+              text
+            }
+            solutions_list {
+              item_description {
+                text
+              }
+              item_title {
+                text
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const sectionData = data.allPrismicSolutions.nodes[0].data
+
   return (
     <StyledSection data-scroll-section>
       <StyledInner>
@@ -12,7 +40,7 @@ const OurSolutions = () => {
             data-scroll
             data-scroll-offset="20%"
           >
-            <span>Our Solutions</span>
+            <span>{sectionData.solutions_section_title?.text}</span>
           </p>
           <p className="intro fadein" data-scroll data-scroll-offset="20%">
             <svg
@@ -27,37 +55,18 @@ const OurSolutions = () => {
                 fill="#91897D"
               />
             </svg>
-            Say hello to the future of thermal management and a new standard for
-            performance, reliability, and intelligence.
+            {sectionData.solutions_section_subtitle?.text}
           </p>
         </div>
         <div className="overview">
-          <div data-scroll data-scroll-offset="20%">
-            <h5>Achieve apex performance</h5>
-            <p>Confidently push the boundaries of what’s possible.</p>
-          </div>
-          <div data-scroll data-scroll-offset="20%">
-            <h5>Control every aspect</h5>
-            <p>Enjoy end-to-end intelligent controls and custom software.</p>
-          </div>
-          <div data-scroll data-scroll-offset="20%">
-            <h5>Scale with ease</h5>
-            <p>
-              Meet every requirement with systems that are highly modular and
-              scalable.
-            </p>
-          </div>
-          <div data-scroll data-scroll-offset="20%">
-            <h5>Enjoy unmatched efficiency</h5>
-            <p>Get more output while consuming less power. </p>
-          </div>
-          <div data-scroll data-scroll-offset="20%">
-            <h5>Upgrade your quality</h5>
-            <p>
-              Rest easy knowing your thermal system uses top-shelf parts and
-              equipment.
-            </p>
-          </div>
+          {sectionData.solutions_list?.map((item, index) => {
+            return (
+              <div data-scroll data-scroll-offset="20%">
+                <h5>{item.item_title?.text}</h5>
+                <p>{item.item_description?.text}</p>
+              </div>
+            )
+          })}
         </div>
       </StyledInner>
     </StyledSection>

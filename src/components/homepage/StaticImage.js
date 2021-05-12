@@ -1,12 +1,33 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import Line from "../Line"
 import ship from "../../images/homepage/ship.jpg"
 import styled from "styled-components"
 
 const StaticImage = () => {
+  const data = useStaticQuery(graphql`
+    {
+      allPrismicHomepageTemplate {
+        nodes {
+          data {
+            divider_image {
+              url
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const imageData = data.allPrismicHomepageTemplate.nodes[0].data
+
   return (
     <StyledSection data-scroll-section>
-      <img data-scroll data-scroll-offset="20%" src={ship} />
+      <img
+        data-scroll
+        data-scroll-offset="20%"
+        src={imageData.divider_image.url}
+      />
     </StyledSection>
   )
 }

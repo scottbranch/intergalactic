@@ -1,4 +1,5 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import Helmet from "react-helmet"
 import AnchorLink from "./AnchorLink.js"
 import Link from "gatsby-link"
@@ -11,35 +12,7 @@ import Line from "./Line.js"
 import styled from "styled-components"
 
 const Carousel = props => {
-  const sliderItems = [
-    {
-      title: "Civil",
-      description: `Our thermal management solutions can cool any aspect of any
-    commercial aircraft. Our core systems can be modified for most
-    needs, or we can build a custom solution for any thermal
-    challenge, including supersonics and electric flight.`,
-      image: slide1,
-      link: "/solutions",
-    },
-    {
-      title: "Defense and Security",
-      description: `We have a long history in defense, and our systems are sole-sourced on multiple tier-one defense platforms. Our thermal management solutions unlock innovation throughout the entire supply chain and enable our partners to build next-generation airborne defense and security platforms.`,
-      image: slide2,
-      link: "/solutions",
-    },
-    {
-      title: "Space",
-      description: `The space race is heating up, and it’s our job to keep it from overheating. Our systems, subsystems, and parts are built to handle the most demanding conditions, including the intense vibrations and heat extremes of space travel. `,
-      image: slide3,
-      link: "/solutions",
-    },
-    {
-      title: "Land and Sea",
-      description: `Everything we build is aerospace-rated, but our systems are ideal for mitigating heat on land and sea, as well. Bring us your most demanding thermal management need and we’ll solve it with a targeted solution. `,
-      image: slide4,
-      link: "/solutions",
-    },
-  ]
+  const { carouselItems } = props
 
   return (
     <StyledSection data-scroll-section>
@@ -50,29 +23,29 @@ const Carousel = props => {
           data-scroll-sticky
           data-scroll-target="#carousel-sticky-trigger"
         >
-          {sliderItems.map((item, index) => {
+          {carouselItems.map((item, index) => {
             return (
               <Slide className={`slide slide${index + 1}`}>
                 <Container1 className="text-container">
                   <h5 data-scroll data-scroll-offset="30%">
-                    <span>{item.title}</span>
+                    <span>{item.slider_title[0]?.text}</span>
                   </h5>
                   <p className="fadein" data-scroll data-scroll-offset="30%">
-                    <span>{item.description}</span>
+                    <span>{item.slider_description[0]?.text}</span>
                   </p>
-                  <AnchorLink to={item.link}>Learn More</AnchorLink>
+                  <AnchorLink to="/solutions">Learn More</AnchorLink>
                 </Container1>
                 <Container2 className="image-container">
                   <SlideImg
                     className="fadein"
                     data-scroll
                     data-scroll-offset="30%"
-                    src={item.image}
+                    src={item.slider_image?.url}
                   />
                 </Container2>
                 <NavBar className="navbar">
                   <p className="eyebrow">
-                    {sliderItems[index + 1] && sliderItems[index + 1].title}
+                    {carouselItems[index + 1]?.slider_title[0]?.text}
                   </p>
                   <div></div>
                   <Pagination>
@@ -116,15 +89,15 @@ const Carousel = props => {
       </span>
       {/*separate thing for mobile because timeline*/}
       <span id="mobile-container">
-        {sliderItems.map((item, index) => (
+        {carouselItems.map((item, index) => (
           <div>
-            <MobileLink to={item.link}>
+            <MobileLink to="/solutions">
               <h5>
-                0{index + 1} :: {item.title}
+                0{index + 1} :: {item.slider_title[0]?.text}
               </h5>
               <Arrow />
             </MobileLink>
-            <MobileImg src={item.image} />
+            <MobileImg src={item.slider_image?.url} />
           </div>
         ))}
       </span>
