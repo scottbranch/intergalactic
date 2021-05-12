@@ -41,7 +41,7 @@ const Container = styled.div`
   }
 
   &:after {
-    display block;
+    display none;
     content: '';
     width: 95%;
     height: 1px;
@@ -50,6 +50,10 @@ const Container = styled.div`
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+
+    @media screen and (min-width: 768px) {
+      display: block;
+    }
   }
 `
 

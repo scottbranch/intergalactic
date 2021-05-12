@@ -1,0 +1,19 @@
+{
+  "Main": {
+    "blog_post": {
+      "type": "Link",
+      "config": {
+        "select": "document",
+        "customtypes": ["blog_post"],
+        "label": "Blog Post"
+      }
+    },
+    "text_blurb": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "Text Blurb"
+      }
+    }
+  }
+}

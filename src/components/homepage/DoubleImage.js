@@ -79,6 +79,7 @@ const Container = styled.div`
 const StyledHeading = styled.h4`
   z-index: 500;
   position: relative;
+  line-height: 85%;
   span:nth-of-type(3) {
     margin: 0px 0 0 90px;
 

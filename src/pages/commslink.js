@@ -71,7 +71,7 @@ const Commslink = () => {
                   ? item.node.data.preview_image.url
                   : fallbackImage
               }
-              title={item.node.data.blog_title.text}
+              title={item.node.data.blog_title?.text}
               category={item.node.tags[0]}
               date={item.node.data.date_published}
               link={item.node.uid}
@@ -106,11 +106,15 @@ const HeadingContainer = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  padding: 0 60px;
+  padding: 0 20px;
+
+  @media screen and (min-width: 768px) {
+    padding: 0 60px;
+  }
 
   h1 {
     text-transform: uppercase;
-    font-size: 52px;
+    font-size: 12vw;
     line-height: 100%;
     padding-bottom: 25px;
     font-weight: 500;

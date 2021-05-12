@@ -423,6 +423,7 @@ const MobileLink = styled(Link)`
 const MobileImg = styled.img`
   width: 100%;
   margin: 0;
+  display: block;
 `
 
 export default Carousel

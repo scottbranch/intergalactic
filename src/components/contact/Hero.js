@@ -19,9 +19,6 @@ const Hero = props => {
       allPrismicContactPage {
         nodes {
           data {
-            heading {
-              text
-            }
             statement {
               text
             }
@@ -35,13 +32,7 @@ const Hero = props => {
 
   return (
     <HeroWrapper data-scroll-section>
-      <StyledSection>
-        <HeadingContainer>
-          <StyledHeading className={isLoaded && "active"}>
-            <span id="span-0">{sectionData.heading[0]?.text}</span>{" "}
-          </StyledHeading>
-        </HeadingContainer>
-      </StyledSection>
+      <StyledSection></StyledSection>
       <ContactInfo>
         <p data-scroll data-scroll-offset="20%">
           {sectionData.statement[0]?.text}
@@ -99,7 +90,7 @@ const HeroWrapper = styled.div`
 
 const StyledSection = styled.section`
   width: 100%;
-  padding-top: 400px;
+  padding-top: 110px;
   position: relative;
   background-color: ${({ theme }) => theme.colors.cream};
   border-bottom: 1px solid ${({ theme }) => theme.colors.black};

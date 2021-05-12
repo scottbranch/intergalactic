@@ -62,6 +62,7 @@ module.exports = {
           team_member: require("./src/schemas/team_member.json"),
           subsystem: require("./src/schemas/subsystem.json"),
           solutions: require("./src/schemas/solutions.json"),
+          featured_blog: require("./src/schemas/featured_blog.json"),
         },
         htmlSerializer: ({ node, key, value }) => (
           type,

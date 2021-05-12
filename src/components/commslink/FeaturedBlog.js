@@ -7,22 +7,39 @@ import fallbackImage from "../../images/commslink/blog-fallback.jpg"
 const FeaturedBlog = () => {
   const data = useStaticQuery(graphql`
     {
-      prismicBlogPost {
-        data {
-          blog_title {
-            text
-          }
-          date_published(formatString: "")
-          preview_image {
-            url
+      allPrismicFeaturedBlog(sort: { fields: data___blog_post___link_type }) {
+        edges {
+          node {
+            data {
+              text_blurb {
+                text
+              }
+              blog_post {
+                document {
+                  ... on PrismicBlogPost {
+                    id
+                    data {
+                      blog_title {
+                        text
+                      }
+                      preview_image {
+                        url
+                      }
+                      date_published
+                    }
+                    uid
+                  }
+                }
+              }
+            }
           }
         }
-        uid
       }
     }
   `)
 
-  const blogData = data.prismicBlogPost.data
+  const blogData =
+    data.allPrismicFeaturedBlog.edges[0].node.data.blog_post.document
 
   return (
     <StyledSection data-scroll-section>
@@ -31,22 +48,21 @@ const FeaturedBlog = () => {
           className="image-container"
           style={{
             backgroundImage: `url(${
-              blogData.preview_image.url
-                ? blogData.preview_image.url
+              blogData.data.preview_image.url
+                ? blogData.data.preview_image.url
                 : fallbackImage
             })`,
           }}
         />
         <div className="description">
-          <span>{blogData.date_published}</span>
-          <h3>{blogData.blog_title.text}</h3>
-          <span>The Boom Box</span>
+          <span>{blogData.data.date_published}</span>
+          <h3>{blogData.data.blog_title.text}</h3>
           <p>
             If you’ve been following our journey, you know our company was
             founded as Airborne ECS (short forenvironmental control systems). We
             just changed our name to Intergalactic. We’d like to explain why.
           </p>
-          <a href={`/commslink/${data.prismicBlogPost.uid}`}>
+          <a href={`/commslink/${blogData.uid}`}>
             Go to article
             <svg
               width="12"

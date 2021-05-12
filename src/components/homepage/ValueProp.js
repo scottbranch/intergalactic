@@ -65,6 +65,7 @@ const StyledSection = styled.section`
 `
 
 const StyledHeading = styled.h3`
+  line-height: 85%;
   span:nth-of-type(2) {
     left: 55px;
 

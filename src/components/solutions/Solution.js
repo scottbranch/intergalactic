@@ -105,7 +105,7 @@ const SolutionContainer = styled.div`
     left: 50%;
     transform: translateX(-50%);
     width: 95%;
-    background-color: ${({ theme }) => theme.colors.cream};
+    background-color: ${({ theme }) => theme.colors.aluminum};
     height: 1px;
   }
 

@@ -65,62 +65,6 @@ const Equipment = props => {
   const sectionData = data.allPrismicSolutions.nodes[0].data
   const equipmentData = data.allPrismicSolutions.edges[0].node.data.equipment
 
-  const equipmentPieces = [
-    {
-      code: "IGE—B3HE",
-      title: "BOREAS3 HEAT EXCHANGER",
-      link: "boreas3-heat-exchanger",
-      image: boreas,
-    },
-    {
-      code: "IGE-A1C",
-      title: "Aries1 Controller",
-      link: "aries1-controller",
-      image: aries,
-    },
-    {
-      code: "IGE-HXP",
-      title: "HydraX Pump",
-      link: "hydrax-pump",
-      image: hydra,
-    },
-    {
-      code: "IGE-L4SC",
-      title: "Libra4 Scroll Compressor",
-      link: "libra4-scroll-compressor",
-      image: libra,
-    },
-    {
-      code: "IGE-C1PDU",
-      title: "Carina1 Power Distribution Unit",
-      link: "carina1-power-distribution-unit",
-      image: carina,
-    },
-    {
-      code: "IGE-OXDA",
-      title: "OrionXD Accumulator",
-      link: "orionxd-accumulator",
-      image: orion,
-    },
-    {
-      code: "IGE-FEH",
-      title: "Fornax Electric Heaters",
-      link: "fornax-electric-heaters",
-      image: fornax,
-    },
-    {
-      code: "IGE-DSTFCV",
-      title: "Dorado ST Liquid Flow Control Valve",
-      link: "dorado-st-liquid-flow-control-valve",
-      image: dorado,
-    },
-    {
-      code: "IGE-VACV",
-      title: "Vela Airflow Control Valve",
-      link: "vela-airflow-control-valve",
-      image: airflow,
-    },
-  ]
   return (
     <EquipmentContainer data-scroll-section>
       <div
