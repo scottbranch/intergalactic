@@ -63,7 +63,7 @@ const Commslink = () => {
       {/*<Filter />*/}
       <FeaturedBlog />
       <Grid data-scroll-section>
-        {blogData.map((item, index) => {
+        {blogData.slice(1).map((item, index) => {
           return (
             <BlogCard
               featuredImage={

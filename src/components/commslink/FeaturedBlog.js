@@ -7,39 +7,34 @@ import fallbackImage from "../../images/commslink/blog-fallback.jpg"
 const FeaturedBlog = () => {
   const data = useStaticQuery(graphql`
     {
-      allPrismicFeaturedBlog(sort: { fields: data___blog_post___link_type }) {
+      allPrismicBlogPost(sort: { order: DESC, fields: data___date_published }) {
         edges {
           node {
             data {
-              text_blurb {
+              blog_content {
                 text
               }
-              blog_post {
-                document {
-                  ... on PrismicBlogPost {
-                    id
-                    data {
-                      blog_title {
-                        text
-                      }
-                      preview_image {
-                        url
-                      }
-                      date_published
-                    }
-                    uid
-                  }
-                }
+              blog_title {
+                text
+              }
+              date_published
+              preview_image {
+                url
               }
             }
+            uid
+            tags
           }
         }
       }
     }
   `)
 
-  const blogData =
-    data.allPrismicFeaturedBlog.edges[0].node.data.blog_post.document
+  const blogData = data.allPrismicBlogPost.edges[0].node.data
+
+  const truncate = str => {
+    return str.length > 200 ? str.substring(0, 197) + "..." : str
+  }
 
   return (
     <StyledSection data-scroll-section>
@@ -48,21 +43,17 @@ const FeaturedBlog = () => {
           className="image-container"
           style={{
             backgroundImage: `url(${
-              blogData.data.preview_image.url
-                ? blogData.data.preview_image.url
+              blogData.preview_image.url
+                ? blogData.preview_image.url
                 : fallbackImage
             })`,
           }}
         />
         <div className="description">
-          <span>{blogData.data.date_published}</span>
-          <h3>{blogData.data.blog_title.text}</h3>
-          <p>
-            If you’ve been following our journey, you know our company was
-            founded as Airborne ECS (short forenvironmental control systems). We
-            just changed our name to Intergalactic. We’d like to explain why.
-          </p>
-          <a href={`/commslink/${blogData.uid}`}>
+          <span>{blogData.date_published}</span>
+          <h3>{blogData.blog_title.text}</h3>
+          <p>{truncate(blogData.blog_content.text)}</p>
+          <a href={`/commslink/${data.allPrismicBlogPost.edges[0].node.uid}`}>
             Go to article
             <svg
               width="12"
