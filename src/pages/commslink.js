@@ -22,7 +22,7 @@ const Commslink = () => {
 
   const data = useStaticQuery(graphql`
     {
-      allPrismicBlogPost(sort: { order: DESC, fields: id }) {
+      allPrismicBlogPost(sort: { order: DESC, fields: data___date_published }) {
         edges {
           node {
             data {
