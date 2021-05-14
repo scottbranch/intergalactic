@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from "react"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
+import Helmet from "react-helmet"
 import { graphql, useStaticQuery } from "gatsby"
 import Link from "gatsby-link"
 import styled from "styled-components"
 
-const TeamMember = ({
-  data: { prismicTeamMember, allPrismicTeamMember, uid },
-}) => {
-  const { data } = prismicTeamMember
+const TeamMember = ({ data: { prismicTeamMember, allPrismicTeamMember } }) => {
+  const { data, uid } = prismicTeamMember
 
   return (
     <Layout className="dark">
+      <SEO title={`Team | ${data.name.text}`} />
+      <Helmet>
+        <link rel="canonical" href={`http://ig.space/${uid}`} />
+      </Helmet>
       <StyledSection data-scroll-section>
         <Container>
           <h5 data-scroll>

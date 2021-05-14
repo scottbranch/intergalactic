@@ -19,6 +19,7 @@ const SuppliersPage = () => {
       <SEO title="Suppliers" />
       <Helmet>
         <body class="suppliers" />
+        <link rel="canonical" href="http://ig.space/suppliers" />
       </Helmet>
       <Hero />
       <Overview />

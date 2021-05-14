@@ -19,6 +19,7 @@ const ContactPage = () => {
       <SEO title="Contact" />
       <Helmet>
         <body class="suppliers" />
+        <link rel="canonical" href="http://ig.space/contact" />
       </Helmet>
       <Hero />
       <Form />

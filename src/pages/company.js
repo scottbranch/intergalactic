@@ -22,6 +22,7 @@ const Company = () => {
       <SEO title="Company" />
       <Helmet>
         <body class="company" />
+        <link rel="canonical" href="http://ig.space/company" />
       </Helmet>
       <Hero />
       <DoubleImage />

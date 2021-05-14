@@ -19,6 +19,13 @@
         "label": "Date Published"
       }
     },
+    "canonical": {
+      "type": "Boolean",
+      "config": {
+        "default_value": false,
+        "label": "Canonical"
+      }
+    },
     "blog_title": {
       "type": "StructuredText",
       "config": {
@@ -37,9 +44,16 @@
     "blog_content": {
       "type": "StructuredText",
       "config": {
-        "multi": "paragraph, heading6, strong, em, hyperlink, image, list-item, o-list-item",
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item",
         "allowTargetBlank": true,
         "label": "Blog Content"
+      }
+    },
+    "video": {
+      "type": "Link",
+      "config": {
+        "select": "media",
+        "label": "Video"
       }
     }
   }

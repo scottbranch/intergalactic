@@ -45,6 +45,7 @@ const Industries = () => {
       <SEO title="Industries" />
       <Helmet>
         <body class="industries has-carousel" />
+        <link rel="canonical" href="http://ig.space/industries" />
       </Helmet>
       <Hero />
       <ImageRow />

@@ -52,6 +52,7 @@ const IndexPage = () => {
       <SEO title="Home" />
       <Helmet>
         <body class="home has-carousel" />
+        <link rel="canonical" href="http://ig.space" />
       </Helmet>
       <Hero />
       <Welcome />

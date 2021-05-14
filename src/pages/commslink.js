@@ -52,6 +52,7 @@ const Commslink = () => {
       <SEO title="Commslink" />
       <Helmet>
         <body class="Commslink" />
+        <link rel="canonical" href="http://ig.space/commslink" />
       </Helmet>
       <StyledSection data-scroll-section>
         <HeadingContainer>

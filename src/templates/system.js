@@ -7,8 +7,8 @@ import Helmet from "react-helmet"
 import styled from "styled-components"
 import { isBrowser } from "react-device-detect"
 
-const System = ({ data: { prismicSystem, allPrismicSystem, uid } }) => {
-  const { data } = prismicSystem
+const System = ({ data: { prismicSystem, allPrismicSystem } }) => {
+  const { data, uid } = prismicSystem
 
   const [isLoaded, setIsLoaded] = useState(false)
 
@@ -31,6 +31,9 @@ const System = ({ data: { prismicSystem, allPrismicSystem, uid } }) => {
   return (
     <Layout className="light">
       <SEO title={data.heading[0]?.text} />
+      <Helmet>
+        <link rel="canonical" href={`http://ig.space/${uid}`} />
+      </Helmet>
       <Hero
         eyebrow={data.code[0]?.text}
         title={data.heading[0]?.text}

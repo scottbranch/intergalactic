@@ -7,20 +7,23 @@ import { RichText } from "prismic-reactjs"
 import { Helmet } from "react-helmet"
 import { isBrowser } from "react-device-detect"
 
-const Post = ({ data: { prismicBlogPost, allPrismicBlogPost, uid } }) => {
+const Post = ({ data: { prismicBlogPost, allPrismicBlogPost } }) => {
   useEffect(() => {
     setTimeout(() => {
       isBrowser && window.scroll.update()
     }, 200)
   })
 
-  const { data, tags, dataRaw } = prismicBlogPost
+  const { data, tags, dataRaw, uid } = prismicBlogPost
 
   return (
     <Layout className="dark">
-      <SEO title="Blog" />
+      <SEO title={`${data.title} | Blog`} />
       <Helmet>
         <body class="blog" />
+        {data.canonical && (
+          <link rel="canonical" href={`http://ig.space/${uid}`} />
+        )}
       </Helmet>
       <StyledSection data-scroll-section>
         <ContentOuter>
@@ -145,8 +148,16 @@ const TextContainer = styled.div`
     padding: 100px 0;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
   h6 {
     text-transform: none;
+    font-size: 25px;
+    line-height: 105%;
+    font-weight: 500;
   }
 
   * {
@@ -182,6 +193,7 @@ export const pageQuery = graphql`
     prismicBlogPost(uid: { eq: $uid }) {
       uid
       data {
+        canonical
         title
         date_published(formatString: "")
         preview_image {
@@ -198,6 +210,7 @@ export const pageQuery = graphql`
       nodes {
         uid
         data {
+          canonical
           title
           date_published(formatString: "")
           preview_image {

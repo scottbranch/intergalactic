@@ -24,6 +24,7 @@ const Solutions = () => {
       <SEO title="Solutions" />
       <Helmet>
         <body class="solution" />
+        <link rel="canonical" href="http://ig.space/solutions" />
       </Helmet>
       <Hero />
       <OurSolutions />
