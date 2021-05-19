@@ -68,7 +68,7 @@ const SubSystem = ({ data: { prismicSubsystem, allPrismicSubsystem } }) => {
           </SectionTitle>
           <SectionDesc
             id="cases-container"
-            className={`cases-container light civil`}
+            className={`cases-container light ${data.use_cases[0].title.text === 'Land & Sea' ? 'land-sea' : data.use_cases[0].title.text}`}
             data-scroll
             data-scroll-offset="20%"
           >
@@ -77,12 +77,10 @@ const SubSystem = ({ data: { prismicSubsystem, allPrismicSubsystem } }) => {
                 {data.use_cases?.map((item, index) => (
                   <li>
                     <button
-                      className={`${item.title.text}-button`}
-                      onClick={() => handleClick(`${item.title.text}`)}
+                    className={`${item.title?.text === 'Land & Sea' ? 'land-sea' : item.title?.text}-button`}
+                    onClick={() => handleClick(`${item.title?.text === 'Land & Sea' ? 'land-sea' : item.title?.text}`)}
                     >
-                      {item.title.text === "land-sea"
-                        ? "land & sea"
-                        : item.title.text}
+                      {item.title?.text === "Land-Sea" ? "Land & Sea" : item.title?.text}
                     </button>
                   </li>
                 ))}
@@ -90,7 +88,7 @@ const SubSystem = ({ data: { prismicSubsystem, allPrismicSubsystem } }) => {
             </TabContainer>
             <span className="desktop-list">
               {data.use_cases?.map((item, index) => (
-                <span className={`text-block ${item.title.text}`}>
+                <span className={`text-block ${item.title?.text === 'Land & Sea' ? 'land-sea' : item.title?.text}`}>
                   {item.description.text}
                 </span>
               ))}
@@ -105,9 +103,7 @@ const SubSystem = ({ data: { prismicSubsystem, allPrismicSubsystem } }) => {
                     data-scroll-offset="20%"
                   >
                     <span>
-                      {item.title.text === "land-sea"
-                        ? "Land & Sea"
-                        : item.title.text}
+                      {item.title?.text}
                     </span>
                   </p>
                   <p className="description">{item.description.text}</p>

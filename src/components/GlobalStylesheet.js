@@ -162,59 +162,71 @@ img.fadein {
     position: absolute;
   }
 
-  .cases-container.civil .civil {
+  .cases-container.civil .civil,
+  .cases-container.Civil .Civil {
     opacity: 1;
   }
 
-  .cases-container.defense .defense {
+  .cases-container.defense .defense,
+  .cases-container.Defense .Defense {
     opacity: 1;
   }
 
-  .cases-container.space .space {
+  .cases-container.space .space,
+  .cases-container.Space .Space {
     opacity: 1;
   }
 
-  .cases-container.land-sea .land-sea {
+  .cases-container.land-sea .land-sea,
+  .cases-container.Land-Sea .Land-Sea {
     opacity: 1;
   }
 
-  .cases-container.civil .civil-button {
+  .cases-container.civil .civil-button,
+  .cases-container.Civil .Civil-button {
     color: ${theme.colors.white};
     text-decoration: underline;
   }
 
-  .cases-container.defense .defense-button {
+  .cases-container.defense .defense-button,
+  .cases-container.Defense .Defense-button {
     color: ${theme.colors.white};
     text-decoration: underline;
   }
 
-  .cases-container.space .space-button {
+  .cases-container.space .space-button,
+  .cases-container.Space .Space-button {
     color: ${theme.colors.white};
     text-decoration: underline;
   }
 
-  .cases-container.land-sea .land-sea-button {
+  .cases-container.land-sea .land-sea-button,
+  .cases-container.Land-Sea .Land-Sea-button {
     color: ${theme.colors.white};
     text-decoration: underline;
   }
 
   //light theme ish
-  .cases-container.light.civil .civil-button {
+  .cases-container.light.civil .civil-button,
+  .cases-container.light.Civil .Civil-button {
     color: ${theme.colors.black};
     text-decoration: underline;
   }
 
-  .cases-container.light.defense .defense-button {
+  .cases-container.light.defense .defense-button,
+  .cases-container.light.Defense .Defense-button {
     color: ${theme.colors.black};
     text-decoration: underline;
   }
 
-  .cases-container.light.space .space-button {
+  .cases-container.light.space .space-button,
+  .cases-container.light.Space .Space-button {
     color: ${theme.colors.black};
     text-decoration: underline;
   }
 
-  .cases-container.light.land-sea .land-sea-button {
+  .cases-container.light.land-sea .land-sea-button,
+  .cases-container.light.Land-Sea .Land-Sea-button {
     color: ${theme.colors.black};
     text-decoration: underline;
   }
@@ -236,7 +248,7 @@ img.fadein {
 }
 
 .dark .title {
-  color: ${theme.colors.cream};  
+  color: ${theme.colors.cream};
 }
 .dark .description {
   color: ${theme.colors.aluminum};
