@@ -41,7 +41,7 @@ const Footer = () => {
             <StyledUl>
               <StyledLi>
                 <a
-                  href="https://www.instagram.com/airborneecs/"
+                  href="https://www.instagram.com/intergalactichq/"
                   target="_blank"
                 >
                   Instagram

@@ -120,6 +120,30 @@ const StyledSection = styled.section`
       display: block;
     }
 
+    &.slide-1 {
+      .slide1 {
+        z-index: 200;
+      }
+
+      .slide2,
+      .slide3,
+      .slide4 {
+        z-index: 100;
+      }
+    }
+
+    &.slide-2 {
+      .slide2 {
+        z-index: 200;
+      }
+
+      .slide1,
+      .slide3,
+      .slide4 {
+        z-index: 100;
+      }
+    }
+
     .slide {
       height: 100%;
 
@@ -309,6 +333,10 @@ const Slide = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+
+  @media screen and (min-width: 1230px) {
+    width: 94%;
+  }
 
   h5 {
     &.is-inview {

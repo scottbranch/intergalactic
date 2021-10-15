@@ -91,7 +91,7 @@ const InnerContainer = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1100px) {
     flex-direction: column-reverse;
     padding: 0 25px;
   }
@@ -118,12 +118,16 @@ const TextContainer = styled.div`
       font-size: 20px;
     }
   }
+
+  @media screen and (min-width: 1100px) {
+    padding-right: 100px;
+  }
 `
 
 const OverviewImg = styled.img`
   max-width: 540px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1100px) {
     max-width: 100%;
   }
 `
