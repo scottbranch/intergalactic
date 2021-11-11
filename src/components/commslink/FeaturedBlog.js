@@ -4,7 +4,10 @@ import Line from "../Line"
 import styled from "styled-components"
 import fallbackImage from "../../images/commslink/blog-fallback.jpg"
 
-const FeaturedBlog = () => {
+const FeaturedBlog = (props) => {
+
+  const { show } = props
+
   const data = useStaticQuery(graphql`
     {
       allPrismicBlogPost(sort: { order: DESC, fields: data___date_published }) {
@@ -37,7 +40,7 @@ const FeaturedBlog = () => {
   }
 
   return (
-    <StyledSection data-scroll-section>
+    <StyledSection data-scroll-section style={{display: `${show ? 'block' : 'none'}` }}>
       <StyledInner>
         <div
           className="image-container"

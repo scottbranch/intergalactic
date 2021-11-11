@@ -12,6 +12,7 @@ import fallbackImage from "../images/commslink/blog-fallback.jpg"
 const Commslink = () => {
   const [isLoaded, setIsLoaded] = useState(false)
   const [filterText, setFilterText] = useState('All')
+  const [showFeaturedBlog, setShowFeaturedBlog] = useState(true)
 
   useEffect(() => {
     setIsLoaded(true)
@@ -63,6 +64,12 @@ const Commslink = () => {
       item.classList.add('show')
     })
 
+    if(item === 'blog-item') {
+      setShowFeaturedBlog(true)
+    } else {
+      setShowFeaturedBlog(false)
+    }
+
     const scrollEl = document.getElementById('posts')
     window.scroll.scrollTo(scrollEl)
 
@@ -100,7 +107,7 @@ const Commslink = () => {
           </div>
         </StyledInner>
       </ListSection>
-      <FeaturedBlog />
+      <FeaturedBlog show={showFeaturedBlog}/>
       <Grid data-scroll-section id="posts">
         {blogData.slice(1).map((item, index) => {
           const tags = item.node.tags
