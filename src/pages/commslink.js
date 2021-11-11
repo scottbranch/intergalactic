@@ -4,7 +4,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Helmet from "react-helmet"
 import styled from "styled-components"
-import Filter from "../components/commslink/Filter"
 import FeaturedBlog from "../components/commslink/FeaturedBlog"
 import BlogCard from "../components/commslink/BlogCard"
 import { isBrowser } from "react-device-detect"
@@ -12,6 +11,7 @@ import fallbackImage from "../images/commslink/blog-fallback.jpg"
 
 const Commslink = () => {
   const [isLoaded, setIsLoaded] = useState(false)
+  const [filterText, setFilterText] = useState('All')
 
   useEffect(() => {
     setIsLoaded(true)
@@ -41,11 +41,34 @@ const Commslink = () => {
             tags
           }
         }
+        distinct(field: tags)
       }
     }
   `)
 
   const blogData = data.allPrismicBlogPost.edges
+  const tagData = data.allPrismicBlogPost.distinct
+
+  const filterItems = (item) => {
+    const allItems = document.querySelectorAll('.blog-item')
+    const className = item.toString().replace(/\s+/g, '-').toLowerCase()
+    const currentItems = document.querySelectorAll(`.${className}`)
+
+    allItems.forEach((item) => {
+      item.classList.remove('show')
+      item.classList.add('hide')
+    })
+
+    currentItems.forEach((item) => {
+      item.classList.add('show')
+    })
+
+    const scrollEl = document.getElementById('posts')
+    window.scroll.scrollTo(scrollEl)
+
+    window.scroll.update()
+
+  }
 
   return (
     <Layout className="dark">
@@ -61,25 +84,46 @@ const Commslink = () => {
           </h1>
         </HeadingContainer>
       </StyledSection>
-      {/*<Filter />*/}
+      <ListSection data-scroll-section>
+        <StyledInner className="filter-container">
+          <div className="intro-container">
+            <p>Filter by:</p>
+           </div>
+          <div className="overview">
+           <ul>
+             <li><a href="javascript:void(0)" onClick={() => filterItems('blog-item')}>All</a></li>
+             {tagData.map(item => {
+               return (
+               <li><a href="javascript:void(0)" onClick={() => filterItems(item)}>{item}</a></li>
+             )})}
+           </ul>
+          </div>
+        </StyledInner>
+      </ListSection>
       <FeaturedBlog />
-      <Grid data-scroll-section>
+      <Grid data-scroll-section id="posts">
         {blogData.slice(1).map((item, index) => {
+          const tags = item.node.tags
+          let tagsArray = []
+          tags.forEach(function(item) {
+            tagsArray.push(item.replace(/\s+/g, '-').toLowerCase())
+          })
+          tagsArray = tagsArray.join(' ')
           return (
             <BlogCard
+              className={`blog-item ${tagsArray}`}
               featuredImage={
                 item.node.data.preview_image.url
                   ? item.node.data.preview_image.url
                   : fallbackImage
               }
               title={item.node.data.blog_title?.text}
-              category={item.node.tags[0]}
+              category={item.node.tags.map(item => `${item}. `)}
               date={item.node.data.date_published}
               link={item.node.uid}
             />
-          )
-        })}
-        {/*<button>Load More</button>*/}
+          )}
+        )}
       </Grid>
     </Layout>
   )
@@ -150,6 +194,61 @@ const Grid = styled.div`
     padding: 20px 40px;
     display: inline-block;
     margin: 0 auto;
+  }
+`
+
+const ListSection = styled.section`
+  width: 100%;
+  position: relative;
+  background-color: ${({ theme }) => theme.colors.cream};
+  padding: 25px 0 0;
+`
+
+const StyledInner = styled.div`
+  display: block;
+  align-items: center;
+  padding: 0 60px;
+  justify-content: space-between;
+
+  @media screen and (min-width: 980px) {
+    justify-content: space-between;
+    display: flex;
+  }
+
+  .intro-container, .overview {
+    p {
+      color: ${({ theme }) => theme.colors.black};
+      font-size: 15px;
+      text-transform: uppercase;
+    }
+
+    ul {
+      margin: 0;
+      @media screen and (min-width: 980px) {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0 0 1.5rem 1.5rem;
+      }
+      li {
+        padding: 0 0 10px 0;
+        margin: 0;
+        @media screen and (min-width: 980px) {
+          margin: 0 10px;
+        }
+      }
+    }
+
+    li {
+      text-transform: uppercase;
+      list-style: none;
+      margin: 0 10px;
+      font-size: 15px;
+    }
+  }
+
+  .overview a {
+    color: ${({ theme }) => theme.colors.black};
+    text-decoration: none;
   }
 `
 

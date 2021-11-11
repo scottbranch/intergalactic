@@ -4,12 +4,12 @@ import Link from "gatsby-link"
 import styled from "styled-components"
 
 const BlogCard = props => {
-  const { featuredImage, title, category, date, link } = props
+  const { featuredImage, title, category, date, link, className } = props
 
   return (
-    <StyledInner data-scroll data-scroll-offset="20%">
+    <StyledInner data-scroll data-scroll-offset="20%" className={`blog-outer ${className}`}>
       <div
-        className="image-container"
+        className={`image-container`}
         style={{ backgroundImage: `url(${featuredImage})` }}
       />
       <div className="description">
@@ -45,6 +45,14 @@ const StyledInner = styled.div`
 
   &.is-inview {
     opacity: 1;
+  }
+
+  &.show {
+    display: block !important;
+  }
+
+  &.hide {
+    display: none;
   }
 
   @media screen and (min-width: 768px) {
