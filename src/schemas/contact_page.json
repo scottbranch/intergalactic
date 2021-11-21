@@ -1,0 +1,112 @@
+{
+  "Main": {
+    "heading": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label": "Heading"
+      }
+    },
+    "statement": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "Statement"
+      }
+    },
+    "sub_heading": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label": "Sub Heading"
+      }
+    },
+    "address_1": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "Address 1"
+      }
+    },
+    "address_2": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "Address 2"
+      }
+    },
+    "address_3": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "Address 3"
+      }
+    },
+    "phone_number": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "Phone Number"
+      }
+    },
+    "email": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "Email"
+      }
+    },
+    "department_heading": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label": "Department Heading"
+      }
+    },
+    "department_subheading": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "Department Subheading"
+      }
+    },
+    "emails": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "department": {
+            "type": "StructuredText",
+            "config": {
+              "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+              "label": "Department"
+            }
+          },
+          "email1": {
+            "type": "StructuredText",
+            "config": {
+              "single": "paragraph",
+              "label": "email"
+            }
+          }
+        },
+        "label": "Emails"
+      }
+    }
+  },
+  "SEO": {
+    "page_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading2",
+        "label": "Page Title"
+      }
+    },
+    "meta_description": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "Meta Description"
+      }
+    }
+  }
+}

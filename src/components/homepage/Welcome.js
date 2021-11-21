@@ -31,10 +31,10 @@ const Welcome = () => {
           data-scroll
           data-scroll-offset="20%"
         >
-          <span>{welcomeData.value_prop_title[0]?.text}</span>
+          <span>{welcomeData.value_prop_title?.text}</span>
         </p>
         <Paragraph className="fadein" data-scroll data-scroll-offset="20%">
-          <span>{welcomeData.value_prop_description[0]?.text}</span>
+          <span>{welcomeData.value_prop_description?.text}</span>
         </Paragraph>
       </StyledInner>
     </StyledSection>

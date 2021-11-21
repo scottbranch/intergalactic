@@ -33,10 +33,10 @@ const Hero = props => {
     <StyledSection data-scroll-section>
       <HeadingContainer>
         <StyledHeading className={isLoaded && "active"}>
-          <span id="span-0">{heroData.heading[0]?.text}</span>
+          <span id="span-0">{heroData.heading?.text}</span>
         </StyledHeading>
         <Paragraph className="fadein" data-scroll>
-          <span>{heroData.subheading[0]?.text}</span>
+          <span>{heroData.subheading?.text}</span>
         </Paragraph>
       </HeadingContainer>
     </StyledSection>

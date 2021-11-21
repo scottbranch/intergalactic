@@ -39,7 +39,7 @@ const ImageRow = props => {
         />
         <InfoBlock data-scroll data-scroll-offset="20%">
           <p className="eyebrow fadein" data-scroll data-scroll-offset="20%">
-            <span>{imageData.image_title[0]?.text}</span>
+            <span>{imageData.image_title?.text}</span>
           </p>
           <GadgetImg
             src={imageData.image_2?.url}
@@ -48,7 +48,7 @@ const ImageRow = props => {
             data-scroll-offset="20%"
           />
           <Description className="fadein" data-scroll data-scroll-offset="20%">
-            <span>{imageData.image_description[0]?.text}</span>
+            <span>{imageData.image_description?.text}</span>
           </Description>
         </InfoBlock>
       </Container>

@@ -34,13 +34,13 @@ const CtaSection = () => {
         <Line />
         <CopyBlock className="first-block">
           <p className="fadein" data-scroll data-scroll-offset="20%">
-            <span>{contactData.contact_text_1[0]?.text}</span>
+            <span>{contactData.contact_text_1?.text}</span>
           </p>
           <AnchorLink to="/contact">Schedule a demo</AnchorLink>
         </CopyBlock>
         <CopyBlock className="second-block">
           <p className="fadein" data-scroll data-scroll-offset="20%">
-            <span>{contactData.contact_text_2[0]?.text}</span>
+            <span>{contactData.contact_text_2?.text}</span>
           </p>
           <AnchorLink to="/contact">Let's Talk</AnchorLink>
         </CopyBlock>

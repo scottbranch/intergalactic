@@ -152,7 +152,9 @@
             "type": "Link",
             "config": {
               "select": "document",
-              "customtypes": ["subsystem"],
+              "customtypes": [
+                "subsystem"
+              ],
               "label": "Item"
             }
           }
@@ -252,6 +254,22 @@
           }
         },
         "label": "Compliance List"
+      }
+    }
+  },
+  "SEO": {
+    "page_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading2",
+        "label": "Page Title"
+      }
+    },
+    "meta_description": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "Meta Description"
       }
     }
   }

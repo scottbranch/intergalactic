@@ -36,13 +36,13 @@ const BoxesChecked = () => {
   return (
     <StyledSection data-scroll-section>
       <StyledHeading data-scroll data-scroll-offset="30%">
-        <span id="span-0">{boxData.boxes_checked_title[0]?.text}</span>
+        <span id="span-0">{boxData.boxes_checked_title?.text}</span>
       </StyledHeading>
       <StyledUl>
         {boxData.checkbox_items.map((item, index) => (
           <StyledLi data-scroll>
             <StyledCheck />
-            {item.checkbox_item[0]?.text}
+            {item.checkbox_item?.text}
           </StyledLi>
         ))}
       </StyledUl>

@@ -47,7 +47,7 @@ module.exports = {
         accessToken:
           "MC5ZRS1tVUJBQUFDQUFfbU1u.77-977-9WkPvv71TRu-_ve-_ve-_ve-_vRfvv73vv71a77-977-977-9Je-_ve-_ve-_ve-_ve-_vXHvv70n77-977-9de-_ve-_vQ",
         schemas: {
-          homepage: require("./src/schemas/homepage.json"),
+          homepage_template: require("./src/schemas/homepage_template.json"),
           product_page: require("./src/schemas/product.json"),
           blog_post: require("./src/schemas/blogPost.json"),
           suppliers_page: require("./src/schemas/suppliers_page.json"),
@@ -56,6 +56,9 @@ module.exports = {
           subsystem: require("./src/schemas/subsystem.json"),
           solutions: require("./src/schemas/solutions.json"),
           featured_blog: require("./src/schemas/featured_blog.json"),
+          contact_page: require("./src/schemas/contact_page.json"),
+          industries_page: require("./src/schemas/industries_page.json"),
+          system: require("./src/schemas/system.json")
         },
         htmlSerializer: ({ node, key, value }) => (
           type,

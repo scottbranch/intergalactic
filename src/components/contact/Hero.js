@@ -35,7 +35,7 @@ const Hero = props => {
       <StyledSection></StyledSection>
       <ContactInfo>
         <p data-scroll data-scroll-offset="20%">
-          {sectionData.statement[0]?.text}
+          {sectionData.statement?.text}
         </p>
         <div>
           <PageLink

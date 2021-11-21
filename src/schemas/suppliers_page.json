@@ -1,46 +1,62 @@
 {
-  "Main": {
-    "heading": {
-      "type": "StructuredText",
-      "config": {
-        "single": "heading6",
-        "label": "Heading"
+  "Main" : {
+    "heading" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading6",
+        "label" : "Heading"
       }
     },
-    "info_title": {
-      "type": "StructuredText",
-      "config": {
-        "single": "heading6",
-        "label": "Info Title"
+    "info_title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading6",
+        "label" : "Info Title"
       }
     },
-    "info_description": {
-      "type": "StructuredText",
-      "config": {
-        "multi": "paragraph, hyperlink",
-        "label": "Info Description"
+    "info_description" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph,hyperlink",
+        "label" : "Info Description"
       }
     },
-    "info_image": {
-      "type": "Image",
-      "config": {
-        "constraint": {},
-        "thumbnails": [],
-        "label": "Info Image"
+    "info_image" : {
+      "type" : "Image",
+      "config" : {
+        "constraint" : { },
+        "thumbnails" : [ ],
+        "label" : "Info Image"
       }
     },
-    "partners_title": {
-      "type": "StructuredText",
-      "config": {
-        "single": "heading6",
-        "label": "Partners Title"
+    "partners_title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading6",
+        "label" : "Partners Title"
       }
     },
-    "partners_subtitle": {
-      "type": "StructuredText",
-      "config": {
-        "single": "paragraph",
-        "label": "Partners Subtitle"
+    "partners_subtitle" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "paragraph",
+        "label" : "Partners Subtitle"
+      }
+    }
+  },
+  "SEO" : {
+    "page_title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading2",
+        "label" : "Page Title"
+      }
+    },
+    "meta_description" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "paragraph",
+        "label" : "Meta Description"
       }
     }
   }

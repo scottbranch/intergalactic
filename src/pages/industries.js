@@ -32,6 +32,12 @@ const Industries = () => {
                 text
               }
             }
+            page_title {
+              text
+            }
+            meta_description {
+              text
+            }
           }
         }
       }
@@ -42,7 +48,7 @@ const Industries = () => {
 
   return (
     <Layout>
-      <SEO title="Industries" />
+      <SEO title={sliderData.page_title.text} description={sliderData.meta_description.text} />
       <Helmet>
         <body class="industries has-carousel" />
         <link rel="canonical" href="http://ig.space/industries" />

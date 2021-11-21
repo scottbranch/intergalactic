@@ -10,29 +10,29 @@ const Hero = props => {
   })
 
   const data = useStaticQuery(graphql`
-    {
-      allPrismicContactPage {
-        nodes {
-          data {
-            department_heading {
+  {
+    allPrismicContactPage {
+      nodes {
+        data {
+          department_heading {
+            text
+          }
+          department_subheading {
+            text
+          }
+          emails {
+            department {
               text
             }
-            department_subheading {
+            email1 {
               text
-            }
-            emails {
-              department {
-                text
-              }
-              email1 {
-                text
-              }
             }
           }
         }
       }
     }
-  `)
+  }
+`)
 
   const sectionData = data.allPrismicContactPage.nodes[0].data
 
@@ -40,12 +40,12 @@ const Hero = props => {
     <StyledSection data-scroll-section>
       <ContactContainer id="departments">
         <h4 data-scroll data-scroll-offset="20%">
-          {sectionData.department_heading[0]?.text}
+          {sectionData.department_heading?.text}
         </h4>
         <FlexContainer>
           <FlexArea data-scroll data-scroll-offset="20%">
             <ContactText>
-              {sectionData.department_subheading[0]?.text}
+              {sectionData.department_subheading?.text}
             </ContactText>
           </FlexArea>
           <FlexArea data-scroll data-scroll-offset="20%">
@@ -54,11 +54,11 @@ const Hero = props => {
                 return (
                   <>
                     <FlexArea data-scroll data-scroll-offset="20%">
-                      <p>{item.department[0]?.text}</p>
+                      <p>{item.department?.text}</p>
                     </FlexArea>
                     <FlexArea data-scroll data-scroll-offset="20%">
-                      <a href={`mailto:${item.email1[0]?.text}`}>
-                        {item.email1[0]?.text}
+                      <a href={`mailto:${item.email1?.text}`}>
+                        {item.email1?.text}
                         <svg
                           width="12"
                           height="12"

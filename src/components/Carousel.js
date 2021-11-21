@@ -24,10 +24,10 @@ const Carousel = props => {
               <Slide className={`slide slide${index + 1}`}>
                 <Container1 className="text-container">
                   <h5 data-scroll data-scroll-offset="30%">
-                    <span>{item.slider_title[0]?.text}</span>
+                    <span>{item.slider_title?.text}</span>
                   </h5>
                   <p className="fadein" data-scroll data-scroll-offset="30%">
-                    <span>{item.slider_description[0]?.text}</span>
+                    <span>{item.slider_description?.text}</span>
                   </p>
                   <AnchorLink to="/solutions">Learn More</AnchorLink>
                 </Container1>
@@ -41,7 +41,7 @@ const Carousel = props => {
                 </Container2>
                 <NavBar className="navbar">
                   <p className="eyebrow">
-                    {carouselItems[index + 1]?.slider_title[0]?.text}
+                    {carouselItems[index + 1]?.slider_title?.text}
                   </p>
                   <div></div>
                   <Pagination>
@@ -89,7 +89,7 @@ const Carousel = props => {
           <div>
             <MobileLink to="/solutions">
               <h5>
-                0{index + 1} :: {item.slider_title[0]?.text}
+                0{index + 1} :: {item.slider_title?.text}
               </h5>
               <Arrow />
             </MobileLink>

@@ -52,7 +52,6 @@ const Team = props => {
         <h5>Team</h5>
         <HoverCover>
           {sectionData.map((item, index) => {
-            console.log("team: ", item)
             return (
               <TeamMember
                 to={`/team/${item?.team_member.document.uid}`}

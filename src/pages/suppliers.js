@@ -1,4 +1,5 @@
 import React, { useEffect } from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero from "../components/suppliers/Hero"
@@ -14,9 +15,26 @@ const SuppliersPage = () => {
     }, 300)
   }, [])
 
+  const data = useStaticQuery(graphql`
+  {
+    allPrismicSuppliersPage {
+      nodes {
+        data {
+          page_title {
+            text
+          }
+          meta_description {
+            text
+          }
+        }
+      }
+    }
+  }
+`)
+
   return (
     <Layout>
-      <SEO title="Suppliers" />
+      <SEO title={data.allPrismicSuppliersPage.nodes[0].data.page_title?.text} description={data.allPrismicSuppliersPage.nodes[0].data.meta_description?.text} />
       <Helmet>
         <body class="suppliers" />
         <link rel="canonical" href="http://ig.space/suppliers" />

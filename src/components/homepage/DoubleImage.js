@@ -36,7 +36,7 @@ const DoubleImage = () => {
           <TextContainer>
             <Line />
             <p className="fadein" data-scroll data-scroll-offset="20%">
-              <span>{solutionData.solutions_text_3[0]?.text}</span>
+              <span>{solutionData.solutions_text_3?.text}</span>
             </p>
           </TextContainer>
           <StyledAnchor to="/solutions">Our solutions</StyledAnchor>

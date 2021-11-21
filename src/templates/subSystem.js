@@ -30,7 +30,7 @@ const SubSystem = ({ data: { prismicSubsystem, allPrismicSubsystem } }) => {
 
   return (
     <Layout className="dark">
-      <SEO title={data.heading?.text} />
+      <SEO title={data.page_title?.text} description={data.meta_description?.text} />
       <Helmet>
         <link rel="canonical" href={`http://ig.space/${uid}`} />
       </Helmet>
@@ -269,6 +269,12 @@ export const pageQuery = graphql`
     prismicSubsystem(uid: { eq: $uid }) {
       uid
       data {
+        meta_description {
+          text
+        }
+        page_title {
+          text
+        }
         code {
           text
         }
@@ -300,6 +306,12 @@ export const pageQuery = graphql`
       nodes {
         uid
         data {
+          meta_description {
+            text
+          }
+          page_title {
+            text
+          }
           code {
             text
           }

@@ -11,7 +11,7 @@ const TeamMember = ({ data: { prismicTeamMember, allPrismicTeamMember } }) => {
 
   return (
     <Layout className="dark">
-      <SEO title={`Team | ${data.name.text}`} />
+      <SEO title={data.page_title.text} description={data.meta_description.text} />
       <Helmet>
         <link rel="canonical" href={`http://ig.space/${uid}`} />
       </Helmet>
@@ -127,6 +127,12 @@ export const pageQuery = graphql`
     prismicTeamMember(uid: { eq: $uid }) {
       uid
       data {
+        meta_description {
+          text
+        }
+        page_title {
+          text
+        }
         description {
           html
         }
@@ -145,6 +151,12 @@ export const pageQuery = graphql`
       nodes {
         uid
         data {
+          meta_description {
+            text
+          }
+          page_title {
+            text
+          }
           description {
             html
           }

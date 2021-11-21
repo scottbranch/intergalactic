@@ -35,7 +35,6 @@ const Layout = ({ children, location, props, className }) => {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Header
-        siteTitle={data.site.siteMetadata?.title || `Title`}
         className={className}
       />
 

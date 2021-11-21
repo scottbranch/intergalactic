@@ -71,7 +71,7 @@ const Hero = props => {
       <ContactFormContainer>
         <div>
           <h4 data-scroll data-scroll-offset="20%">
-            {sectionData.sub_heading[0]?.text}
+            {sectionData.sub_heading?.text}
           </h4>
           <StyledSubHeading
             className="fadein"
@@ -83,17 +83,17 @@ const Hero = props => {
           <FlexArea>
             <div>
               <address data-scroll data-scroll-offset="20%">
-                {sectionData.address_1[0]?.text}
+                {sectionData.address_1?.text}
                 <br />
-                {sectionData.address_2[0]?.text}
+                {sectionData.address_2?.text}
                 <br />
-                {sectionData.address_3[0]?.text}
+                {sectionData.address_3?.text}
               </address>
-              <a href={`tel:${sectionData.phone_number[0]?.text}`}>
-                {sectionData.phone_number[0]?.text}
+              <a href={`tel:${sectionData.phone_number?.text}`}>
+                {sectionData.phone_number?.text}
               </a>
-              <a href={`mailto:${sectionData.email[0]?.text}`}>
-                {sectionData.email[0]?.text}
+              <a href={`mailto:${sectionData.email?.text}`}>
+                {sectionData.email?.text}
               </a>
             </div>
           </FlexArea>

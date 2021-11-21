@@ -39,17 +39,22 @@ const IndexPage = () => {
                 text
               }
             }
+            page_title {
+              text
+            }
+            meta_description {
+              text
+            }
           }
         }
       }
     }
   `)
 
-  const sliderData = data.allPrismicHomepageTemplate.nodes[0].data
-
+  const homepageData = data.allPrismicHomepageTemplate.nodes[0].data
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title={homepageData.page_title.text} description={homepageData.meta_description.text}/>
       <Helmet>
         <body class="home has-carousel" />
         <link rel="canonical" href="http://ig.space" />
@@ -60,7 +65,7 @@ const IndexPage = () => {
       <StaticImage />
       <DoubleImage />
       <ImageFloat />
-      <Carousel carouselItems={sliderData.slider} />
+      <Carousel carouselItems={homepageData.slider} />
       <CircleSection />
       <BoxesChecked />
       <CtaSection />

@@ -1,0 +1,142 @@
+{
+  "Main" : {
+    "title" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "Document Title",
+        "useAsTitle" : true
+      }
+    },
+    "uid" : {
+      "type" : "UID",
+      "config" : {
+        "label" : "Homepage ID"
+      }
+    },
+    "value_prop_title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading6",
+        "label" : "Value Prop Title"
+      }
+    },
+    "value_prop_description" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "paragraph",
+        "label" : "Value Prop Description"
+      }
+    },
+    "solutions_text_1" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph",
+        "label" : "Solutions Text 1"
+      }
+    },
+    "solutions_text_2" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph",
+        "label" : "Solutions Text 2"
+      }
+    },
+    "divider_image" : {
+      "type" : "Image",
+      "config" : {
+        "constraint" : { },
+        "thumbnails" : [ ],
+        "label" : "Divider Image"
+      }
+    },
+    "solutions_text_3" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph",
+        "label" : "Solutions Text 3"
+      }
+    },
+    "slider" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "slider_image" : {
+            "type" : "Image",
+            "config" : {
+              "constraint" : { },
+              "thumbnails" : [ ],
+              "label" : "Slider Image"
+            }
+          },
+          "slider_title" : {
+            "type" : "StructuredText",
+            "config" : {
+              "single" : "heading5",
+              "label" : "Slider Title"
+            }
+          },
+          "slider_description" : {
+            "type" : "StructuredText",
+            "config" : {
+              "multi" : "paragraph",
+              "label" : "Slider Description"
+            }
+          }
+        },
+        "label" : "Slider"
+      }
+    },
+    "boxes_checked_title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading3",
+        "label" : "Boxes Checked Title"
+      }
+    },
+    "checkbox_items" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "checkbox_item" : {
+            "type" : "StructuredText",
+            "config" : {
+              "multi" : "paragraph",
+              "label" : "Checkbox Item"
+            }
+          }
+        },
+        "label" : "Checkbox Items"
+      }
+    },
+    "contact_text_1" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph",
+        "label" : "Contact text 1"
+      }
+    },
+    "contact_text_2" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph",
+        "label" : "Contact Text 2"
+      }
+    }
+  },
+  "SEO" : {
+    "page_title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading2",
+        "label" : "Page Title"
+      }
+    },
+    "meta_description" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "paragraph",
+        "label" : "Meta Description"
+      }
+    }
+  }
+}

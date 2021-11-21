@@ -18,7 +18,7 @@ const Post = ({ data: { prismicBlogPost, allPrismicBlogPost } }) => {
 
   return (
     <Layout className="dark">
-      <SEO title={`${data.title} | Blog`} />
+      <SEO title={data.page_title.text} description={data.meta_description.text} />
       <Helmet>
         <body class="blog" />
         {data.canonical && (
@@ -202,6 +202,12 @@ export const pageQuery = graphql`
         blog_content {
           html
         }
+        page_title {
+          text
+        }
+        meta_description {
+          text
+        }
       }
       tags
       dataRaw
@@ -218,6 +224,12 @@ export const pageQuery = graphql`
           }
           blog_content {
             html
+          }
+          page_title {
+            text
+          }
+          meta_description {
+            text
           }
         }
         tags

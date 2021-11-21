@@ -37,10 +37,10 @@ const ValueProp = props => {
           <TextContainer>
             <Line />
             <p className="fadein" data-scroll data-scroll-offset="20%">
-              <span>{valueData.solutions_text_1[0]?.text}</span>
+              <span>{valueData.solutions_text_1?.text}</span>
             </p>
             <p className="fadein" data-scroll data-scroll-offset="20%">
-              <span>{valueData.solutions_text_2[0]?.text}</span>
+              <span>{valueData.solutions_text_2?.text}</span>
             </p>
           </TextContainer>
           <AnchorLink to="/solutions">Our Solutions</AnchorLink>

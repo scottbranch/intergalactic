@@ -30,16 +30,16 @@ const System = ({ data: { prismicSystem, allPrismicSystem } }) => {
 
   return (
     <Layout className="light">
-      <SEO title={data.heading[0]?.text} />
+      <SEO title={data.page_title?.text} description={data.meta_description?.text} />
       <Helmet>
         <link rel="canonical" href={`http://ig.space/${uid}`} />
       </Helmet>
       <Hero
-        eyebrow={data.code[0]?.text}
-        title={data.heading[0]?.text}
+        eyebrow={data.code?.text}
+        title={data.heading?.text}
         heroImg={data.image.url}
       />
-      <Solutions description={data.summary[0]?.text} />
+      <Solutions description={data.summary?.text} />
       <StyledSection data-scroll-section>
         <Container>
           <SectionTitle data-scroll data-scroll-offset="20%">
@@ -53,7 +53,7 @@ const System = ({ data: { prismicSystem, allPrismicSystem } }) => {
                 data-scroll
                 data-scroll-offset="20%"
               >
-                {item.description[0]?.text}
+                {item.description?.text}
               </span>
             ))}
           </SectionDesc>
@@ -68,7 +68,7 @@ const System = ({ data: { prismicSystem, allPrismicSystem } }) => {
           </SectionTitle>
           <SectionDesc
             id="cases-container"
-            className={`cases-container dark ${data.use_cases[0].title[0].text === 'Land & Sea' ? 'land-sea' : data.use_cases[0].title[0].text}`}
+            className={`cases-container dark ${data.use_cases[0].title?.text === 'Land & Sea' ? 'land-sea' : data.use_cases[0].title?.text}`}
             data-scroll
             data-scroll-offset="20%"
           >
@@ -77,10 +77,10 @@ const System = ({ data: { prismicSystem, allPrismicSystem } }) => {
                 {data.use_cases?.map((item, index) => (
                   <li>
                     <button
-                      className={`${item.title[0]?.text === 'Land & Sea' ? 'land-sea' : item.title[0]?.text}-button`}
-                      onClick={() => handleClick(`${item.title[0]?.text === 'Land & Sea' ? 'land-sea' : item.title[0]?.text}`)}
+                      className={`${item.title?.text === 'Land & Sea' ? 'land-sea' : item.title?.text}-button`}
+                      onClick={() => handleClick(`${item.title?.text === 'Land & Sea' ? 'land-sea' : item.title?.text}`)}
                     >
-                      {item.title[0]?.text}
+                      {item.title?.text}
                     </button>
                   </li>
                 ))}
@@ -89,11 +89,11 @@ const System = ({ data: { prismicSystem, allPrismicSystem } }) => {
             <span className="desktop-list">
               {data.use_cases?.map((item, index) => (
                 <span
-                  className={`text-block ${item.title[0]?.text === 'Land & Sea' ? 'land-sea' : item.title[0]?.text}`}
+                  className={`text-block ${item.title?.text === 'Land & Sea' ? 'land-sea' : item.title?.text}`}
                   data-scroll
                   data-scroll-offset="20%"
                 >
-                  {item.description[0]?.text}
+                  {item.description?.text}
                 </span>
               ))}
             </span>
@@ -107,10 +107,10 @@ const System = ({ data: { prismicSystem, allPrismicSystem } }) => {
                     data-scroll-offset="20%"
                   >
                     <span>
-                      {item.title[0]?.text}
+                      {item.title?.text}
                     </span>
                   </p>
-                  <p className="description">{item.description[0]?.text}</p>
+                  <p className="description">{item.description?.text}</p>
                 </div>
               ))}
             </div>
@@ -273,6 +273,12 @@ export const pageQuery = graphql`
     prismicSystem(uid: { eq: $uid }) {
       uid
       data {
+        page_title {
+          text
+        }
+        meta_description {
+          text
+        }
         code {
           text
         }
@@ -304,6 +310,12 @@ export const pageQuery = graphql`
       nodes {
         uid
         data {
+          page_title {
+            text
+          }
+          meta_description {
+            text
+          }
           code {
             text
           }
