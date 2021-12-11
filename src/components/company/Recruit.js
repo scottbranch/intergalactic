@@ -15,6 +15,10 @@ const Recruit = props => {
             apply_subheading {
               html
             }
+            apply_link {
+              url
+              target
+            }
           }
         }
       }
@@ -33,7 +37,7 @@ const Recruit = props => {
               __html: sectionData.apply_subheading?.html,
             }}
           />
-          <StyledLink to="/contact" color="light">
+          <StyledLink href={sectionData.apply_link.url} target={sectionData.apply_link.target} color="light">
             Apply
           </StyledLink>
         </TextContainer>
@@ -80,9 +84,20 @@ const TextContainer = styled.div`
   max-width: 570px;
 `
 
-const StyledLink = styled(AnchorLink)`
+const StyledLink = styled.a`
   margin-top: 45px;
   display: inline-block;
+  text-transform: uppercase;
+  border: 1px solid
+    ${({ theme, color }) =>
+      color === "light" ? theme.colors.gold : theme.colors.black};
+  color: ${({ theme, color }) =>
+    color === "light" ? theme.colors.gold : theme.colors.black};
+  text-decoration: none;
+  padding: 20px 42px;
+  font-family: ${({ theme }) => theme.fonts.cartographMedium};
+  font-size: 15px;
+  letter-spacing: 1px;
 `
 
 export default Recruit

@@ -1,122 +1,131 @@
 {
-  "Main" : {
-    "heading" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading6",
-        "label" : "Heading"
+  "Main": {
+    "heading": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading6",
+        "label": "Heading"
       }
     },
-    "about_text" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "paragraph",
-        "label" : "About Text"
+    "about_text": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "About Text"
       }
     },
-    "about_subtext" : {
-      "type" : "StructuredText",
-      "config" : {
-        "multi" : "paragraph",
-        "label" : "About Subtext"
+    "about_subtext": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph",
+        "label": "About Subtext"
       }
     },
-    "team" : {
-      "type" : "Group",
-      "config" : {
-        "fields" : {
-          "team_member" : {
-            "type" : "Link",
-            "config" : {
-              "select" : "document",
-              "customtypes" : [ "team_member" ],
-              "label" : "Team Member"
+    "team": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "team_member": {
+            "type": "Link",
+            "config": {
+              "select": "document",
+              "customtypes": [
+                "team_member"
+              ],
+              "label": "Team Member"
             }
           }
         },
-        "label" : "Team"
+        "label": "Team"
       }
     },
-    "apply_heading" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading6",
-        "label" : "Apply Heading"
+    "apply_heading": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading6",
+        "label": "Apply Heading"
       }
     },
-    "apply_subheading" : {
-      "type" : "StructuredText",
-      "config" : {
-        "multi" : "paragraph",
-        "label" : "Apply Subheading"
+    "apply_subheading": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph",
+        "label": "Apply Subheading"
       }
     },
-    "values_heading" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading6",
-        "label" : "Values Heading"
+    "apply_link": {
+      "type": "Link",
+      "config": {
+        "allowTargetBlank": true,
+        "label": "Apply Link"
       }
     },
-    "values_subheading" : {
-      "type" : "StructuredText",
-      "config" : {
-        "multi" : "paragraph",
-        "label" : "Values Subheading"
+    "values_heading": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading6",
+        "label": "Values Heading"
       }
     },
-    "values_image" : {
-      "type" : "Image",
-      "config" : {
-        "constraint" : { },
-        "thumbnails" : [ ],
-        "label" : "Values Image"
+    "values_subheading": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph",
+        "label": "Values Subheading"
       }
     },
-    "values" : {
-      "type" : "Group",
-      "config" : {
-        "fields" : {
-          "icon" : {
-            "type" : "Image",
-            "config" : {
-              "constraint" : { },
-              "thumbnails" : [ ],
-              "label" : "Icon"
+    "values_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Values Image"
+      }
+    },
+    "values": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "icon": {
+            "type": "Image",
+            "config": {
+              "constraint": {},
+              "thumbnails": [],
+              "label": "Icon"
             }
           },
-          "title" : {
-            "type" : "StructuredText",
-            "config" : {
-              "single" : "heading1,heading2,heading3,heading4,heading5,heading6",
-              "label" : "Title"
+          "title": {
+            "type": "StructuredText",
+            "config": {
+              "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+              "label": "Title"
             }
           },
-          "description" : {
-            "type" : "StructuredText",
-            "config" : {
-              "multi" : "paragraph",
-              "label" : "description"
+          "description": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph",
+              "label": "description"
             }
           }
         },
-        "label" : "Values"
+        "label": "Values"
       }
     }
   },
-  "SEO" : {
-    "page_title" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading2",
-        "label" : "Page Title"
+  "SEO": {
+    "page_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading2",
+        "label": "Page Title"
       }
     },
-    "meta_description" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "paragraph",
-        "label" : "Meta Description"
+    "meta_description": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "Meta Description"
       }
     }
   }
