@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import styled, { css } from "styled-components"
 
 const Hero = props => {
-  const { eyebrow, title, type, image } = props
+  const { eyebrow, title, type, image, subheading, altText } = props
 
   const [isLoaded, setIsLoaded] = useState(false)
 
@@ -19,9 +19,12 @@ const Hero = props => {
         <StyledHeading className={isLoaded && "active"} type={type}>
           <span id="span-0">{title}</span>
         </StyledHeading>
+        <StyledSubheading className={isLoaded && "active"} type={type}>
+          <span id="span-1">{subheading}</span>
+        </StyledSubheading>
       </HeadingContainer>
       <ImgContainer>
-        <img src={image} />
+        <img src={image} alt={altText}/>
       </ImgContainer>
     </StyledSection>
   )
@@ -59,11 +62,13 @@ const HeadingContainer = styled.div`
   }
 `
 
-const StyledHeading = styled.h2`
+const StyledHeading = styled.h1`
   color: ${({ theme }) => theme.colors.black};
   font-size: 39px;
   line-height: 100%;
   max-width: 850px;
+  font-weight: normal;
+  text-transform: uppercase;
 
   @media screen and (min-width: 768px) {
     font-size: 50px;
@@ -73,6 +78,16 @@ const StyledHeading = styled.h2`
   @media screen and (min-width: 1330px) {
     font-size: 95px;
     line-height: 90px;
+  }
+`
+
+const StyledSubheading = styled.h2`
+  font-size: 19px;
+  line-height: 25px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 25px;
+    line-height: 36px;
   }
 `
 

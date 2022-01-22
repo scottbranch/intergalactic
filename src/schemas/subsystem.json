@@ -1,92 +1,171 @@
 {
-  "Main": {
-    "heading": {
-      "type": "StructuredText",
-      "config": {
-        "single": "heading1",
-        "label": "Heading"
+  "Main" : {
+    "heading" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading1",
+        "label" : "Heading"
       }
     },
-    "uid": {
-      "type": "UID",
-      "config": {
-        "label": "url"
+    "subheading" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading2",
+        "label" : "Subheading"
       }
     },
-    "code": {
-      "type": "StructuredText",
-      "config": {
-        "single": "heading6",
-        "label": "Code"
+    "uid" : {
+      "type" : "UID",
+      "config" : {
+        "label" : "url"
       }
     },
-    "image": {
-      "type": "Image",
-      "config": {
-        "constraint": {},
-        "thumbnails": [],
-        "label": "Image"
+    "code" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading6",
+        "label" : "Code"
       }
     },
-    "summary": {
-      "type": "StructuredText",
-      "config": {
-        "multi": "paragraph",
-        "allowTargetBlank": true,
-        "label": "Summary"
+    "image" : {
+      "type" : "Image",
+      "config" : {
+        "constraint" : { },
+        "thumbnails" : [ ],
+        "label" : "Image"
       }
     },
-    "features": {
-      "type": "Group",
-      "config": {
-        "fields": {
-          "description": {
-            "type": "StructuredText",
-            "config": {
-              "single": "paragraph",
-              "label": "Description"
-            }
-          }
-        },
-        "label": "Features"
+    "summary" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph",
+        "allowTargetBlank" : true,
+        "label" : "Summary"
       }
     },
-    "use_cases": {
-      "type": "Group",
-      "config": {
-        "fields": {
-          "title": {
-            "type": "StructuredText",
-            "config": {
-              "single": "heading1,heading2,heading3,heading4,heading5,heading6",
-              "label": "Title"
+    "description_blocks" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "title" : {
+            "type" : "StructuredText",
+            "config" : {
+              "single" : "heading6",
+              "label" : "Title"
             }
           },
-          "description": {
-            "type": "StructuredText",
-            "config": {
-              "single": "paragraph",
-              "label": "Description"
+          "description" : {
+            "type" : "StructuredText",
+            "config" : {
+              "single" : "paragraph",
+              "label" : "Description"
             }
           }
         },
-        "label": "Use Cases"
+        "label" : "Description Blocks"
+      }
+    },
+    "features" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "description" : {
+            "type" : "StructuredText",
+            "config" : {
+              "single" : "paragraph",
+              "label" : "Description"
+            }
+          }
+        },
+        "label" : "Features"
+      }
+    },
+    "use_cases" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "title" : {
+            "type" : "StructuredText",
+            "config" : {
+              "single" : "heading1,heading2,heading3,heading4,heading5,heading6",
+              "label" : "Title"
+            }
+          },
+          "description" : {
+            "type" : "StructuredText",
+            "config" : {
+              "single" : "paragraph",
+              "label" : "Description"
+            }
+          }
+        },
+        "label" : "Use Cases"
+      }
+    },
+    "table_heading" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading6",
+        "label" : "Table Heading"
+      }
+    },
+    "table_description" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "paragraph",
+        "label" : "Table Description"
+      }
+    },
+    "table" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "attribute" : {
+            "type" : "StructuredText",
+            "config" : {
+              "single" : "heading6",
+              "label" : "Attribute"
+            }
+          },
+          "basic" : {
+            "type" : "StructuredText",
+            "config" : {
+              "single" : "paragraph",
+              "label" : "Basic"
+            }
+          },
+          "plus" : {
+            "type" : "StructuredText",
+            "config" : {
+              "single" : "paragraph",
+              "label" : "Plus"
+            }
+          },
+          "pro" : {
+            "type" : "StructuredText",
+            "config" : {
+              "single" : "paragraph",
+              "label" : "Pro"
+            }
+          }
+        },
+        "label" : "Table"
       }
     }
   },
-  "SEO": {
-    "page_title": {
-      "type": "StructuredText",
-      "config": {
-        "single": "heading2",
-        "label": "Page Title"
+  "SEO" : {
+    "page_title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading2",
+        "label" : "Page Title"
       }
     },
-    "meta_description": {
-      "type": "StructuredText",
-      "config": {
-        "single": "paragraph",
-        "label": "Meta Description"
+    "meta_description" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "paragraph",
+        "label" : "Meta Description"
       }
     }
   }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import styled, { css } from "styled-components"
 
 const Solutions = props => {
-  const { description } = props
+  const { description, title } = props
 
   const [isLoaded, setIsLoaded] = useState(false)
 
@@ -14,7 +14,7 @@ const Solutions = props => {
     <StyledSection data-scroll-section>
       <Container>
         <SectionTitle className="fadein" data-scroll data-scroll-offset="20%">
-          <span>SUMMARY:</span>
+          <span>{title}</span>
         </SectionTitle>
         <SectionDesc>
           <p data-scroll data-scroll-offset="20%">
@@ -63,6 +63,7 @@ const SectionTitle = styled.div`
   margin-bottom: 40px;
   opacity: 0;
   transition: opacity 1s ease;
+  text-transform: uppercase;
 
   &.is-inview {
     opacity: 1;

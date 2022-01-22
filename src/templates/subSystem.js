@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero from "../components/solution/subsystems/Hero"
 import Solutions from "../components/solution/subsystems/Solutions"
+import Table from "../components/solution/subsystems/Table"
 import Helmet from "react-helmet"
 import styled from "styled-components"
 import { isBrowser } from "react-device-detect"
@@ -38,8 +39,15 @@ const SubSystem = ({ data: { prismicSubsystem, allPrismicSubsystem } }) => {
         eyebrow={data.code?.text}
         title={data.heading?.text}
         image={data.image?.url}
+        subheading={data.subheading?.text}
+        altText={data.image?.alt}
       />
-      <Solutions description={data.summary?.text} />
+      {data.description_blocks.map((item,index) => {
+        return (
+          <Solutions title={item.title.text} description={item.description.text} />
+        )
+      })}
+      {data.features.length > 0 ?
       <StyledSection data-scroll-section>
         <Container>
           <SectionTitle data-scroll data-scroll-offset="20%">
@@ -59,60 +67,73 @@ const SubSystem = ({ data: { prismicSubsystem, allPrismicSubsystem } }) => {
           </SectionDesc>
         </Container>
       </StyledSection>
-      <StyledSection data-scroll-section>
-        <UseCaseContainer>
-          <SectionTitle className="fadein">
-            <span data-scroll data-scroll-offset="20%">
-              USE CASES:
-            </span>
-          </SectionTitle>
-          <SectionDesc
-            id="cases-container"
-            className={`cases-container light ${data.use_cases[0].title.text === 'Land & Sea' ? 'land-sea' : data.use_cases[0].title.text}`}
-            data-scroll
-            data-scroll-offset="20%"
-          >
-            <TabContainer>
-              <ul>
+      : ''
+      }
+      {(data.use_cases.length > 0) ?
+        <StyledSection data-scroll-section>
+          <UseCaseContainer>
+            <SectionTitle className="fadein">
+              <span data-scroll data-scroll-offset="20%">
+                USE CASES:
+              </span>
+            </SectionTitle>
+            <SectionDesc
+              id="cases-container"
+              className={`cases-container light ${data.use_cases[0].title.text === 'Land & Sea' ? 'land-sea' : data.use_cases[0].title.text}`}
+              data-scroll
+              data-scroll-offset="20%"
+            >
+              <TabContainer>
+                <ul>
+                  {data.use_cases?.map((item, index) => (
+                    <li>
+                      <button
+                      className={`${item.title?.text === 'Land & Sea' ? 'land-sea' : item.title?.text}-button`}
+                      onClick={() => handleClick(`${item.title?.text === 'Land & Sea' ? 'land-sea' : item.title?.text}`)}
+                      >
+                        {item.title?.text === "Land-Sea" ? "Land & Sea" : item.title?.text}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </TabContainer>
+              <span className="desktop-list">
                 {data.use_cases?.map((item, index) => (
-                  <li>
-                    <button
-                    className={`${item.title?.text === 'Land & Sea' ? 'land-sea' : item.title?.text}-button`}
-                    onClick={() => handleClick(`${item.title?.text === 'Land & Sea' ? 'land-sea' : item.title?.text}`)}
-                    >
-                      {item.title?.text === "Land-Sea" ? "Land & Sea" : item.title?.text}
-                    </button>
-                  </li>
+                  <span className={`text-block ${item.title?.text === 'Land & Sea' ? 'land-sea' : item.title?.text}`}>
+                    {item.description.text}
+                  </span>
                 ))}
-              </ul>
-            </TabContainer>
-            <span className="desktop-list">
-              {data.use_cases?.map((item, index) => (
-                <span className={`text-block ${item.title?.text === 'Land & Sea' ? 'land-sea' : item.title?.text}`}>
-                  {item.description.text}
-                </span>
-              ))}
-            </span>
-            {/*mobile stuff*/}
-            <div className="mobile-list" data-scroll data-scroll-offset="20%">
-              {data.use_cases?.map((item, index) => (
-                <div className={`mobile-block`}>
-                  <p
-                    className="title fadein"
-                    data-scroll
-                    data-scroll-offset="20%"
-                  >
-                    <span>
-                      {item.title?.text}
-                    </span>
-                  </p>
-                  <p className="description">{item.description.text}</p>
-                </div>
-              ))}
-            </div>
-          </SectionDesc>
-        </UseCaseContainer>
-      </StyledSection>
+              </span>
+              {/*mobile stuff*/}
+              <div className="mobile-list" data-scroll data-scroll-offset="20%">
+                {data.use_cases?.map((item, index) => (
+                  <div className={`mobile-block`}>
+                    <p
+                      className="title fadein"
+                      data-scroll
+                      data-scroll-offset="20%"
+                    >
+                      <span>
+                        {item.title?.text}
+                      </span>
+                    </p>
+                    <p className="description">{item.description.text}</p>
+                  </div>
+                ))}
+              </div>
+            </SectionDesc>
+          </UseCaseContainer>
+        </StyledSection>
+        : ''
+      }
+
+
+        <Table
+          title={data.table_heading?.text}
+          description={data.table_description?.text}
+          tableData={data.table}
+        />
+
     </Layout>
   )
 }
@@ -278,6 +299,14 @@ export const pageQuery = graphql`
         code {
           text
         }
+        description_blocks {
+          description {
+            text
+          }
+          title {
+            text
+          }
+        }
         features {
           description {
             text
@@ -287,10 +316,34 @@ export const pageQuery = graphql`
           text
         }
         image {
+          alt
           url
+        }
+        subheading {
+          text
         }
         summary {
           text
+        }
+        table_heading {
+          text
+        }
+        table_description {
+          text
+        }
+        table {
+          pro {
+            text
+          }
+          plus {
+            text
+          }
+          basic {
+            text
+          }
+          attribute {
+            text
+          }
         }
         use_cases {
           description {
@@ -315,6 +368,14 @@ export const pageQuery = graphql`
           code {
             text
           }
+          description_blocks {
+            description {
+              text
+            }
+            title {
+              text
+            }
+          }
           features {
             description {
               text
@@ -324,10 +385,34 @@ export const pageQuery = graphql`
             text
           }
           image {
+            alt
             url
+          }
+          subheading {
+            text
           }
           summary {
             text
+          }
+          table_heading {
+            text
+          }
+          table_description {
+            text
+          }
+          table {
+            pro {
+              text
+            }
+            plus {
+              text
+            }
+            basic {
+              text
+            }
+            attribute {
+              text
+            }
           }
           use_cases {
             description {
