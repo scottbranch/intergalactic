@@ -128,11 +128,14 @@ const SubSystem = ({ data: { prismicSubsystem, allPrismicSubsystem } }) => {
       }
 
 
+      {data.table.length > 0 ?
         <Table
           title={data.table_heading?.text}
           description={data.table_description?.text}
           tableData={data.table}
         />
+        : ''
+      }
 
     </Layout>
   )
