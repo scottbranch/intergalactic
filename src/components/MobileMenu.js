@@ -73,6 +73,7 @@ const MobileMenu = ({ theme }) => {
           <Link className="links" to="/contact">
             Contact
           </Link>
+          <a className="links" href="https://careers.smartrecruiters.com/Intergalactic2" target="_blank">CAREERS</a>
         </Social>
         <Legal>
           <a

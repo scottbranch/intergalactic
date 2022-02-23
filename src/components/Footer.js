@@ -34,6 +34,14 @@ const Footer = () => {
                   AS9100 certification
                 </a>
               </StyledLi>
+              <StyledLi>
+                <a
+                  href="https://careers.smartrecruiters.com/Intergalactic2"
+                  target="_blank"
+                >
+                  Careers
+                </a>
+              </StyledLi>
             </StyledUl>
           </LinkContainer>
           <LinkContainer>

@@ -126,6 +126,7 @@ const MenuOverlay = props => {
             <Social>
               <Link to="/company">COMPANY</Link>
               <Link to="/contact">CONTACT</Link>
+              <a href="https://careers.smartrecruiters.com/Intergalactic2" target="_blank">CAREERS</a>
             </Social>
             <Legal>
               <p>© {new Date().getFullYear()} Intergalactic</p>
