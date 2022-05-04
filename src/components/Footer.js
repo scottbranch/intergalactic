@@ -28,7 +28,7 @@ const Footer = () => {
               </StyledLi>
               <StyledLi>
                 <a
-                  href="https://prismic-io.s3.amazonaws.com/igspace/1252633c-5b5c-4808-9def-56f4b62370b4_Intergalactic+AS9100+certification.pdf"
+                  href="https://prismic-io.s3.amazonaws.com/igspace/2934dc8a-f110-42a8-a6ad-b11381146fe5_14122+Airborne+ECS+dba+INTERGALACTIC+07-Jun-2021.pdf"
                   target="_blank"
                 >
                   AS9100 certification
