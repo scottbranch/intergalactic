@@ -61,7 +61,7 @@ const SuppliersPage = () => {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        nda: e.target.getAttribute("name"),
+        "form-name": e.target.getAttribute("name"),
         pdf: pdfDoc,
       }),
     })
