@@ -22,8 +22,6 @@ const SuppliersPage = () => {
 
     // doc.text("Hello world!", 0.5, 0.5)
     // doc.save("a4.pdf")
-
-    // console.log({ doc })
   }, [])
 
   function generatePdf() {
