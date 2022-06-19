@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -10,6 +10,8 @@ import { isBrowser } from "react-device-detect"
 import { jsPDF } from "jspdf"
 
 const SuppliersPage = () => {
+  const [pdfDoc, setPdfDoc] = useState(undefined)
+
   useEffect(() => {
     setTimeout(() => {
       isBrowser && window.scroll.update()
@@ -32,11 +34,13 @@ const SuppliersPage = () => {
     doc.html(pdfContainer, {
       callback: function (doc) {
         let binary = doc.output()
-        return binary ? btoa(binary) : ""
+        setPdfDoc(`data:application/pdf;base64,${btoa(binary)}`)
       },
       x: 0,
       y: 0,
     })
+
+    console.log({ pdfDoc })
 
     // var doc = new jsPdf()
     // doc.text("jsPDF to Mail", 40, 30)
@@ -51,13 +55,14 @@ const SuppliersPage = () => {
   }
 
   const handleSubmit = e => {
+    console.log({ pdfDoc })
     e.preventDefault()
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": e.target.getAttribute("name"),
-        "form-pdf": generatePdf(),
+        "form-pdf": pdfDoc,
       }),
     })
       .then(() => console.log("success"))
@@ -107,7 +112,7 @@ const SuppliersPage = () => {
           </p>
         </div>
         <div>
-          <input value="input value" />
+          <input value="" onChange={() => generatePdf()} />
         </div>
 
         <form
@@ -123,6 +128,7 @@ const SuppliersPage = () => {
               <input name="bot-field" />
             </label>
           </div>
+          <input name="pdf" type="hidden" value={pdfDoc} />
           <button type="submit">Generate PDF</button>
         </form>
       </div>
