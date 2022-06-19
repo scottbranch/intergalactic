@@ -62,7 +62,7 @@ const SuppliersPage = () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         nda: e.target.getAttribute("name"),
-        pdf: e.target.value,
+        pdf: pdfDoc,
       }),
     })
       .then(() => console.log("success"))
