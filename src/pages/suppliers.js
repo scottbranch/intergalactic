@@ -11,6 +11,11 @@ import { jsPDF } from "jspdf"
 
 const SuppliersPage = () => {
   const [pdfDoc, setPdfDoc] = useState(undefined)
+  const [formState, setFormState] = useState(false)
+
+  const handleChange = e => {
+    setFormState({ ...formState, [e.target.name]: e.target.value })
+  }
 
   useEffect(() => {
     setTimeout(() => {
@@ -35,13 +40,13 @@ const SuppliersPage = () => {
       callback: function (doc) {
         let binary = doc.output()
         setPdfDoc(`data:application/pdf;base64,${btoa(binary)}`)
+        // doc.save()
       },
       x: 0,
       y: 0,
     })
 
     console.log({ pdfDoc })
-
     // var doc = new jsPdf()
     // doc.text("jsPDF to Mail", 40, 30)
     // var binary = doc.output()
@@ -63,6 +68,7 @@ const SuppliersPage = () => {
       body: encode({
         "form-name": e.target.getAttribute("name"),
         pdf: pdfDoc,
+        ...formState,
       }),
     })
       .then(() => console.log("success"))
@@ -129,6 +135,7 @@ const SuppliersPage = () => {
             </label>
           </div>
           <input name="pdf" type="hidden" value={pdfDoc} />
+          <input type="file" name="test" onChange={handleChange} />
           <button type="submit">Generate PDF</button>
         </form>
       </div>
