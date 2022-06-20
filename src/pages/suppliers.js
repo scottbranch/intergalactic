@@ -39,7 +39,7 @@ const SuppliersPage = () => {
     doc.html(pdfContainer, {
       callback: function (doc) {
         let binary = doc.output()
-        setPdfDoc(`data:application/pdf;base64,${btoa(binary)}`)
+        setPdfDoc(btoa(binary))
         // doc.save()
       },
       x: 0,
@@ -68,7 +68,6 @@ const SuppliersPage = () => {
       body: encode({
         "form-name": e.target.getAttribute("name"),
         pdf: pdfDoc,
-        ...formState,
       }),
     })
       .then(() => console.log("success"))
@@ -135,7 +134,6 @@ const SuppliersPage = () => {
             </label>
           </div>
           <input name="pdf" type="hidden" value={pdfDoc} />
-          <input type="file" name="test" onChange={handleChange} />
           <button type="submit">Generate PDF</button>
         </form>
       </div>
