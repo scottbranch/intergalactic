@@ -36,7 +36,7 @@ const Footer = () => {
               </StyledLi>
               <StyledLi>
                 <a
-                  href="https://careers.smartrecruiters.com/Intergalactic2"
+                  href="https://jobs.gusto.com/boards/intergalactic-976040a1-9236-4a36-950e-a579394f676c"
                   target="_blank"
                 >
                   Careers
