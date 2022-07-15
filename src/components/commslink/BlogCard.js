@@ -7,14 +7,18 @@ const BlogCard = props => {
   const { featuredImage, title, category, date, link, className } = props
 
   return (
-    <StyledInner data-scroll data-scroll-offset="20%" className={`blog-outer ${className}`}>
+    <StyledInner
+      data-scroll
+      data-scroll-offset="20%"
+      className={`blog-outer ${className}`}
+    >
       <div
         className={`image-container`}
         style={{ backgroundImage: `url(${featuredImage})` }}
       />
       <div className="description">
         <span>{date}</span>
-        <h5>{title}</h5>
+        <h2>{title}</h2>
         <span>{category}</span>
         <Link to={link}>
           Go to article
@@ -93,7 +97,7 @@ const StyledInner = styled.div`
       }
     }
 
-    h5 {
+    h2 {
       font-size: 25px;
       line-height: 30px;
       color: ${({ theme }) => theme.colors.black};

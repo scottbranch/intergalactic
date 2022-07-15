@@ -4,8 +4,7 @@ import Line from "../Line"
 import styled from "styled-components"
 import fallbackImage from "../../images/commslink/blog-fallback.jpg"
 
-const FeaturedBlog = (props) => {
-
+const FeaturedBlog = props => {
   const { show } = props
 
   const data = useStaticQuery(graphql`
@@ -40,7 +39,10 @@ const FeaturedBlog = (props) => {
   }
 
   return (
-    <StyledSection data-scroll-section style={{display: `${show ? 'block' : 'none'}` }}>
+    <StyledSection
+      data-scroll-section
+      style={{ display: `${show ? "block" : "none"}` }}
+    >
       <StyledInner>
         <div
           className="image-container"
@@ -54,7 +56,7 @@ const FeaturedBlog = (props) => {
         />
         <div className="description">
           <span>{blogData.date_published}</span>
-          <h3>{blogData.blog_title.text}</h3>
+          <StyledH2>{blogData.blog_title.text}</StyledH2>
           <p>{truncate(blogData.blog_content.text)}</p>
           <a href={`/commslink/${data.allPrismicBlogPost.edges[0].node.uid}`}>
             Go to article
@@ -84,6 +86,13 @@ const StyledSection = styled.section`
   @media screen and (min-width: 768px) {
     padding: 40px 0 120px;
   }
+`
+
+const StyledH2 = styled.h2`
+  font-size: 25px;
+  line-height: 30px;
+  color: ${({ theme }) => theme.colors.black};
+  font-family: ${({ theme }) => theme.fonts.tacticRegular};
 `
 
 const StyledInner = styled.div`
@@ -135,13 +144,6 @@ const StyledInner = styled.div`
       font-family: ${({ theme }) => theme.fonts.cartographMedium};
       font-size: 15px;
       letter-spacing: 1px;
-    }
-
-    h3 {
-      font-size: 25px;
-      line-height: 30px;
-      color: ${({ theme }) => theme.colors.black};
-      font-family: ${({ theme }) => theme.fonts.tacticRegular};
     }
 
     a {

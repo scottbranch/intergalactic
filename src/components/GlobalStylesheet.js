@@ -101,7 +101,7 @@ img.fadein {
     font-weight: 500;
 
     @media screen and (min-width: 768px) {
-      font-size: 5.3vw; //95px
+      font-size: 5.3vw;
       line-height: 95%;
     }
   }

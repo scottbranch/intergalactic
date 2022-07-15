@@ -18,7 +18,10 @@ const Post = ({ data: { prismicBlogPost, allPrismicBlogPost } }) => {
 
   return (
     <Layout className="dark">
-      <SEO title={data.page_title.text} description={data.meta_description.text} />
+      <SEO
+        title={data.page_title.text}
+        description={data.meta_description.text}
+      />
       <Helmet>
         <body class="blog" />
         {data.canonical && (
@@ -29,9 +32,9 @@ const Post = ({ data: { prismicBlogPost, allPrismicBlogPost } }) => {
         <ContentOuter>
           <HeadingContainer>
             <Date>{data.date_published}</Date>
-            <h5 className="fadein" data-scroll>
+            <h1 className="fadein" data-scroll>
               <span id="span-0">{data.title}</span>
-            </h5>
+            </h1>
             <HeaderImg src={data.preview_image.url} />
           </HeadingContainer>
           <ContentContainer>
@@ -69,10 +72,16 @@ const StyledSection = styled.section`
 const HeadingContainer = styled.div`
   max-width: 1200px;
 
-  h5 {
+  h1 {
     padding: 0 25px;
+    font-size: 20px;
+    line-height: 100%;
+    text-transform: uppercase;
+    font-weight: 500;
 
     @media screen and (min-width: 768px) {
+      font-size: 3.7vw; //48px
+      line-height: 105%;
       padding: 0;
     }
   }
