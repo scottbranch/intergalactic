@@ -25,23 +25,23 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // The property ID; the tracking code won't be generated without it
-        trackingId: "UA-196848983-2",
+        trackingId: "G-2YT9LGPLZ8",
       },
     },
     {
-        resolve: `gatsby-plugin-google-gtag`,
-        options: {
-          // You can add multiple tracking ids and a pageview event will be fired for all of them.
-          trackingIds: [
-            "UA-196848983-2", // Google Analytics / GA
-          ],
-          // This object is used for configuration specific to this plugin
-          pluginConfig: {
-            // Puts tracking script in the head instead of the body
-            head: true,
-          },
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          "G-2YT9LGPLZ8", // Google Analytics / GA
+        ],
+        // This object is used for configuration specific to this plugin
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: true,
         },
       },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -72,7 +72,7 @@ module.exports = {
           featured_blog: require("./src/schemas/featured_blog.json"),
           contact_page: require("./src/schemas/contact_page.json"),
           industries_page: require("./src/schemas/industries_page.json"),
-          system: require("./src/schemas/system.json")
+          system: require("./src/schemas/system.json"),
         },
         htmlSerializer: ({ node, key, value }) => (
           type,
