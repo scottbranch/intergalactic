@@ -41,7 +41,7 @@ const ValueProp = props => {
               Contact supply port <Arrow />
             </PartnerLink>
             <a
-              href="https://prismic-io.s3.amazonaws.com/igspace/157b6a11-1f74-48d1-bfa3-d69868eb269f_SQRM-001_+Supplier+Quality+Requirements++2.9.2022.pdf"
+              href="https://prismic-io.s3.amazonaws.com/igspace/cf4bd41d-b4bd-4b43-9cec-3b4873a0f95f_SQRM-001_+Supplier+Quality+Requirements++11.17.2022.pdf"
               target="_blank"
             >
               Supplier quality assurance requirements <Arrow />
@@ -51,6 +51,12 @@ const ValueProp = props => {
               target="_blank"
             >
               Terms &amp; conditions <Arrow />
+            </a>
+            <a
+              href="https://prismic-io.s3.amazonaws.com/igspace/0248d7e2-dc0d-4706-80da-a1e4783d944c_SPRM-001_+Supplier+Packaging+Requirements+11.16.2022.pdf"
+              target="_blank"
+            >
+              Supplier Packaging Requirements <Arrow />
             </a>
           </p>
         </TextContainer>
