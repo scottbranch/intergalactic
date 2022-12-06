@@ -97,10 +97,11 @@ const Description = styled.p`
   margin: 0;
 `
 
-const StyledHeading = styled.h2`
+const StyledHeading = styled.h1`
   color: ${({ theme }) => theme.colors.cream};
   font-size: 76px;
   line-height: 68px;
+  font-weight: normal;
 
   @media screen and (max-width: 768px) {
     margin-bottom: 230px;

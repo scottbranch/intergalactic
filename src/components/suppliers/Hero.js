@@ -61,11 +61,12 @@ const HeadingContainer = styled.div`
   }
 `
 
-const StyledHeading = styled.h2`
+const StyledHeading = styled.h1`
   color: ${({ theme }) => theme.colors.cream};
   z-index: 1;
   font-size: 76px;
   line-height: 68px;
+  font-weight: normal;
 
   @media screen and (max-width: 768px) {
     max-width: 100%;

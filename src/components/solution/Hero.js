@@ -56,11 +56,12 @@ const HeadingContainer = styled.div`
   }
 `
 
-const StyledHeading = styled.h2`
+const StyledHeading = styled.h1`
   color: ${({ theme }) => theme.colors.gold};
   font-size: 95px;
   line-height: 90px;
   max-width: 850px;
+  font-weight: normal;
 
   @media screen and (max-width: 768px) {
     font-size: 40px;

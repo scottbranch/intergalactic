@@ -151,10 +151,11 @@ const Description = styled.p`
   margin: 0;
 `
 
-const StyledHeading = styled.h2`
+const StyledHeading = styled.h1`
   color: ${({ theme }) => theme.colors.cream};
   font-size: 52px;
   line-height: 100%;
+  font-weight: normal;
 
   @media screen and (min-width: 768px) {
     font-size: 76px;
