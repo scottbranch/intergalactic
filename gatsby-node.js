@@ -16,7 +16,14 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
 }
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
+
+  createRedirect({
+    fromPath: `/commslink/heres-your-ultimate-guide-to-the-joint-strike-fighter`,
+    toPath: `/commslink/heres-your-ultimate-guide-to-the-joint-strike-fighter-f35`,
+    redirectInBrowser: true,
+    isPermanent: true,
+  })
 
   const pages = await graphql(`
     {
