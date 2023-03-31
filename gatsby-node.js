@@ -19,6 +19,13 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions
 
   createRedirect({
+    fromPath: `/commslink/heres-your-ultimate-guide-to-the-joint-strike-fighter/`,
+    toPath: `/commslink/heres-your-ultimate-guide-to-the-joint-strike-fighter-f35`,
+    redirectInBrowser: true,
+    isPermanent: true,
+  })
+
+  createRedirect({
     fromPath: `/commslink/heres-your-ultimate-guide-to-the-joint-strike-fighter`,
     toPath: `/commslink/heres-your-ultimate-guide-to-the-joint-strike-fighter-f35`,
     redirectInBrowser: true,
