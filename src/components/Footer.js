@@ -36,7 +36,7 @@ const Footer = () => {
               </StyledLi>
               <StyledLi>
                 <a
-                  href="https://jobs.gusto.com/boards/intergalactic-976040a1-9236-4a36-950e-a579394f676c"
+                  href="https://www.applicantpro.com/openings/igspace/jobs"
                   target="_blank"
                 >
                   Careers
@@ -74,7 +74,7 @@ const Footer = () => {
         <BottomLinks>
           <div>
             <BottomLink
-              href="https://prismic-io.s3.amazonaws.com/igspace/86f1d824-779c-4e74-8857-b3565c5557cf_PUR-PO-001+Intergalactic+ECS+Terms+and+Conditions.pdf"
+              href="https://prismic-io.s3.amazonaws.com/igspace/ec39f497-9ddd-4484-9641-67e8b2b30b9e_PUR-PO-001+Intergalactic+Terms+and+Conditions+Rev+E.pdf"
               target="_blank"
             >
               Terms & Conditions
