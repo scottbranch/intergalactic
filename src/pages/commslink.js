@@ -61,23 +61,6 @@ const Commslink = () => {
         uid
         tags
       }
-      blog2: prismicBlogPost(id: {eq: "f225e72e-e4e4-5c5d-a06e-5213628c7a79"}) {
-        data {
-          blog_content {
-            html
-            text
-          }
-          blog_title {
-            text
-          }
-          date_published
-          preview_image {
-            url
-          }
-        }
-        uid
-        tags
-      }
     }
   `)
 
@@ -86,7 +69,7 @@ const Commslink = () => {
 
   const {
     blog1,
-    blog2
+    // blog2
   } = data
 
   const filterItems = (item) => {
@@ -150,7 +133,7 @@ const Commslink = () => {
       <Grid data-scroll-section id="posts">
 
       {/* repeat this for every  new blog entry */}
-      <BlogCard
+      {/* <BlogCard
               className={`blog-item ${blog2.tags.map(function(item) {
                 return item.replace(/\s+/g, '-').toLowerCase()
               })}`}
@@ -163,7 +146,7 @@ const Commslink = () => {
               category={blog2.tags.map(item => `${item}. `)}
               date={blog2.data.date_published}
               link={blog2.uid}
-            />
+            /> */}
 
         {/* TODO: Revert this back to blogData.slice(1) after pagination is fixed */}
         {blogData.map((item, index) => {
