@@ -5,7 +5,7 @@ import styled from "styled-components"
 import fallbackImage from "../../images/commslink/blog-fallback.jpg"
 
 const FeaturedBlog = props => {
-  const { show } = props
+  const { show, blogData } = props
 
   const data = useStaticQuery(graphql`
     {
@@ -32,7 +32,7 @@ const FeaturedBlog = props => {
     }
   `)
 
-  const blogData = data.allPrismicBlogPost.edges[0].node.data
+  // const blogData = data.allPrismicBlogPost.edges[0].node.data
 
   const truncate = str => {
     return str.length > 200 ? str.substring(0, 197) + "..." : str
@@ -48,17 +48,17 @@ const FeaturedBlog = props => {
           className="image-container"
           style={{
             backgroundImage: `url(${
-              blogData.preview_image.url
-                ? blogData.preview_image.url
+              blogData.data.preview_image.url
+                ? blogData.data.preview_image.url
                 : fallbackImage
             })`,
           }}
         />
         <div className="description">
-          <span>{blogData.date_published}</span>
-          <StyledH2>{blogData.blog_title.text}</StyledH2>
-          <p>{truncate(blogData.blog_content.text)}</p>
-          <a href={`/commslink/${data.allPrismicBlogPost.edges[0].node.uid}`}>
+          <span>{blogData.data.date_published}</span>
+          <StyledH2>{blogData.data.blog_title.text}</StyledH2>
+          <p>{truncate(blogData.data.blog_content.text)}</p>
+          <a href={`/commslink/${blogData.uid}`}>
             Go to article
             <svg
               width="12"
