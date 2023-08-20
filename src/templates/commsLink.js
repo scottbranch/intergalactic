@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Helmet from "react-helmet"
@@ -9,9 +9,8 @@ import BlogCard from "../components/commslink/BlogCard"
 import { isBrowser } from "react-device-detect"
 import fallbackImage from "../images/commslink/blog-fallback.jpg"
 
-const Commslink = () => {
+const BlogList = props => {
   const [isLoaded, setIsLoaded] = useState(false)
-  const [filterText, setFilterText] = useState('All')
   const [showFeaturedBlog, setShowFeaturedBlog] = useState(true)
 
   useEffect(() => {
@@ -21,82 +20,40 @@ const Commslink = () => {
     }, 300)
   }, [])
 
-  const data = useStaticQuery(graphql`
-    {
-      allPrismicBlogPost(sort: { order: DESC, fields: data___date_published }) {
-        edges {
-          node {
-            data {
-              blog_content {
-                html
-              }
-              blog_title {
-                text
-              }
-              date_published
-              preview_image {
-                url
-              }
-            }
-            uid
-            tags
-          }
-        }
-        distinct(field: tags)
-      }
-      blog1: prismicBlogPost(id: {eq: "b7bf70b1-ed29-5d59-9497-57353344a54a"}) {
-        data {
-          blog_content {
-            html
-            text
-          }
-          blog_title {
-            text
-          }
-          date_published
-          preview_image {
-            url
-          }
-        }
-        uid
-        tags
-      }
-    }
-  `)
-
-  const blogData = data.allPrismicBlogPost.edges
-  const tagData = data.allPrismicBlogPost.distinct
-
-  const {
-    blog1,
-    // blog2
-  } = data
-
-  const filterItems = (item) => {
-    const allItems = document.querySelectorAll('.blog-item')
-    const className = item.toString().replace(/\s+/g, '-').toLowerCase()
+  const filterItems = item => {
+    const allItems = document.querySelectorAll(".blog-item")
+    const className = item.toString().replace(/\s+/g, "-").toLowerCase()
     const currentItems = document.querySelectorAll(`.${className}`)
 
-    allItems.forEach((item) => {
-      item.classList.remove('show')
-      item.classList.add('hide')
+    allItems.forEach(item => {
+      item.classList.remove("show")
+      item.classList.add("hide")
     })
 
-    currentItems.forEach((item) => {
-      item.classList.add('show')
+    currentItems.forEach(item => {
+      item.classList.add("show")
     })
 
-    if(item === 'blog-item') {
+    if (item === "blog-item") {
       setShowFeaturedBlog(true)
     } else {
       setShowFeaturedBlog(false)
     }
 
-    const scrollEl = document.getElementById('posts')
+    const scrollEl = document.getElementById("posts")
     window.scroll.scrollTo(scrollEl)
 
     window.scroll.update()
+  }
 
+  const blogData = props.data.allPrismicBlogPost.edges
+  const tagData = props.data.allPrismicBlogPost.distinct
+  const pageInfo = props.data.allPrismicBlogPost.pageInfo
+  const paginationNumbers = []
+
+  for (let i = 0; i < pageInfo.pageCount; i++) {
+    let currentPage = i + 1
+    paginationNumbers.push(currentPage)
   }
 
   return (
@@ -117,45 +74,46 @@ const Commslink = () => {
         <StyledInner className="filter-container">
           <div className="intro-container">
             <p>Filter by:</p>
-           </div>
+          </div>
           <div className="overview">
-           <ul>
-             <li><a href="javascript:void(0)" onClick={() => filterItems('blog-item')}>All</a></li>
-             {tagData.map(item => {
-               return (
-               <li><a href="javascript:void(0)" onClick={() => filterItems(item)}>{item}</a></li>
-             )})}
-           </ul>
+            <ul>
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  onClick={() => filterItems("blog-item")}
+                >
+                  All
+                </a>
+              </li>
+              {tagData.map(item => {
+                return (
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      onClick={() => filterItems(item)}
+                    >
+                      {item}
+                    </a>
+                  </li>
+                )
+              })}
+            </ul>
           </div>
         </StyledInner>
       </ListSection>
-      <FeaturedBlog blogData={blog1} show={showFeaturedBlog}/>
+      {pageInfo.currentPage === 1 ? (
+        <FeaturedBlog blogData={blogData[0].node} show={showFeaturedBlog} />
+      ) : (
+        ""
+      )}
       <Grid data-scroll-section id="posts">
-
-      {/* repeat this for every  new blog entry */}
-      {/* <BlogCard
-              className={`blog-item ${blog2.tags.map(function(item) {
-                return item.replace(/\s+/g, '-').toLowerCase()
-              })}`}
-              featuredImage={
-                blog2.data.preview_image.url
-                  ? blog2.data.preview_image.url
-                  : fallbackImage
-              }
-              title={blog2.data.blog_title?.text}
-              category={blog2.tags.map(item => `${item}. `)}
-              date={blog2.data.date_published}
-              link={blog2.uid}
-            /> */}
-
-        {/* TODO: Revert this back to blogData.slice(1) after pagination is fixed */}
-        {blogData.map((item, index) => {
+        {blogData.slice(1).map((item, index) => {
           const tags = item.node.tags
           let tagsArray = []
-          tags.forEach(function(item) {
-            tagsArray.push(item.replace(/\s+/g, '-').toLowerCase())
+          tags.forEach(function (item) {
+            tagsArray.push(item.replace(/\s+/g, "-").toLowerCase())
           })
-          tagsArray = tagsArray.join(' ')
+          tagsArray = tagsArray.join(" ")
           return (
             <BlogCard
               className={`blog-item ${tagsArray}`}
@@ -169,12 +127,119 @@ const Commslink = () => {
               date={item.node.data.date_published}
               link={item.node.uid}
             />
+          )
+        })}
+        <PaginationUl>
+          {pageInfo.hasPreviousPage ? (
+            <PaginateTextLink
+              to={`/commslink/${
+                pageInfo.currentPage === 2 ? "" : pageInfo.currentPage - 1
+              }`}
+            >
+              Prev
+            </PaginateTextLink>
+          ) : (
+            ""
           )}
-        )}
+          {paginationNumbers.map(item => {
+            return (
+              <li className={item === pageInfo.currentPage ? "active" : ""}>
+                <Link to={item === 1 ? "/commslink" : `/commslink/${item}`}>
+                  {item}
+                </Link>
+              </li>
+            )
+          })}
+          {pageInfo.hasNextPage ? (
+            <PaginateTextLink to={`/commslink/${pageInfo.currentPage + 1}`}>
+              Next
+            </PaginateTextLink>
+          ) : (
+            ""
+          )}
+        </PaginationUl>
       </Grid>
     </Layout>
   )
 }
+
+export const blogListQuery = graphql`
+  query blogListQuery($skip: Int!, $limit: Int!) {
+    allPrismicBlogPost(
+      sort: { order: DESC, fields: first_publication_date }
+      limit: $limit
+      skip: $skip
+    ) {
+      edges {
+        node {
+          data {
+            blog_content {
+              html
+              text
+            }
+            blog_title {
+              text
+            }
+            date_published
+            preview_image {
+              url
+            }
+          }
+          uid
+          tags
+        }
+      }
+      distinct(field: tags)
+      pageInfo {
+        currentPage
+        hasNextPage
+        hasPreviousPage
+        itemCount
+        totalCount
+        perPage
+        pageCount
+      }
+    }
+  }
+`
+
+const PaginationUl = styled.ul`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+
+  li {
+    list-style: none;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 17px;
+
+    a {
+      text-decoration: none;
+      color: ${({ theme }) => theme.colors.aluminum};
+
+      &:hover {
+        color: ${({ theme }) => theme.colors.black};
+      }
+    }
+
+    &.active a {
+      color: ${({ theme }) => theme.colors.black};
+    }
+  }
+`
+
+const PaginateTextLink = styled(Link)`
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.black};
+  margin: 0 20px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`
 
 const StyledSection = styled.section`
   width: 100%;
@@ -186,10 +251,6 @@ const StyledSection = styled.section`
   @media screen and (min-width: 768px) {
     height: 500px;
   }
-`
-
-const BGSection = styled.div`
-  background-color: ${({ theme }) => theme.colors.cream};
 `
 
 const HeadingContainer = styled.div`
@@ -262,7 +323,8 @@ const StyledInner = styled.div`
     display: flex;
   }
 
-  .intro-container, .overview {
+  .intro-container,
+  .overview {
     p {
       color: ${({ theme }) => theme.colors.black};
       font-size: 15px;
@@ -299,4 +361,4 @@ const StyledInner = styled.div`
   }
 `
 
-export default Commslink
+export default BlogList

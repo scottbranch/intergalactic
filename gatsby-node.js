@@ -1,4 +1,6 @@
 const path = require("path")
+const { createFilePath } = require("gatsby-source-filesystem")
+const { paginate } = require('gatsby-awesome-pagination');
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   if (stage === "build-html" || stage === "develop-html") {
@@ -15,8 +17,41 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   }
 }
 
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage, createRedirect } = actions
+
+  // QUERY FOR ALL BLOG POSTS
+  const result = await graphql(
+    `{
+        allPrismicBlogPost(
+          sort: {order: DESC, fields: first_publication_date}
+          limit: 1000
+        ) {
+          edges {
+            node {
+              uid
+            }
+          }
+        }
+      }
+    `)
+
+   // CREATE BLOG LIST PAGES
+   const posts = result.data.allPrismicBlogPost.edges
+   const postsPerPage = 40
+   const numPages = Math.ceil(posts.length / postsPerPage)
+   Array.from({ length: numPages }).forEach((_, i) => {
+     createPage({
+       path: i === 0 ? `/commslink` : `/commslink/${i + 1}`,
+       component: path.resolve("./src/templates/commsLink.js"),
+       context: {
+         limit: postsPerPage,
+         skip: i * postsPerPage,
+         numPages,
+         currentPage: i + 1,
+       },
+     })
+   })
 
   createRedirect({
     fromPath: `/commslink/heres-your-ultimate-guide-to-the-joint-strike-fighter/`,
@@ -97,3 +132,18 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 }
+
+// BLOG PAGINATION STUF
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === `allPrismicBlogPost`) {
+    const value = createFilePath({ node, getNode })
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    })
+  }
+}
+
+
