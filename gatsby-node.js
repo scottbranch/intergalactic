@@ -1,6 +1,5 @@
 const path = require("path")
 const { createFilePath } = require("gatsby-source-filesystem")
-const { paginate } = require('gatsby-awesome-pagination');
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   if (stage === "build-html" || stage === "develop-html") {
@@ -22,9 +21,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // QUERY FOR ALL BLOG POSTS
   const result = await graphql(
-    `{
+    `
+      {
         allPrismicBlogPost(
-          sort: {order: DESC, fields: first_publication_date}
+          sort: { order: DESC, fields: first_publication_date }
           limit: 1000
         ) {
           edges {
@@ -34,24 +34,25 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
       }
-    `)
+    `
+  )
 
-   // CREATE BLOG LIST PAGES
-   const posts = result.data.allPrismicBlogPost.edges
-   const postsPerPage = 40
-   const numPages = Math.ceil(posts.length / postsPerPage)
-   Array.from({ length: numPages }).forEach((_, i) => {
-     createPage({
-       path: i === 0 ? `/commslink` : `/commslink/${i + 1}`,
-       component: path.resolve("./src/templates/commsLink.js"),
-       context: {
-         limit: postsPerPage,
-         skip: i * postsPerPage,
-         numPages,
-         currentPage: i + 1,
-       },
-     })
-   })
+  // CREATE BLOG LIST PAGES
+  const posts = result.data.allPrismicBlogPost.edges
+  const postsPerPage = 40
+  const numPages = Math.ceil(posts.length / postsPerPage)
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/commslink` : `/commslink/${i + 1}`,
+      component: path.resolve("./src/templates/commsLink.js"),
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
+      },
+    })
+  })
 
   createRedirect({
     fromPath: `/commslink/heres-your-ultimate-guide-to-the-joint-strike-fighter/`,
@@ -145,5 +146,3 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
   }
 }
-
-
