@@ -108,6 +108,7 @@ const BlogList = props => {
       )}
       <Grid data-scroll-section id="posts">
         {blogData.slice(1).map((item, index) => {
+          console.log("item ", item)
           const tags = item.node.tags
           let tagsArray = []
           tags.forEach(function (item) {

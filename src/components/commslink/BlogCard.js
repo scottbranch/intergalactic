@@ -20,7 +20,7 @@ const BlogCard = props => {
         <span>{date}</span>
         <h2>{title}</h2>
         <span>{category}</span>
-        <Link to={link}>
+        <Link to={`/commslink/${link}`}>
           Go to article
           <svg
             width="12"
