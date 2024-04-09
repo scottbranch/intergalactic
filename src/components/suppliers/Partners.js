@@ -47,7 +47,7 @@ const ValueProp = props => {
               Supplier quality assurance requirements <Arrow />
             </a>
             <a
-              href="https://prismic-io.s3.amazonaws.com/igspace/aa76f430-0145-4b7c-a450-69e0fdfbccc3_PUR-PO-001+Intergalactic+Terms+and+Conditions+Rev+F.pdf"
+              href="https://igspace.cdn.prismic.io/igspace/ZhWeVDjCgu4jztnY_PUR-PO-001%2CIntergalaticTerms%26ConditionsRevG04.07.2024.pdf"
               target="_blank"
             >
               Terms &amp; conditions <Arrow />
