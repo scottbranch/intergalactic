@@ -53,7 +53,7 @@ const ValueProp = props => {
               Terms &amp; conditions <Arrow />
             </a>
             <a
-              href="https://prismic-io.s3.amazonaws.com/igspace/0248d7e2-dc0d-4706-80da-a1e4783d944c_SPRM-001_+Supplier+Packaging+Requirements+11.16.2022.pdf"
+              href="https://igspace.cdn.prismic.io/igspace/ZkZvOyol0Zci9ORw_SPRM-001%2CSupplierPackagingRequirements05.15.2024.pdf"
               target="_blank"
             >
               Supplier Packaging Requirements <Arrow />
