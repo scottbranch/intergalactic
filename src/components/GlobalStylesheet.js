@@ -21,6 +21,24 @@ function textDelay() {
 }
 
 export default createGlobalStyle`
+
+#pdf-container {
+  width: 800px;
+  h1 {
+    margin: 0;
+    font-size: 20px;
+  }
+  p {
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+  }
+
+  input {
+    font-size: 10px;
+  }
+}
+
   html,
   body {
     color: ${theme.colors.black};

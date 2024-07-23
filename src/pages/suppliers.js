@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -8,13 +8,72 @@ import Partners from "../components/suppliers/Partners"
 import Helmet from "react-helmet"
 import styled from "styled-components"
 import { isBrowser } from "react-device-detect"
+import { jsPDF } from "jspdf"
 
 const SuppliersPage = () => {
+  const [pdfDoc, setPdfDoc] = useState(undefined)
+  const [formState, setFormState] = useState(false)
+
+  const handleChange = e => {
+    setFormState({ ...formState, [e.target.name]: e.target.value })
+  }
+
   useEffect(() => {
     setTimeout(() => {
       isBrowser && window.scroll.update()
     }, 300)
+
+    // const doc = new jsPDF({
+    //   unit: "in",
+    //   format: [8.5, 11],
+    // })
+
+    // doc.text("Hello world!", 0.5, 0.5)
+    // doc.save("a4.pdf")
   }, [])
+
+  function generatePdf() {
+    const pdfContainer = document.getElementById("pdf-container")
+
+    var doc = new jsPDF("p", "px", "a3", true)
+
+    doc.html(pdfContainer, {
+      callback: function (doc) {
+        let binary = doc.output()
+        setPdfDoc(btoa(binary))
+        // doc.save()
+      },
+      x: 0,
+      y: 0,
+    })
+
+    console.log({ pdfDoc })
+    // var doc = new jsPdf()
+    // doc.text("jsPDF to Mail", 40, 30)
+    // var binary = doc.output()
+    // return binary ? btoa(binary) : ""
+  }
+
+  function encode(data) {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
+  }
+
+  const handleSubmit = e => {
+    console.log({ pdfDoc })
+    e.preventDefault()
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": e.target.getAttribute("name"),
+        pdf: pdfDoc,
+      }),
+    })
+      .then(() => console.log("success"))
+      .catch(error => alert(error))
+  }
 
   const data = useStaticQuery(graphql`
     {
@@ -46,6 +105,39 @@ const SuppliersPage = () => {
         <link rel="canonical" href="http://ig.space/suppliers" />
       </Helmet>
       <Hero />
+      <div id="pdf-container" data-scroll-section>
+        <h1>NDA PDF</h1>
+        <div>
+          <p style={{ fontSize: "12px", lineHeight: "12px" }}>
+            some stuff here for testing
+          </p>
+        </div>
+        <div>
+          <p style={{ fontSize: "12px", lineHeight: "12px" }}>
+            some stuff here for testing
+          </p>
+        </div>
+        <div>
+          <input value="" onChange={() => generatePdf()} />
+        </div>
+
+        <form
+          name="nda"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          onSubmit={handleSubmit}
+        >
+          <div hidden aria-hidden="true">
+            <label>
+              Don't fill this out if you're human:
+              <input name="bot-field" />
+            </label>
+          </div>
+          <input name="pdf" type="hidden" value={pdfDoc} />
+          <button type="submit">Generate PDF</button>
+        </form>
+      </div>
       <Overview />
       <Partners />
     </Layout>
