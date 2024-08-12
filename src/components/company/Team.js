@@ -54,13 +54,13 @@ const Team = props => {
           {sectionData.map((item, index) => {
             return (
               <TeamMember
-                to={`/team/${item?.team_member.document.uid}`}
+                to={`/team/${item?.team_member?.document?.uid}`}
                 data-scroll
                 data-scroll-offset="20%"
               >
-                <h6>{item.team_member.document.data.name?.text}</h6>
+                <h6>{item?.team_member?.document?.data?.name?.text}</h6>
                 <p className="eyebrow">
-                  {item.team_member.document.data.title?.text}
+                  {item?.team_member?.document?.data?.title?.text}
                 </p>
                 <svg
                   width="20"
@@ -76,7 +76,7 @@ const Team = props => {
                 </svg>
                 <Headshot
                   className="headshot"
-                  src={item.team_member.document.data.headshot?.url}
+                  src={item?.team_member?.document?.data?.headshot?.url}
                 />
               </TeamMember>
             )
