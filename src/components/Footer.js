@@ -1,6 +1,7 @@
 import React from "react"
 import Link from "gatsby-link"
 import styled from "styled-components"
+import isoCertificate from "../images/iso-certificate.jpg"
 
 const Footer = () => {
   return (
@@ -79,6 +80,7 @@ const Footer = () => {
             >
               Terms & Conditions
             </BottomLink>
+            <IsoImg src={isoCertificate} />
           </div>
           <div>
             <p>© {new Date().getFullYear()} Intergalactic</p>
@@ -88,6 +90,12 @@ const Footer = () => {
     </StyledFooter>
   )
 }
+
+const IsoImg = styled.img`
+  max-width: 150px;
+  display: block;
+  margin-top: 20px;
+`
 
 const StyledFooter = styled.footer`
   background: ${({ theme }) => theme.colors.black};
