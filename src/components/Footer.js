@@ -75,7 +75,7 @@ const Footer = () => {
         <BottomLinks>
           <div>
             <BottomLink
-              href="https://igspace.cdn.prismic.io/igspace/ZhWeVDjCgu4jztnY_PUR-PO-001%2CIntergalaticTerms%26ConditionsRevG04.07.2024.pdf"
+              href="https://igspace.cdn.prismic.io/igspace/Z9tLEDiBA97Gir0H_PUR-PO-001IntergalaticTermsConditionsRevH03.18.2025.pdf"
               target="_blank"
             >
               Terms & Conditions
