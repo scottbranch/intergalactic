@@ -75,7 +75,7 @@ const Footer = () => {
         <BottomLinks>
           <div>
             <BottomLink
-              href="https://igspace.cdn.prismic.io/igspace/Z9tLEDiBA97Gir0H_PUR-PO-001IntergalaticTermsConditionsRevH03.18.2025.pdf"
+              href="https://www.geaerospace.com/company/doing-business"
               target="_blank"
             >
               Terms & Conditions
