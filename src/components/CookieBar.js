@@ -7,8 +7,11 @@ const CookieBar = () => {
   return (
     <Div id="cookie-bar">
       <p>
-        <Link to="/commslink/heres-why-we-changed-our-name-to-intergalactic">
-          Airborne ECS is now Intergalactic <Arrow />
+        <Link
+          to="https://www.unisonindustries.com/mechanical/thermal-management"
+          target="_blank"
+        >
+          Intergalactic is now part of Unison, a GE Aerospace company <Arrow />
         </Link>
       </p>
     </Div>
