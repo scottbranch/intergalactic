@@ -29,7 +29,7 @@ const Footer = () => {
               </StyledLi>
               <StyledLi>
                 <a
-                  href="https://prismic-io.s3.amazonaws.com/igspace/0fd1171a-2eff-4896-8f4e-6b2f1c0a24ca_17806+Intergalactic+Spaceworx+LLC+DBA+Intergalactic+30-Oct-2023.pdf"
+                  href="https://igspace.cdn.prismic.io/igspace/agtbEKYofJOwHV-D_17806_Intergalactic_Spaceworx_LLC_dba_Intergalactic_15-Jul-2024.pdf"
                   target="_blank"
                 >
                   AS9100 certification
@@ -37,7 +37,7 @@ const Footer = () => {
               </StyledLi>
               <StyledLi>
                 <a
-                  href="https://www.applicantpro.com/openings/igspace/jobs"
+                  href="https://careers.geaerospace.com/global/en/search-results?keywords=Intergalactic"
                   target="_blank"
                 >
                   Careers

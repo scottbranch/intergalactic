@@ -75,7 +75,7 @@ const MobileMenu = ({ theme }) => {
           </Link>
           <a
             className="links"
-            href="https://www.applicantpro.com/openings/igspace/jobs"
+            href="https://careers.geaerospace.com/global/en/search-results?keywords=Intergalactic"
             target="_blank"
           >
             CAREERS

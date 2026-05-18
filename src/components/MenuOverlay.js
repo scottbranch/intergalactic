@@ -127,7 +127,7 @@ const MenuOverlay = props => {
               <Link to="/company">COMPANY</Link>
               <Link to="/contact">CONTACT</Link>
               <a
-                href="https://www.applicantpro.com/openings/igspace/jobs"
+                href="https://careers.geaerospace.com/global/en/search-results?keywords=Intergalactic"
                 target="_blank"
               >
                 CAREERS
